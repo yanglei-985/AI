@@ -81,7 +81,7 @@ function renderToday(video) {
   );
   const playerSlot = h("div");
   const actions = h("div", { class: "actions" },
-    video.ytId && h("button", {
+    video.ytId && !window.QUANT_NO_EMBED && h("button", {
       class: "primary",
       onclick: () => {
         playerSlot.replaceChildren(h("iframe", {
