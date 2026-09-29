@@ -36,6 +36,8 @@ const params = new URLSearchParams(location.search);
 const todayStr = /^\d{4}-\d{2}-\d{2}$/.test(params.get("date") || "") ? params.get("date") : ymd(new Date());
 
 const $ = (id) => document.getElementById(id);
+// Deploys stamp the commit id into index.html; locally the placeholder stays, so use the clock.
+const VER = /__/.test(window.APP_VERSION || "__") ? String(Date.now()) : window.APP_VERSION;
 let data, progress, currentId, activeTab = "points";
 
 // ---------- streak / stats ----------
@@ -143,12 +145,19 @@ function renderPlayer(video) {
   bar.hidden = false;
   applyPrefs();
   const slot = h("div", { id: "player-slot" });
-  bar.firstElementChild.replaceChildren(slot);
+  const msg = h("div", { class: "player-msg" }, "正在加载播放器…");
+  const showMsg = (text) => {
+    msg.replaceChildren(text, " ", h("a", { href: video.url, target: "_blank", rel: "noopener" }, "在 YouTube 打开"));
+    msg.classList.add("show");
+  };
+  bar.firstElementChild.replaceChildren(msg, slot);
   const token = playerToken;
   loadYT().then((ok) => {
     if (token !== playerToken) return;
     if (!ok || !window.YT || !window.YT.Player) {
       // API blocked: fall back to a plain embed (no transcript sync)
+      showMsg("播放器脚本没有加载出来，字幕暂时不能跟着视频高亮。");
+      msg.classList.remove("show");
       slot.replaceWith(h("iframe", {
         src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.ytId)}`,
         title: video.title, allowfullscreen: true,
@@ -161,6 +170,11 @@ function renderPlayer(video) {
       videoId: video.ytId, width: "100%", height: "100%",
       host: "https://www.youtube-nocookie.com",
       playerVars: { rel: 0, playsinline: 1, modestbranding: 1 },
+      events: {
+        onError: (e) => showMsg(e && [101, 150, 153].includes(e.data)
+          ? "这个视频的作者不允许在其他网站播放。"
+          : `播放出错（代码 ${e && e.data}）。`),
+      },
     });
   });
 }
@@ -208,7 +222,7 @@ async function renderLesson(video) {
   root.replaceChildren(h("p", { class: "eyebrow" }, "加载中…"));
   let lesson;
   try {
-    const res = await fetch(`data/lessons/${encodeURIComponent(video.id)}.json`);
+    const res = await fetch(`data/lessons/${encodeURIComponent(video.id)}.json?v=${VER}`);
     if (!res.ok) throw new Error(res.status);
     lesson = await res.json();
   } catch {
@@ -360,7 +374,7 @@ function select(id, scroll) {
 // ---------- boot ----------
 (async function main() {
   try {
-    const res = await fetch("data/curriculum.json");
+    const res = await fetch(`data/curriculum.json?v=${VER}`);
     data = await res.json();
   } catch {
     $("today").replaceChildren(h("div", { class: "pending" }, "无法加载课程数据。请先运行 node scripts/build.mjs 并通过 HTTP 访问。"));

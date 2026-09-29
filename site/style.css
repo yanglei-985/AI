@@ -125,3 +125,13 @@ button:focus-visible, .btn:focus-visible, a:focus-visible { outline: 2px solid v
 .seg.now { background: var(--accent-soft); }
 .toolbar { flex-wrap: wrap; }
 @media (prefers-reduced-motion: reduce) { .seg { transition: none; } }
+
+.player-inner { position: relative; }
+.player-inner iframe, #player-slot { position: relative; z-index: 1; }
+.player-msg {
+  position: absolute; inset: 0; z-index: 0; display: grid; place-content: center; gap: 4px; padding: 16px;
+  text-align: center; color: #fff; font-size: .9rem;
+}
+.player-msg a { color: #9cc3ff; }
+.player-msg.show { z-index: 2; background: #1b1b1b; }
+.foot-ver { margin: 4px 0 0; font-size: .72rem; opacity: .8; }

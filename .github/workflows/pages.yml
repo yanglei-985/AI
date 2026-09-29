@@ -28,6 +28,8 @@ jobs:
           node-version: 22
       - name: Validate content and build data
         run: node scripts/build.mjs
+      - name: Stamp version (cache busting)
+        run: sed -i "s/__VERSION__/${GITHUB_SHA::7}/g" site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
