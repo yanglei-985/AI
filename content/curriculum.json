@@ -1,0 +1,168 @@
+{
+  "startDate": "2026-09-29",
+  "note": "视频均来自 2026-09-29 的网络搜索结果（标题与链接出现在搜索结果里），但当时无法在沙箱内打开 YouTube 核实频道/时长/字幕，请以实际视频页为准。channel 为 null 表示尚未确认。",
+  "videos": [
+    {
+      "id": "8GnJV5i-R7Q",
+      "title": "Quant Trading Basics for Beginners Explained | Quantreo",
+      "channel": "Quantreo",
+      "lang": "en",
+      "level": "入门",
+      "topic": "量化入门",
+      "reason": "面向零基础的量化交易概览课程，先建立「量化到底在做什么」的整体图景，再学后面的专题。"
+    },
+    {
+      "id": "504woY_aMjE",
+      "title": "What is Quantitative Trading? The Complete Beginner's Guide",
+      "channel": null,
+      "lang": "en",
+      "level": "入门",
+      "topic": "量化入门",
+      "reason": "用「用数据和概率取代恐惧与贪婪」的角度讲量化交易，和上一个视频互补，帮你巩固基本概念和术语。"
+    },
+    {
+      "id": "1xHsKpAwi4U",
+      "title": "量化交易入门。",
+      "channel": null,
+      "lang": "zh",
+      "level": "入门",
+      "topic": "量化入门",
+      "reason": "中文视频，讲入门量化需要的金融知识、统计与数据科学、编程和交易经验，适合规划自己的学习路线。"
+    },
+    {
+      "id": "wvXDB9dMdEo",
+      "title": "1. Introduction, Financial Terms and Concepts (MIT 18.S096)",
+      "channel": "MIT OpenCourseWare",
+      "lang": "en",
+      "level": "入门",
+      "topic": "金融基础",
+      "reason": "MIT 金融数学课程第 1 讲，系统介绍基本金融术语与概念，是后续所有数学工具的语境基础。"
+    },
+    {
+      "id": "UGLfZc6-7wI",
+      "title": "Mathematics and Probability for Quantitative Finance & Trading | An Introduction | Srijit Mukherjee",
+      "channel": null,
+      "lang": "en",
+      "level": "入门",
+      "topic": "概率统计",
+      "reason": "梳理量化金融与交易所需的数学与概率工具，帮你判断该补哪些数学。"
+    },
+    {
+      "id": "n5dmt8tj2Jo",
+      "title": "Probability in Finance - Statistics For The Trading Floor - Quantitative Methods",
+      "channel": null,
+      "lang": "en",
+      "level": "入门",
+      "topic": "概率统计",
+      "reason": "从交易场景切入讲概率与统计，把抽象概念和收益、风险联系起来。"
+    },
+    {
+      "id": "FnIHU2hj4qQ",
+      "title": "GARCH vs ARIMA Explained | Which Time Series Model Should You Use?",
+      "channel": null,
+      "lang": "en",
+      "level": "进阶",
+      "topic": "时间序列",
+      "reason": "对比 ARIMA（预测均值）与 GARCH（刻画波动率聚集），是金融时间序列建模的核心区分。"
+    },
+    {
+      "id": "6I9dqE-Wy-g",
+      "title": "Fama French Three Factor Model Explained | Essentials of Investments Course. CFA Exam",
+      "channel": null,
+      "lang": "en",
+      "level": "进阶",
+      "topic": "因子投资",
+      "reason": "讲解市场、规模、价值三因子模型，是理解多因子选股和 alpha/beta 拆分的起点。"
+    },
+    {
+      "id": "IsfMOskV-pk",
+      "title": "机器学习与量化投资1：从单因子选股到多因子策略【邢不行】",
+      "channel": "邢不行",
+      "lang": "zh",
+      "level": "进阶",
+      "topic": "因子投资",
+      "reason": "中文讲解如何从单因子（市盈率、股价等）走到多因子组合，适合把因子理论落到 A 股实操。"
+    },
+    {
+      "id": "wByjGWMTnNQ",
+      "title": "金融建模 50 | 教你通过Python进行量化交易回测（Python Backtesting Trading Strategy）",
+      "channel": null,
+      "lang": "zh",
+      "level": "进阶",
+      "topic": "回测",
+      "reason": "用 Python 走一遍量化回测流程，配合代码理解回测框架与指标。"
+    },
+    {
+      "id": "THYLv5_0Vm8",
+      "title": "KELLY CRITERION | Ed Thorp | Optimal Position Sizing For Stock Trading",
+      "channel": null,
+      "lang": "en",
+      "level": "进阶",
+      "topic": "风险与仓位",
+      "reason": "凯利公式是仓位管理的经典理论，来自 Ed Thorp 的视角，重点理解「最大化长期对数增长」与半凯利的现实考量。"
+    },
+    {
+      "id": "dqjIVVj3Xxs",
+      "title": "MV_V13: Mean-Variance Optimal Portfolios (Markowitz): Basic Derivations and Pseudo Code",
+      "channel": null,
+      "lang": "en",
+      "level": "进阶",
+      "topic": "组合优化",
+      "reason": "推导马科维茨均值-方差最优组合并给出伪代码，把「有效前沿」从概念变成可计算的东西。"
+    },
+    {
+      "id": "l-CTe4IHWdw",
+      "title": "Quant Trading: Explained by a Jane Street Intern",
+      "channel": null,
+      "lang": "en",
+      "level": "入门",
+      "topic": "行业与职业",
+      "reason": "从实习生视角了解顶级自营交易公司里量化交易员的日常和思维方式。"
+    },
+    {
+      "id": "S7eig5VXFpY",
+      "title": "Where market making meets market microstructure",
+      "channel": null,
+      "lang": "en",
+      "level": "高级",
+      "topic": "市场微观结构",
+      "reason": "IAQF 研讨会讲座（2023-02），把做市策略与限价订单簿、微观结构联系起来。"
+    },
+    {
+      "id": "pRurbL9-Lus",
+      "title": "Ten Financial Applications of Machine Learning | Dr. Marcos López de Prado",
+      "channel": null,
+      "lang": "en",
+      "level": "高级",
+      "topic": "机器学习",
+      "reason": "López de Prado 总结机器学习在金融中的十类应用，帮你建立「ML 在量化里到底能干什么」的地图。"
+    },
+    {
+      "id": "tODXAJDZtow",
+      "title": "Machine Learning for Asset Managers with Marcos Lopez de Prado",
+      "channel": null,
+      "lang": "en",
+      "level": "高级",
+      "topic": "机器学习",
+      "reason": "2020 年网络研讨会，讲机器学习在资产管理中的实践，可与上一个视频对照学习。"
+    },
+    {
+      "id": "2W7iIifTVDE",
+      "title": "【量化小讲堂】python量化投资入门：10年400倍策略分享（上）",
+      "channel": null,
+      "lang": "zh",
+      "level": "入门",
+      "topic": "Python 量化",
+      "reason": "中文 Python 量化入门系列（上），用完整策略案例串起数据、信号和回测（注意：收益宣称仅供参考，需批判性看待）。"
+    },
+    {
+      "id": "OL-qyDCkth0",
+      "title": "量化投资学习路线一条龙，保姆教程，小白入门必备",
+      "channel": null,
+      "lang": "zh",
+      "level": "入门",
+      "topic": "学习路线",
+      "reason": "中文学习路线总览（Python 编程、量化策略、交易等），可用来校准自己的长期学习计划。"
+    }
+  ]
+}
