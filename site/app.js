@@ -79,30 +79,123 @@ function renderToday(video) {
     video.channel && h("span", { class: "badge" }, video.channel),
     video.minutes && h("span", { class: "badge" }, `${video.minutes} 分钟`),
   );
-  const playerSlot = h("div");
+  const hasPlayer = !!video.ytId && !window.QUANT_NO_EMBED;
+  const toggle = (label, key) => {
+    const b = h("button", { "aria-pressed": String(prefs[key]) }, "");
+    const paint = () => { b.textContent = `${label}：${prefs[key] ? "开" : "关"}`; b.setAttribute("aria-pressed", String(prefs[key])); };
+    b.addEventListener("click", () => { prefs[key] = !prefs[key]; savePrefs(); paint(); applyPrefs(); });
+    paint();
+    return b;
+  };
   const actions = h("div", { class: "actions" },
-    video.ytId && !window.QUANT_NO_EMBED && h("button", {
-      class: "primary",
-      onclick: () => {
-        playerSlot.replaceChildren(h("iframe", {
-          class: "player",
-          src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.ytId)}`,
-          title: video.title,
-          allow: "accelerometer; encrypted-media; picture-in-picture; fullscreen",
-          allowfullscreen: true,
-          referrerpolicy: "strict-origin-when-cross-origin",
-        }));
-      },
-    }, "▶ 在此播放"),
     video.url && h("a", { class: "btn", href: video.url, target: "_blank", rel: "noopener" }, "在 YouTube 打开"),
+    hasPlayer && toggle("固定视频", "pin"),
+    hasPlayer && toggle("字幕跟随播放", "follow"),
   );
   $("today").replaceChildren(h("div", { class: "card" },
     h("div", { class: "eyebrow" }, `${isToday ? "今日推荐" : "正在学习"} · ${todayStr} · ${STATUS_TEXT[video.status]}`),
     h("h2", { class: "title" }, video.title),
     badges,
     h("p", { class: "reason" }, video.reason),
-    actions, playerSlot,
+    actions,
   ));
+}
+
+// ---------- player (YouTube IFrame API) ----------
+// The player sits in a sticky bar so it stays in view while the transcript scrolls.
+// The transcript highlights the line being spoken; clicking a time jumps the video there.
+const PREF_KEY = "quant-prefs-v1";
+const prefs = (() => {
+  const d = { pin: true, follow: false };
+  try { return { ...d, ...JSON.parse(localStorage.getItem(PREF_KEY)) }; } catch { return d; }
+})();
+const savePrefs = () => { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch { /* storage unavailable */ } };
+const applyPrefs = () => $("player-bar").classList.toggle("unpinned", !prefs.pin);
+
+let ytPlayer = null, ytLoading = null, playerToken = 0;
+let seg = { starts: [], els: [], active: -1 };
+
+function loadYT() {
+  if (window.YT && window.YT.Player) return Promise.resolve(true);
+  if (ytLoading) return ytLoading;
+  ytLoading = new Promise((resolve) => {
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => { if (prev) prev(); resolve(true); };
+    const s = document.createElement("script");
+    s.src = "https://www.youtube.com/iframe_api";
+    s.onerror = () => resolve(false);
+    document.head.append(s);
+    setTimeout(() => resolve(!!(window.YT && window.YT.Player)), 8000);
+  });
+  return ytLoading;
+}
+
+function destroyPlayer() {
+  playerToken++;
+  if (ytPlayer && ytPlayer.destroy) { try { ytPlayer.destroy(); } catch { /* already gone */ } }
+  ytPlayer = null;
+}
+
+function renderPlayer(video) {
+  const bar = $("player-bar");
+  destroyPlayer();
+  if (!video.ytId || window.QUANT_NO_EMBED) { bar.hidden = true; return; }
+  bar.hidden = false;
+  applyPrefs();
+  const slot = h("div", { id: "player-slot" });
+  bar.firstElementChild.replaceChildren(slot);
+  const token = playerToken;
+  loadYT().then((ok) => {
+    if (token !== playerToken) return;
+    if (!ok || !window.YT || !window.YT.Player) {
+      // API blocked: fall back to a plain embed (no transcript sync)
+      slot.replaceWith(h("iframe", {
+        src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.ytId)}`,
+        title: video.title, allowfullscreen: true,
+        allow: "accelerometer; encrypted-media; picture-in-picture; fullscreen",
+        referrerpolicy: "strict-origin-when-cross-origin",
+      }));
+      return;
+    }
+    ytPlayer = new window.YT.Player(slot, {
+      videoId: video.ytId, width: "100%", height: "100%",
+      host: "https://www.youtube-nocookie.com",
+      playerVars: { rel: 0, playsinline: 1, modestbranding: 1 },
+    });
+  });
+}
+
+const toSec = (t) => t.split(":").reduce((a, x) => a * 60 + Number(x), 0);
+
+function tick() {
+  if (!ytPlayer || !ytPlayer.getCurrentTime || seg.starts.length === 0) return;
+  let t;
+  try { t = ytPlayer.getCurrentTime(); } catch { return; }
+  if (typeof t !== "number") return;
+  let lo = 0, hi = seg.starts.length - 1, idx = -1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (seg.starts[mid] <= t) { idx = mid; lo = mid + 1; } else hi = mid - 1;
+  }
+  if (idx === seg.active) return;
+  if (seg.els[seg.active]) seg.els[seg.active].classList.remove("now");
+  seg.active = idx;
+  const el = seg.els[idx];
+  if (!el || !el.isConnected) return;
+  el.classList.add("now");
+  if (prefs.follow) {
+    // the header (and the pinned player) will cover the top of the viewport once scrolled
+    const bar = $("player-bar");
+    const covered = document.querySelector(".top").offsetHeight + (bar.hidden || !prefs.pin ? 0 : bar.offsetHeight);
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - covered - 12, behavior: "smooth" });
+  }
+}
+setInterval(tick, 400);
+
+function seekTo(sec) {
+  if (!ytPlayer || !ytPlayer.seekTo) return;
+  ytPlayer.seekTo(sec, true);
+  if (ytPlayer.playVideo) ytPlayer.playVideo();
 }
 
 // ---------- lesson ----------
@@ -151,13 +244,21 @@ const panels = {
       onclick: () => { box.classList.toggle("hide-zh"); toggle.textContent = box.classList.contains("hide-zh") ? "显示中文解释" : "隐藏中文解释"; },
     }, "隐藏中文解释");
     const hasZh = l.transcript.some((s) => s.zh);
+    const canSeek = !!byId(l.id).ytId && !window.QUANT_NO_EMBED;
+    let last = 0;
+    const starts = l.transcript.map((s) => (s.time ? (last = toSec(s.time)) : last));
+    const els = l.transcript.map((s, i) => h("div", { class: "seg" },
+      s.time && (canSeek
+        ? h("button", { class: "t seek", title: "从这里开始播放", onclick: () => seekTo(starts[i]) }, `▶ ${s.time}`)
+        : h("div", { class: "t" }, s.time)),
+      h("p", { class: "en", lang: l.lang }, s.text),
+      s.zh && h("p", { class: "zh" }, s.zh),
+    ));
+    seg = { starts: canSeek ? starts : [], els, active: -1 };
     box.append(
-      h("div", { class: "toolbar" }, hasZh && toggle, h("span", {}, `${l.transcript.length} 段`)),
-      ...l.transcript.map((s) => h("div", { class: "seg" },
-        s.time && h("div", { class: "t" }, s.time),
-        h("p", { class: "en", lang: l.lang }, s.text),
-        s.zh && h("p", { class: "zh" }, s.zh),
-      )),
+      h("div", { class: "toolbar" }, hasZh && toggle, h("span", {}, `${l.transcript.length} 段`),
+        canSeek && h("span", {}, "点击时间可跳转，播放时当前行会高亮")),
+      ...els,
     );
     return box;
   },
@@ -248,7 +349,9 @@ function select(id, scroll) {
   currentId = id;
   activeTab = "points";
   const v = byId(id);
+  seg = { starts: [], els: [], active: -1 };
   renderToday(v);
+  renderPlayer(v);
   renderLesson(v);
   renderPath();
   if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
@@ -266,6 +369,11 @@ function select(id, scroll) {
   progress = store.read();
   $("foot-note").textContent = data.note;
   renderStats();
+  const header = document.querySelector(".top");
+  const setHeader = () => document.documentElement.style.setProperty("--hdr", `${header.offsetHeight}px`);
+  setHeader();
+  if (window.ResizeObserver) new ResizeObserver(setHeader).observe(header);
+  else window.addEventListener("resize", setHeader);
   const requested = params.get("v");
   select(requested && byId(requested) ? requested : todaysVideo().id, false);
 })();

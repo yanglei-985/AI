@@ -5,9 +5,10 @@
 ## 怎么用
 
 1. **打开网页**：首页显示「今日推荐」（按日期在学习路径中轮换，16 个视频循环），可点击「在此播放」或跳转 YouTube；下方是关键点 / 字幕 / 术语 / 测验四个标签。英文视频的字幕下方有中文解释（可隐藏）；中文视频只有原文字幕。
-2. **做完测验**才会记为「已学」，进度和连续学习天数保存在你自己的浏览器里。
-3. **添加新视频**：见下面「添加新视频」。
-4. **发布**：推送到 `main`（或当前开发分支）后，GitHub Actions 会运行 `node scripts/build.mjs` 并部署 `site/`。首次需要在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，然后在 Actions 页面手动运行一次 *Deploy site to GitHub Pages*。网址通常是 `https://<用户名>.github.io/<仓库名>/`。
+2. **视频固定在页面上方**，字幕在下面随鼠标滚动：播放时当前字幕行会高亮，点击字幕前的时间可以跳到视频对应位置；可以在卡片里关闭「固定视频」或打开「字幕跟随播放」。
+3. **做完测验**才会记为「已学」，进度和连续学习天数保存在你自己的浏览器里。
+4. **添加新视频**：见下面「添加新视频」。
+5. **发布**：推送到 `main`（或当前开发分支）后，GitHub Actions 会运行 `node scripts/build.mjs` 并部署 `site/`。首次需要在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，然后在 Actions 页面手动运行一次 *Deploy site to GitHub Pages*。网址通常是 `https://<用户名>.github.io/<仓库名>/`。
 
 ## 目录
 

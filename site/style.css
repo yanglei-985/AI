@@ -101,3 +101,27 @@ button:focus-visible, .btn:focus-visible, a:focus-visible { outline: 2px solid v
 .dot.done { background: var(--ok); color: #fff; }
 
 .foot { color: var(--muted); font-size: .8rem; padding-top: 24px; padding-bottom: 40px; }
+
+/* video stays in view while the transcript scrolls */
+.player-bar {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--hdr, 52px)); z-index: 4;
+  background: var(--bg); padding: 10px 0; margin-top: 12px;
+  box-shadow: 0 10px 12px -10px rgba(0, 0, 0, .35);
+}
+.player-bar.unpinned { position: static; box-shadow: none; }
+.player-inner {
+  width: min(100%, 780px, calc(40vh * 16 / 9)); margin: 0 auto;
+  aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000;
+}
+.player-inner iframe, #player-slot { display: block; width: 100%; height: 100%; border: 0; }
+
+.actions button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.seg { padding-inline: 8px; margin-inline: -8px; border-radius: 8px; transition: background-color .2s; }
+.seg .t.seek {
+  border: 0; background: none; padding: 2px 0; border-radius: 4px; font: inherit; font-size: .78rem;
+  color: var(--accent); cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.seg .t.seek:hover { text-decoration: underline; }
+.seg.now { background: var(--accent-soft); }
+.toolbar { flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) { .seg { transition: none; } }
