@@ -229,13 +229,29 @@ function tick() {
   if (!el || !el.isConnected) return;
   el.classList.add("now");
   if (prefs.follow) {
-    // the header (and the pinned player) will cover the top of the viewport once scrolled
-    const bar = $("player-bar");
-    const covered = document.querySelector(".top").offsetHeight + (bar.hidden || !prefs.pin ? 0 : bar.offsetHeight);
-    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - covered - 12, behavior: "smooth" });
+    // scroll only inside the transcript box, so the page (and the video) stay put
+    const box = el.closest(".seg-scroll");
+    if (box) box.scrollTo({ top: el.offsetTop - 8, behavior: "smooth" });
   }
 }
 setInterval(tick, 400);
+
+// Study layout: video under the header, then the tabs, then a transcript box that fills the
+// rest of the screen. Only the box scrolls; the page and the video stay where they are.
+function fitTranscript(align) {
+  const box = document.querySelector(".seg-scroll");
+  if (!box) return;
+  const header = document.querySelector(".top").offsetHeight;
+  if (align) {
+    const bar = $("player-bar");
+    const anchor = bar && !bar.hidden ? $("player-holder") : document.querySelector(".tabs");
+    window.scrollTo({ top: anchor.getBoundingClientRect().top + window.scrollY - header });
+    pinCheck();
+  }
+  const top = box.getBoundingClientRect().top;
+  box.style.height = `${Math.max(240, window.innerHeight - top - 12)}px`;
+}
+window.addEventListener("resize", () => fitTranscript(false));
 
 function seekTo(sec) {
   if (!ytPlayer || !ytPlayer.seekTo) return;
@@ -269,6 +285,7 @@ async function renderLesson(video) {
     activeTab = key;
     for (const b of bar.children) b.setAttribute("aria-selected", String(b.dataset.key === key));
     panel.replaceChildren(panels[key](lesson));
+    if (key === "transcript") requestAnimationFrame(() => fitTranscript(true));
   };
   for (const [key, label] of tabs) {
     bar.append(h("button", { role: "tab", "data-key": key, onclick: () => show(key) }, label));
@@ -303,7 +320,7 @@ const panels = {
     box.append(
       h("div", { class: "toolbar" }, hasZh && toggle, h("span", {}, `${l.transcript.length} 段`),
         canSeek && h("span", {}, "点击时间可跳转，播放时当前行会高亮")),
-      ...els,
+      h("div", { class: "seg-scroll", tabindex: "0", "aria-label": "字幕（可单独滚动）" }, ...els),
     );
     return box;
   },

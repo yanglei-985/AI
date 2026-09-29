@@ -111,7 +111,7 @@ button:focus-visible, .btn:focus-visible, a:focus-visible { outline: 2px solid v
   border-bottom: 1px solid var(--line); box-shadow: 0 10px 12px -10px rgba(0, 0, 0, .35);
 }
 .player-inner {
-  width: min(100%, 780px, calc(40vh * 16 / 9)); margin: 0 auto;
+  width: min(100%, 780px, calc(36vh * 16 / 9)); margin: 0 auto;
   aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000;
 }
 .player-inner iframe, #player-slot { display: block; width: 100%; height: 100%; border: 0; }
@@ -136,3 +136,12 @@ button:focus-visible, .btn:focus-visible, a:focus-visible { outline: 2px solid v
 .player-msg a { color: #9cc3ff; }
 .player-msg.show { z-index: 2; background: #1b1b1b; }
 .foot-ver { margin: 4px 0 0; font-size: .72rem; opacity: .8; }
+
+/* transcript scrolls in its own box; the page and the video stay still */
+.seg-scroll {
+  position: relative; height: 60vh;
+  overflow-y: auto; overscroll-behavior: contain; padding: 0 10px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--surface);
+}
+.seg-scroll .seg { margin-inline: -2px; }
+.seg-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
