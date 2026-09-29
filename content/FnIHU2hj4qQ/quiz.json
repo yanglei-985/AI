@@ -1,0 +1,8 @@
+[
+  {"q": "ARIMA 和 GARCH 分别主要建模时间序列的什么？", "options": ["ARIMA 建模方差，GARCH 建模均值", "ARIMA 建模均值，GARCH 建模方差（波动率）", "两者都只建模均值", "两者都只建模趋势"], "answer": 1, "explain": "ARIMA 预测值本身（均值），GARCH 预测随时间变化的方差（波动率/风险）。"},
+  {"q": "ARIMA 中的「I」代表？", "options": ["独立（Independent）", "差分整合（Integrated），通过差分使序列平稳", "指数（Index）", "插值（Interpolation）"], "answer": 1, "explain": "I 表示对序列做差分使其平稳。"},
+  {"q": "「波动率聚集」指的是？", "options": ["价格总是上涨", "大波动之后倾向于跟着大波动，小波动之后倾向于小波动", "波动率恒定不变", "只有一个交易日波动很大"], "answer": 1, "explain": "这是金融收益率的典型特征，也是使用 GARCH 的原因。"},
+  {"q": "下面哪个任务更适合用 GARCH？", "options": ["预测下个月的降雨量", "预测某月的销售额", "估计某只股票收益的风险（波动率）", "预测能源需求趋势"], "answer": 2, "explain": "视频的例子：预测降雨量用 ARIMA，估计股票收益风险用 GARCH。"},
+  {"q": "在标准记法 GARCH(p,q) 中，滞后的平方残差项被称为？", "options": ["GARCH 项", "ARCH 项", "MA 项", "AR 项"], "answer": 1, "explain": "滞后平方残差项叫 ARCH 项，滞后条件方差项叫 GARCH 项（视频里把这两个名称说反了，属于口误）。"},
+  {"q": "同时需要刻画趋势（均值）和波动时，常见做法是？", "options": ["只用 ARIMA", "只用 GARCH", "用 ARIMA 建模均值、GARCH 建模残差的方差", "两者都不能用"], "answer": 2, "explain": "这是金融中常见的混合模型。"}
+]

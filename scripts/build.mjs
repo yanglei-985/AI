@@ -62,7 +62,7 @@ function parseNotes(text, where) {
 }
 
 // ---- bilingual.md: blocks separated by blank lines; "> " lines are Chinese ----
-function parseBilingual(text, where) {
+function parseBilingual(text, where, lang) {
   const blocks = text.split(/\r?\n\s*\r?\n/).map((b) => b.trim()).filter(Boolean);
   const out = blocks.map((b) => {
     const en = [], zh = [];
@@ -70,19 +70,19 @@ function parseBilingual(text, where) {
       if (line.startsWith(">")) zh.push(line.replace(/^>\s?/, ""));
       else en.push(line);
     }
-    let enText = en.join(" ").trim();
+    let body = en.join(" ").trim();
     let time = null;
-    const t = enText.match(/^\[(\d{1,2}:\d{2}(?::\d{2})?)\]\s*/);
+    const t = body.match(/^\[(\d{1,2}:\d{2}(?::\d{2})?)\]\s*/);
     if (t) {
       time = t[1];
-      enText = enText.slice(t[0].length);
+      body = body.slice(t[0].length);
     }
-    return { time, en: enText, zh: zh.join(" ").trim() };
+    return { time, text: body, zh: zh.join(" ").trim() };
   });
   if (out.length === 0) fail(`${where}: bilingual.md is empty`);
   out.forEach((b, i) => {
-    if (!b.en) fail(`${where}: block ${i + 1} has no English text`);
-    if (!b.zh) fail(`${where}: block ${i + 1} has no Chinese ("> ...") line`);
+    if (!b.text) fail(`${where}: block ${i + 1} has no transcript text`);
+    if (!b.zh && lang !== "zh") fail(`${where}: block ${i + 1} has no Chinese ("> ...") line`);
   });
   return out;
 }
@@ -108,11 +108,6 @@ if (!cur) {
 if (!/^\d{4}-\d{2}-\d{2}$/.test(cur.startDate || "")) fail("curriculum.json: startDate must be YYYY-MM-DD");
 
 const entries = [...(cur.videos || [])];
-const demoMetaPath = join(contentDir, "demo-sample", "meta.json");
-if (existsSync(demoMetaPath)) {
-  const demo = readJson(demoMetaPath);
-  if (demo) entries.push(demo);
-}
 
 rmSync(lessonsOut, { recursive: true, force: true });
 mkdirSync(lessonsOut, { recursive: true });
@@ -126,7 +121,7 @@ for (const m of entries) {
   seen.add(m.id);
 
   const dir = join(contentDir, m.id);
-  const hasTranscript = existsSync(join(dir, "transcript.txt")) || existsSync(join(dir, "bilingual.md"));
+  const hasTranscript = ["transcript.txt", "transcript.srt", "bilingual.md"].some((f) => existsSync(join(dir, f)));
   const hasBilingual = existsSync(join(dir, "bilingual.md"));
   const hasNotes = existsSync(join(dir, "notes.md"));
   const hasQuiz = existsSync(join(dir, "quiz.json"));
@@ -137,8 +132,11 @@ for (const m of entries) {
 
   const entry = {
     id: m.id, title: m.title, channel: m.channel ?? null, lang: m.lang, level: m.level,
-    topic: m.topic, reason: m.reason, demo: !!m.demo, status,
-    url: m.demo ? null : `https://www.youtube.com/watch?v=${m.id}`,
+    topic: m.topic, reason: m.reason, status,
+    // ytId defaults to id; set "ytId": null when the real YouTube URL is unknown
+    ytId: m.ytId === undefined ? m.id : m.ytId,
+    url: (m.ytId === undefined ? m.id : m.ytId) ? `https://www.youtube.com/watch?v=${m.ytId === undefined ? m.id : m.ytId}` : null,
+    minutes: m.minutes ?? null,
   };
   index.push(entry);
 
@@ -146,7 +144,7 @@ for (const m of entries) {
     const lesson = {
       ...entry,
       notes: parseNotes(readFileSync(join(dir, "notes.md"), "utf8"), where),
-      transcript: parseBilingual(readFileSync(join(dir, "bilingual.md"), "utf8"), where),
+      transcript: parseBilingual(readFileSync(join(dir, "bilingual.md"), "utf8"), where, m.lang),
       quiz: (() => { const q = readJson(join(dir, "quiz.json")); checkQuiz(q, where); return q; })(),
     };
     writeFileSync(join(lessonsOut, `${m.id}.json`), JSON.stringify(lesson));

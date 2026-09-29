@@ -1,0 +1,371 @@
+1
+00:00:00,760 --> 00:00:07,359
+An event can be extremely likely and not happen, or an event can be extremely unlikely and
+
+2
+00:00:07,359 --> 00:00:08,840
+still happen.
+
+3
+00:00:08,840 --> 00:00:12,259
+This is an idea that many people find confusing.
+
+4
+00:00:12,259 --> 00:00:17,920
+In today's video, we'll be discussing probability and why it's important for investors to have
+
+5
+00:00:17,920 --> 00:00:25,119
+a good understanding of how it works.
+
+6
+00:00:25,119 --> 00:00:31,994
+is the study of events and outcomes that involve an element of uncertainty. Rolling a dice,
+
+7
+00:00:31,994 --> 00:00:38,739
+for example, involves uncertainty, as does investing in the stock market. Rolling two
+
+8
+00:00:38,739 --> 00:00:45,559
+dice at the same time has an uncertain outcome, but some outcomes are more likely than others,
+
+9
+00:00:45,559 --> 00:00:50,239
+and the likelihood of the different outcomes can actually be quantified.
+
+10
+00:00:50,239 --> 00:00:57,773
+While most people do understand probability, in the real world few actually seem to believe in it.
+
+11
+00:00:57,773 --> 00:01:03,579
+People understand that certain outcomes are rare and that the best you can do is to make decisions
+
+12
+00:01:03,579 --> 00:01:09,720
+where the odds are generally in your favor. They understand that you can make a wise decision and
+
+13
+00:01:09,720 --> 00:01:15,579
+end up being wrong or make a badly thought out decision and still end up right because that's
+
+14
+00:01:15,579 --> 00:01:22,140
+just how luck and risk work. But almost nobody actually uses probability in the real world
+
+15
+00:01:22,140 --> 00:01:28,700
+when judging things, in particular things like other people's successes. What people instead
+
+16
+00:01:28,700 --> 00:01:35,700
+care about is, were you right or were you wrong? Probability is about nuance and gradation,
+
+17
+00:01:35,700 --> 00:01:41,440
+but in the real world, people see things as being more black and white. If you said something will
+
+18
+00:01:41,440 --> 00:01:47,824
+happen and it happens, you were right. If you said it will happen and it doesn't, you were wrong.
+
+19
+00:01:47,824 --> 00:01:53,619
+That's how people think, because it's easier to analyze outcomes than the thought process
+
+20
+00:01:53,619 --> 00:02:00,659
+underlying a prediction. A famous example can be drawn from the 2016 U.S. presidential election,
+
+21
+00:02:00,659 --> 00:02:08,659
+where American statistician Nate Silver calculated a 71% chance that Hillary Clinton would win the
+
+22
+00:02:08,659 --> 00:02:14,980
+election that Donald Trump went on to win. Silver had been named one of the world's 100
+
+23
+00:02:14,980 --> 00:02:22,160
+most influential people by Time magazine in 2009 after his election forecasting system
+
+24
+00:02:22,160 --> 00:02:40,120
+successfully predicted the outcomes in 49 out of the 50 states in the 2008 US presidential election In the 2012 U presidential election his forecasting system correctly predicted the winner of all 50 states and the
+
+25
+00:02:40,120 --> 00:02:49,300
+District of Columbia. Nonetheless, the main takeaway in 2016 was quite simply that Nate Silver was wrong.
+
+26
+00:02:49,300 --> 00:02:55,098
+Great examples can be drawn from the 2020 coronavirus pandemic as well.
+
+27
+00:02:55,098 --> 00:03:01,380
+News headlines say things like, experts predict 700,000 deaths by the end of July.
+
+28
+00:03:01,380 --> 00:03:15,480
+What they should say is experts have a 95% confidence that the number of deaths by the end of July will be between 550,000 and 850,000 or something like that.
+
+29
+00:03:15,480 --> 00:03:21,465
+It doesn't necessarily make a snappy headline, but that's actually what a prediction looks like.
+
+30
+00:03:21,465 --> 00:03:28,830
+With the original headline, if the number of deaths by the end of July turns out to be, say, 650,000,
+
+31
+00:03:28,830 --> 00:03:33,030
+people will declare the experts wrong, even though it was pretty close.
+
+32
+00:03:33,030 --> 00:03:38,789
+If the number turns out to be 900,000, they'll be called disastrously wrong,
+
+33
+00:03:38,789 --> 00:03:43,060
+even though the forecasters knew there was a reasonable chance of that occurring.
+
+34
+00:03:43,060 --> 00:03:47,834
+Misunderstanding probability happens a lot in investing too.
+
+35
+00:03:47,834 --> 00:03:52,563
+Predictions that come true bring invitations to talk on CNBC.
+
+36
+00:03:52,563 --> 00:03:57,060
+Predictions that don't bring mockery from those who end up being right.
+
+37
+00:03:57,060 --> 00:04:01,180
+Probability theory began in 17th century France,
+
+38
+00:04:01,180 --> 00:04:06,900
+when the two great French mathematicians Blaise Pascal and Pierre de Fermat
+
+39
+00:04:06,900 --> 00:04:10,500
+corresponded over problems from games of chance.
+
+40
+00:04:10,500 --> 00:04:19,465
+These types of problems continue to influence early researchers in establishing a mathematical theory of probability.
+
+41
+00:04:19,465 --> 00:04:28,490
+Today, probability theory is a well-established branch of mathematics that's applicable in every area of scholarly activity,
+
+42
+00:04:28,490 --> 00:04:34,110
+from physics to weather prediction to predicting the risks of new medical treatments.
+
+43
+00:04:34,110 --> 00:04:39,780
+Knowing the probability of getting heads when flipping a coin is 50%,
+
+44
+00:04:39,780 --> 00:04:47,285
+the probability of flipping heads on two coins flipped at the same time is then 50% times 50%,
+
+45
+00:04:47,285 --> 00:05:09,040
+or 25 The four possible outcomes are heads heads tails and tails Thus there is a one in four chance of flipping heads or or 25 That calculation of course only works when the two events are independent of each other
+
+46
+00:05:09,040 --> 00:05:14,320
+Looking at events like weather forecasts and questioning the likelihood of having two rainy
+
+47
+00:05:14,320 --> 00:05:21,240
+days in a row recognizes that such events are different to coin flips. Rain yesterday might
+
+48
+00:05:21,240 --> 00:05:27,919
+actually predict rain today because storms can last more than one day and of course because
+
+49
+00:05:27,919 --> 00:05:34,980
+weather is seasonal. Probability turns up in all areas of finance. Probability allows financial
+
+50
+00:05:34,980 --> 00:05:41,040
+professionals to calculate expected value. The expected value of an investment is simply the
+
+51
+00:05:41,040 --> 00:05:47,520
+probabilities of the various outcomes multiplied by the various payoffs in the different scenarios.
+
+52
+00:05:47,520 --> 00:05:54,740
+This is used everywhere from valuing a simple equity investment to pricing exotic derivatives.
+
+53
+00:05:54,740 --> 00:06:05,500
+The insurance industry is almost entirely built on probability calculations, and an important component of credit is the probability a loan will be repaid.
+
+54
+00:06:05,500 --> 00:06:11,080
+In my book, Statistics for the Trading Floor, which is linked to in the description below,
+
+55
+00:06:11,080 --> 00:06:16,520
+I work through all of the important probability calculations and how they can be applied to stock
+
+56
+00:06:16,520 --> 00:06:23,880
+market analysis. As I mentioned earlier, good ideas as measured by probability can turn out
+
+57
+00:06:23,880 --> 00:06:31,120
+badly and bad ideas can turn out well, at least in the short run. In probability theory, the law
+
+58
+00:06:31,120 --> 00:06:37,320
+of large numbers is a theorem that describes the result of performing the same experiment
+
+59
+00:06:37,320 --> 00:06:44,440
+a large number of times. According to the law, the average of the results obtained from a large
+
+60
+00:06:44,440 --> 00:06:51,500
+number of trials should be close to the expected value and will tend to become closer as more
+
+61
+00:06:51,500 --> 00:06:58,419
+trials are performed. While every lottery does have a winner, if a person buys thousands of
+
+62
+00:06:58,419 --> 00:07:04,913
+tickets that have an expected value of 70 cents, and they pay a dollar for each of these tickets,
+
+63
+00:07:04,913 --> 00:07:10,775
+it becomes a mathematical certainty that they will lose money. In her best-selling book,
+
+64
+00:07:10,775 --> 00:07:15,160
+Thinking in Bets, I'll put an Amazon link to it in the description below,
+
+65
+00:07:15,160 --> 00:07:22,120
+professional poker player Annie Duke explains how in the long run, the cumulative effect of being a
+
+66
+00:07:22,120 --> 00:07:39,960
+little bit better at decision making by taking probability into account can have a huge effect on how our lives work out Things like jobs and relocation decisions are bets Sales negotiations and contracts are bets Buying a house is a bet
+
+67
+00:07:39,960 --> 00:07:46,060
+All decisions are bets on the future. They shouldn't be viewed as being right or wrong
+
+68
+00:07:46,060 --> 00:07:52,300
+based on how they turn out. Duke explains in her book how professional poker players
+
+69
+00:07:52,300 --> 00:07:58,840
+try to avoid the intellectual foible of what she calls resulting, which means looking at a single
+
+70
+00:07:58,840 --> 00:08:05,925
+outcome as opposed to considering the broader spectrum of possibilities. When poker players win,
+
+71
+00:08:05,925 --> 00:08:12,620
+they must separate luck from process. If they can figure that out, they can improve their game and
+
+72
+00:08:12,620 --> 00:08:19,180
+their future outcomes and understand what was attributable to skill and what was attributable
+
+73
+00:08:19,180 --> 00:08:27,320
+to randomness. When a poker player or an investor loses after placing a smart bet, they should not
+
+74
+00:08:27,320 --> 00:08:33,240
+be upset. This is an outcome that has to happen once in a while. Understanding what would have
+
+75
+00:08:33,240 --> 00:08:39,940
+been the best move relative to the probabilities is what actually matters. Probability is central
+
+76
+00:08:39,940 --> 00:08:46,160
+to almost all of the formulas that are used in quantitative finance. Possibly the most basic
+
+77
+00:08:46,160 --> 00:08:53,160
+calculation that we do in finance involves projecting likely or probable cash flows and
+
+78
+00:08:53,160 --> 00:08:59,339
+then discounting them at an appropriate discount rate that takes risk into account. This is the
+
+79
+00:08:59,339 --> 00:09:06,640
+discounted cash flow model. Modeling stock prices over time and determining fair prices for financial
+
+80
+00:09:06,640 --> 00:09:12,960
+instruments is once again heavily grounded in probability theory, and this is how we price
+
+81
+00:09:12,960 --> 00:09:20,195
+options. The insurance industry is fairly obviously based almost entirely on probability.
+
+82
+00:09:20,195 --> 00:09:27,440
+So, why does probability then get ignored? Well, a lot of what goes on in the financial world
+
+83
+00:09:27,440 --> 00:09:33,500
+is an attempt to rid yourself of the painful reality of not knowing what's going to happen
+
+84
+00:09:33,500 --> 00:09:40,000
+next. Someone who tells you that there's a certain chance of recession happening doesn't do much to
+
+85
+00:09:40,000 --> 00:09:44,248
+get rid of that pain, and in fact they might just be adding to it.
+
+86
+00:09:44,248 --> 00:09:49,959
+But someone who says there is definitely going to be a recession this year offers something
+
+87
+00:09:49,959 --> 00:09:55,680
+to grab onto with both hands that feels like taking control of your future. When you realize
+
+88
+00:09:55,680 --> 00:10:01,840
+that making people feel better is more appealing than giving people useful figures, you start to
+
+89
+00:10:01,840 --> 00:10:07,554
+see why financial professionals often avoid using probability at all in their discussions.
+
+90
+00:10:07,554 --> 00:10:13,619
+But hopefully you can see here how important probability is and how important it is to
+
+91
+00:10:13,619 --> 00:10:19,460
+improve your way of thinking and to think in a more scientific manner and that using things like
+
+92
+00:10:19,460 --> 00:10:25,440
+probability and statistics should improve your investing performance and hopefully your life
+
+93
+00:10:25,440 --> 00:10:28,899
+outcomes in general. Anyhow, have a great day. Bye.

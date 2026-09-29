@@ -1,0 +1,131 @@
+1
+00:00:00,000 --> 00:00:05,000
+GARCH vs ARIMA, a comparison of two time series models.
+
+2
+00:00:05,000 --> 00:00:14,000
+Welcome to this educational video where we'll explore and compare two widely used time series models, ARIMA and GARCH.
+
+3
+00:00:14,000 --> 00:00:19,000
+These models serve different purposes in forecasting and analyzing time-dependent data.
+
+4
+00:00:19,000 --> 00:00:22,000
+Let's break down their differences, strengths and use cases.
+
+5
+00:00:22,000 --> 00:00:28,000
+ARIMA stands for Auto Regressive Integrated Moving Average.
+
+6
+00:00:28,000 --> 00:00:34,160
+It is a linear model used to forecast a variable based on its own past values and past errors.
+
+7
+00:00:34,160 --> 00:00:35,993
+The model has three components.
+
+8
+00:00:35,993 --> 00:00:42,230
+AR, autoregressive, uses the relationship between an observation and a number of lagged observations.
+
+9
+00:00:42,230 --> 00:00:47,058
+I, integrated, applies differencing to make the time series stationary.
+
+10
+00:00:47,058 --> 00:00:52,840
+And MA, moving average, uses the relationship between an observation and a lagged error term.
+
+11
+00:00:52,840 --> 00:00:59,990
+GARCH stands for Generalized Autoregressive Conditional Heteroscedasticity.
+
+12
+00:00:59,990 --> 00:01:05,535
+It is used primarily to model volatility, especially in financial time series like stock returns.
+
+13
+00:01:05,535 --> 00:01:12,595
+While ARIMA models the mean of a time series, GARCH models the variance, which often changes over time in financial data.
+
+14
+00:01:12,595 --> 00:01:21,220
+GARCH-PQ captures P, lagged values of past variance, also known as ARCH terms, and Q, lagged squared residuals, known as GARCH terms.
+
+15
+00:01:22,840 --> 00:01:36,167
+Alright let compare them directly ARIMA is often used for datasets like monthly sales where patterns are more predictable over longer periods on the other hand GARCH is more suited for daily stock returns capturing
+
+16
+00:01:36,167 --> 00:01:42,227
+the volatility and unpredictability of financial markets.
+
+17
+00:01:42,227 --> 00:01:46,947
+Use ARIMA when your primary goal is to predict future values in a time series that doesn't
+
+18
+00:01:46,947 --> 00:01:48,867
+show changing variants.
+
+19
+00:01:48,867 --> 00:01:54,247
+It's widely used in economic forecasting, energy demand and environmental data.
+
+20
+00:01:54,247 --> 00:01:59,347
+Use GARCH when dealing with financial data, especially where volatility is not constant.
+
+21
+00:01:59,347 --> 00:02:04,467
+For example in asset returns, where sudden market shocks lead to volatility clustering.
+
+22
+00:02:04,467 --> 00:02:07,267
+Example, forecasting next month's rainfall?
+
+23
+00:02:07,267 --> 00:02:08,627
+Use ARIMA.
+
+24
+00:02:08,627 --> 00:02:10,487
+Estimating risk in stock returns?
+
+25
+00:02:10,487 --> 00:02:12,487
+Use GARCH.
+
+26
+00:02:12,487 --> 00:02:17,987
+Yes, a common approach in finance is to use ARIMA for modeling the mean and GARCH for
+
+27
+00:02:17,987 --> 00:02:22,607
+modeling the variance of the residuals, this hybrid model is useful when both trend and
+
+28
+00:02:22,607 --> 00:02:26,807
+volatility need to be captured.
+
+29
+00:02:26,807 --> 00:02:32,707
+To summarize, ARIMA is great for forecasting values, GARCH is ideal for forecasting variance
+
+30
+00:02:32,707 --> 00:02:33,967
+or risk.
+
+31
+00:02:33,967 --> 00:02:38,267
+Use them based on your data characteristics and your forecasting goal.
+
+32
+00:02:38,267 --> 00:02:44,727
+Understanding the right tool for the right task is key in time series analysis.
+
+33
+00:02:44,727 --> 00:02:48,767
+Stay Curious Keep Learning Like Share and Subscribe for more educational content.

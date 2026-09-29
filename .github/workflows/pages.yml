@@ -2,7 +2,8 @@ name: Deploy site to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    # the repo currently has only the development branch; main is listed for when it exists
+    branches: [main, claude/exciting-clarke-22etrz]
   workflow_dispatch:
 
 permissions:

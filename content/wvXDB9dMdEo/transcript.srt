@@ -1,0 +1,3339 @@
+1
+00:00:00,000 --> 00:00:02,460
+The following content is provided under a Creative
+
+2
+00:00:02,460 --> 00:00:03,879
+Commons license.
+
+3
+00:00:03,879 --> 00:00:06,299
+Your support will help MIT OpenCourseWare
+
+4
+00:00:06,299 --> 00:00:10,639
+continue to offer high quality educational resources for free.
+
+5
+00:00:10,639 --> 00:00:13,280
+To make a donation or view additional materials
+
+6
+00:00:13,280 --> 00:00:17,199
+from hundreds of MIT courses, visit MIT OpenCourseWare
+
+7
+00:00:17,199 --> 00:00:18,199
+at ocw.mit.edu.
+
+8
+00:00:21,480 --> 00:00:24,080
+This is the second time we are having this class.
+
+9
+00:00:24,080 --> 00:00:28,000
+We had it last year in a smaller version that
+
+10
+00:00:28,000 --> 00:00:30,450
+That was for six units of credit.
+
+11
+00:00:30,450 --> 00:00:32,695
+And we had it once a week.
+
+12
+00:00:32,695 --> 00:00:37,290
+And mostly practitioners from the industry, from Morgan Stanley,
+
+13
+00:00:37,290 --> 00:00:41,940
+talking about examples how math is applied in modern finance.
+
+14
+00:00:45,020 --> 00:00:45,945
+Okay.
+
+15
+00:00:45,945 --> 00:00:46,735
+Is it over?
+
+16
+00:00:46,735 --> 00:00:47,375
+Okay.
+
+17
+00:00:47,375 --> 00:00:47,970
+Yeah.
+
+18
+00:00:47,970 --> 00:00:50,840
+And so we got some good response last year.
+
+19
+00:00:50,840 --> 00:00:53,160
+So with the support of the math department,
+
+20
+00:00:53,160 --> 00:01:00,180
+we decided to expand this class to be 12 units of credit and have twice a week.
+
+21
+00:01:00,180 --> 00:01:05,820
+So we have every Tuesday and Thursday afternoon from 2.30 to 4, as you know, in this classroom.
+
+22
+00:01:07,060 --> 00:01:16,005
+And so last year, Dr. Vasili Estrella and I, by the way, I'm Jake Shaw, and that's Dr. Vasili,
+
+23
+00:01:16,005 --> 00:01:18,495
+and we were the main instructors last year.
+
+24
+00:01:18,495 --> 00:01:21,520
+Now we doubled it up to four main instructors.
+
+25
+00:01:21,520 --> 00:01:24,520
+that's Dr. Peter Kempstor
+
+26
+00:01:24,520 --> 00:01:26,640
+and Dr. Chunbong Li
+
+27
+00:01:26,640 --> 00:01:29,799
+the reason we doubled up the main instructors
+
+28
+00:01:29,799 --> 00:01:32,140
+is we have newly added math lectures
+
+29
+00:01:32,140 --> 00:01:34,200
+mostly focusing on
+
+30
+00:01:34,200 --> 00:01:38,159
+from linear algebra probability to statistics
+
+31
+00:01:38,159 --> 00:01:40,320
+and some stochastic calculus
+
+32
+00:01:40,320 --> 00:01:42,939
+to give you the foundation to understand
+
+33
+00:01:42,939 --> 00:01:45,840
+the math will be used
+
+34
+00:01:45,840 --> 00:01:47,840
+in those examples
+
+35
+00:01:47,840 --> 00:01:50,759
+in the lecture taught by
+
+36
+00:01:50,759 --> 00:01:53,340
+the practitioners from the industry.
+
+37
+00:01:54,599 --> 00:01:58,819
+And the purpose of this course is really to give you a sampling manual
+
+38
+00:01:58,819 --> 00:02:03,499
+to see how mathematics is applied in modern finance
+
+39
+00:02:03,499 --> 00:02:06,759
+and help you to decide if this is a field that you would be...
+
+40
+00:02:06,759 --> 00:02:07,774
+Thank you, using WebEx.
+
+41
+00:02:07,774 --> 00:02:11,680
+Please visit our website at www.webex.com.
+
+42
+00:02:13,799 --> 00:02:15,659
+Okay, you heard that.
+
+43
+00:02:16,700 --> 00:02:20,519
+And so hopefully this will give you enough information
+
+44
+00:02:20,519 --> 00:02:21,840
+to decide
+
+45
+00:02:21,840 --> 00:02:22,960
+this is the field
+
+46
+00:02:22,960 --> 00:02:23,840
+you'd like to pursue
+
+47
+00:02:23,840 --> 00:02:35,600
+in your future career In fact last year when we finished the class we had a few students coming to work in the industry Some work at Morgan Stanley some work at
+
+48
+00:02:35,600 --> 00:02:42,940
+elsewhere. And so that's really the goal. And at the same time, obviously,
+
+49
+00:02:42,940 --> 00:02:51,600
+you will further solidify your math knowledge and learn a new content. And we
+
+50
+00:02:51,600 --> 00:02:54,840
+put the prerequisite about the math part a bit later.
+
+51
+00:02:56,200 --> 00:03:02,920
+So I will use today's first lecture's time to give you an introduction, really to prepare
+
+52
+00:03:02,920 --> 00:03:06,820
+you some basic background knowledge about the financial markets.
+
+53
+00:03:08,080 --> 00:03:12,280
+Some terminologies will be used, which you may not have heard before.
+
+54
+00:03:13,340 --> 00:03:18,500
+So before I get into the introduction, I may always like to know who are actually in the
+
+55
+00:03:18,500 --> 00:03:19,065
+classroom.
+
+56
+00:03:19,065 --> 00:03:20,680
+So let me ask you a few questions.
+
+57
+00:03:20,680 --> 00:03:28,089
+You just need to raise your hands so I know roughly what kind of background and where you are.
+
+58
+00:03:28,089 --> 00:03:30,900
+So how many undergraduate students are here?
+
+59
+00:03:33,060 --> 00:03:35,940
+So I would say 80%.
+
+60
+00:03:35,940 --> 00:03:36,940
+Okay, statistics.
+
+61
+00:03:38,160 --> 00:03:39,935
+How many graduate students are here?
+
+62
+00:03:39,935 --> 00:03:41,345
+Just to verify.
+
+63
+00:03:41,345 --> 00:03:44,000
+Okay, yeah, that's about right, 20%.
+
+64
+00:03:44,000 --> 00:03:49,260
+And how many students are in finance and business major?
+
+65
+00:03:50,680 --> 00:03:58,800
+just one okay and how many of you are in math major most of you okay how many of
+
+66
+00:03:58,800 --> 00:04:06,239
+you are engineering major okay I feel how many of you actually from other
+
+67
+00:04:06,239 --> 00:04:12,180
+universities so okay great because the last year we had quite a few so I want
+
+68
+00:04:12,180 --> 00:04:16,880
+to specifically tell you that you are very welcome to attend the classes here
+
+69
+00:04:16,880 --> 00:04:22,940
+right so it's open door and last year I remember we had a couple of students
+
+70
+00:04:22,940 --> 00:04:30,560
+from Harvard that's where I actually work right now and but my I forgot to
+
+71
+00:04:30,560 --> 00:04:34,760
+mention that even that but I'm affiliated with both the math department
+
+72
+00:04:34,760 --> 00:04:40,280
+and the Sloan school here so so anyway thanks for that we will be doing a bit
+
+73
+00:04:40,280 --> 00:04:45,858
+more polling along the way mainly to get feedback of how you feel about the class
+
+74
+00:04:45,858 --> 00:04:51,620
+Last year, we had it online, so if you feel the class is going too fast, or the math part
+
+75
+00:04:51,620 --> 00:05:06,090
+is going too slow or the finance part is a bit confusing the easiest way is really just to send us emails which you will find from the class website So anyway today All of us have MIT emails
+
+76
+00:05:06,090 --> 00:05:11,025
+Yes, we all have MIT emails, which are listed on the website.
+
+77
+00:05:11,025 --> 00:05:13,270
+And we are all on the website.
+
+78
+00:05:13,270 --> 00:05:17,090
+Yep, and obviously we have offices here.
+
+79
+00:05:17,090 --> 00:05:21,720
+You can easily stop by Peter and Chun Boon's offices.
+
+80
+00:05:21,720 --> 00:05:26,465
+and Vasily and I probably will be less often on campus,
+
+81
+00:05:26,465 --> 00:05:28,175
+but we'll be here quite often,
+
+82
+00:05:28,175 --> 00:05:30,585
+and definitely I'd love to be more.
+
+83
+00:05:30,585 --> 00:05:34,280
+So anyway, I will start today's lecture with a story
+
+84
+00:05:34,280 --> 00:05:36,380
+and a quiz at the end.
+
+85
+00:05:37,700 --> 00:05:39,600
+Don't worry, it's not a real quiz.
+
+86
+00:05:39,600 --> 00:05:40,950
+I'm just going to ask you some questions.
+
+87
+00:05:40,950 --> 00:05:43,803
+You can raise your hand and give your answer.
+
+88
+00:05:43,803 --> 00:05:46,345
+But let me start with my story.
+
+89
+00:05:46,345 --> 00:05:47,740
+This is actually my personal story.
+
+90
+00:05:47,740 --> 00:05:51,715
+I want to tell you why I tell you the story later,
+
+91
+00:05:51,715 --> 00:05:59,595
+But the story actually was in the mid-90s, I just left Salomon Brothers.
+
+92
+00:05:59,595 --> 00:06:09,178
+That was my first financial industry job to go to Morgan Stanley in New York to join the options trading desk.
+
+93
+00:06:09,178 --> 00:06:11,800
+So the first day, I sat down.
+
+94
+00:06:12,940 --> 00:06:15,050
+I opened the trading book.
+
+95
+00:06:15,050 --> 00:06:16,560
+I found something was missing.
+
+96
+00:06:18,020 --> 00:06:20,160
+And so I turned around.
+
+97
+00:06:20,160 --> 00:06:22,363
+I asked my desk quant.
+
+98
+00:06:22,363 --> 00:06:25,860
+I said, where is the Vega report?
+
+99
+00:06:25,860 --> 00:06:27,580
+Okay, so let me show you.
+
+100
+00:06:31,760 --> 00:06:32,960
+So that's the story.
+
+101
+00:06:34,600 --> 00:06:39,915
+And I'm obviously not going to tell you the story of pi or life of pi.
+
+102
+00:06:39,915 --> 00:06:42,390
+That's not a financial story.
+
+103
+00:06:42,390 --> 00:06:45,740
+Or the rest of the story, alpha, beta, delta, gamma, theta,
+
+104
+00:06:45,740 --> 00:06:50,730
+which you will learn from Peter and Chumbo and Vasily's classes.
+
+105
+00:06:50,730 --> 00:06:52,840
+So I'm going to talk about Vega.
+
+106
+00:06:52,840 --> 00:06:54,830
+So by the way, before I tell you the story,
+
+107
+00:06:54,830 --> 00:06:56,660
+what's unique about Vega on this list?
+
+108
+00:06:58,880 --> 00:07:00,035
+It's not a Greek letter.
+
+109
+00:07:00,035 --> 00:07:01,185
+That's right.
+
+110
+00:07:01,185 --> 00:07:01,915
+Okay.
+
+111
+00:07:01,915 --> 00:07:04,030
+So I turned around and asked my desk client,
+
+112
+00:07:04,030 --> 00:07:05,640
+where's the Vega report?
+
+113
+00:07:05,640 --> 00:07:09,525
+But how many of you actually know what Vega is?
+
+114
+00:07:09,525 --> 00:07:10,640
+Okay, a lot of people know.
+
+115
+00:07:10,640 --> 00:07:12,840
+So anyway, I'm not going to...
+
+116
+00:07:12,840 --> 00:07:15,720
+It's just for the people who haven't heard about it before,
+
+117
+00:07:15,720 --> 00:07:20,940
+is a measurement about a book or portfolio or position
+
+118
+00:07:20,940 --> 00:07:22,919
+sensitivity to volatility.
+
+119
+00:07:22,919 --> 00:07:24,419
+So what is the volatility?
+
+120
+00:07:24,419 --> 00:07:37,680
+Which again you will learn more in rigorous terms how it defined in mathematics But the meaning of it is really a measurement or indication of how volatile
+
+121
+00:07:37,680 --> 00:07:42,445
+or what's the standard deviation of a price can change over time.
+
+122
+00:07:42,445 --> 00:07:44,610
+Okay, that's all you need to know right now.
+
+123
+00:07:44,610 --> 00:07:46,420
+I'm not going to ask you questions later.
+
+124
+00:07:47,560 --> 00:07:50,400
+So, Matt Desaquan looked at me and said,
+
+125
+00:07:52,220 --> 00:07:54,540
+you know, this is supposed to be options trading desk.
+
+126
+00:07:54,540 --> 00:07:57,700
+So he looked at me kind of puzzled.
+
+127
+00:07:57,700 --> 00:08:06,440
+So instead of answering my question, he handed over me a training manual for new employees and new analysts.
+
+128
+00:08:06,440 --> 00:08:10,615
+So I opened the training manual and looked it through.
+
+129
+00:08:10,615 --> 00:08:12,665
+I actually found my answer.
+
+130
+00:08:12,665 --> 00:08:15,935
+So actually at Moonstone, this is not called Vega.
+
+131
+00:08:15,935 --> 00:08:17,510
+It's called Kappa.
+
+132
+00:08:17,510 --> 00:08:19,780
+So now I remember it's called Kappa.
+
+133
+00:08:19,780 --> 00:08:21,810
+Kappa is actually a Greek letter.
+
+134
+00:08:21,810 --> 00:08:25,495
+So further, I look at, on the same page,
+
+135
+00:08:25,495 --> 00:08:28,620
+there was actually a footnote, which I copied down.
+
+136
+00:08:29,680 --> 00:08:37,280
+So the footnote about why it's called Kappa at Morgan Stanley.
+
+137
+00:08:39,339 --> 00:08:43,339
+Kappa is also called Vega by some uneducated traders
+
+138
+00:08:43,339 --> 00:08:44,875
+at the Solomon Brothers.
+
+139
+00:08:44,875 --> 00:08:46,285
+That's where I came from.
+
+140
+00:08:46,285 --> 00:08:46,760
+I just joined.
+
+141
+00:08:46,760 --> 00:08:50,459
+they have mistaken Vega as a Greek letter
+
+142
+00:08:50,459 --> 00:08:52,100
+after gambling at Vegas.
+
+143
+00:08:55,040 --> 00:08:58,415
+So, anyway, so that was my first day.
+
+144
+00:08:58,415 --> 00:09:03,160
+So, obviously, I learned how to call Kappa very quickly
+
+145
+00:09:03,160 --> 00:09:05,470
+because I came from Solomon Brothers.
+
+146
+00:09:05,470 --> 00:09:09,499
+And I called Kappa in the last 17 years.
+
+147
+00:09:09,499 --> 00:09:11,795
+But you will hear people calling it Vega.
+
+148
+00:09:11,795 --> 00:09:13,660
+Obviously, probably more people calling it Vega.
+
+149
+00:09:13,660 --> 00:09:18,915
+But anyway, so that's my first day at Morgan Stanley.
+
+150
+00:09:18,915 --> 00:09:21,515
+But why did I tell you this story?
+
+151
+00:09:21,515 --> 00:09:23,580
+What point did I try to make?
+
+152
+00:09:24,880 --> 00:09:29,140
+So this story is actually, when you think about it,
+
+153
+00:09:29,140 --> 00:09:34,295
+mathematical or quantitative finance is a rather new field.
+
+154
+00:09:34,295 --> 00:09:36,980
+A lot of these terms were newly introduced.
+
+155
+00:09:36,980 --> 00:09:49,845
+And the pricing model of options, as you know, was introduced at the black shows in the 70s, or some of the groundwork maybe done a bit earlier.
+
+156
+00:09:49,845 --> 00:09:56,875
+But it's not like finance was a quantitative profession to start with.
+
+157
+00:09:56,875 --> 00:10:03,980
+So what we witnessed in the last 30 years was really a transformation of the trading profession
+
+158
+00:10:03,980 --> 00:10:09,055
+coming from mostly undereducated traders.
+
+159
+00:10:09,055 --> 00:10:15,030
+Some of them typically joined the firms in the mailroom and became traders later on.
+
+160
+00:10:15,030 --> 00:10:16,439
+That's a typical career path.
+
+161
+00:10:16,439 --> 00:10:22,320
+And to nowadays, if you walk on the trading floor, you talk to the traders, most of them
+
+162
+00:10:22,320 --> 00:10:24,640
+have advanced degrees.
+
+163
+00:10:24,640 --> 00:10:32,719
+And quite a few of them have very high training in mathematics and computer science.
+
+164
+00:10:32,719 --> 00:10:36,579
+So what has changed over the last 20 or 30 years?
+
+165
+00:10:36,579 --> 00:10:44,879
+I mean, I myself personally was probably one of the data point experiencing this change.
+
+166
+00:10:44,879 --> 00:10:52,940
+And I certainly didn't expect I would be doing this when I was at MIT, but I did that in
+
+167
+00:10:52,940 --> 00:10:56,140
+the last 20 years.
+
+168
+00:10:56,140 --> 00:11:05,060
+So the point I'm trying to tell you is before you dive into any details of mathematics or
+
+169
+00:11:05,060 --> 00:11:12,880
+any concept in finance in this class, just bear in mind this is a field developed in
+
+170
+00:11:12,880 --> 00:11:17,259
+in the last mostly 30 years or even shorter.
+
+171
+00:11:17,259 --> 00:11:21,399
+And what you really need to ask questions is,
+
+172
+00:11:21,399 --> 00:11:26,860
+it's not really is right or wrong in mathematics.
+
+173
+00:11:26,860 --> 00:11:29,380
+Is it right or wrong in physics?
+
+174
+00:11:29,380 --> 00:11:34,060
+So how the concepts are established or defined
+
+175
+00:11:34,060 --> 00:11:35,140
+and verified?
+
+176
+00:11:35,140 --> 00:11:37,200
+Because this is a field, the transformation
+
+177
+00:11:37,200 --> 00:11:42,340
+about the participants, products, models, methodology,
+
+178
+00:11:42,340 --> 00:11:45,198
+Everything are changing very rapidly, even nowadays.
+
+179
+00:11:45,198 --> 00:11:46,453
+It's still changing.
+
+180
+00:11:46,453 --> 00:11:57,139
+So with that, I will give you some background of how the financial markets are actually started.
+
+181
+00:11:57,139 --> 00:12:03,110
+And that's really the history part of this industry.
+
+182
+00:12:03,110 --> 00:12:10,265
+So when we talk about markets, we know in the early days, people need to exchange goods.
+
+183
+00:12:10,265 --> 00:12:11,840
+You have something I don't have.
+
+184
+00:12:11,840 --> 00:12:13,160
+I have something you don't have.
+
+185
+00:12:13,160 --> 00:12:25,620
+So there exchanges right Then it becomes centralized There are stock exchanges futures exchanges all over the world then products will be listed as securities
+
+186
+00:12:25,620 --> 00:12:28,900
+on these exchanges that's one way of trading
+
+187
+00:12:28,900 --> 00:12:34,060
+which is centralized obviously the last the 10-15 years now we have ECNs
+
+188
+00:12:34,060 --> 00:12:37,380
+electronic platforms trade
+
+189
+00:12:37,380 --> 00:12:40,720
+over you know even larger volume of those trades
+
+190
+00:12:40,720 --> 00:12:44,740
+so financial products is really just one form of
+
+191
+00:12:44,740 --> 00:12:48,900
+trading and when you think about it, there are many other ways of trading
+
+192
+00:12:48,900 --> 00:12:52,459
+aside from exchanges. One
+
+193
+00:12:52,459 --> 00:12:56,140
+of them which is called OTC is
+
+194
+00:12:56,140 --> 00:12:59,860
+over-the-counter meaning two counterparties
+
+195
+00:12:59,860 --> 00:13:03,320
+agree to do a trade without
+
+196
+00:13:03,320 --> 00:13:06,360
+really subject to the exchange rules or
+
+197
+00:13:06,360 --> 00:13:10,320
+the underlying trading agreement does not have to be
+
+198
+00:13:10,320 --> 00:13:13,640
+a securitized product or standardized
+
+199
+00:13:13,640 --> 00:13:16,250
+or whatever ways you defined it.
+
+200
+00:13:16,250 --> 00:13:20,430
+And the different regions have different exchanges and markets as well,
+
+201
+00:13:20,430 --> 00:13:24,180
+and they typically specialize in local products,
+
+202
+00:13:24,180 --> 00:13:31,613
+local company stocks, local bonds, and local currencies.
+
+203
+00:13:31,613 --> 00:13:34,055
+So there are many different forms.
+
+204
+00:13:34,055 --> 00:13:37,590
+So again, what's in common?
+
+205
+00:13:37,590 --> 00:13:39,615
+That's the question you need to ask.
+
+206
+00:13:39,615 --> 00:13:41,640
+Also, you need to know the specifics.
+
+207
+00:13:41,640 --> 00:13:45,640
+And the currencies, money itself, are also traded.
+
+208
+00:13:47,260 --> 00:13:52,105
+And that's where different currencies are issued by different countries.
+
+209
+00:13:52,105 --> 00:13:59,465
+So when we talk about trading stocks, there are also people who trade baskets of stocks, trade groups of stocks together.
+
+210
+00:13:59,465 --> 00:14:02,560
+And that's stock index or indices.
+
+211
+00:14:03,820 --> 00:14:05,988
+So there are different products.
+
+212
+00:14:05,988 --> 00:14:08,600
+How does the stock get listed on the stock exchange?
+
+213
+00:14:08,600 --> 00:14:12,970
+it goes through IPO, initial public offering process.
+
+214
+00:14:12,970 --> 00:14:17,150
+So when a company changes from private to public,
+
+215
+00:14:17,150 --> 00:14:19,324
+it goes through this IPO process.
+
+216
+00:14:19,324 --> 00:14:23,070
+It's called primary market, primary listing.
+
+217
+00:14:23,070 --> 00:14:27,360
+And once the stock is listed on the exchange
+
+218
+00:14:27,360 --> 00:14:30,665
+and it becomes traded in the market,
+
+219
+00:14:30,665 --> 00:14:32,360
+we call it secondary trading.
+
+220
+00:14:32,360 --> 00:14:34,880
+So that's after the primary market.
+
+221
+00:14:34,880 --> 00:14:42,279
+and equity or stock is one form of trading or one form of financial
+
+222
+00:14:42,279 --> 00:14:56,420
+products what are other forms loans actually debt products are more generic than equity products When you started thinking about what is really
+
+223
+00:14:56,420 --> 00:15:00,380
+finances about, it's really about someone has money someone
+
+224
+00:15:00,380 --> 00:15:03,760
+doesn't, someone has money to lend out, someone
+
+225
+00:15:03,760 --> 00:15:09,240
+needs to borrow money, so that's loan. Loan is really a private agreement
+
+226
+00:15:09,240 --> 00:15:12,320
+between two counterparties or multiple counterparties.
+
+227
+00:15:12,320 --> 00:15:15,580
+When you securitize them, they become bonds.
+
+228
+00:15:16,720 --> 00:15:22,755
+And when you look at bonds, every government issues large sovereign debt.
+
+229
+00:15:22,755 --> 00:15:27,550
+So the U.S. government has large outstanding U.S. treasury debt.
+
+230
+00:15:27,550 --> 00:15:28,880
+Bonds, notes, bills.
+
+231
+00:15:30,000 --> 00:15:34,775
+And corporates have issued a lot of debt products as well.
+
+232
+00:15:34,775 --> 00:15:40,400
+They borrow money when they need to build a new factory or expand universities borrow money.
+
+233
+00:15:40,400 --> 00:15:47,635
+When MIT needs to build a new building, some of the money will come from the endowment support,
+
+234
+00:15:47,635 --> 00:15:52,328
+some will come from some other form of research budget,
+
+235
+00:15:52,328 --> 00:15:57,590
+or some will come from debt financing, just borrowed from the public.
+
+236
+00:15:57,590 --> 00:16:02,820
+Local governments, states, counties even, so they have various forms.
+
+237
+00:16:04,540 --> 00:16:05,479
+So that's debt product.
+
+238
+00:16:05,479 --> 00:16:13,620
+Commodities, actually, you know, metal, energy, agriculture products,
+
+239
+00:16:13,620 --> 00:16:17,490
+all traded, right, mostly in the futures format and some in physical format,
+
+240
+00:16:17,490 --> 00:16:19,110
+meaning you take deliveries.
+
+241
+00:16:19,110 --> 00:16:24,004
+When you actually buy and sell, you build a warehouse to take them.
+
+242
+00:16:24,004 --> 00:16:28,740
+You ship a tank to store above the ocean.
+
+243
+00:16:29,820 --> 00:16:35,039
+And the real estate, you buy and sell houses, you know, 2008 financial crisis,
+
+244
+00:16:35,039 --> 00:16:39,540
+if you read about it this has a lot to do with the real estate market the
+
+245
+00:16:39,540 --> 00:16:45,900
+mortgages and asset-backed securities and so I'm not trying to give you all
+
+246
+00:16:45,900 --> 00:16:49,500
+the definition dumping the information on you but I like you at least you're
+
+247
+00:16:49,500 --> 00:16:55,100
+hearing it once today then then you have more interest you can read on the side
+
+248
+00:16:55,100 --> 00:17:02,760
+so asset-backed securities is when you have an asset you basically issue a debt
+
+249
+00:17:02,760 --> 00:17:12,560
+with the asset backing it and how do you rate the assets risk level and what's the income stream
+
+250
+00:17:12,560 --> 00:17:26,140
+cash flow and during before 2008 financial crisis as you heard large amount of CMBS commercial basically is a
+
+251
+00:17:26,140 --> 00:17:30,880
+commercial real estate backed securities mortgage securities
+
+252
+00:17:30,880 --> 00:17:34,240
+and the residential as well and
+
+253
+00:17:34,240 --> 00:17:38,660
+further of all these you heard probably a lot about the derivative products
+
+254
+00:17:38,660 --> 00:17:41,760
+so that started with swaps options
+
+255
+00:17:41,760 --> 00:17:44,780
+and the structured products. It becomes
+
+256
+00:17:44,780 --> 00:17:48,220
+more tailor-made for either investors
+
+257
+00:17:48,220 --> 00:17:50,600
+or borrowers
+
+258
+00:17:50,600 --> 00:17:54,500
+to structure the products in a way to suit their needs.
+
+259
+00:17:54,500 --> 00:17:56,980
+And some of the complexity
+
+260
+00:17:56,980 --> 00:17:59,640
+of those structured products become
+
+261
+00:17:59,640 --> 00:18:03,240
+quite high and the mathematics involved
+
+262
+00:18:03,240 --> 00:18:05,720
+in pricing them and the risk management
+
+263
+00:18:05,720 --> 00:18:07,320
+become rather challenging.
+
+264
+00:18:11,760 --> 00:18:15,200
+so
+
+265
+00:18:15,200 --> 00:18:17,100
+let me
+
+266
+00:18:17,100 --> 00:18:19,560
+coming back to the players
+
+267
+00:18:19,560 --> 00:18:20,360
+in the market
+
+268
+00:18:20,360 --> 00:18:24,360
+one large type of player
+
+269
+00:18:24,360 --> 00:18:25,740
+is really bank
+
+270
+00:18:25,740 --> 00:18:27,260
+so they are
+
+271
+00:18:27,260 --> 00:18:29,760
+essentially after
+
+272
+00:18:29,760 --> 00:18:30,820
+1933
+
+273
+00:18:30,820 --> 00:18:33,740
+Glass-Steagall legislation
+
+274
+00:18:33,740 --> 00:18:35,800
+there were two main types
+
+275
+00:18:35,800 --> 00:18:37,760
+of banks, one is called commercial
+
+276
+00:18:37,760 --> 00:18:39,480
+bank, the other is investment bank
+
+277
+00:18:39,480 --> 00:18:41,180
+commercial bank
+
+278
+00:18:41,180 --> 00:18:46,040
+is supposedly taking deposits and lend out the money
+
+279
+00:18:46,040 --> 00:18:50,945
+and doing more commercial services.
+
+280
+00:18:50,945 --> 00:18:55,020
+And investment bank is supposed to focus on the capital markets,
+
+281
+00:18:55,020 --> 00:19:00,595
+raising capital, trading, and asset management.
+
+282
+00:19:00,595 --> 00:19:07,700
+But obviously, after 1999, the glass eagle was repealed.
+
+283
+00:19:07,700 --> 00:19:09,900
+There's no longer that.
+
+284
+00:19:09,900 --> 00:19:17,975
+Some people blame that, probably for a very good reason, for the cause of 2008 financial crisis.
+
+285
+00:19:17,975 --> 00:19:23,930
+But I want to tell you how currently investment banks are organized.
+
+286
+00:19:23,930 --> 00:19:30,015
+So, I mean, Vasily just mentioned he works in the fixed income, right?
+
+287
+00:19:30,015 --> 00:19:36,980
+And so banks typically organized by institutional business and asset management.
+
+288
+00:19:36,980 --> 00:19:38,320
+So within the institutional
+
+289
+00:19:40,000 --> 00:19:43,400
+it has typically three main parts.
+
+290
+00:19:43,400 --> 00:19:48,695
+Fixed income, which trade the debt and the derivative products.
+
+291
+00:19:48,695 --> 00:19:52,765
+Equity, trade stocks and the derivative products.
+
+292
+00:19:52,765 --> 00:19:56,995
+And IBD stands for Investment Banking Division,
+
+293
+00:19:56,995 --> 00:20:00,280
+which really covers corporate finance,
+
+294
+00:20:00,280 --> 00:20:04,529
+raising capital, listing a stock, IPO,
+
+295
+00:20:04,529 --> 00:20:07,380
+and merger and acquisition and advisory.
+
+296
+00:20:07,380 --> 00:20:11,374
+So that's how banks are organized.
+
+297
+00:20:11,374 --> 00:20:16,983
+Outside banks, other players, basically the asset managers,
+
+298
+00:20:16,983 --> 00:20:20,079
+are obviously a very big force in the financial markets.
+
+299
+00:20:21,920 --> 00:20:27,139
+So the question a lot of people ask is, is this a zero-sum game?
+
+300
+00:20:27,139 --> 00:20:30,173
+I'm sure you've heard this many times.
+
+301
+00:20:30,173 --> 00:20:33,739
+So in the financial markets, some people win, some people lose.
+
+302
+00:20:33,739 --> 00:20:40,535
+I mean, a lot of times, it depends on specific products you trade, the market you're in.
+
+303
+00:20:40,535 --> 00:20:44,784
+It is, a lot of times, pretty net zero.
+
+304
+00:20:44,784 --> 00:20:47,899
+But why do we need financial markets?
+
+305
+00:20:49,000 --> 00:20:55,593
+This comes back to what I described before, because something existed.
+
+306
+00:20:55,593 --> 00:20:56,840
+Actually, there's a need for it.
+
+307
+00:20:56,840 --> 00:21:03,570
+It's really the need to bridge between the lenders and the borrowers.
+
+308
+00:21:03,570 --> 00:21:07,650
+that's really coming down to the essential relationship.
+
+309
+00:21:07,650 --> 00:21:13,275
+So investors who have money need to have better yield or better return,
+
+310
+00:21:13,275 --> 00:21:14,214
+better interest.
+
+311
+00:21:14,214 --> 00:21:18,095
+In the current environment, when you have a savings account,
+
+312
+00:21:18,095 --> 00:21:20,714
+you know you don't really earn much at all.
+
+313
+00:21:20,714 --> 00:21:27,489
+And so you would have to take more risk to generate more return.
+
+314
+00:21:27,489 --> 00:21:32,740
+Or you have longer horizon CDs or other type of products
+
+315
+00:21:32,740 --> 00:21:34,403
+or trade the stocks.
+
+316
+00:21:34,403 --> 00:21:36,215
+So that's when somebody has money.
+
+317
+00:21:36,215 --> 00:21:41,199
+When you trade stocks, you're essentially buying a stock.
+
+318
+00:21:41,199 --> 00:21:43,055
+You give the money somewhere.
+
+319
+00:21:43,055 --> 00:21:45,365
+Supposedly, go to the company.
+
+320
+00:21:45,365 --> 00:21:50,248
+The company use the money to generate a better return.
+
+321
+00:21:50,248 --> 00:21:54,290
+And for the borrowers, whoever needs money,
+
+322
+00:21:54,290 --> 00:21:57,815
+they need to have access to the capital.
+
+323
+00:21:57,815 --> 00:22:01,900
+So obviously, different borrowers have different risks.
+
+324
+00:22:01,900 --> 00:22:16,180
+Some people borrow money never return or never generate any returns or never even return the principal And so the trade between lenders and the borrowers is again essentially the main driver of the financial markets
+
+325
+00:22:19,880 --> 00:22:23,160
+So a few more words about market participants.
+
+326
+00:22:24,540 --> 00:22:29,630
+So banks and so-called dealers play the role of market making.
+
+327
+00:22:29,630 --> 00:22:31,860
+What is market making?
+
+328
+00:22:31,860 --> 00:22:38,890
+So when you or some end user go to the market, wants to buy or sell,
+
+329
+00:22:38,890 --> 00:22:42,860
+typically, if there's no market, you don't really find the match.
+
+330
+00:22:42,860 --> 00:22:47,680
+And some of the products you want to buy or sell may not necessarily be liquid.
+
+331
+00:22:48,720 --> 00:22:54,720
+So the dealers step in the middle, make you a price, say, OK, you want to buy or sell.
+
+332
+00:22:54,720 --> 00:23:07,745
+I can tell you, this stock, I make you a price, $0.99, and that's my bid, $0.95, that's my offer.
+
+333
+00:23:07,745 --> 00:23:10,700
+So that's the price I'm willing to buy or sell.
+
+334
+00:23:11,700 --> 00:23:18,120
+So that's called, but what the result of the trade, the dealer actually takes the other side of your trade.
+
+335
+00:23:18,120 --> 00:23:21,345
+So they take principal risk in this case.
+
+336
+00:23:21,345 --> 00:23:24,590
+So that's the difference between dealers and the brokers.
+
+337
+00:23:24,590 --> 00:23:28,270
+So brokers don't really take principal risks.
+
+338
+00:23:28,270 --> 00:23:34,540
+If you want to buy something or sell something, if I'm a broker, so I don't make your price.
+
+339
+00:23:34,540 --> 00:23:36,960
+I go to the market makers.
+
+340
+00:23:36,960 --> 00:23:43,313
+I actually put two people together to kind of matchmaking, make that trade happen.
+
+341
+00:23:43,313 --> 00:23:44,890
+So I earn a commission.
+
+342
+00:23:44,890 --> 00:23:46,180
+So that's a broker's role.
+
+343
+00:23:47,239 --> 00:23:51,660
+So obviously there are individual investors, retail investors, same meaning.
+
+344
+00:23:51,660 --> 00:23:55,100
+mutual funds who actually manage
+
+345
+00:23:55,100 --> 00:23:59,160
+public investors' money typically in a long-only
+
+346
+00:23:59,160 --> 00:24:04,020
+format, meaning long means you buy something
+
+347
+00:24:04,020 --> 00:24:08,000
+so you don't really short-sell a particular
+
+348
+00:24:08,000 --> 00:24:11,840
+security. Insurance companies have large assets
+
+349
+00:24:11,840 --> 00:24:15,320
+they need to generate return, generate cash flow to meet their liability
+
+350
+00:24:15,320 --> 00:24:19,919
+needs, so they need to invest. And the pension funds
+
+351
+00:24:19,919 --> 00:24:24,960
+same thing as inflation goes higher they need to pay out more to the retirees so
+
+352
+00:24:24,960 --> 00:24:28,539
+where do you get a return right sovereign wealth fund similarly
+
+353
+00:24:28,539 --> 00:24:34,020
+endowment funds they will have this same situation have capital needs to deploy
+
+354
+00:24:34,020 --> 00:24:49,220
+and make better return so there other type of players hedge funds So how many of you have heard hedge funds Okay good almost everyone Okay so I not there and Peter mentioned
+
+355
+00:24:49,220 --> 00:24:55,580
+that he used to work at a hedge fund. So there are different types of
+
+356
+00:24:55,580 --> 00:25:00,520
+strategies which I will dive into a bit more, but hedge fund play the role in the
+
+357
+00:25:00,520 --> 00:25:08,260
+market they basically find opportunities to profit from inefficient market
+
+358
+00:25:08,260 --> 00:25:13,780
+positioning or pricing so they have different strategies and the private
+
+359
+00:25:13,780 --> 00:25:20,680
+equity I mean different type of funds they basically look to take a cup invest
+
+360
+00:25:20,680 --> 00:25:26,919
+in companies and you know either take them private or invest in the private
+
+361
+00:25:26,919 --> 00:25:30,220
+equity form to hopefully
+
+362
+00:25:30,220 --> 00:25:34,020
+improve the company's profitability and then
+
+363
+00:25:34,020 --> 00:25:37,680
+cash out. Governments obviously have a
+
+364
+00:25:37,680 --> 00:25:40,840
+huge impact on the market.
+
+365
+00:25:40,840 --> 00:25:44,760
+We know in the financial crisis government intervened
+
+366
+00:25:44,760 --> 00:25:48,919
+and not only that, at the normal market condition
+
+367
+00:25:48,919 --> 00:25:52,440
+government always have a very large impact on the market
+
+368
+00:25:52,440 --> 00:25:56,540
+because they are the policymakers. They decide the interest rate and interest rate
+
+369
+00:25:56,540 --> 00:26:04,005
+curve and the different policies they push out obviously will generate different outlook
+
+370
+00:26:04,005 --> 00:26:09,640
+for the future markets, therefore profitability. Then the corporate hedges and the liabilities.
+
+371
+00:26:09,640 --> 00:26:15,440
+When corporates borrow money, they create some risk, so they need to be sensitive to
+
+372
+00:26:15,440 --> 00:26:22,440
+the market changes. To summarize, the types of trading, the first
+
+373
+00:26:22,440 --> 00:26:24,139
+The types of trading.
+
+374
+00:26:25,180 --> 00:26:28,520
+The first type is really just hedging.
+
+375
+00:26:28,520 --> 00:26:33,245
+That means you're not proactively adding risk to what you have.
+
+376
+00:26:33,245 --> 00:26:34,965
+You already have some exposure.
+
+377
+00:26:34,965 --> 00:26:40,535
+Let's say, just to give you an example, let's say you borrow money.
+
+378
+00:26:40,535 --> 00:26:41,860
+You bought a house, so you have a mortgage.
+
+379
+00:26:43,159 --> 00:26:49,800
+And so let's say it's a floating rate mortgage payments.
+
+380
+00:26:49,800 --> 00:26:56,640
+and you're worried about the interest rate going higher, right? So you can lock
+
+381
+00:26:56,640 --> 00:27:02,340
+that rate in into the fixed rate format or you can find ways to hedge your
+
+382
+00:27:02,340 --> 00:27:18,200
+exposure or your corporate has a large income coming from Europe so you have euros coming in but you not sure if euro will trade stronger to the US dollar in the future or trade weaker
+
+383
+00:27:18,200 --> 00:27:21,500
+right if you trade it will be if you think it will be stronger you just leave
+
+384
+00:27:21,500 --> 00:27:25,900
+it but if you think it will will trade weaker so you may want to hedge it
+
+385
+00:27:25,900 --> 00:27:32,180
+meaning you want to sell euro and buy US dollars and so that's the hedging type
+
+386
+00:27:32,180 --> 00:27:35,595
+The second type, as I mentioned, is a market maker.
+
+387
+00:27:35,595 --> 00:27:38,600
+So market maker also takes principal risk.
+
+388
+00:27:38,600 --> 00:27:43,920
+But the main source of profit is really to earn the bid offer.
+
+389
+00:27:43,920 --> 00:27:48,145
+I gave you the example of 90 cents bid, 95 cents offer.
+
+390
+00:27:48,145 --> 00:27:52,835
+So that's what the market maker is trying to profit from.
+
+391
+00:27:52,835 --> 00:27:56,580
+But obviously, they have residual risks sitting on the book.
+
+392
+00:27:56,580 --> 00:27:58,300
+Not every trade is matched.
+
+393
+00:27:58,300 --> 00:28:06,820
+so how to optimize those group of trades that's what market makers doing most of
+
+394
+00:28:06,820 --> 00:28:12,820
+the banks dealers are market makers I mean in the new regular regulation
+
+395
+00:28:12,820 --> 00:28:19,299
+obviously proprietary trading is some you know expand right and so the third
+
+396
+00:28:19,299 --> 00:28:24,339
+type is really the proprietary trader the risk taker so these are the hedge
+
+397
+00:28:24,339 --> 00:28:30,280
+funds or some portfolio managers they need to focus on generating return and
+
+398
+00:28:30,280 --> 00:28:37,060
+with control the risk so that's where the beta and alpha the concept comes in
+
+399
+00:28:37,060 --> 00:28:41,620
+so if your portfolio manager I mean some people say you don't really you know
+
+400
+00:28:41,620 --> 00:28:46,280
+don't worry don't go pick any stocks just buy S&P 500 index fund you know
+
+401
+00:28:46,280 --> 00:28:52,820
+very cheap you can pay very little cost to do it that's true so but if you want
+
+402
+00:28:52,820 --> 00:28:57,339
+to beat the S&P 500 index.
+
+403
+00:28:57,339 --> 00:29:03,740
+Let's assume we call the S&P 500 index fund is asset B.
+
+404
+00:29:03,740 --> 00:29:08,360
+So the return of that, R of B, that's the return of that index.
+
+405
+00:29:08,360 --> 00:29:13,940
+Then you have a portfolio A. Your time series of return
+
+406
+00:29:13,940 --> 00:29:19,160
+of your asset A, obviously, you can do linear regression.
+
+407
+00:29:19,160 --> 00:29:21,140
+A lot of your mass major here.
+
+408
+00:29:21,140 --> 00:29:26,820
+And you can find a correlation between those two time series.
+
+409
+00:29:30,000 --> 00:29:35,819
+form. So you can say this actually somehow it came out it's supposed to be
+
+410
+00:29:35,819 --> 00:29:43,019
+alpha and a beta but it turned out to be you know the letters but so in a short
+
+411
+00:29:43,019 --> 00:29:48,880
+description beta is really kind of you know just think as a correlated move
+
+412
+00:29:48,880 --> 00:29:55,460
+with the other asset alpha is really the you know the difference in return
+
+413
+00:29:55,460 --> 00:29:58,974
+format, you want to beat S&P 500.
+
+414
+00:29:58,974 --> 00:30:02,688
+So you want to basically have certain tracking of this index,
+
+415
+00:30:02,688 --> 00:30:04,600
+but you want to return more on top of that.
+
+416
+00:30:10,460 --> 00:30:17,655
+So let me just go in details of how each type of trade actually occurs.
+
+417
+00:30:17,655 --> 00:30:21,280
+So when we talk about hedging, I mentioned the currency example.
+
+418
+00:30:21,280 --> 00:30:22,940
+Let me give you another example.
+
+419
+00:30:22,940 --> 00:30:27,139
+A lot of people issue bonds or issue debt.
+
+420
+00:30:27,139 --> 00:30:33,000
+So this example I'm going to give you is, let's think about Australian corporate.
+
+421
+00:30:34,000 --> 00:30:39,050
+Because interest rate in Australia is higher than in Japan.
+
+422
+00:30:39,050 --> 00:30:47,039
+So typically, people like to borrow money in Japan because you pay smaller interest.
+
+423
+00:30:47,039 --> 00:30:49,439
+And you invest it in Australia.
+
+424
+00:30:49,439 --> 00:30:53,179
+you earn higher interest rate.
+
+425
+00:30:54,240 --> 00:30:57,039
+So let me ask you a question.
+
+426
+00:30:57,039 --> 00:31:00,204
+Who can tell me, why don't people just do that all day long,
+
+427
+00:31:00,204 --> 00:31:05,544
+just borrow from Japan and invest it in Australia?
+
+428
+00:31:05,544 --> 00:31:09,895
+Then that interest rate, I'm giving you an example of a difference.
+
+429
+00:31:09,895 --> 00:31:15,700
+It's about 3.5% for the 10-year, roughly, 10-year swap rates.
+
+430
+00:31:16,740 --> 00:31:17,700
+Why don't, yeah, go ahead.
+
+431
+00:31:17,700 --> 00:31:18,060
+Right.
+
+432
+00:31:20,680 --> 00:31:23,309
+Because you invest in the Australian Aussie,
+
+433
+00:31:23,309 --> 00:31:24,474
+Australian dollar,
+
+434
+00:31:24,474 --> 00:31:27,434
+the Australian dollar may become weaker to the yen.
+
+435
+00:31:27,434 --> 00:31:29,299
+You may lose all your profit or even more.
+
+436
+00:31:30,460 --> 00:31:34,384
+And further, if everybody plays the same game,
+
+437
+00:31:34,384 --> 00:31:36,579
+then when you try to exit,
+
+438
+00:31:36,579 --> 00:31:40,039
+you have the adverse impact of your trade.
+
+439
+00:31:41,060 --> 00:31:44,698
+So let's say you think that's the right time to do it,
+
+440
+00:31:44,698 --> 00:31:47,160
+but then at one time you wake up,
+
+441
+00:31:47,160 --> 00:31:50,800
+you said, huh, I think too many people are doing this, I want to hedge myself.
+
+442
+00:31:50,800 --> 00:31:51,800
+So what do you do?
+
+443
+00:31:51,800 --> 00:31:52,800
+.
+
+444
+00:31:52,800 --> 00:31:53,800
+Yep.
+
+445
+00:31:53,800 --> 00:32:12,300
+So you try to lock in right So basically you sell the Australian dollars by the Japanese yen Or on the interest rate terms you say you basically pay the Australian dollar in the swap leg and receive yen
+
+446
+00:32:12,300 --> 00:32:21,725
+So this involves foreign exchange trade, interest rate swap, and the cross-currency swap.
+
+447
+00:32:21,725 --> 00:32:25,990
+So your answer about currency forward is roughly right,
+
+448
+00:32:25,990 --> 00:32:29,120
+but obviously involves a bit more in actual execution.
+
+449
+00:32:30,700 --> 00:32:32,935
+So let's just give you an example.
+
+450
+00:32:32,935 --> 00:32:36,640
+Even if you are not a finance guy, you work in a corporate,
+
+451
+00:32:36,640 --> 00:32:40,320
+you just do input, export, or building a factory,
+
+452
+00:32:40,320 --> 00:32:44,840
+you have to know actually what the exposure is.
+
+453
+00:32:44,840 --> 00:32:49,320
+So risk management nowadays becomes pretty widespread responsibility.
+
+454
+00:32:49,320 --> 00:32:56,020
+responsibility. It's not just the corporate treasury's responsibility. So that's on the
+
+455
+00:32:56,020 --> 00:33:04,640
+hedging side. Obviously, if you're Intel, for example, you sell a lot of chips overseas,
+
+456
+00:33:05,860 --> 00:33:10,380
+and your income, actually Intel does have a lot of overseas income sitting outside the
+
+457
+00:33:10,380 --> 00:33:17,420
+States. So the exposure to them is, if the exchange rate fluctuates, dollar becomes a
+
+458
+00:33:17,420 --> 00:33:22,160
+stronger they actually lose money so they need to think about you know how to
+
+459
+00:33:22,160 --> 00:33:29,360
+hedge their revenue produced overseas and obviously if you are import-export
+
+460
+00:33:29,360 --> 00:33:36,200
+that's even more apparent and if you're entering in the merger deal you
+
+461
+00:33:36,200 --> 00:33:41,360
+one company is buying another you need to hedge your potential currency
+
+462
+00:33:41,360 --> 00:33:47,360
+exposure and your interest rate exposure and whatever is on the on the on asset
+
+463
+00:33:47,360 --> 00:33:50,560
+or the liability of the balance sheet, you need to hedge your exposure.
+
+464
+00:33:55,820 --> 00:33:58,425
+So we talked about hedging activity.
+
+465
+00:33:58,425 --> 00:34:00,100
+Let's talk about a bit of market making.
+
+466
+00:34:01,360 --> 00:34:07,305
+So if it's a simple, transparent product, everybody pretty much knows where the price is.
+
+467
+00:34:07,305 --> 00:34:12,120
+So if you buy Apple stock, I think a lot of people know pretty much where it is.
+
+468
+00:34:12,120 --> 00:34:17,264
+You may even have it on your cell phone, know where that stock is.
+
+469
+00:34:17,264 --> 00:34:20,600
+but if it's not transparent
+
+470
+00:34:20,600 --> 00:34:24,080
+so what do you do? so if I instead of asking you where Apple is
+
+471
+00:34:24,080 --> 00:34:35,920
+probably you gonna tell me today okay yeah but if I ask you instead what is the call option on Apple stock in two months time
+
+472
+00:34:36,960 --> 00:34:38,115
+I'll give you a strike.
+
+473
+00:34:38,115 --> 00:34:38,920
+Let's say $500.
+
+474
+00:34:39,960 --> 00:34:41,600
+So you're probably less transparent.
+
+475
+00:34:41,600 --> 00:34:44,980
+So that market maker comes in
+
+476
+00:34:44,980 --> 00:34:46,180
+to provide that liquidity
+
+477
+00:34:46,180 --> 00:34:48,405
+and then takes the risk,
+
+478
+00:34:48,405 --> 00:34:49,380
+then manages the book
+
+479
+00:34:49,380 --> 00:34:52,085
+by balancing those Greeks,
+
+480
+00:34:52,085 --> 00:34:53,420
+which I mentioned earlier,
+
+481
+00:34:53,420 --> 00:35:00,320
+delta which describes the kind of the linear relationship of this whole book
+
+482
+00:35:00,320 --> 00:35:04,520
+to the underlying stock or underlying whatever currency that's called a delta
+
+483
+00:35:04,520 --> 00:35:14,300
+gamma is really the change of the portfolio take the derivative to that to
+
+484
+00:35:14,300 --> 00:35:20,100
+the Delta or to the underlying spot so that's second order derivative by the
+
+485
+00:35:20,100 --> 00:35:21,420
+Delta is the first order.
+
+486
+00:35:21,420 --> 00:35:22,445
+So gamma you take.
+
+487
+00:35:22,445 --> 00:35:25,919
+So now you have curvature or convexity coming in.
+
+488
+00:35:27,580 --> 00:35:31,979
+And theta is really, you know, nothing changes in the market.
+
+489
+00:35:31,979 --> 00:35:33,980
+Nothing changes in your position.
+
+490
+00:35:33,980 --> 00:35:39,560
+How your trading book is carrying or bleeding away money.
+
+491
+00:35:40,820 --> 00:35:44,150
+And we talked about the volatility exposure with Vega.
+
+492
+00:35:44,150 --> 00:35:46,960
+And on top of that, what are the tail risks?
+
+493
+00:35:46,960 --> 00:35:50,280
+What other events can actually get you into big trouble?
+
+494
+00:35:51,460 --> 00:35:54,175
+So people use value at risk.
+
+495
+00:35:54,175 --> 00:35:58,208
+So you will hear this VAR concept in some of the lectures,
+
+496
+00:35:58,208 --> 00:36:01,195
+which is also obviously a very important concept.
+
+497
+00:36:01,195 --> 00:36:04,460
+I think Peter will teach.
+
+498
+00:36:06,000 --> 00:36:11,030
+Then capital, how much capital are you using?
+
+499
+00:36:11,030 --> 00:36:13,040
+It becomes a very important issue nowadays.
+
+500
+00:36:13,040 --> 00:36:21,110
+and balance sheet, again, you have asset, you have liability, how do you leverage, how much leverage you have.
+
+501
+00:36:21,110 --> 00:36:28,735
+Before the crisis, for example, a lot of the banks leveraged up 40 times, meaning when you have $1, you had $40 exposure.
+
+502
+00:36:28,735 --> 00:36:31,200
+So when the market moves a little, you get wiped out.
+
+503
+00:36:31,200 --> 00:36:35,760
+That's really what amplified in the 2008 financial crisis.
+
+504
+00:36:35,760 --> 00:36:37,680
+and how do you measure
+
+505
+00:36:37,680 --> 00:36:40,780
+the asset in balance sheet
+
+506
+00:36:40,780 --> 00:36:41,760
+when you have derivatives
+
+507
+00:36:41,760 --> 00:36:44,060
+rather than straightforward notional
+
+508
+00:36:50,060 --> 00:36:50,740
+so
+
+509
+00:36:50,740 --> 00:36:53,300
+a lot of quantitative type of people
+
+510
+00:36:53,300 --> 00:37:06,960
+like to focus a bit more on the risk taking side because people heard stories about successful cases of some hedge funds using high math right They generate very impressive returns and
+
+511
+00:37:06,960 --> 00:37:12,340
+they seem to have an edge. So now people focus on trading strategies, right? So
+
+512
+00:37:12,340 --> 00:37:17,840
+that falls into the category of proprietary trading or risk-taking.
+
+513
+00:37:17,840 --> 00:37:22,260
+So that you can just simply do directional trading strategies. Just go
+
+514
+00:37:22,260 --> 00:37:27,020
+long or short the stock, right? That's very simple. They are the so-called
+
+515
+00:37:27,020 --> 00:37:32,280
+gut traders, gut feeling, go with your gut. You don't even think, you say I'm
+
+516
+00:37:32,280 --> 00:37:39,700
+eating, I'm eating, you know, curry today, so I go long. I'm eating rice tomorrow, so
+
+517
+00:37:39,700 --> 00:37:47,900
+I go short. So this arbitrage, arbitrage is really to find the relationships
+
+518
+00:37:47,900 --> 00:37:56,160
+between prices and try to profit from those relationship mispricing.
+
+519
+00:37:56,160 --> 00:37:57,479
+This is actually very interesting.
+
+520
+00:37:58,780 --> 00:38:01,335
+Not many people focus on arbitrage,
+
+521
+00:38:01,335 --> 00:38:04,290
+because when a lot of people are gut traders,
+
+522
+00:38:04,290 --> 00:38:06,195
+you essentially just watch your own market.
+
+523
+00:38:06,195 --> 00:38:07,360
+You don't really care what's going on.
+
+524
+00:38:07,360 --> 00:38:10,840
+If you trade gold in the States,
+
+525
+00:38:10,840 --> 00:38:15,615
+the gold price happens in Asia and in Europe.
+
+526
+00:38:15,615 --> 00:38:16,480
+It matters, right?
+
+527
+00:38:16,480 --> 00:38:18,590
+Because you're trading the same thing.
+
+528
+00:38:18,590 --> 00:38:22,670
+If they are not priced the same way, you can profit from the difference.
+
+529
+00:38:22,670 --> 00:38:25,820
+And that's just a simple example.
+
+530
+00:38:25,820 --> 00:38:31,530
+But a spot price versus forward price, that's a deterministic relationship.
+
+531
+00:38:31,530 --> 00:38:33,139
+It's a mathematical relationship.
+
+532
+00:38:33,139 --> 00:38:36,120
+If that relationship breaks down, you can also profit.
+
+533
+00:38:36,120 --> 00:38:42,459
+So there are many examples of mathematical relationship which gives you the arbitrage opportunity.
+
+534
+00:38:42,459 --> 00:38:49,515
+I mean, the other type is called a value trader or relative value strategies.
+
+535
+00:38:49,515 --> 00:38:56,665
+Instead of, you know, think there's a deterministic, temporary mathematical relationship,
+
+536
+00:38:56,665 --> 00:38:59,175
+you look at a bit longer term in the horizon,
+
+537
+00:38:59,175 --> 00:39:03,580
+you have to determine what is really the underlying value of a particular instrument,
+
+538
+00:39:03,580 --> 00:39:06,295
+then trade on the relative value.
+
+539
+00:39:06,295 --> 00:39:10,750
+I mean, obviously, there are successful value investors out there.
+
+540
+00:39:10,750 --> 00:39:15,265
+And the systematic trader builds computer models.
+
+541
+00:39:15,265 --> 00:39:17,660
+One example is trend following.
+
+542
+00:39:17,660 --> 00:39:19,860
+So just follow the price trend.
+
+543
+00:39:19,860 --> 00:39:25,040
+I mean, that used to be an effective strategy for some time.
+
+544
+00:39:25,040 --> 00:39:30,019
+But when a lot of people are doing the same thing, that becomes much less effective.
+
+545
+00:39:31,519 --> 00:39:33,418
+Or momentum, same thing.
+
+546
+00:39:33,418 --> 00:39:34,769
+Stat op, right?
+
+547
+00:39:34,769 --> 00:39:44,900
+Finding statistical relationship among a large number of stocks that trade at a higher frequency.
+
+548
+00:39:44,900 --> 00:39:47,820
+and fundamental analysis
+
+549
+00:39:47,820 --> 00:39:49,820
+is really trying to understand what's going on
+
+550
+00:39:49,820 --> 00:39:51,380
+in the world, what is the
+
+551
+00:39:51,380 --> 00:39:53,800
+trade balance
+
+552
+00:39:53,800 --> 00:39:55,540
+what is the earning potential
+
+553
+00:39:55,540 --> 00:39:57,520
+of a company
+
+554
+00:39:57,520 --> 00:39:59,680
+what is the trade balance of a country
+
+555
+00:39:59,680 --> 00:40:01,399
+what is the policy change
+
+556
+00:40:01,399 --> 00:40:03,680
+what does it mean when Federal Reserve
+
+557
+00:40:03,680 --> 00:40:05,980
+announced they're going to taper the quantitative
+
+558
+00:40:05,980 --> 00:40:06,780
+easing
+
+559
+00:40:06,780 --> 00:40:09,940
+what's the wide stock market sold off
+
+560
+00:40:09,940 --> 00:40:11,739
+in the last couple
+
+561
+00:40:11,739 --> 00:40:13,840
+months, especially wide
+
+562
+00:40:13,840 --> 00:40:18,280
+stocks in India, Brazil, Indonesia sold out more.
+
+563
+00:40:18,280 --> 00:40:19,500
+Why is that?
+
+564
+00:40:19,500 --> 00:40:21,680
+So you have to go through this fundamental analysis.
+
+565
+00:40:22,980 --> 00:40:25,750
+And there are special situations.
+
+566
+00:40:25,750 --> 00:40:31,410
+Some companies are going through particular difficulties,
+
+567
+00:40:31,410 --> 00:40:33,440
+assets are priced very cheaply.
+
+568
+00:40:33,440 --> 00:40:35,640
+So there are firms out there.
+
+569
+00:40:35,640 --> 00:40:39,900
+You probably heard Bain Capital and many others.
+
+570
+00:40:39,900 --> 00:40:45,140
+They focus on these private equity and special situation opportunities.
+
+571
+00:40:49,160 --> 00:40:53,920
+So what have all these to do with mathematics?
+
+572
+00:40:55,220 --> 00:40:56,740
+Where does math come in?
+
+573
+00:40:57,940 --> 00:40:59,465
+How do you use math?
+
+574
+00:40:59,465 --> 00:41:02,580
+So I want to give you some aspects of that.
+
+575
+00:41:02,580 --> 00:41:09,753
+So from my personal experience, I joined the market really start working on pricing models.
+
+576
+00:41:09,753 --> 00:41:11,404
+So that's the first area.
+
+577
+00:41:11,404 --> 00:41:18,648
+So math is very effective because when you, your bank or your corporate,
+
+578
+00:41:18,648 --> 00:41:25,324
+you want to buy some financial instruments, you have to know where is the price.
+
+579
+00:41:25,324 --> 00:41:28,079
+It's easy to observe a stock in the market,
+
+580
+00:41:28,079 --> 00:41:31,475
+but when it comes to more complex products,
+
+581
+00:41:31,475 --> 00:41:36,523
+they just take one step forward on the complexity, which is option.
+
+582
+00:41:36,523 --> 00:41:38,444
+You have to know how to price an option.
+
+583
+00:41:38,444 --> 00:41:40,530
+So that's where the math comes in.
+
+584
+00:41:40,530 --> 00:41:42,940
+You actually have to be able to solve differential equations
+
+585
+00:41:42,940 --> 00:41:58,860
+to get a model price Then you obviously adjust to your assumptions to fit into the market So pricing model which Vasily and many of his colleagues can tell you more which
+
+586
+00:41:58,860 --> 00:42:04,440
+is very much a very interesting and challenging area how do you price all
+
+587
+00:42:04,440 --> 00:42:09,900
+these instruments and when I say pricing is not in the narrow definition of just
+
+588
+00:42:09,900 --> 00:42:14,580
+to come up as a price when you build a pricing model you also generate the risk
+
+589
+00:42:14,580 --> 00:42:21,660
+parameters of these instruments and how do you risk manage them. So that comes to
+
+590
+00:42:21,660 --> 00:42:27,600
+the second part. So math is very useful in risk management, which I will give you
+
+591
+00:42:27,600 --> 00:42:33,780
+some questions after this slide. When you can see that risk
+
+592
+00:42:33,780 --> 00:42:37,320
+management itself is very challenging, it's not a purely mathematical question,
+
+593
+00:42:37,320 --> 00:42:43,160
+but yet math plays a very important role to quantify how much exposure you have.
+
+594
+00:42:43,160 --> 00:42:46,655
+Then the third is trading strategies.
+
+595
+00:42:46,655 --> 00:42:49,519
+Again, I think a lot of people with math background,
+
+596
+00:42:50,739 --> 00:42:56,800
+or in general, people are looking for the so-called Holy Grail trading strategies.
+
+597
+00:42:56,800 --> 00:42:59,920
+It's almost like perpetual motion machines, right?
+
+598
+00:42:59,920 --> 00:43:02,060
+People were looking for 100 years ago.
+
+599
+00:43:02,060 --> 00:43:05,465
+You just turn it on, it makes money by itself.
+
+600
+00:43:05,465 --> 00:43:10,369
+You go to sleep, you go on vacation, you come back, you have more in your bank account.
+
+601
+00:43:10,369 --> 00:43:12,960
+Obviously, that's not going to happen.
+
+602
+00:43:12,960 --> 00:43:18,859
+The robot trader or robotic trader is the dream.
+
+603
+00:43:19,980 --> 00:43:26,175
+It has its place or its use, but it's a fast-evolving market.
+
+604
+00:43:26,175 --> 00:43:34,240
+You have to constantly upgrade your research and adjust your strategies.
+
+605
+00:43:34,240 --> 00:43:35,905
+There's no such thing.
+
+606
+00:43:35,905 --> 00:43:38,330
+You can build and leave it alone.
+
+607
+00:43:38,330 --> 00:43:39,740
+It runs for itself forever.
+
+608
+00:43:39,740 --> 00:43:50,250
+But I just want to mention that because maybe towards the end of the term, you will feel, hmm, I came up with this brilliant trading strategy.
+
+609
+00:43:50,250 --> 00:43:52,065
+I think it's going to make money forever.
+
+610
+00:43:52,065 --> 00:43:53,200
+Please let me know first.
+
+611
+00:43:59,020 --> 00:44:04,580
+So I want to leave some time to Vasily.
+
+612
+00:44:04,580 --> 00:44:04,960
+actually
+
+613
+00:44:04,960 --> 00:44:06,100
+he can
+
+614
+00:44:06,100 --> 00:44:06,580
+give you
+
+615
+00:44:06,580 --> 00:44:06,919
+some
+
+616
+00:44:06,919 --> 00:44:07,580
+examples
+
+617
+00:44:07,580 --> 00:44:08,520
+of projects
+
+618
+00:44:08,520 --> 00:44:09,180
+of last
+
+619
+00:44:09,180 --> 00:44:09,600
+year's
+
+620
+00:44:09,600 --> 00:44:10,160
+students
+
+621
+00:44:10,160 --> 00:44:10,900
+who actually
+
+622
+00:44:10,900 --> 00:44:12,180
+came to
+
+623
+00:44:12,180 --> 00:44:12,780
+this class
+
+624
+00:44:12,780 --> 00:44:13,419
+and did
+
+625
+00:44:13,419 --> 00:44:14,060
+some real
+
+626
+00:44:14,060 --> 00:44:30,660
+application at Morgan Stanley but before I hand it over to Vasili let me ask you some questions I just want to give you not really to quiz you just give you the sense how math and intuition and judgment can
+
+627
+00:44:30,660 --> 00:44:32,340
+come into the same place.
+
+628
+00:44:32,340 --> 00:44:33,820
+So let me first give you an example.
+
+629
+00:44:33,820 --> 00:44:35,860
+So I call it risk aversion.
+
+630
+00:44:35,860 --> 00:44:41,680
+So you are facing two choices, choice A and choice B. Choice
+
+631
+00:44:41,680 --> 00:44:45,580
+A being you have 80 chance to lose $500.
+
+632
+00:44:45,580 --> 00:44:50,920
+You have 20% chance to win $500.
+
+633
+00:44:50,920 --> 00:44:52,540
+It's pretty clear, right?
+
+634
+00:44:52,540 --> 00:44:57,860
+That's choice A. Or choice B, you basically just lock in.
+
+635
+00:44:57,860 --> 00:45:02,000
+You have 100% chance to lose $280.
+
+636
+00:45:02,000 --> 00:45:09,000
+Let me ask you, for whoever likes to choose choice A,
+
+637
+00:45:09,000 --> 00:45:09,860
+Please raise your hand.
+
+638
+00:45:16,640 --> 00:45:21,205
+About six out of, say, let's call it 50.
+
+639
+00:45:21,205 --> 00:45:22,050
+Okay.
+
+640
+00:45:22,050 --> 00:45:25,340
+So can I ask you why you think choice A makes sense?
+
+641
+00:45:25,340 --> 00:45:31,685
+I know it's a lower expected value, but I enjoy gambling.
+
+642
+00:45:31,685 --> 00:45:34,865
+I would rather get the chance of...
+
+643
+00:45:34,865 --> 00:45:35,560
+Right.
+
+644
+00:45:35,560 --> 00:45:39,790
+Because you don't want to lock in that $280 loss, right?
+
+645
+00:45:39,790 --> 00:45:42,270
+That way you still have 20% chance to win.
+
+646
+00:45:42,270 --> 00:45:42,900
+So, okay.
+
+647
+00:45:44,120 --> 00:45:46,305
+For the ones who raised their hand for choice A,
+
+648
+00:45:46,305 --> 00:45:47,955
+are there any other reasons?
+
+649
+00:45:47,955 --> 00:45:49,223
+Same reason?
+
+650
+00:45:49,223 --> 00:45:49,680
+Okay.
+
+651
+00:45:55,720 --> 00:45:58,710
+Okay, I assume the rest of you will choose choice B,
+
+652
+00:45:58,710 --> 00:46:00,160
+unless you're neither.
+
+653
+00:46:00,160 --> 00:46:02,320
+Okay, how many of you choose choice B?
+
+654
+00:46:05,560 --> 00:46:07,555
+Okay, choice B, okay.
+
+655
+00:46:07,555 --> 00:46:10,099
+And are there anybody thinking neither is right?
+
+656
+00:46:10,099 --> 00:46:13,719
+So maybe they're just like, you have to choose.
+
+657
+00:46:13,719 --> 00:46:14,534
+Okay.
+
+658
+00:46:14,534 --> 00:46:16,110
+No, you have to choose.
+
+659
+00:46:16,110 --> 00:46:18,220
+Okay, so either choice A or choice B.
+
+660
+00:46:19,479 --> 00:46:22,350
+So let me just talk a little bit about this.
+
+661
+00:46:22,350 --> 00:46:24,800
+Again, I'm not trying to tell you which one is right,
+
+662
+00:46:24,800 --> 00:46:27,685
+but I just share my thoughts on how to look at this.
+
+663
+00:46:27,685 --> 00:46:29,420
+Why I call it risk aversion, right?
+
+664
+00:46:29,420 --> 00:46:33,075
+So this is very common human behavior.
+
+665
+00:46:33,075 --> 00:46:35,539
+When you go to the market, you buy a stock.
+
+666
+00:46:35,539 --> 00:46:43,039
+when the stock goes up makes bit money the natural tendency for especially
+
+667
+00:46:43,039 --> 00:47:05,100
+someone is new to the market is to let take take profit let sell how I made a thousand dollars I made five hundred dollars let go you know have a nice meal or you know whatever I buy an iPad but when the stock loses money what the natural tendency that
+
+668
+00:47:05,100 --> 00:47:10,740
+I think natural tendency a lot of people will keep it I think if you have the
+
+669
+00:47:10,740 --> 00:47:14,520
+discipline to get out that's great then that's you know I I mean trading is
+
+670
+00:47:14,520 --> 00:47:18,700
+really all about how would you how do you risk manage you know have a
+
+671
+00:47:18,700 --> 00:47:23,880
+discipline and how to manage your losses right the natural tendency a lot of
+
+672
+00:47:23,880 --> 00:47:27,280
+people it's now I think there's a chance to 20% chance to come back I'm gonna
+
+673
+00:47:27,280 --> 00:47:34,260
+make $500 more right why do I want to lock in to stop myself out at 280 right
+
+674
+00:47:34,260 --> 00:47:38,760
+so even though the expected value as a lot of people I think it used a lot of
+
+675
+00:47:38,760 --> 00:47:43,640
+people said you know you lose expected value which is $300 in choice a
+
+676
+00:47:43,640 --> 00:47:52,120
+but you would still not to choose choice B because you don't want to lock in the $280 loss.
+
+677
+00:47:52,120 --> 00:47:58,680
+Again, I'm not trying to inject the idea to you of which one is right or wrong,
+
+678
+00:47:58,680 --> 00:47:59,830
+but think about it.
+
+679
+00:47:59,830 --> 00:48:06,690
+So that's really the common behavior, which mathematically may not make sense,
+
+680
+00:48:06,690 --> 00:48:09,060
+but that's a lot of people still would like to do.
+
+681
+00:48:09,060 --> 00:48:15,240
+right and we also really when you think about it was depends on your situation
+
+682
+00:48:15,240 --> 00:48:24,420
+and if you can let's say you think the market I mean I'm giving you the stock
+
+683
+00:48:24,420 --> 00:48:28,800
+example again if you're not purely following the discipline of stop-loss
+
+684
+00:48:28,800 --> 00:48:33,280
+but you just think you know the fundamental picture has changed you
+
+685
+00:48:33,280 --> 00:48:37,680
+really don't think the stock is should go up anymore obviously I don't whatever
+
+686
+00:48:37,680 --> 00:48:44,140
+level you should get out, regardless how much loss you're locking.
+
+687
+00:48:44,140 --> 00:48:49,200
+But if you think the fundamental story is still very sound, you should think about,
+
+688
+00:48:49,200 --> 00:48:52,780
+as if you don't have a position, what do you want to do next?
+
+689
+00:48:52,780 --> 00:48:55,760
+But anyway, mathematically, I just want to see.
+
+690
+00:48:55,760 --> 00:48:59,720
+It's actually, I think, I guess this is MIT.
+
+691
+00:48:59,720 --> 00:49:07,180
+So many people think mathematically you would actually choose choice B, because that's low
+
+692
+00:49:07,180 --> 00:49:12,220
+expectation which makes sense but I think if you ask a larger audience I
+
+693
+00:49:12,220 --> 00:49:15,173
+think you probably a lot of people don't really want to choose choice B because
+
+694
+00:49:15,173 --> 00:49:17,419
+choice B because they don't want to lock in the loss.
+
+695
+00:49:20,760 --> 00:49:29,020
+Now, let me change the question a little bit. So, choice A becomes, instead of the 80% chance
+
+696
+00:49:29,020 --> 00:49:38,820
+to lose, now you have 80% chance to win $500 and 20% chance to lose $500. Choice B, you have 100%
+
+697
+00:49:38,820 --> 00:49:41,650
+chance to win $280,
+
+698
+00:49:41,650 --> 00:49:43,600
+who would
+
+699
+00:49:43,600 --> 00:49:44,600
+choose choice A?
+
+700
+00:49:47,680 --> 00:49:48,980
+Again, minority
+
+701
+00:49:48,980 --> 00:49:51,120
+of this audience. Let's say less than
+
+702
+00:49:51,120 --> 00:49:53,079
+10%. Who would choose
+
+703
+00:49:53,079 --> 00:49:54,075
+choice B?
+
+704
+00:49:54,075 --> 00:49:55,300
+The rest of it.
+
+705
+00:49:55,300 --> 00:49:56,640
+Okay. All right.
+
+706
+00:49:58,719 --> 00:49:59,600
+Can someone
+
+707
+00:49:59,600 --> 00:50:01,660
+choose choice A?
+
+708
+00:50:01,660 --> 00:50:03,615
+Give me an argument.
+
+709
+00:50:03,615 --> 00:50:05,134
+Why would you? Yeah.
+
+710
+00:50:05,134 --> 00:50:06,780
+Seemingly high recorded value,
+
+711
+00:50:06,780 --> 00:50:12,399
+and why utility is roughly constant over this $500 range.
+
+712
+00:50:13,920 --> 00:50:14,874
+Okay.
+
+713
+00:50:14,874 --> 00:50:15,663
+Yeah.
+
+714
+00:50:15,663 --> 00:50:18,513
+Anyone want to give me a reason for choice B?
+
+715
+00:50:18,513 --> 00:50:19,669
+Higher shop.
+
+716
+00:50:19,669 --> 00:50:20,903
+Higher shop.
+
+717
+00:50:20,903 --> 00:50:22,324
+Higher shop.
+
+718
+00:50:22,324 --> 00:50:23,734
+Yeah.
+
+719
+00:50:23,734 --> 00:50:25,070
+Okay.
+
+720
+00:50:25,070 --> 00:50:27,960
+Well, let me just leave it here.
+
+721
+00:50:27,960 --> 00:50:33,230
+Again, I think we can talk a bit more along in the class.
+
+722
+00:50:33,230 --> 00:50:34,520
+I mean, the last day of the class,
+
+723
+00:50:34,520 --> 00:50:37,280
+Hopefully, we have much deeper discussion on this.
+
+724
+00:50:38,520 --> 00:50:39,834
+It's not unique.
+
+725
+00:50:39,834 --> 00:50:42,708
+The answer, okay, I think it can go either way.
+
+726
+00:50:42,708 --> 00:50:49,979
+I mean, as you said, if your bank account balance is, let's say you're a freshman student,
+
+727
+00:50:49,979 --> 00:51:00,259
+your bank account is $800, your choice will be very different from someone who has $100,000 in his bank account.
+
+728
+00:51:00,259 --> 00:51:10,819
+okay and also your risk tolerance right how much you can you can tolerate but I
+
+729
+00:51:10,819 --> 00:51:16,200
+mean I'm gonna give you say this is right or wrong but with that let me move
+
+730
+00:51:16,200 --> 00:51:25,760
+on and give you some homework so before I give you the homework I want to make a
+
+731
+00:51:25,760 --> 00:51:26,659
+a few more comments.
+
+732
+00:51:27,720 --> 00:51:29,920
+Do people always learn from their experiences?
+
+733
+00:51:29,920 --> 00:51:31,678
+You think, you know, in science,
+
+734
+00:51:31,678 --> 00:51:33,619
+we collect evidence,
+
+735
+00:51:33,619 --> 00:51:35,234
+we build models.
+
+736
+00:51:35,234 --> 00:51:46,200
+We first understand the physics we build mathematic models then we verify in physics doing experiments But is that the same investigation process in finance
+
+737
+00:51:47,840 --> 00:51:50,755
+I mean, market cycles are typically very long.
+
+738
+00:51:50,755 --> 00:51:53,435
+But people tend to have short memories.
+
+739
+00:51:53,435 --> 00:51:55,970
+So how do people really learn from the experience?
+
+740
+00:51:55,970 --> 00:51:57,650
+It's a very interesting question.
+
+741
+00:51:57,650 --> 00:52:02,760
+And the very natural tendency is to extrapolate historical experience.
+
+742
+00:52:02,760 --> 00:52:10,080
+what happened in 2008 people still remember what happened in 1970s maybe
+
+743
+00:52:10,080 --> 00:52:14,700
+some people still remember what happened a hundred years ago right so people tend
+
+744
+00:52:14,700 --> 00:52:22,360
+to extrapolate join conclusions from very recent experience and deterministic
+
+745
+00:52:22,360 --> 00:52:26,640
+relationship versus statistical relationship is very interesting as well
+
+746
+00:52:26,640 --> 00:52:31,620
+when you try to trade on those how do you really build models and is the
+
+747
+00:52:31,620 --> 00:53:00,620
+market really efficient? What part is efficient? How do you really apply those theories in your day-to-day risk management or trading activities? And sometimes people tend to oversimplify, just say, oh, I can model this. This is one important parameter. I just take that. So I just give you all the warnings that, again, very young, new
+
+748
+00:53:00,620 --> 00:53:09,239
+field and largely often this is art than science so keep that in mind even though
+
+749
+00:53:09,239 --> 00:53:14,819
+we're talking about mathematics in finance math is very powerful and useful
+
+750
+00:53:14,819 --> 00:53:20,200
+in finance so learn the math learn the finance first but keep those questions
+
+751
+00:53:20,200 --> 00:53:28,099
+along the way when you are learning during this class okay so suggested
+
+752
+00:53:28,099 --> 00:53:36,340
+homework optional. Just, I mentioned a lot of terminologies today. Go to the course
+
+753
+00:53:36,340 --> 00:53:43,099
+website, read what we have put up for the financial glossary, right? So, if you
+
+754
+00:53:43,099 --> 00:53:48,020
+still have things you don't understand, make, compile your own list of financial
+
+755
+00:53:48,020 --> 00:53:54,640
+concepts, which you can search on the web or even ask us. But I encourage you to do
+
+756
+00:53:54,640 --> 00:54:00,020
+that it will prepare you well so that's really and the read other materials on
+
+757
+00:54:00,020 --> 00:54:16,040
+the on the course web so we got maybe how about this we still got about 15 minutes or 10 or 12 minutes left so I passed it to Vasili then maybe we can leave five minutes for some questions yeah okay yeah
+
+758
+00:54:35,000 --> 00:54:37,000
+who were
+
+759
+00:54:37,000 --> 00:54:42,560
+but
+
+760
+00:54:42,560 --> 00:54:45,280
+I just wanted to give
+
+761
+00:54:45,280 --> 00:54:47,120
+an example of
+
+762
+00:54:47,120 --> 00:54:56,780
+okay
+
+763
+00:54:56,780 --> 00:54:59,400
+yeah thanks
+
+764
+00:54:59,400 --> 00:55:02,919
+because he was working
+
+765
+00:55:02,919 --> 00:55:04,980
+in our group and it just will
+
+766
+00:55:04,980 --> 00:55:11,400
+give you an idea of what what a little bit of an idea what what we will be
+
+767
+00:55:11,400 --> 00:55:17,280
+talking about and what actually do in the daily life or what an intern or
+
+768
+00:55:17,280 --> 00:55:23,640
+somebody who comes to work in this industry could do and what one project
+
+769
+00:55:23,640 --> 00:55:30,900
+is which douchan worked was on estimating the noisy derivative
+
+770
+00:55:30,900 --> 00:55:33,015
+The derivative is called delta.
+
+771
+00:55:33,015 --> 00:55:36,170
+Delta is usually the first derivative to a function.
+
+772
+00:55:36,170 --> 00:55:43,790
+And as we'll see in the class, quite often to obtain a price, you do it through Monte Carlo,
+
+773
+00:55:43,790 --> 00:55:48,640
+meaning running a lot of paths and then averaging along them.
+
+774
+00:55:48,640 --> 00:55:50,220
+So it's a statistical method.
+
+775
+00:55:50,220 --> 00:55:55,620
+So obviously there is a noise to your answer every time.
+
+776
+00:55:55,620 --> 00:56:06,790
+So if you want to differentiate this function and get a derivative, then this derivative will be quite noisy.
+
+777
+00:56:06,790 --> 00:56:14,200
+And so instead of getting the true derivative, you might obtain something quite different from two derivatives
+
+778
+00:56:14,200 --> 00:56:19,500
+just because there is a confidence interval around any point.
+
+779
+00:56:19,500 --> 00:56:22,105
+And obviously there is a trade-off here as well,
+
+780
+00:56:22,105 --> 00:56:27,760
+because you can run more paths, throw more computational power,
+
+781
+00:56:27,760 --> 00:56:31,975
+which will reduce your confidence interval.
+
+782
+00:56:31,975 --> 00:56:50,120
+You will know better where you are more precise Or the other solution could be if you know that your your function is not too concave and reasonably flat you might move the do
+
+783
+00:56:50,120 --> 00:56:54,860
+the numerical differentiation on why the interval basically reducing the
+
+784
+00:56:54,860 --> 00:56:59,480
+significance of the error right and you would hope to arrive to a better
+
+785
+00:56:59,480 --> 00:57:03,760
+approximation so obviously there is somewhere a balance and the question was
+
+786
+00:57:03,760 --> 00:57:12,100
+how is there an optimal shift size to get the derivative.
+
+787
+00:57:13,660 --> 00:57:18,985
+And that's what, oh, oh, oh, the slide got corrupted.
+
+788
+00:57:18,985 --> 00:57:25,770
+Right, so there was quite a bit of mathematics involved in minimization and optimization.
+
+789
+00:57:25,770 --> 00:57:33,585
+There was an answer, and that's actually what we finally arrived at.
+
+790
+00:57:33,585 --> 00:57:40,460
+and that's some some toy example but still it shows you that if you use
+
+791
+00:57:40,460 --> 00:57:45,839
+constant size and not optimal size that that would be your numerical derivative
+
+792
+00:57:45,839 --> 00:57:52,059
+of this of this blue function while the well if you use the optimal shift size
+
+793
+00:57:52,059 --> 00:57:58,060
+which which dushan computed it would be much smoother and much better so that's
+
+794
+00:57:58,060 --> 00:58:03,200
+one of example and that's what he did and we actually are implementing it in
+
+795
+00:58:03,200 --> 00:58:12,800
+our systems and plan plan to use it in practice another project was actually
+
+796
+00:58:12,800 --> 00:58:19,580
+quite different and it was about electronic trading and basically how to
+
+797
+00:58:19,580 --> 00:58:31,040
+better predict prices of of currencies and exchange rate fun enough it was on
+
+798
+00:58:31,040 --> 00:58:37,480
+ruble ruble US dollar because it was actually aimed for for our Moscow office
+
+799
+00:58:37,480 --> 00:58:44,640
+and basically what we had we had the noise observation of broker data and it
+
+800
+00:58:44,640 --> 00:58:51,040
+was not it was coming on a different non-uniform times basically at random
+
+801
+00:58:51,040 --> 00:59:00,025
+times so we decided to use Kalma filter and to and to study how it can predict
+
+802
+00:59:00,025 --> 00:59:02,940
+and yeah that's one of the nice graphs Dushan produced which again will be
+
+803
+00:59:02,940 --> 00:59:10,000
+and yeah that's one of of the nice graphs Lucian produced which it
+
+804
+00:59:11,460 --> 00:59:16,619
+we will use this strategy and this the column filters which he constructed in
+
+805
+00:59:16,619 --> 00:59:26,340
+our in our trading platform in Moscow all right so that's just a couple of
+
+806
+00:59:26,340 --> 00:59:28,480
+examples which I wanted to give you
+
+807
+00:59:28,480 --> 00:59:30,460
+as a preview of what
+
+808
+00:59:30,460 --> 00:59:31,900
+we will be talking in the class.
+
+809
+00:59:33,500 --> 00:59:34,675
+Just a reminder,
+
+810
+00:59:34,675 --> 00:59:36,480
+the website is fully functional.
+
+811
+00:59:38,300 --> 00:59:39,200
+We put
+
+812
+00:59:39,200 --> 00:59:40,405
+syllables there,
+
+813
+00:59:40,405 --> 00:59:42,079
+a short list of literature.
+
+814
+00:59:43,680 --> 00:59:44,600
+We will be
+
+815
+00:59:44,600 --> 00:59:46,280
+posting a lot of materials there.
+
+816
+00:59:47,340 --> 00:59:48,300
+Probably most
+
+817
+00:59:48,300 --> 00:59:51,085
+lectures will be published there.
+
+818
+00:59:51,085 --> 00:59:52,680
+Jake's slides are there already.
+
+819
+00:59:54,480 --> 00:59:54,880
+So,
+
+820
+00:59:54,880 --> 00:59:56,519
+any questions
+
+821
+00:59:56,519 --> 01:00:00,899
+please hand back
+
+822
+01:00:00,899 --> 01:00:03,179
+there are some sign up sheets
+
+823
+01:00:03,179 --> 01:00:05,239
+so we like to get your emails
+
+824
+01:00:05,239 --> 01:00:06,399
+so we can
+
+825
+01:00:06,399 --> 01:00:08,280
+put you on the website
+
+826
+01:00:08,280 --> 01:00:09,979
+for the further announcements
+
+827
+01:00:09,979 --> 01:00:12,740
+but you can also add yourself
+
+828
+01:00:12,740 --> 01:00:14,979
+but it's probably easier
+
+829
+01:00:14,979 --> 01:00:17,460
+if you put your email on the sign up sheet
+
+830
+01:00:17,460 --> 01:00:18,079
+so we can
+
+831
+01:00:18,079 --> 01:00:20,460
+yeah but please
+
+832
+01:00:20,460 --> 01:00:21,899
+please visit and
+
+833
+01:00:21,899 --> 01:00:24,399
+sign up here because there will be announcements
+
+834
+01:00:24,399 --> 01:00:25,180
+to the class.
+
+835
+01:00:26,980 --> 01:00:28,380
+Alright, thank you very much.

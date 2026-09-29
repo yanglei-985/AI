@@ -1,0 +1,1447 @@
+1
+00:00:00,000 --> 00:00:07,379
+In particular, we're going to also pay attention to all the things that can go wrong when machine
+
+2
+00:00:07,379 --> 00:00:11,300
+learning is applied in finance.
+
+3
+00:00:11,300 --> 00:00:16,859
+So the use of disclaimers apply.
+
+4
+00:00:16,859 --> 00:00:24,180
+Past performance is not an indication of future results, et cetera.
+
+5
+00:00:24,180 --> 00:00:29,340
+The title of this presentation is different than the one that was sent in the email.
+
+6
+00:00:29,340 --> 00:00:35,340
+The content is still the same, but what I wanted to stress here is the various ways
+
+7
+00:00:35,340 --> 00:00:39,860
+in which machine learning is useful in finance.
+
+8
+00:00:39,860 --> 00:00:49,739
+Let's start with a review of what makes financial machine learning different from traditional
+
+9
+00:00:49,739 --> 00:00:52,280
+quantitative techniques.
+
+10
+00:00:52,280 --> 00:00:59,520
+To begin with, machine learning is able to model complex, nonlinear relationships in
+
+11
+00:00:59,520 --> 00:01:03,100
+a high-dimensional space.
+
+12
+00:01:03,100 --> 00:01:13,280
+It allows us to analyze a wide variety of data, whether this data is asynchronous, categorical,
+
+13
+00:01:13,280 --> 00:01:17,920
+numerical, words, text, et cetera.
+
+14
+00:01:17,920 --> 00:01:21,740
+And machine learning really focuses on predictability.
+
+15
+00:01:21,740 --> 00:01:30,100
+The goal of machine learning is to be able to perform tasks that are very much in line
+
+16
+00:01:30,100 --> 00:01:36,740
+with the goals of financial applications, like predicting prices, classifying companies
+
+17
+00:01:36,740 --> 00:01:41,360
+according to their probability of default, providing recommendations.
+
+18
+00:01:41,360 --> 00:01:51,100
+Now, at the same time, we have to be aware that as powerful as machine learning is, machine
+
+19
+00:01:51,100 --> 00:01:56,799
+learning will always identify a pattern even if there is no pattern so we cannot
+
+20
+00:01:56,799 --> 00:02:02,479
+apply machine learning algorithms blindly we have to know a number of
+
+21
+00:02:02,479 --> 00:02:08,800
+caveats and and put controls and protections so that they find machine
+
+22
+00:02:08,800 --> 00:02:17,140
+learning application works as expected let's start with I guess what is the
+
+23
+00:02:17,140 --> 00:02:24,760
+favorite application of people in finance and that is really how can we
+
+24
+00:02:24,760 --> 00:02:33,480
+make better price predictions if you know if you remember from your econometrics class
+
+25
+00:02:37,560 --> 00:02:45,160
+the main goal of econometric models and statistics in general is to identify what variables
+
+26
+00:02:45,160 --> 00:02:55,980
+are predictive and what is the set of equations that allows us to make forecasts.
+
+27
+00:02:55,980 --> 00:03:03,300
+So the main goal of econometric and statistical models is more of an understanding the structure
+
+28
+00:03:03,300 --> 00:03:06,520
+of a phenomenon rather than making predictions.
+
+29
+00:03:06,520 --> 00:03:15,400
+and the funny thing is that sometimes these two goals prediction and understanding
+
+30
+00:03:15,400 --> 00:03:25,520
+can be in contradiction it is not necessarily true that the most explanatory model the
+
+31
+00:03:25,520 --> 00:03:30,519
+model that provides us an insight into a phenomenon happens to be the best predictor
+
+32
+00:03:30,519 --> 00:03:52,980
+And the reason is this. When a model is fed data that is not complete, that is not the ultimate variables that are involved in a process, this model is going to be misleading.
+
+33
+00:03:52,980 --> 00:03:56,240
+Essentially, it's not going to deliver the best predictions.
+
+34
+00:03:56,240 --> 00:04:08,850
+It's going to adjudicate what is the source of the variance of the problem, but it's not necessarily going to give us the best predictions.
+
+35
+00:04:08,850 --> 00:04:19,139
+So this is a problem that in statistics is known as multiple linearity.
+
+36
+00:04:19,139 --> 00:04:24,735
+You have multiple variables where these variables are competing with each other.
+
+37
+00:04:24,735 --> 00:04:30,385
+They are not necessarily the ultimate variables controlling a phenomenon.
+
+38
+00:04:30,385 --> 00:04:46,840
+And when you put them together into a model, the econometric model is going to try to adjudicate the cost of the viability of a certain variable to a set of candidates.
+
+39
+00:04:46,840 --> 00:04:52,080
+And this set of candidates may not be the best set.
+
+40
+00:04:52,080 --> 00:05:05,015
+It is not necessarily that these candidates are the ones that are ultimately responsible for the phenomenon And as a result the model is not going to be the most predictive
+
+41
+00:05:05,015 --> 00:05:09,820
+The identification is not going to be correct, and the model is not going to be the most
+
+42
+00:05:09,820 --> 00:05:10,200
+predictive.
+
+43
+00:05:10,200 --> 00:05:19,040
+And one of the advantages of machine learning is that you can throw in a number of features,
+
+44
+00:05:19,040 --> 00:05:29,690
+And even if these features are not the ultimate responsible for the phenomenon, still the machine learning algorithm can figure out what is the best prediction.
+
+45
+00:05:29,690 --> 00:05:34,575
+And this prediction is not going to be an unbiased predictor.
+
+46
+00:05:34,575 --> 00:05:41,100
+It's going to be a biased predictor, and yet it's going to be more predictive than an unbiased predictor.
+
+47
+00:05:41,100 --> 00:06:04,880
+So, that's one of the most interesting factors of machine learning that is able to cope with this sort of situations where traditional classical assumptions are not verified.
+
+48
+00:06:04,880 --> 00:06:11,035
+And still, even though those assumptions are not verified, the model can be predicted.
+
+49
+00:06:11,035 --> 00:06:21,979
+The second application that is very often ignored in machine learning is portfolio construction and risk analysis.
+
+50
+00:06:21,979 --> 00:06:45,580
+So if you're familiar with the efficient frontier approach to portfolio construction, Markovitch-style portfolios, well, you know that essentially there is a set of equations that allows you to compute a portfolio that is optimal in the sense of producing the best returns given a certain level of risk.
+
+51
+00:06:45,580 --> 00:06:53,979
+and as it happens the mathematics that are underlined this procedure are not
+
+52
+00:06:53,979 --> 00:07:02,979
+necessarily very robust to noise to estimation errors and it is very well
+
+53
+00:07:02,979 --> 00:07:07,659
+known that when you compute an optimal portfolio according to Markovitch or
+
+54
+00:07:07,659 --> 00:07:13,599
+the fishing frontier and you remove a small portion of the data let's say 10%
+
+55
+00:07:13,599 --> 00:07:18,860
+the data, the optimal portfolio of the Sun is going to be very different.
+
+56
+00:07:19,900 --> 00:07:24,240
+These models, efficient frontier kind of models, are not robust.
+
+57
+00:07:26,020 --> 00:07:36,320
+They are very sensitive to the input data And when you are trading a portfolio where transaction costs may be substantial
+
+58
+00:07:37,720 --> 00:07:43,960
+just efficient frontier kind of optimal portfolios are going to be extremely expensive.
+
+59
+00:07:45,860 --> 00:07:50,400
+That's where machine learning can provide solutions that are very robust.
+
+60
+00:07:50,400 --> 00:08:07,180
+And in this plot, what you can see is on the left side, you can see a representation of a covariance matrix where each variable in the covariance matrix is related to any other variable.
+
+61
+00:08:07,180 --> 00:08:15,525
+So you compute covariance values between any pair of variables in the covariance matrix.
+
+62
+00:08:15,525 --> 00:08:20,395
+And that requires the estimation of n times n plus 1 divided by 2 variables.
+
+63
+00:08:20,395 --> 00:08:27,900
+In order to estimate these n times n plus 1 divided by 2 variables, you would need at
+
+64
+00:08:27,900 --> 00:08:32,220
+least the same number of observations.
+
+65
+00:08:32,220 --> 00:08:39,240
+In fact, you would need that correlations are stable during this time period of n times
+
+66
+00:08:39,240 --> 00:08:42,839
+n plus 1 divided by 2 observations.
+
+67
+00:08:42,839 --> 00:08:47,820
+So for instance, in the case of 50 by 50 covariance matrix, that would require more than five
+
+68
+00:08:47,820 --> 00:08:49,880
+years of daily data.
+
+69
+00:08:49,880 --> 00:08:55,260
+Now, we all know that in finance, correlations are not stable for that long.
+
+70
+00:08:55,260 --> 00:09:10,495
+It is an unrealistic assumption to expect that correlations are going to be stable or constant even for a five-year period.
+
+71
+00:09:10,495 --> 00:09:18,380
+As a result, the covariance matrices that are estimated in finance are typically not robust.
+
+72
+00:09:18,380 --> 00:09:23,929
+and then when you apply these methods, convex optimization methods,
+
+73
+00:09:23,929 --> 00:09:27,485
+that are extremely sensitive to estimation errors,
+
+74
+00:09:27,485 --> 00:09:32,080
+then that explains why Markovitch portfolios are so unstable.
+
+75
+00:09:33,480 --> 00:09:38,600
+The alternative is to apply, rather than this sort of topology,
+
+76
+00:09:38,600 --> 00:09:45,370
+a complete graph topology, to apply a tree graph topology,
+
+77
+00:09:45,370 --> 00:09:49,765
+which is what some machine learning applications do.
+
+78
+00:09:49,765 --> 00:09:57,359
+The intuition behind these kind of topologies that people typically make top-down decisions.
+
+79
+00:09:57,359 --> 00:10:03,519
+When you go to an investment committee, you start by answering the question, what are
+
+80
+00:10:03,519 --> 00:10:05,800
+you going to invest in, stocks versus bonds?
+
+81
+00:10:05,800 --> 00:10:09,555
+And then within stocks, what is the geographic distribution?
+
+82
+00:10:09,555 --> 00:10:13,480
+And then the sectors, subsectors, industry, et cetera.
+
+83
+00:10:13,480 --> 00:10:25,723
+So this is a kind of tree structure that prevents you from having to estimate every single connection between any two pair of variables.
+
+84
+00:10:25,723 --> 00:10:39,700
+And because now instead of having n times n plus 1 divided by 2 connections to be estimated, now we have n minus 1 connections, these methods are structurally more robust.
+
+85
+00:10:39,700 --> 00:10:49,780
+What this means is that we will be able to compute, to estimate this method without requiring
+
+86
+00:10:49,780 --> 00:10:56,280
+this sort of extreme assumptions that convex optimization methods require.
+
+87
+00:10:56,280 --> 00:11:03,120
+And while there are many empirical studies that show that this sort of tree structure
+
+88
+00:11:03,120 --> 00:11:09,240
+delivers much better performance out of sample.
+
+89
+00:11:09,240 --> 00:11:14,698
+Markovic solutions are optimal in sample, so in history, right?
+
+90
+00:11:14,698 --> 00:11:16,925
+That's what you are solving for.
+
+91
+00:11:16,925 --> 00:11:19,200
+The solution is mathematically correct.
+
+92
+00:11:19,200 --> 00:11:31,560
+However, out of sample, going forward, Markovic solutions underperform the sort of machine learning solutions I'm discussing now.
+
+93
+00:11:31,560 --> 00:11:46,640
+And, in fact, it has been shown that machine learning portfolios outperform, on average, Markovitch-style portfolios by up to 31%.
+
+94
+00:11:46,640 --> 00:11:50,425
+So that's quite a significant gain.
+
+95
+00:11:50,425 --> 00:11:54,035
+And that is before taking into account transaction costs.
+
+96
+00:11:54,035 --> 00:11:59,139
+Once you take into account transaction costs, Markovitch portfolios are truly prohibitive.
+
+97
+00:11:59,139 --> 00:12:04,140
+Application number three is structural breaks.
+
+98
+00:12:04,140 --> 00:12:24,120
+Now in this case what we need to keep in mind is there is this misconception in the general public that machine learning methods are not able to
+
+99
+00:12:25,320 --> 00:12:31,959
+identify changes in regimes. Whenever there is a structural break in a phenomenon, the phenomenon
+
+100
+00:12:31,959 --> 00:12:38,600
+is going to behave in a completely different way. And that is a misconception because,
+
+101
+00:12:38,600 --> 00:12:49,120
+In fact, machine learning algorithms are quite good at recognizing when an observation does
+
+102
+00:12:49,120 --> 00:12:54,800
+not belong to a previously observed population.
+
+103
+00:12:54,800 --> 00:13:02,360
+Machine learning algorithms are flexible enough to be able to identify within a very short
+
+104
+00:13:02,360 --> 00:13:13,360
+time when an observation is unrelated to previous examples presented of the phenomenon.
+
+105
+00:13:13,360 --> 00:13:26,120
+What I can show you here in this plot is an example of what is the explosiveness of the
+
+106
+00:13:26,120 --> 00:13:28,960
+S&P 500 in history.
+
+107
+00:13:28,960 --> 00:13:36,119
+And this method in particular identifies the flash crash is the highest peak.
+
+108
+00:13:36,119 --> 00:13:38,579
+You can see it here, May 6, 2010.
+
+109
+00:13:38,579 --> 00:13:47,680
+And the way it does it is it recognizes that during the flash crash, there was a very strong
+
+110
+00:13:47,680 --> 00:13:49,940
+persistent serial correlation in the returns.
+
+111
+00:13:49,940 --> 00:13:56,000
+And these sorts of features can then be fed to machine learning algorithms in order to
+
+112
+00:13:56,000 --> 00:14:00,540
+recognize whether you should be in the market or not.
+
+113
+00:14:00,540 --> 00:14:03,900
+If you're a market maker, should you be providing liquidity?
+
+114
+00:14:03,900 --> 00:14:10,279
+If you are a position taker, should you be pressing the market or being passive?
+
+115
+00:14:10,279 --> 00:14:18,120
+So this is an example of how, even though the flash drives, as you know, didn't last
+
+116
+00:14:18,120 --> 00:14:25,840
+more than a few hours, a few hours were enough for the algorithm to recognize that we were
+
+117
+00:14:25,840 --> 00:14:31,500
+in an entirely different regime.
+
+118
+00:14:31,500 --> 00:14:36,840
+Application number four is one of my favorites, is bed sizing.
+
+119
+00:14:36,840 --> 00:14:42,620
+Typically, when people utilize traditional quantitative methods, they try to predict
+
+120
+00:14:42,620 --> 00:15:00,820
+a price and then the question of how much to suppose that there is a mispricing that the security is very cheap much cheaper than what would be warranted by fundamental factors that you want to buy this product
+
+121
+00:15:00,820 --> 00:15:03,285
+Now, how much should you bet?
+
+122
+00:15:03,285 --> 00:15:05,180
+How much should you invest in this opportunity?
+
+123
+00:15:05,180 --> 00:15:18,240
+and that's where you want to apply methods that are going to tell you essentially
+
+124
+00:15:18,240 --> 00:15:20,010
+what is the confidence in this opportunity.
+
+125
+00:15:20,010 --> 00:15:23,835
+Should you invest a lot of money or very little?
+
+126
+00:15:23,835 --> 00:15:30,940
+There are no really good models in traditional quantitative finance for answering that question.
+
+127
+00:15:30,940 --> 00:15:39,185
+However, there are several machine learning techniques that can help you answer this very question.
+
+128
+00:15:39,185 --> 00:15:43,333
+And that is an example is what I call meta-labeling.
+
+129
+00:15:43,333 --> 00:15:48,500
+The notion behind meta-labeling is that you are going to take some observations
+
+130
+00:15:48,500 --> 00:15:59,100
+and you're going to label as one observations where a prediction was accurate
+
+131
+00:15:59,100 --> 00:16:01,625
+and zero when a prediction was not accurate.
+
+132
+00:16:01,625 --> 00:16:05,375
+It doesn't matter if it was a buy or sell prediction.
+
+133
+00:16:05,375 --> 00:16:07,495
+The question is the outcome.
+
+134
+00:16:07,495 --> 00:16:10,295
+A one means that the prediction was correct,
+
+135
+00:16:10,295 --> 00:16:12,460
+a zero that the prediction was incorrect.
+
+136
+00:16:12,460 --> 00:16:19,465
+And then you can train a classifier on previous predictions made by that model.
+
+137
+00:16:19,465 --> 00:16:27,040
+And by doing so, what you achieve is essentially you have trained a machine learning algorithm
+
+138
+00:16:27,040 --> 00:16:34,263
+to tell you whether you should invest or not in an opportunity recognized by a different model.
+
+139
+00:16:34,263 --> 00:16:39,740
+So this is like a two-layer approach where you have a fundamental or technical
+
+140
+00:16:39,740 --> 00:16:46,900
+or discretionary model making predictions, and then you train a machine learning algorithm on top
+
+141
+00:16:46,900 --> 00:16:53,440
+that is going to tell you whether the opportunities should be pursued or dismissed.
+
+142
+00:16:53,440 --> 00:16:58,240
+Example number five is feature importance.
+
+143
+00:16:58,240 --> 00:17:08,479
+So, very often people believe that machine learning is a black box, and it could be a
+
+144
+00:17:08,479 --> 00:17:09,760
+black box.
+
+145
+00:17:09,760 --> 00:17:13,820
+It all depends how you use it.
+
+146
+00:17:13,820 --> 00:17:27,310
+If you want to trust the model and you don want to learn anything about the model then it is a black box But the reality is there are multiple machine learning techniques that allow you to open the box and look what is inside
+
+147
+00:17:27,310 --> 00:17:29,950
+And feature importance is one of them.
+
+148
+00:17:29,950 --> 00:17:37,480
+The idea behind feature importance is that you can apply different methods to identify
+
+149
+00:17:37,480 --> 00:17:43,260
+whether a variable was important or not in order to make a prediction.
+
+150
+00:17:43,260 --> 00:17:51,660
+In other words, suppose that you're making a prediction and now you remove one variable,
+
+151
+00:17:51,660 --> 00:17:56,100
+by how much does the accuracy of the prediction decay?
+
+152
+00:17:56,100 --> 00:18:00,680
+And this is the plot that you can see here.
+
+153
+00:18:00,680 --> 00:18:04,740
+Essentially what it tells you is that there are some variables that are very important
+
+154
+00:18:04,740 --> 00:18:08,419
+and other variables that are not so important.
+
+155
+00:18:08,419 --> 00:18:15,500
+what this is telling us is what are the factors at play in a particular phenomenon.
+
+156
+00:18:16,940 --> 00:18:22,900
+This is something that is very useful because even though machine learning algorithms are
+
+157
+00:18:22,900 --> 00:18:31,049
+not going to tell us a particular closed formula or equation that is producing the predictions,
+
+158
+00:18:31,049 --> 00:18:37,400
+machine learning is able to tell us what are the variables relevant to a phenomenon, and
+
+159
+00:18:37,400 --> 00:18:46,960
+Then based on this information, you can build a theory about what are the variables governing,
+
+160
+00:18:46,960 --> 00:18:50,440
+controlling a particular situation.
+
+161
+00:18:52,300 --> 00:18:55,020
+Application number six is controlling for effects.
+
+162
+00:18:56,540 --> 00:19:06,360
+If you're familiar with econometric methods, this is a typical equation that people try to solve in econometrics.
+
+163
+00:19:06,360 --> 00:19:21,120
+You have a variable that you're trying to understand, to model, and then you have a number of variables, X, that you are using as predictors or explanatory variables.
+
+164
+00:19:21,120 --> 00:19:25,040
+And then you have some variables, Z, that you're using as control.
+
+165
+00:19:25,040 --> 00:19:33,820
+These are variables that you want to use in order to make sure that variables, X, are actually responsible for a phenomenon.
+
+166
+00:19:40,000 --> 00:19:49,880
+Why? And machine learning methods can be very helpful in taking care of these Z variables.
+
+167
+00:19:49,880 --> 00:20:00,010
+Why? Because the reality is nobody is really interested in structural form of the control variables.
+
+168
+00:20:00,010 --> 00:20:08,519
+Nobody is really interested in the gammas, the factors, estimations for Z.
+
+169
+00:20:08,519 --> 00:20:11,374
+that people are really interested in the betas.
+
+170
+00:20:11,374 --> 00:20:17,579
+So this block of the equation can be modeled using machine learning algorithms
+
+171
+00:20:17,579 --> 00:20:22,839
+in a much more effective way than linear econometric methods.
+
+172
+00:20:24,460 --> 00:20:29,215
+Application number seven is credit ratings and analyst recommendations.
+
+173
+00:20:29,215 --> 00:20:37,800
+As you know, rating agencies today are already intensive users of machine learning methods.
+
+174
+00:20:37,800 --> 00:20:52,554
+most companies are monitored and supported by rating agencies using a number of machine learning algorithms,
+
+175
+00:20:52,554 --> 00:20:54,680
+one of them, for instance, Random Forest.
+
+176
+00:20:54,680 --> 00:20:59,299
+So what you can see in this plot, which is produced by Moody's,
+
+177
+00:20:59,299 --> 00:21:12,589
+is this is a universe of bonds where in black are bonds that did not default,
+
+178
+00:21:12,589 --> 00:21:18,119
+and in red are bonds that defaulted based on two variables
+
+179
+00:21:18,119 --> 00:21:22,809
+that are used to characterize the probability of default, X and Y.
+
+180
+00:21:22,809 --> 00:21:25,639
+You can think of this, for instance, like a PCA analysis.
+
+181
+00:21:25,639 --> 00:21:34,440
+In the middle plot, you can see the kind of classification that was achieved by a logit
+
+182
+00:21:34,440 --> 00:21:37,740
+kind of model, like a linear prediction model.
+
+183
+00:21:37,740 --> 00:21:42,240
+And as you can see, it's very unsatisfactory.
+
+184
+00:21:42,240 --> 00:21:47,760
+And on the right side, you can see the plot of the classification achieved by a random
+
+185
+00:21:47,760 --> 00:21:48,759
+forest.
+
+186
+00:21:48,759 --> 00:21:58,480
+And as you can see, it's very similar to their original sample, meaning that machine learning
+
+187
+00:21:58,480 --> 00:22:04,760
+algorithms are able to recognize incredibly complex patterns.
+
+188
+00:22:04,760 --> 00:22:24,240
+This pattern would be very difficult to be represented using a set of equations And yet a very simple machine learning algorithm is able to grasp this complexity and model
+
+189
+00:22:24,240 --> 00:22:28,700
+the original data effectively.
+
+190
+00:22:28,700 --> 00:22:35,140
+Number eight is sentiment analysis recommender systems.
+
+191
+00:22:35,140 --> 00:22:55,600
+So you're probably familiar with a number of applications that have been used in the past where algorithms read news and extract what is the polarity of a message.
+
+192
+00:22:55,600 --> 00:23:00,230
+whether the message has a positive connotation, negative connotation.
+
+193
+00:23:00,230 --> 00:23:06,420
+What is it really that the writer, the author is trying to express?
+
+194
+00:23:06,420 --> 00:23:21,640
+And there are a number of commercial products out there that essentially what they do is they read thousands of news from a number of stocks.
+
+195
+00:23:21,640 --> 00:23:29,425
+they rate this news according to their novelty, whether it is new news or old news,
+
+196
+00:23:29,425 --> 00:23:34,180
+and whether the message is positive or negative, what is the implicit recommendation,
+
+197
+00:23:34,180 --> 00:23:40,540
+and then they are able to aggregate that in terms of sectors, countries, products, asset classes, et cetera.
+
+198
+00:23:40,540 --> 00:23:51,880
+and you know this is something that can be very helpful essentially to have a graphic
+
+199
+00:23:51,880 --> 00:23:58,600
+representation of what is the news about a sector or a stock and then you can go and
+
+200
+00:23:58,600 --> 00:24:08,180
+dive and see if you know what are these particular news telling you, what are the stories that
+
+201
+00:24:08,180 --> 00:24:18,080
+are being circulated. Some people may go as far as to use these kind of recommender systems
+
+202
+00:24:18,080 --> 00:24:26,800
+and sentiment analysis as to provide actual trading recommendations. In any case, I think
+
+203
+00:24:26,800 --> 00:24:50,600
+that they are very helpful even as aggregators a way to summarize and condense what is being presented to the market today Application number nine is detection of false investment strategies You probably familiar with this situation where someone can run thousands of backtests
+
+204
+00:24:50,600 --> 00:24:58,040
+and find an investment strategy even if the series is completely random and unpredictable.
+
+205
+00:24:58,040 --> 00:25:00,145
+So let me give you an example.
+
+206
+00:25:00,145 --> 00:25:05,770
+Suppose that you give me a time series that is a random walk.
+
+207
+00:25:05,770 --> 00:25:08,605
+It's a random walk, it's therefore unpredictable.
+
+208
+00:25:08,605 --> 00:25:13,380
+There is no investment strategy to be uncovered, but you don't tell me that.
+
+209
+00:25:13,380 --> 00:25:18,040
+You just give me a random walk and tell me, Marcos, find an investment strategy.
+
+210
+00:25:18,040 --> 00:25:29,195
+And I start running, you know, a thousand back tests using different trading rules and trading logics.
+
+211
+00:25:29,195 --> 00:25:38,605
+And the expected value of the maximum share ratio that I will obtain happens to be represented in this plot.
+
+212
+00:25:38,605 --> 00:25:41,660
+It's over three.
+
+213
+00:25:41,660 --> 00:25:42,900
+It's over three.
+
+214
+00:25:42,900 --> 00:25:52,320
+I have been able to identify a strategy with a Sharpe ratio of three where there was none.
+
+215
+00:25:52,320 --> 00:25:56,380
+And that is the problem of selection bias under multiple testing.
+
+216
+00:25:57,800 --> 00:26:08,695
+Most of the papers that you find in academic journals and elsewhere, they really are the result of selection bias.
+
+217
+00:26:08,695 --> 00:26:12,300
+They publicize strategies even though there are no strategies.
+
+218
+00:26:12,300 --> 00:26:21,778
+Why? Because most authors do not control for all the trials that have taken place that are involved in a discovery.
+
+219
+00:26:21,778 --> 00:26:27,700
+And this is a very dangerous situation, particularly when you work in a financial firm,
+
+220
+00:26:27,700 --> 00:26:37,060
+because you can run thousands of factors and then pick the best one, which is going to be a high sharp ratio just by luck,
+
+221
+00:26:37,060 --> 00:26:40,500
+even though there is no strategy there, and invest money.
+
+222
+00:26:40,500 --> 00:26:45,560
+and that's why most quantitative firms fail.
+
+223
+00:26:45,560 --> 00:26:48,600
+Machine learning can help you avoid this situation
+
+224
+00:26:48,600 --> 00:26:54,550
+by collecting all the factors that have taken place,
+
+225
+00:26:54,550 --> 00:26:58,839
+whether it is within a research project or a firm, et cetera,
+
+226
+00:26:58,839 --> 00:27:03,883
+and cluster them to identify how many trials,
+
+227
+00:27:03,883 --> 00:27:16,860
+how many different strategies have been attempted And then you can use that information Let say that you have attempted 10 different strategies
+
+228
+00:27:16,860 --> 00:27:19,380
+Even you have run thousands of packages,
+
+229
+00:27:19,380 --> 00:27:23,580
+but there are really, truly 10 different strategies
+
+230
+00:27:23,580 --> 00:27:25,100
+that have been attempted.
+
+231
+00:27:25,100 --> 00:27:27,880
+Now from that you can write what is the expected value
+
+232
+00:27:27,880 --> 00:27:29,520
+of the maximum Sharpe ratio,
+
+233
+00:27:29,520 --> 00:27:32,080
+and therefore deflate the Sharpe ratio.
+
+234
+00:27:32,080 --> 00:27:39,900
+What is the true sharp ratio that you have uncovered given that you have conducted all these experiments?
+
+235
+00:27:41,460 --> 00:27:48,860
+Application number 10 is customization cost reduction compliance.
+
+236
+00:27:48,860 --> 00:28:04,840
+So, you know, there has been this push over the years, over the past five, ten years, to reduce costs in the financial industry, to reduce fees.
+
+237
+00:28:04,840 --> 00:28:12,580
+and you know one of the main applications of machine learning is that
+
+238
+00:28:12,580 --> 00:28:17,320
+it allows you to automate many tasks that until now have been performed by
+
+239
+00:28:17,320 --> 00:28:30,200
+by expert humans and as a result machine learning will be able to provide very
+
+240
+00:28:30,200 --> 00:28:40,600
+law cost solutions. So suppose for instance that you are managing a hedge fund and you're charging
+
+241
+00:28:40,600 --> 00:28:51,580
+$220,000. Well, hedge funds typically manage money with an assets per capita ratio of around
+
+242
+00:28:51,580 --> 00:28:56,440
+$100 million or less, $100 million per employee.
+
+243
+00:28:58,480 --> 00:29:06,354
+Suppose that an employee of a hedge fund earns, I don't know, $400,000 a year.
+
+244
+00:29:06,354 --> 00:29:08,500
+Well, that's 40 basis points.
+
+245
+00:29:08,500 --> 00:29:19,440
+And once you automate the costs involved in the task performed by that individual,
+
+246
+00:29:19,440 --> 00:29:27,200
+you can bring those costs down to a level that is actually very close to the fees of an ETF.
+
+247
+00:29:28,800 --> 00:29:32,500
+Machine learning is the best answer that hedge funds can find to fight
+
+248
+00:29:32,500 --> 00:29:48,840
+is the best answer that hedge funds can find to fight the fee war that has unfolded as a result of cheap ETS, replication strategies, smart bid, etc.
+
+249
+00:29:49,840 --> 00:29:54,619
+It makes asset management economic again.
+
+250
+00:29:54,619 --> 00:30:17,519
+All right. Now, these are 10 different applications of machine learning in finance that can be very helpful. At the same time, I cannot end this presentation without bringing up a number of caveats or dangers involved in financial machine learning.
+
+251
+00:30:17,519 --> 00:30:26,580
+Number one, we all need to be very aware that financial applications are particularly difficult.
+
+252
+00:30:27,700 --> 00:30:41,760
+The kind of problems that Silicon Valley companies solve are very simple compared to the problems that Wall Street firms have to solve.
+
+253
+00:30:41,760 --> 00:30:48,140
+And the reason is financial data is complicated.
+
+254
+00:30:49,580 --> 00:30:54,700
+These series typically are non-stationary, multilinear.
+
+255
+00:30:56,080 --> 00:30:59,860
+They are not independent and identically distributed.
+
+256
+00:31:02,100 --> 00:31:06,220
+There are all sorts of regime changes, as we saw before.
+
+257
+00:31:06,220 --> 00:31:13,240
+because of all these reasons, it's very difficult to apply traditional machine learning methods.
+
+258
+00:31:14,280 --> 00:31:20,780
+The reality is that the machine learning that we need in finance is very different
+
+259
+00:31:20,780 --> 00:31:29,300
+from the machine learning that is being used on the West Coast for driving cars or recognizing faces.
+
+260
+00:31:29,300 --> 00:31:39,560
+and one thing I joke or I explain in a humorous way is that my dog can recognize faces.
+
+261
+00:31:40,720 --> 00:31:44,720
+You know, there are many machine learning algorithms out there that recognize faces.
+
+262
+00:31:44,720 --> 00:31:50,470
+My dog can also recognize faces, but my dog cannot manage my investment portfolio.
+
+263
+00:31:50,470 --> 00:32:07,300
+And definitely there are hundreds of millions of car drivers out there but there are not hundreds of millions of successful portfolio managers
+
+264
+00:32:07,300 --> 00:32:13,600
+Finance is a tricky problem and machine learning can be extremely helpful, but we have to recognize
+
+265
+00:32:13,600 --> 00:32:21,620
+that the machine learning that is needed in finance is very different from the standard
+
+266
+00:32:21,620 --> 00:32:23,620
+machine learning.
+
+267
+00:32:23,620 --> 00:32:31,500
+Here in this table, what I have presented are multiple problems that are particular
+
+268
+00:32:31,500 --> 00:32:40,459
+to finance, non-stationarity with long memory, variable information arrival rate, outcomes
+
+269
+00:32:40,459 --> 00:32:45,980
+that expand multiple observations, regime stretches, dependence, etc.
+
+270
+00:32:45,980 --> 00:32:47,620
+For each of these problems, there is a solution.
+
+271
+00:32:47,620 --> 00:32:49,300
+It's not that these are open problems.
+
+272
+00:32:49,300 --> 00:33:05,835
+There are solutions, but we have to be very wary of this notion that we're going to download some software or hire someone from Google or Amazon, and they are just without any prior experience in finance.
+
+273
+00:33:05,835 --> 00:33:13,470
+And, you know, just because they develop a software for recognizing faces, now we can predict prices.
+
+274
+00:33:13,470 --> 00:33:16,540
+That's likely to be a mistake.
+
+275
+00:33:16,540 --> 00:33:25,340
+If you are interested in understanding a bit more about what makes financial machine learning
+
+276
+00:33:25,340 --> 00:33:36,260
+different, you can find a lot of examples in this new book that came out last February.
+
+277
+00:33:36,260 --> 00:33:41,540
+With that, I thank you for your attention and I welcome any questions that you may have.
+
+278
+00:33:41,540 --> 00:33:41,720
+Thank you.
+
+279
+00:33:46,540 --> 00:34:16,533
+Thank you.
+
+280
+00:34:16,533 --> 00:34:49,320
+All right thank you so much for your presentation Marcos I don see any questions coming in so far through the chat box but if you have any additional questions feel free to send those now so that he can go ahead and take a look
+
+281
+00:34:49,320 --> 00:35:15,940
+Okay, I do see a few questions in the chat box.
+
+282
+00:35:15,940 --> 00:35:19,940
+Marcos, you want to go ahead and answer those?
+
+283
+00:35:19,940 --> 00:35:23,940
+Yeah, let me check.
+
+284
+00:35:27,940 --> 00:35:31,940
+I see here,
+
+285
+00:35:31,940 --> 00:35:35,940
+I want to develop a Dyna-Q model for training. Which
+
+286
+00:35:35,940 --> 00:35:39,940
+packages would you suggest?
+
+287
+00:35:39,940 --> 00:35:43,940
+Well, I think it relates to machine learning.
+
+288
+00:35:43,940 --> 00:35:47,410
+There are a number of very useful libraries out there.
+
+289
+00:35:47,410 --> 00:35:50,100
+One of them is Scikit-learn.
+
+290
+00:35:51,820 --> 00:35:53,539
+It's very helpful.
+
+291
+00:35:54,580 --> 00:35:55,725
+It's open source.
+
+292
+00:35:55,725 --> 00:36:00,440
+It's being contributed by a large number of people.
+
+293
+00:36:01,860 --> 00:36:03,740
+I also like TensorFlow.
+
+294
+00:36:03,740 --> 00:36:09,039
+That's more of a Google product, and it's very powerful.
+
+295
+00:36:09,039 --> 00:36:17,500
+It allows you to use GPUs and various high-performance computing solutions.
+
+296
+00:36:17,500 --> 00:36:22,200
+And then, of course, this can be used as building blocks.
+
+297
+00:36:22,200 --> 00:36:29,240
+What I like is to utilize some basic functionality developed by someone else.
+
+298
+00:36:29,240 --> 00:36:30,240
+I read the code.
+
+299
+00:36:30,240 --> 00:36:36,720
+I understand what's going on, make sure that everything works as intended, and then develop
+
+300
+00:36:36,720 --> 00:36:37,720
+your own.
+
+301
+00:36:37,720 --> 00:36:42,720
+In general, you don't want to run, you know,
+
+302
+00:36:45,060 --> 00:36:47,580
+in advance or complicated software developed
+
+303
+00:36:47,580 --> 00:36:49,320
+by someone else.
+
+304
+00:36:49,320 --> 00:36:52,680
+The software is not only typically,
+
+305
+00:36:53,720 --> 00:37:06,820
+that it typically contains bugs but in addition is the devil is in the details You want to understand exactly what is the what each line is doing and that is doing what you expect
+
+306
+00:37:06,820 --> 00:37:12,400
+it to do so my recommendation is I would go with psychic learn terms of flow and
+
+307
+00:37:12,400 --> 00:37:18,040
+then I would I would test it I would make sure that the functions perform as
+
+308
+00:37:18,040 --> 00:37:25,000
+I expected and then I would use those as building blocks for your own libraries
+
+309
+00:37:25,000 --> 00:37:35,940
+There is a question by Valerio Cerotti.
+
+310
+00:37:35,940 --> 00:37:37,880
+Any good literature on the subject?
+
+311
+00:37:37,880 --> 00:37:38,880
+Yeah.
+
+312
+00:37:38,880 --> 00:37:44,120
+Well, you're going to start by reading the book I just referred to, Advances in Financial
+
+313
+00:37:44,120 --> 00:37:45,120
+Machine Learning.
+
+314
+00:37:45,120 --> 00:37:49,580
+It was published by Wiley in February.
+
+315
+00:37:49,580 --> 00:37:54,320
+I believe it's actually the first book in financial machine learning.
+
+316
+00:37:56,260 --> 00:38:00,154
+And you can see their discussion of the subject.
+
+317
+00:38:00,154 --> 00:38:13,780
+And from there, the book mentions hundreds of papers that deal with specific topics or specific sections of the book.
+
+318
+00:38:13,780 --> 00:38:22,240
+And if you're interested in a particular area, the book can guide you in that way by providing a number of references.
+
+319
+00:38:28,980 --> 00:38:30,339
+Yeah, there is another question.
+
+320
+00:38:31,339 --> 00:38:37,780
+I would have to say if you could upload the PDF of this presentation at quantresearch.com.
+
+321
+00:38:37,780 --> 00:38:40,660
+Well, you can find it at quantresearch.org.
+
+322
+00:38:40,660 --> 00:38:45,760
+the suffix of the
+
+323
+00:38:45,760 --> 00:38:48,880
+URL is .org
+
+324
+00:38:48,880 --> 00:38:54,100
+rather than .com and you can find the presentation
+
+325
+00:38:54,100 --> 00:38:58,000
+there, the title of the presentation
+
+326
+00:38:58,000 --> 00:39:02,420
+is 10 Financial Applications of Machine Learning
+
+327
+00:39:02,420 --> 00:39:06,800
+you can find the presentation in the seminars section so when you go to
+
+328
+00:39:06,800 --> 00:39:15,560
+quantresearch.org, go to the seminar section and there you will find on top 10 financial
+
+329
+00:39:15,560 --> 00:39:18,060
+applications of machine learning.
+
+330
+00:39:18,060 --> 00:39:22,500
+There is another question by Rosemary, so you're saying random forest is better than
+
+331
+00:39:22,500 --> 00:39:28,340
+There is another question by Rosemary.
+
+332
+00:39:28,340 --> 00:39:31,759
+So you're saying random forest is better than logistic regression?
+
+333
+00:39:31,759 --> 00:39:39,699
+Well, in general, it would be hard to make an assertion like one algorithm is better
+
+334
+00:39:39,699 --> 00:39:40,699
+than another.
+
+335
+00:39:40,699 --> 00:39:49,619
+As it relates to modeling default probabilities, I would say there are plenty of studies that
+
+336
+00:39:49,619 --> 00:39:58,579
+show that random forest are better than logistic regressions because a logistic regression makes
+
+337
+00:39:58,579 --> 00:40:05,379
+a number of assumptions that are not necessarily true and it enforces a structure that may not be
+
+338
+00:40:05,379 --> 00:40:13,699
+the structure that is at play in a particular phenomenon. Random forests are much more flexible
+
+339
+00:40:13,699 --> 00:40:29,034
+in that respect and um i i would say that that in this particular application of that i discussed of default probability yeah random forays are more powerful than logistic regression
+
+340
+00:40:43,974 --> 00:40:45,654
+Here's the question by Pavel.
+
+341
+00:40:45,654 --> 00:40:47,754
+Marco, could you please highlight briefly
+
+342
+00:40:47,754 --> 00:40:49,454
+the main methods of machine learning
+
+343
+00:40:49,454 --> 00:40:51,734
+to detect structural breaks.
+
+344
+00:40:51,734 --> 00:40:55,699
+There is a chapter in the book, I believe it's chapter 18,
+
+345
+00:40:55,699 --> 00:40:58,414
+that goes, discusses at length
+
+346
+00:41:00,334 --> 00:41:02,834
+a number of structural break methods.
+
+347
+00:41:02,834 --> 00:41:05,754
+My favorite is the method discovered
+
+348
+00:41:05,754 --> 00:41:10,754
+by Philip, a professor at Yale, and the name is SADF.
+
+349
+00:41:11,914 --> 00:41:16,914
+This method, you know, there is a very lengthy section
+
+350
+00:41:16,914 --> 00:41:22,554
+section in the book explaining this method and how this method can be applied in the context of machine learning.
+
+351
+00:41:24,074 --> 00:41:45,838
+Beyond that beyond SADF there are a number of alternative econometric approaches that typically do not work so well because they require a very long time series to recognize that a regime has changed
+
+352
+00:41:45,838 --> 00:41:51,568
+There are also machine learning methods that, you know, can be helpful
+
+353
+00:41:51,568 --> 00:41:58,688
+that are not necessarily based on recognizing changes in colorations,
+
+354
+00:41:58,688 --> 00:42:03,633
+that are more tree-based and structural.
+
+355
+00:42:03,633 --> 00:42:06,428
+But, you know, I would refer you to the book for the details.
+
+356
+00:42:20,348 --> 00:42:21,423
+All right.
+
+357
+00:42:21,423 --> 00:42:31,568
+I think these were all the questions. There is a final one. Will there be a recording available of this webinar? I believe so.
+
+358
+00:42:31,568 --> 00:42:45,337
+And the presentation is available in my website quantresearch Please feel free to send me emails with any further questions that you may have
+
+359
+00:42:45,337 --> 00:42:46,622
+Thank you so much for your time.
+
+360
+00:43:03,222 --> 00:43:24,362
+Thank you so much for your time, everyone. Thank you, Marcos. We really appreciate that.
+
+361
+00:43:24,362 --> 00:43:31,041
+It's quantresearch.org, and we'll also have the recording available at quantnews.com. Thanks again.
+
+362
+00:43:33,222 --> 00:43:34,222
+Thank you.

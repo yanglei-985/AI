@@ -1,0 +1,699 @@
+1
+00:00:00,000 --> 00:00:03,460
+Hello and welcome to this session. This is Professor Farhat in which we would look at
+
+2
+00:00:03,460 --> 00:00:07,900
+the Fama French three-factor model. This topic is covered on the CFA exam,
+
+3
+00:00:07,900 --> 00:00:13,460
+briefly on the CPA exam in form of multiple regression, as well as essentials of investment
+
+4
+00:00:13,460 --> 00:00:17,500
+course. As always, I would like to remind you to connect with me on LinkedIn if you haven't done
+
+5
+00:00:17,500 --> 00:00:23,350
+so. YouTube is where you would need to subscribe. I have 1,800 plus accounting, auditing, tax,
+
+6
+00:00:23,350 --> 00:00:27,480
+finance, as well as Excel tutorials. If you like my lectures, please like them,
+
+7
+00:00:27,480 --> 00:00:32,164
+share them, put them in playlists. If they benefit you, it means they might benefit other people.
+
+8
+00:00:32,164 --> 00:00:38,100
+On my website, farhatlectures.com, you will find additional resources to supplement and complement
+
+9
+00:00:38,100 --> 00:00:44,643
+your accounting, your finance, as well as this course and your professional certification, CPA,
+
+10
+00:00:44,643 --> 00:00:52,760
+CIA, CFA, or CMA. Please check out my website. Let's take a look at what we learned already.
+
+11
+00:00:52,760 --> 00:01:02,674
+We learned about CAPM, and basically CAPM is a way to predict your expected return on a certain stock based on the beta.
+
+12
+00:01:02,674 --> 00:01:07,563
+The beta, it means how does your stock correlate with the market.
+
+13
+00:01:07,563 --> 00:01:12,513
+So how do we compute your expected return for a specific stock, return on stock D?
+
+14
+00:01:12,513 --> 00:01:16,610
+It's the risk-free rate, beta times the risk premium.
+
+15
+00:01:16,610 --> 00:01:19,460
+And this is what we say is the CAPM model.
+
+16
+00:01:19,460 --> 00:01:24,779
+And basically what we are using here is one factor to predict your expected return.
+
+17
+00:01:24,779 --> 00:01:27,715
+And that's basically the beta times the expected return.
+
+18
+00:01:27,715 --> 00:01:29,880
+Now we can use multiple factor.
+
+19
+00:01:29,880 --> 00:01:35,170
+In the prior session, we also saw that we can expand this rather than just using the beta.
+
+20
+00:01:35,170 --> 00:01:39,500
+For one factor, we could use the beta for the market, the beta for the treasury bond.
+
+21
+00:01:39,500 --> 00:01:43,045
+So what we're doing is we're using two-factor model.
+
+22
+00:01:43,045 --> 00:01:49,280
+Here comes Fama and French, which are the two authors, Eugene Fama and Kenneth French.
+
+23
+00:01:49,280 --> 00:01:56,344
+And what they did is they expanded on that CAPM, and they said there might be other factors that affect the expected return.
+
+24
+00:01:56,344 --> 00:02:00,850
+And what they find out is there are two main factors that we can add.
+
+25
+00:02:00,850 --> 00:02:04,505
+So we can take the CAPM and add two more factors.
+
+26
+00:02:04,505 --> 00:02:13,920
+And those two factors are small minus big, SMB, which is small cap outperform large cap, which is the size effect.
+
+27
+00:02:13,920 --> 00:02:22,860
+So I'm just going to add here, they added the size effect to the formula, and they added
+
+28
+00:02:22,860 --> 00:02:36,295
+the high minus low which is the value which is I put here SMB plus high minus low
+
+29
+00:02:36,295 --> 00:02:37,720
+And what is high minus low?
+
+30
+00:02:37,720 --> 00:02:44,560
+What they find out also is that high book-to-market ratio, which are considered value stock, outperform
+
+31
+00:02:44,560 --> 00:02:47,925
+low book-to-market ratio, which are growth stocks.
+
+32
+00:02:47,925 --> 00:02:49,045
+So what they said is this.
+
+33
+00:02:49,045 --> 00:02:54,700
+They said, okay, let's add those two factors to the CAPM and see what happened to the expected
+
+34
+00:02:54,700 --> 00:03:02,470
+return. Because what the argument is, beta for the market, the way the stock reacts to the market,
+
+35
+00:03:02,470 --> 00:03:07,660
+it's not the only factor, there are other factors. What are those two other factors? The size and the
+
+36
+00:03:07,660 --> 00:03:13,840
+value of the stock. And why did we choose the size? Basically, here's the argument. Shares of large
+
+37
+00:03:13,840 --> 00:03:18,459
+firms may be less risky. Now, what do we mean by large versus small in the first place? Because
+
+38
+00:03:18,459 --> 00:03:22,305
+What we're saying here, small, small minus big.
+
+39
+00:03:22,305 --> 00:03:26,843
+It's a small capitalization, and you're going to find out what they mean by M minus.
+
+40
+00:03:26,843 --> 00:03:31,035
+So basically, they looked at small cap stocks versus large cap stock.
+
+41
+00:03:31,035 --> 00:03:34,684
+What do we mean by small cap versus large cap?
+
+42
+00:03:34,684 --> 00:03:38,758
+For example, Apple computer has a large capitalization.
+
+43
+00:03:38,758 --> 00:03:41,190
+How do you compute cap stock?
+
+44
+00:03:41,190 --> 00:03:45,180
+It's basically the number of shares times the market, the stock market price,
+
+45
+00:03:45,180 --> 00:03:50,060
+versus a small company would have a small cap stock.
+
+46
+00:03:50,060 --> 00:03:52,680
+Now, what would be an example of a small cap?
+
+47
+00:03:52,680 --> 00:03:56,094
+Small will be something like Papa John's Pizza.
+
+48
+00:03:56,094 --> 00:03:58,140
+So Apple will be a large cap stock.
+
+49
+00:03:58,140 --> 00:04:02,479
+So Apple versus Papa John's Pizza.
+
+50
+00:04:02,479 --> 00:04:05,145
+So this is a small cap.
+
+51
+00:04:05,145 --> 00:04:07,820
+It means if we take the number of shares times the stock price,
+
+52
+00:04:07,820 --> 00:04:12,034
+it may add up to like $50 billion versus Apple.
+
+53
+00:04:12,034 --> 00:04:14,200
+Apple right now is $1 plus trillion.
+
+54
+00:04:14,200 --> 00:04:21,165
+dollar. So it's more than a trillion dollar. So this is what we mean by large versus small.
+
+55
+00:04:21,165 --> 00:04:29,459
+So other things being equal, large cap stocks, they are followed more by analysts. So for example,
+
+56
+00:04:29,459 --> 00:04:33,160
+stock market analysts on Wall Street, they would follow a company like
+
+57
+00:04:33,160 --> 00:04:41,294
+Apple more than they follow Papa Joe. So with better informed investors with the media coverage,
+
+58
+00:04:41,294 --> 00:04:47,210
+the prices of these two different stocks may be accurately reflected the true value of the stock.
+
+59
+00:04:47,210 --> 00:04:53,453
+And as a result, if they are reflecting the true value, they are less susceptible to systematic risk,
+
+60
+00:04:53,453 --> 00:05:07,400
+to systematic markets so everything is known because they are followed as well as firm specific fluctuation because everyone is evaluating them Therefore we should have more information about large cap and because we have more information there is less risk
+
+61
+00:05:07,400 --> 00:05:14,485
+Also, shares of large firms like Apple, they have deeper pockets and greater debt capacity.
+
+62
+00:05:14,485 --> 00:05:19,960
+So, in an economic downturn, these firms, they can withstand downturns.
+
+63
+00:05:19,960 --> 00:05:24,465
+So they react differently than small caps because of A and B.
+
+64
+00:05:24,465 --> 00:05:28,895
+Because of those two reasons, small firms will command higher risk premium.
+
+65
+00:05:28,895 --> 00:05:30,660
+You don't know much about them.
+
+66
+00:05:30,660 --> 00:05:32,370
+Well, because they're not followed.
+
+67
+00:05:32,370 --> 00:05:36,420
+Well, less information means more risk, more risk means more return.
+
+68
+00:05:36,420 --> 00:05:40,955
+And since they don't have deep pockets, they don't have a lot of money,
+
+69
+00:05:40,955 --> 00:05:45,690
+they may not withstand downturn economic risk.
+
+70
+00:05:45,690 --> 00:05:47,360
+Therefore, more risk, more return.
+
+71
+00:05:47,360 --> 00:05:57,665
+Therefore, the beta alone does not give them enough justice when it comes to computing their expected return.
+
+72
+00:05:57,665 --> 00:06:01,295
+Therefore, the size does matter comparing small versus large.
+
+73
+00:06:01,295 --> 00:06:04,635
+And usually what we say, small cap outperform large cap.
+
+74
+00:06:04,635 --> 00:06:14,900
+The second factor is the high book-to-market ratio stocks, which are considered value stocks, outperform low book-to-market ratio.
+
+75
+00:06:14,900 --> 00:06:18,340
+Now, what does it mean high book-to-market versus low book-to-market ratio?
+
+76
+00:06:18,340 --> 00:06:22,465
+We can compute the book ratio to market ratio.
+
+77
+00:06:22,465 --> 00:06:33,085
+So, if the market is in the denominator, if we have more book, it means accounting record, their assets,
+
+78
+00:06:33,085 --> 00:06:38,845
+they have more assets than what's reflecting in the market, it means they are a mature company.
+
+79
+00:06:38,845 --> 00:06:40,419
+That's considered value stock.
+
+80
+00:06:40,419 --> 00:06:48,979
+if they have less amount in the denominator, less books, less on the books, less assets relative to their market value,
+
+81
+00:06:48,979 --> 00:06:55,139
+it means their performance is based on future expectation.
+
+82
+00:06:55,139 --> 00:06:57,955
+Therefore, they are considered growth stocks.
+
+83
+00:06:57,955 --> 00:07:06,170
+So value stocks, they have a lot of assets in relationship to their market versus the low book asset ratio.
+
+84
+00:07:06,170 --> 00:07:11,975
+So high book-to-market ratio, they are considered, generally speaking, they are mature firms.
+
+85
+00:07:11,975 --> 00:07:17,540
+They already have a lot of assets relative to their market.
+
+86
+00:07:17,540 --> 00:07:24,200
+So what happens is with many assets on the books, when they have a downturn, you are not using your assets at full capacity.
+
+87
+00:07:24,200 --> 00:07:43,160
+Well if you not using your assets at full capacity it implies a higher systematic risk When there is a market risk you not using all of your assets you are less efficient therefore you should perform lower from a logical perspective Low book to market ratio those assets they value their
+
+88
+00:07:43,160 --> 00:07:48,480
+growth from future cash flow because they don't have enough assets right now, but the expectation
+
+89
+00:07:48,480 --> 00:07:54,240
+is they're going to have a future cash flow. That's why they have a high book to market.
+
+90
+00:07:54,240 --> 00:07:55,965
+Now, what do you mean book to market?
+
+91
+00:07:55,965 --> 00:07:59,765
+It means low book to market.
+
+92
+00:07:59,765 --> 00:08:01,285
+It means M is high.
+
+93
+00:08:01,285 --> 00:08:02,235
+Why M is high?
+
+94
+00:08:02,235 --> 00:08:06,490
+So let's assume we have a company with 100 books, 100 market.
+
+95
+00:08:06,490 --> 00:08:07,820
+The answer is 1.
+
+96
+00:08:07,820 --> 00:08:09,680
+So here's what's going to happen.
+
+97
+00:08:09,680 --> 00:08:16,840
+If I keep the books 100 and I make the market 200 as value, the ratio is 0.5.
+
+98
+00:08:16,840 --> 00:08:20,195
+So I have a low, low book to market.
+
+99
+00:08:20,195 --> 00:08:22,120
+It means my market value is higher.
+
+100
+00:08:22,120 --> 00:08:29,015
+If my market value is higher, it means my market value is higher, not because I have a lot of assets on the books.
+
+101
+00:08:29,015 --> 00:08:31,659
+I have better future prospect.
+
+102
+00:08:31,659 --> 00:08:34,408
+And that's why I'm considered growth stocks.
+
+103
+00:08:34,408 --> 00:08:44,839
+And research shows that, on average, these companies, they have higher average return, again, because the expectation is they're going to have higher growth, higher growth.
+
+104
+00:08:44,839 --> 00:08:52,590
+If you are interested in actual data about this model, you can go to Kenneth French's website, which is he teaches at Dartmouth College.
+
+105
+00:08:52,590 --> 00:08:55,310
+And this is just a snapshot of it.
+
+106
+00:08:55,310 --> 00:09:02,940
+But below, you can download Excel data about small minus big and high minus low.
+
+107
+00:09:02,940 --> 00:09:09,040
+And the way they compute this, the way they compute the size factor and the growth factor, again, you can go and see the data.
+
+108
+00:09:09,040 --> 00:09:10,420
+But I'm going to show you how they do it.
+
+109
+00:09:10,420 --> 00:09:12,515
+is the difference, how do they compute?
+
+110
+00:09:12,515 --> 00:09:14,945
+So what's considered small and what's considered big,
+
+111
+00:09:14,945 --> 00:09:17,665
+what they do is they look at the difference.
+
+112
+00:09:17,665 --> 00:09:19,875
+Notice the difference in returns.
+
+113
+00:09:19,875 --> 00:09:25,045
+And firms with low market value, low capitalization versus high market value.
+
+114
+00:09:25,045 --> 00:09:29,798
+And this is why we call it small minus big.
+
+115
+00:09:29,798 --> 00:09:30,945
+Small minus big.
+
+116
+00:09:30,945 --> 00:09:34,914
+It means they take two portfolios, one with small cap, one with large cap.
+
+117
+00:09:34,914 --> 00:09:37,150
+They compute the return and they find the difference.
+
+118
+00:09:37,150 --> 00:09:39,845
+This is how we compute the size factor.
+
+119
+00:09:39,845 --> 00:09:42,079
+Now, how do we compute the value
+
+120
+00:09:42,079 --> 00:09:43,980
+versus growth factor? Again, it's
+
+121
+00:09:43,980 --> 00:09:46,220
+the difference in return in stocks
+
+122
+00:09:46,220 --> 00:09:48,075
+with two portfolios,
+
+123
+00:09:48,075 --> 00:09:49,660
+one with high,
+
+124
+00:09:49,660 --> 00:09:52,000
+and one with low ratio of
+
+125
+00:09:52,000 --> 00:09:53,980
+book to market. They look at those two
+
+126
+00:09:53,980 --> 00:09:56,070
+portfolios, they follow them,
+
+127
+00:09:56,070 --> 00:09:57,920
+and they compute the difference.
+
+128
+00:09:57,920 --> 00:09:58,585
+So once again,
+
+129
+00:09:58,585 --> 00:10:01,514
+if you're interested in looking at actual data,
+
+130
+00:10:01,514 --> 00:10:07,005
+you can go to Kenneth's website,
+
+131
+00:10:07,005 --> 00:10:08,460
+and you'll be able to kind of French,
+
+132
+00:10:08,460 --> 00:10:10,500
+and you'll be able to download actual data.
+
+133
+00:10:10,500 --> 00:10:13,969
+This is just basically a summary as of June 30th,
+
+134
+00:10:13,969 --> 00:10:15,838
+just showing you the factors.
+
+135
+00:10:15,838 --> 00:10:18,760
+Now, let's take a look at an example,
+
+136
+00:10:18,760 --> 00:10:19,975
+because as far as we're concerned,
+
+137
+00:10:19,975 --> 00:10:23,145
+I'm going to keep this the least amount of statistics as possible.
+
+138
+00:10:23,145 --> 00:10:24,775
+Let's just take a look at a sample.
+
+139
+00:10:24,775 --> 00:10:26,940
+Suppose that the risk-free rate is 1%.
+
+140
+00:10:26,940 --> 00:10:31,625
+The beta for market risk premium, 1.235, that's the beta.
+
+141
+00:10:31,625 --> 00:10:34,160
+And the market risk premium is 6%.
+
+142
+00:10:34,160 --> 00:10:39,245
+Then the beta for small minus big is 0.246.
+
+143
+00:10:39,245 --> 00:10:41,193
+Again, you can compute this.
+
+144
+00:10:41,193 --> 00:10:42,720
+It could be provided to you.
+
+145
+00:10:42,720 --> 00:10:46,720
+And risk premium is 2% small minus big.
+
+146
+00:10:46,720 --> 00:10:54,504
+So when we take the small minus big, the small portfolio return versus the big portfolio return,
+
+147
+00:10:54,504 --> 00:10:56,579
+it's the risk premium is 2%.
+
+148
+00:10:56,579 --> 00:10:59,688
+The beta for high minus low is 0.69.
+
+149
+00:10:59,688 --> 00:11:00,900
+This is the beta.
+
+150
+00:11:00,900 --> 00:11:03,439
+And the risk premium is 3%.
+
+151
+00:11:03,439 --> 00:11:06,724
+Now we are ready to find the expected return.
+
+152
+00:11:06,724 --> 00:11:11,729
+Let's assume this company is Ford using this benchmark and risk premium.
+
+153
+00:11:11,729 --> 00:11:12,859
+Let's see.
+
+154
+00:11:12,859 --> 00:11:22,460
+So we going to take the risk return This is basically a multi analysis So basically if we stop right here this is basically cap M
+
+155
+00:11:22,460 --> 00:11:24,930
+Cap M. This is basically cap M.
+
+156
+00:11:24,930 --> 00:11:28,735
+Now, what we do, in addition to the cap M, which is we take the beta of Ford,
+
+157
+00:11:29,875 --> 00:11:39,695
+the beta of Ford, which is here, is 1.235 of the risk times the risk premium, which is 6%.
+
+158
+00:11:39,695 --> 00:11:40,735
+Then we add.
+
+159
+00:11:40,735 --> 00:11:42,545
+Now, this is the addition that they added.
+
+160
+00:11:42,545 --> 00:11:44,010
+Small minus big.
+
+161
+00:11:44,010 --> 00:11:49,670
+The beta for fourth, small minus big, times the expected return.
+
+162
+00:11:49,670 --> 00:11:52,095
+The expected return is how much?
+
+163
+00:11:53,275 --> 00:11:56,200
+Small minus big is 2% to the risk premium.
+
+164
+00:11:56,200 --> 00:11:58,850
+So we'll take 2.246.
+
+165
+00:11:58,850 --> 00:12:00,915
+This is the beta times 2%.
+
+166
+00:12:00,915 --> 00:12:03,555
+And we'll do the same thing for high minus low.
+
+167
+00:12:03,555 --> 00:12:07,535
+The beta times the risk premium for that, 3%.
+
+168
+00:12:07,535 --> 00:12:10,755
+And the expected return is 10.978.
+
+169
+00:12:10,755 --> 00:12:20,894
+All what we did is we expanded the expanded CAPM to give us more information about Ford Motor Company,
+
+170
+00:12:20,894 --> 00:12:23,135
+and we can do this for any other company.
+
+171
+00:12:23,135 --> 00:12:25,380
+We can do this for any other company.
+
+172
+00:12:25,380 --> 00:12:29,769
+And this is basically, in a nutshell, in the least amount of statistics provided,
+
+173
+00:12:29,769 --> 00:12:38,334
+the explanation of the Fama-French model and its simplicity, as much as I can simplify it.
+
+174
+00:12:38,334 --> 00:12:40,630
+I hope I get the point through.
+
+175
+00:12:40,630 --> 00:12:44,315
+Study hard, stay safe, and good luck.

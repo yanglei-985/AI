@@ -21,7 +21,6 @@
 | `content/<id>/bilingual.md` | 双语字幕：英文段落 + 以 `> ` 开头的中文解释，段落以空行分隔，可选 `[mm:ss]` 开头 |
 | `content/<id>/notes.md` | `## 摘要` / `## 关键点` / `## 术语表`（`- **术语**: 释义`）/ `## 延伸阅读` |
 | `content/<id>/quiz.json` | `[{"q","options":[…],"answer":下标,"explain"}]` |
-| `content/demo-sample/` | 示例学习包（非真实视频），用来演示页面 |
 | `site/` | 静态网页；`site/data/` 由 build 生成 |
 
 ## 本地预览
@@ -35,6 +34,13 @@ python3 -m http.server -d site 8000   # 打开 http://localhost:8000
 
 ## 关于视频列表
 
-`content/curriculum.json` 中的视频来自网络搜索结果，标题与链接确实出现在搜索结果里，但生成列表时无法打开 YouTube 核实频道、时长和字幕是否可用。请以实际视频页为准；不合适的视频直接从列表里删掉或替换即可。
+`content/curriculum.json` 是学习路径（顺序 = 推荐顺序）。里面的视频都有你提供的字幕文件（`content/<id>/transcript.srt`）。字幕来自 YouTube，含语音识别错误；英文字幕的术语错误在 `content/<id>/fixes.json` 里修正。
 
-检查视频是否仍可用（在你自己的电脑上运行）：`python3 scripts/check_videos.py`，把输出贴给 Claude 即可替换失效视频。
+### 添加新视频
+
+1. 把字幕存为 `content/<视频ID>/transcript.srt`，并在 `curriculum.json` 里加一项（`id` 就是 YouTube 视频 ID）。
+2. 英文视频：`node scripts/make_bilingual.mjs <id> --draft` 查看分段；写 `zh.txt`（每行 `序号: 中文解释`）后运行 `node scripts/make_bilingual.mjs <id>`。中文视频：`... --mono`。
+3. 写 `notes.md`、`quiz.json`（格式见上表），运行 `node scripts/build.mjs`。
+4. 不知道 YouTube 链接的视频，在 `curriculum.json` 里设 `"ytId": null`（页面就不显示播放按钮）。
+
+检查视频是否仍可用（在你自己的电脑上运行）：`python3 scripts/check_videos.py`。

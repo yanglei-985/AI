@@ -1,0 +1,331 @@
+1
+00:00:00,000 --> 00:00:14,599
+In this video, I want to use some basic math derivations and pseudocode to walk you through
+
+2
+00:00:14,599 --> 00:00:19,279
+the strategic portfolio allocation approach of Markovits.
+
+3
+00:00:19,279 --> 00:00:26,800
+The video is well suited for undergrad students and also for MBA students.
+
+4
+00:00:26,800 --> 00:00:32,840
+The portfolio selection process of Markovits is a two-step approach.
+
+5
+00:00:32,840 --> 00:00:37,800
+Step 1 is to find the tangency portfolio.
+
+6
+00:00:37,800 --> 00:00:45,180
+Step 2 is that based on the investor's risk aversion, we find the optimal portfolio on
+
+7
+00:00:45,180 --> 00:00:47,140
+the capital allocation line.
+
+8
+00:00:47,140 --> 00:00:53,420
+And remember, the capital allocation line is the linear connecting line between the
+
+9
+00:00:53,420 --> 00:01:01,179
+tangency portfolio and the risk-free rate. So let's add some math intuition for step one.
+
+10
+00:01:03,019 --> 00:01:07,820
+Now I'm going to present three ways for determining the tangency portfolio.
+
+11
+00:01:08,860 --> 00:01:17,020
+The first approach is the most direct one. You have to run a numerical optimization across all
+
+12
+00:01:17,020 --> 00:01:23,500
+possible portfolio weights Wp and you're going to search for the portfolio weight
+
+13
+00:01:23,500 --> 00:01:31,300
+that maximizes the portfolio's Sharpe ratio. The resulting optimal portfolio weight
+
+14
+00:01:31,300 --> 00:01:36,219
+is then the tangency portfolio which I denote as Wtp.
+
+15
+00:01:39,259 --> 00:01:46,939
+I also like the upcoming second approach as it gives us not only the portfolio weight of the
+
+16
+00:01:46,939 --> 00:01:55,259
+tangency portfolio WTP but it also gives us any other efficient portfolio allocation WF.
+
+17
+00:01:57,099 --> 00:02:05,179
+Now that's the approach that is often used in financial software which displays the efficient
+
+18
+00:02:05,179 --> 00:02:15,260
+frontier. So here's what you would do numerically. So look at the mu sigma diagram. You discretize
+
+19
+00:02:15,260 --> 00:02:23,580
+the x-axis as fine as you like. That specifies the target risk, sigma p, for which you are
+
+20
+00:02:23,580 --> 00:02:40,040
+now going to find the unique portfolio that offers for that risk the highest expected return mu p Notice capital sigma is an exogenous data input
+
+21
+00:02:41,840 --> 00:02:44,680
+It's the covariance matrix of asset returns.
+
+22
+00:02:45,959 --> 00:02:50,520
+The last constraint is called the full investment constraint.
+
+23
+00:02:50,520 --> 00:02:57,519
+This says that all the wealth needs to be invested into the risky assets.
+
+24
+00:02:57,519 --> 00:03:07,519
+As you have a grid for sigma p and hence also for sigma square p,
+
+25
+00:03:07,519 --> 00:03:14,519
+you can now solve the previous optimization problem for any target risk.
+
+26
+00:03:14,519 --> 00:03:20,520
+Mathematically, it means that for all target risks,
+
+27
+00:03:20,520 --> 00:03:25,520
+σ2p, within a lower bound and an upper bound,
+
+28
+00:03:25,520 --> 00:03:29,519
+you are going to solve the previous optimization problem.
+
+29
+00:03:29,519 --> 00:03:33,519
+And here Lb denotes the lower bound,
+
+30
+00:03:33,519 --> 00:03:36,519
+Ub denotes the upper bound.
+
+31
+00:03:36,519 --> 00:03:40,519
+An increment is the step size of the grid.
+
+32
+00:03:40,519 --> 00:03:51,320
+Note, the resulting efficient portfolios W are all on the efficient frontier.
+
+33
+00:03:51,320 --> 00:03:58,140
+In order to plot the efficient frontier, you have to record their respective expected return
+
+34
+00:03:58,140 --> 00:04:06,440
+µf and their respective variance σ²f.
+
+35
+00:04:06,440 --> 00:04:14,400
+Now you are going to find the tangency portfolio as the efficient portfolio with the highest
+
+36
+00:04:14,400 --> 00:04:18,720
+Sharpe ratio.
+
+37
+00:04:18,720 --> 00:04:25,380
+Now the upcoming third approach for getting the tangency portfolio is to calculate the
+
+38
+00:04:25,380 --> 00:04:29,720
+full minimum variance frontier.
+
+39
+00:04:29,720 --> 00:04:34,659
+The upper part of that frontier is the efficient frontier.
+
+40
+00:04:34,659 --> 00:04:39,900
+The lower part is the inefficient frontier.
+
+41
+00:04:39,900 --> 00:04:47,840
+Similar to the previous approach, you find the tangency portfolio as the efficient portfolio
+
+42
+00:04:47,840 --> 00:04:51,940
+with the highest Sharpe ratio.
+
+43
+00:04:51,940 --> 00:05:05,000
+So mathematically you do create a grid for all expected portfolio returns that you want to consider We call them
+
+44
+00:05:05,000 --> 00:05:13,000
+And for these you set a lower bound, an upper bound and an incremental step size.
+
+45
+00:05:13,000 --> 00:05:22,000
+And now you are looking for a portfolio of risky assets that earns the target expected return µP
+
+46
+00:05:22,000 --> 00:05:27,300
+and that exposes the investor to the least amount of risk.
+
+47
+00:05:28,820 --> 00:05:37,140
+Note here that the tangency portfolio will be the efficient portfolio with the highest Sharpe ratio.
+
+48
+00:05:38,440 --> 00:05:41,940
+Okay, let's pause for a minute.
+
+49
+00:05:43,340 --> 00:05:48,740
+We just talked about three ways to determine the tangency portfolio.
+
+50
+00:05:48,740 --> 00:06:02,740
+Once you have its portfolio weight WTP, you determine its expected return, its volatility and its Sharpe ratio.
+
+51
+00:06:02,740 --> 00:06:10,740
+So let's move on to the second step of the Markowitz portfolio selection procedure.
+
+52
+00:06:10,740 --> 00:06:25,740
+Given the tangency portfolio and importantly given the investors risk aversion we find now how much to lever the tangency portfolio up or down.
+
+53
+00:06:25,740 --> 00:06:37,740
+So investor I has mean variance preferences with the risk aversion gamma I which is zero or larger than zero.
+
+54
+00:06:37,740 --> 00:06:48,740
+The mean variance investor seeks to find the optimal fraction of wealth, yi, that should be invested into the tangency portfolio.
+
+55
+00:06:48,740 --> 00:06:56,740
+And the share 1 minus yi, that should be invested into the risk-free instrument.
+
+56
+00:06:56,740 --> 00:07:05,620
+So, if we connect back to the case where we are looking for the optimal portfolio for
+
+57
+00:07:05,620 --> 00:07:15,919
+each of the 200,000 employees of Daimler, we would solve the following problem.
+
+58
+00:07:15,919 --> 00:07:20,419
+The first order condition would look as follows.
+
+59
+00:07:20,419 --> 00:07:42,280
+We set that to zero and then we solve for the optimal fraction of wealth that employee I invests into the tangency portfolio And finally the optimal allocation for employee I would be to invest YI star into the tangency
+
+60
+00:07:42,280 --> 00:07:50,240
+portfolio and 1 minus YI star into the risk-free asset.
+
+61
+00:07:50,240 --> 00:07:58,540
+Now it's likely that some of the 280,000 Daimler employees, if not all of them, will have difficulties
+
+62
+00:07:58,540 --> 00:08:03,320
+to state their coefficient of risk aversion.
+
+63
+00:08:03,320 --> 00:08:12,100
+So alternatively they could state the maximum volatility that they are willing to accept.
+
+64
+00:08:12,100 --> 00:08:20,360
+For example, let's say Pauline wants her optimal portfolio to have an annualized volatility
+
+65
+00:08:20,360 --> 00:08:23,620
+of 20%.
+
+66
+00:08:23,620 --> 00:08:32,400
+Also assume that the tangency portfolio has an expected volatility of 15%.
+
+67
+00:08:32,400 --> 00:08:39,200
+And assume in addition that Pauline wants to invest 100,000 euros.
+
+68
+00:08:39,200 --> 00:08:47,680
+You therefore know that y square times the variance of the TP portfolio needs to be equal
+
+69
+00:08:47,680 --> 00:08:52,040
+to the variance that Pauline is willing to take.
+
+70
+00:08:52,040 --> 00:09:01,300
+Now you solve for y star and you see it just coincides with the ratio of the volatility
+
+71
+00:09:01,300 --> 00:09:07,560
+that Pauline wants to hold in her portfolio divided by the volatility of the tangency
+
+72
+00:09:07,560 --> 00:09:18,280
+portfolio. Plugging in the numbers in that example you have 0.2 divided by 0.15 which gives you 1.333.
+
+73
+00:09:19,480 --> 00:09:27,880
+So that solution would say that as Pauline is willing to be exposed to 20 percent of systematic
+
+74
+00:09:27,880 --> 00:09:36,680
+volatility while the TP portfolio is exposed to 15 percent volatility the optimal portfolio for
+
+75
+00:09:36,680 --> 00:09:48,360
+Pauline would be to borrow an additional 33,333 euros at the risk-free rate and to invest
+
+76
+00:09:48,360 --> 00:09:52,500
+a total of 133,333 euros into the Tangency portfolio.
+
+77
+00:09:52,500 --> 00:10:02,040
+into the Tangency portfolio. Notice, Pauline's optimal portfolio
+
+78
+00:10:02,040 --> 00:10:09,939
+will only have exposure to systematic risk. Systematic risk is also called
+
+79
+00:10:09,939 --> 00:10:20,259
+diversifiable risk. And here is why. WTP has 100% exposure to systematic risk.
+
+80
+00:10:21,619 --> 00:10:30,899
+The ratio sigma CP over sigma TP quantifies the optimal amount of leverage that is going to be
+
+81
+00:10:30,899 --> 00:10:36,719
+applied to the systematic risk of the TP portfolio.
+
+82
+00:10:36,719 --> 00:10:44,280
+So Pauline and any other employee of Daimler will therefore not be exposed to any type
+
+83
+00:10:44,280 --> 00:10:59,259
+of asset specific risk.

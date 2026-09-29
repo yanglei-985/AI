@@ -1,0 +1,3375 @@
+1
+00:00:00,000 --> 00:00:12,840
+So why I'm asking, so it's called backtesting. So what is backtesting? So let's say you have a data set. OK, so let's say you have an array of. Can you see my screen?
+
+2
+00:00:12,840 --> 00:00:16,920
+yes sir
+
+3
+00:00:16,920 --> 00:00:20,260
+ok so let's assume
+
+4
+00:00:20,260 --> 00:00:21,340
+that
+
+5
+00:00:21,340 --> 00:00:23,860
+let's say you are
+
+6
+00:00:23,860 --> 00:00:27,619
+importing
+
+7
+00:00:27,619 --> 00:00:28,960
+Y finances
+
+8
+00:00:28,960 --> 00:00:30,360
+YF
+
+9
+00:00:30,360 --> 00:00:32,780
+import
+
+10
+00:00:32,780 --> 00:00:38,320
+numpy as
+
+11
+00:00:38,320 --> 00:00:39,079
+NP
+
+12
+00:00:39,079 --> 00:00:40,380
+import
+
+13
+00:00:40,380 --> 00:00:41,520
+fund
+
+14
+00:00:41,520 --> 00:00:47,220
+I think it will be
+
+15
+00:00:47,220 --> 00:00:51,120
+let us see if it wonders or not
+
+16
+00:00:51,120 --> 00:00:56,900
+so then you use data is equal to
+
+17
+00:00:56,900 --> 00:01:01,100
+YF dot then you use the ticker
+
+18
+00:01:01,100 --> 00:01:04,319
+ticker means let us say you just use Apple ok
+
+19
+00:01:04,319 --> 00:01:07,800
+the stock ID that is there in the stock exchange
+
+20
+00:01:07,800 --> 00:01:15,899
+sorry and then you use the period and then you use so how do you know about this okay
+
+21
+00:01:15,899 --> 00:01:21,539
+so when is when there is when without using google so you can go here and you can just
+
+22
+00:01:21,539 --> 00:01:26,780
+do this and it will come on the right hand side okay the function can you see the screen
+
+23
+00:01:26,780 --> 00:01:32,380
+so that's how you know so you need tickers that is which tickers you're going to do
+
+24
+00:01:32,380 --> 00:01:41,899
+in the start and end which may be none and you can also use uh period and interval so period means
+
+25
+00:01:41,899 --> 00:01:50,539
+for how many uh days let's say so you can say six months so you can see an ex there are the examples
+
+26
+00:01:50,539 --> 00:01:59,100
+below okay here there are examples so i think six months and um interval is let's say one day
+
+27
+00:01:59,100 --> 00:02:02,420
+okay
+
+28
+00:02:02,420 --> 00:02:07,420
+so you will run it
+
+29
+00:02:07,420 --> 00:02:08,639
+so it's running
+
+30
+00:02:08,639 --> 00:02:10,819
+so the more you run it
+
+31
+00:02:10,819 --> 00:02:12,160
+so this is called documentation
+
+32
+00:02:12,160 --> 00:02:14,060
+so those who are learning to code
+
+33
+00:02:14,060 --> 00:02:15,200
+and trying to learn
+
+34
+00:02:15,200 --> 00:02:17,099
+essentially you are using chat gpt okay
+
+35
+00:02:17,099 --> 00:02:19,040
+but there are two phases of learning guys
+
+36
+00:02:19,040 --> 00:02:19,360
+okay
+
+37
+00:02:19,360 --> 00:02:22,840
+one is understanding that you can actually code
+
+38
+00:02:22,840 --> 00:02:38,460
+if you are given the resources without using like For example this is how I use chat GPT okay I do not ask it so i do not ask it to so how this is how i learn coding myself for new things i do not ask it to give me
+
+39
+00:02:38,460 --> 00:02:52,020
+uh the answer i just ask it to uh let's say give me the optimum thing okay uh that helps me
+
+40
+00:02:52,020 --> 00:03:00,100
+understand so similarly you can also do that too okay so you can ask strategy pity and it will
+
+41
+00:03:00,100 --> 00:03:05,620
+help you out in that fashion so now this is the data set so if you see data it will be coming out
+
+42
+00:03:05,620 --> 00:03:15,060
+like this okay so what i will do is that i will change this into an edit so you can see the first
+
+43
+00:03:15,060 --> 00:03:19,760
+so data dot so let's say columns
+
+44
+00:03:19,760 --> 00:03:22,900
+I am saving the column names as this
+
+45
+00:03:22,900 --> 00:03:41,780
+column names are saved now I see it's
+
+46
+00:03:41,780 --> 00:03:44,500
+pandas are ok so what is the difference this is the data frame
+
+47
+00:03:44,500 --> 00:03:46,300
+it's usually
+
+48
+00:03:46,300 --> 00:03:47,800
+it's a data frame and
+
+49
+00:03:47,800 --> 00:03:50,360
+you actually work with it in using
+
+50
+00:03:50,360 --> 00:03:52,280
+pandas. Now the difference between
+
+51
+00:03:52,280 --> 00:03:54,343
+pandas and numpy is the following.
+
+52
+00:03:54,343 --> 00:03:56,080
+Numpy is a raw array
+
+53
+00:03:56,080 --> 00:03:58,100
+raw matrices
+
+54
+00:03:58,100 --> 00:04:00,400
+or tensors, one dimensional array
+
+55
+00:04:00,400 --> 00:04:02,480
+or two dimensional arrays or three dimensional arrays
+
+56
+00:04:02,480 --> 00:04:03,940
+or multi dimensional arrays.
+
+57
+00:04:05,100 --> 00:04:06,480
+But pandas
+
+58
+00:04:06,480 --> 00:04:08,580
+are two dimensional and
+
+59
+00:04:08,580 --> 00:04:10,459
+the thing is
+
+60
+00:04:10,459 --> 00:04:12,239
+that you can actually access it by
+
+61
+00:04:12,239 --> 00:04:14,200
+the names of the
+
+62
+00:04:14,200 --> 00:04:20,200
+columns or rows okay which you cannot do it in numpy because there's no name for example if you
+
+63
+00:04:20,200 --> 00:04:30,360
+just change it into uh data underscore array is np dot array of data let's see yeah
+
+64
+00:04:39,240 --> 00:04:41,880
+and you just show data you will see now
+
+65
+00:04:41,880 --> 00:05:06,540
+you will see now it a raw now data set Okay The columns has disappeared The column names The good thing is that if you work with the column names using Pandas
+
+66
+00:05:06,540 --> 00:05:10,120
+that's okay to do, but that may actually
+
+67
+00:05:10,120 --> 00:05:15,160
+you may need to do a lot of different things. For example, in this
+
+68
+00:05:15,160 --> 00:05:19,040
+case, it's a multi-index. So, you have to reset the
+
+69
+00:05:19,040 --> 00:05:22,960
+index every single time and that's sometimes hard. Okay. That sometimes
+
+70
+00:05:22,960 --> 00:05:26,640
+takes you away from the whole stuff. So I will be using
+
+71
+00:05:26,640 --> 00:05:30,895
+just this raw data of matrices,
+
+72
+00:05:30,895 --> 00:05:34,530
+matrix and that will help you. So this is the data set.
+
+73
+00:05:34,530 --> 00:05:39,040
+So if you want to just visualize it, just do this. You just do this
+
+74
+00:05:39,040 --> 00:05:41,660
+as df is equal to data
+
+75
+00:05:41,660 --> 00:05:46,780
+okay. So now I will introduce the pandas. So just
+
+76
+00:05:46,780 --> 00:05:49,260
+import pandas as pd
+
+77
+00:05:49,260 --> 00:05:55,880
+and just what if you want to visualize just do this
+
+78
+00:05:55,880 --> 00:05:59,500
+data frame of this data underscore array
+
+79
+00:05:59,500 --> 00:06:02,180
+and you can just do columns
+
+80
+00:06:02,180 --> 00:06:08,280
+as columns and if you just visualize this
+
+81
+00:06:08,280 --> 00:06:12,340
+you will see that our data set only so see the
+
+82
+00:06:12,340 --> 00:06:15,700
+date and time were removed but the column names are there
+
+83
+00:06:15,700 --> 00:06:18,200
+even if you do not want to give the columns
+
+84
+00:06:18,200 --> 00:06:21,160
+it will look like this
+
+85
+00:06:21,160 --> 00:06:22,860
+ok so this is
+
+86
+00:06:22,860 --> 00:06:25,780
+so now you have to access by 01
+
+87
+00:06:25,780 --> 00:06:27,380
+but this is just to visualize it
+
+88
+00:06:27,380 --> 00:06:29,620
+so this is the same matrix as the numpy array
+
+89
+00:06:29,620 --> 00:06:31,020
+but it is a better visualization
+
+90
+00:06:31,020 --> 00:06:33,900
+a tabular format you can access it by the names
+
+91
+00:06:33,900 --> 00:06:35,900
+of this ok this is the only difference
+
+92
+00:06:35,900 --> 00:06:38,000
+all of you understood
+
+93
+00:06:38,000 --> 00:06:38,539
+this guys
+
+94
+00:06:38,539 --> 00:06:42,820
+yes sir
+
+95
+00:06:42,820 --> 00:06:44,039
+ok
+
+96
+00:06:44,039 --> 00:07:14,033
+Yes, sir.
+
+97
+00:07:14,033 --> 00:07:24,740
+nothing but a multi-dimensional so if you remember that just remembering I
+
+98
+00:07:24,740 --> 00:07:47,015
+that why I like to give in a mathematical format a data set is nothing but x is equal to x1 x2 dot dot dot dot xn or t is the data set we have right
+
+99
+00:07:47,015 --> 00:07:49,500
+And you can see below what's coming.
+
+100
+00:07:49,500 --> 00:08:05,780
+and I hope all of you can see properly and each of xi is in r to the power d.
+
+101
+00:08:05,780 --> 00:08:09,900
+In this case, in this case, I hope it is d is equal to 5, right?
+
+102
+00:08:19,500 --> 00:08:25,520
+okay in the case of a B is equal to 5 and what is the trading strategy a
+
+103
+00:08:25,520 --> 00:08:29,940
+trading strategy is nothing but a let's say you tell it talk about
+
+104
+00:08:29,940 --> 00:08:33,600
+trading strategy at a time T because at time T minus 1 the strategy will be
+
+105
+00:08:33,600 --> 00:08:39,000
+different mathematically right because the moving crossover may be different so
+
+106
+00:08:39,000 --> 00:08:48,839
+a trading strategy is a function of time so T at time T is a function of this X
+
+107
+00:08:48,839 --> 00:08:53,280
+Right. Which is going from therefore.
+
+108
+00:08:58,320 --> 00:09:02,260
+It's a D T cross D therefore. Right.
+
+109
+00:09:04,420 --> 00:09:09,230
+The T time points of D dimension T is in columns just like this.
+
+110
+00:09:09,230 --> 00:09:13,695
+It's taking in this entire data set. The T is in columns. D is in rows.
+
+111
+00:09:13,695 --> 00:09:17,780
+Sorry. I mean, T is the number of rows and D is the number of columns.
+
+112
+00:09:18,839 --> 00:09:21,300
+and this is going to
+
+113
+00:09:21,300 --> 00:09:24,040
+this set.
+
+114
+00:09:25,860 --> 00:09:26,770
+Like,
+
+115
+00:09:26,770 --> 00:09:28,620
+buy, sell, or hold.
+
+116
+00:09:30,320 --> 00:09:31,514
+Right?
+
+117
+00:09:31,514 --> 00:09:33,268
+This set it is going.
+
+118
+00:09:33,268 --> 00:09:34,850
+So, this is just a trading strategy.
+
+119
+00:09:34,850 --> 00:09:37,000
+Because, at the t-th time point, we are deciding
+
+120
+00:09:37,000 --> 00:09:39,005
+based on some mathematical functions.
+
+121
+00:09:39,005 --> 00:09:40,800
+Like, if the moving cross over
+
+122
+00:09:40,800 --> 00:09:42,789
+Now, there is another thing.
+
+123
+00:09:42,789 --> 00:09:44,800
+This function also has something called theta.
+
+124
+00:09:46,320 --> 00:09:47,360
+That we don't know.
+
+125
+00:09:48,839 --> 00:09:52,500
+So, this theta is unknown right.
+
+126
+00:09:52,500 --> 00:09:53,280
+so this theta is
+
+127
+00:09:54,799 --> 00:09:59,080
+unknown right
+
+128
+00:09:59,080 --> 00:10:02,160
+so that's why
+
+129
+00:10:02,160 --> 00:10:05,599
+we need bath testing
+
+130
+00:10:10,960 --> 00:10:14,080
+okay let's do some
+
+131
+00:10:14,080 --> 00:10:21,400
+That's why we need backtesting.
+
+132
+00:10:25,980 --> 00:10:28,320
+Guys, can you see this zoom out thing?
+
+133
+00:10:29,440 --> 00:10:30,200
+Can you see this?
+
+134
+00:10:32,340 --> 00:10:33,079
+All of you?
+
+135
+00:10:37,280 --> 00:10:39,425
+Is it visible, this text?
+
+136
+00:10:39,425 --> 00:10:40,760
+Yes, sir.
+
+137
+00:10:40,760 --> 00:10:42,079
+All of you, it's visible?
+
+138
+00:10:42,079 --> 00:10:43,999
+yes
+
+139
+00:10:43,999 --> 00:10:45,300
+ok
+
+140
+00:10:45,300 --> 00:10:47,659
+so
+
+141
+00:10:47,659 --> 00:10:50,480
+that's why we need backtesting
+
+142
+00:10:50,480 --> 00:10:51,940
+so what does backtesting do
+
+143
+00:10:51,940 --> 00:10:56,200
+it does nothing but
+
+144
+00:10:56,200 --> 00:10:58,040
+it divides this
+
+145
+00:10:58,040 --> 00:11:04,399
+so essentially it's based on past data
+
+146
+00:11:04,399 --> 00:11:05,560
+right it's actually training
+
+147
+00:11:05,560 --> 00:11:08,380
+we are building
+
+148
+00:11:12,080 --> 00:11:22,360
+We are finding theta based on not on t, because if we take in xt, it does not make sense, right?
+
+149
+00:11:22,360 --> 00:11:25,480
+Because xt is the right time point based on this.
+
+150
+00:11:33,180 --> 00:11:34,440
+xt minus 1.
+
+151
+00:11:36,060 --> 00:11:37,660
+The theta is found based on that.
+
+152
+00:11:39,740 --> 00:11:39,960
+Okay.
+
+153
+00:11:39,960 --> 00:11:42,210
+Okay, theta is found based on that.
+
+154
+00:11:42,210 --> 00:11:44,420
+We are finding based on the xt minus 1.
+
+155
+00:11:51,000 --> 00:11:53,100
+And, yes.
+
+156
+00:11:55,619 --> 00:12:05,360
+So, we are finding based on xt minus 1 and then we are testing on xt.
+
+157
+00:12:05,360 --> 00:12:28,900
+or not testing we are taking decisions on Xt based on Xt So it involves X all of them all all t values but this is how the decision happens okay so this is a small subtle aspect out there now
+
+158
+00:12:28,900 --> 00:12:37,160
+one important thing is that we sometimes
+
+159
+00:12:39,140 --> 00:12:44,480
+yeah so what what all of you guys done here is based on xt minus 1 so that's a
+
+160
+00:12:44,480 --> 00:12:50,120
+practicing is important because it helps you in segregating this aspect okay so
+
+161
+00:12:50,120 --> 00:12:54,739
+in segregating this so when you are actually sharing the data you actually
+
+162
+00:12:54,739 --> 00:13:00,620
+sharing on this result on this XT this one but actually you should share your
+
+163
+00:13:00,620 --> 00:13:07,239
+data on XT what it has happened on XT okay I mean it can also happen that you
+
+164
+00:13:07,239 --> 00:13:15,600
+can divide till x like till d minus 1 and you can also do it till this you can also do it like
+
+165
+00:13:15,600 --> 00:13:23,585
+x underscore d c dots you can do also like do it as this
+
+166
+00:13:23,585 --> 00:13:31,540
+make sense so you can also do it like first d data points and take decisions and then
+
+167
+00:13:31,540 --> 00:13:34,980
+share your findings
+
+168
+00:13:34,980 --> 00:13:37,060
+based on
+
+169
+00:13:37,060 --> 00:13:39,160
+this.
+
+170
+00:13:44,160 --> 00:13:45,940
+Yeah, so your findings
+
+171
+00:13:45,940 --> 00:13:49,360
+or your results on
+
+172
+00:13:49,360 --> 00:13:51,200
+helps you
+
+173
+00:13:51,200 --> 00:13:53,440
+to find best theta.
+
+174
+00:13:56,600 --> 00:13:57,850
+Okay.
+
+175
+00:13:57,850 --> 00:13:59,860
+But you should share your findings
+
+176
+00:13:59,860 --> 00:14:02,065
+on the data set you are tasting.
+
+177
+00:14:02,065 --> 00:14:02,960
+Make sense, guys?
+
+178
+00:14:02,960 --> 00:14:03,260
+See you soon.
+
+179
+00:14:06,800 --> 00:14:10,400
+And mathematics of financial data, right?
+
+180
+00:14:10,400 --> 00:14:11,779
+But today we'll be talking about
+
+181
+00:14:11,779 --> 00:14:13,670
+stochasticness of prices.
+
+182
+00:14:13,670 --> 00:14:15,530
+So let's do some live coding.
+
+183
+00:14:15,530 --> 00:14:16,960
+So let's say download
+
+184
+00:14:16,960 --> 00:14:21,040
+import Yfinance as YF.
+
+185
+00:14:23,039 --> 00:14:25,560
+Import Numbuy as NP.
+
+186
+00:14:26,880 --> 00:14:29,725
+Import Pandas as PD.
+
+187
+00:14:29,725 --> 00:14:34,785
+So, once we import them, let's get some price.
+
+188
+00:14:34,785 --> 00:14:36,205
+So, we get data.
+
+189
+00:14:36,205 --> 00:14:39,373
+And then we do yf.download.
+
+190
+00:14:39,373 --> 00:14:41,755
+Then we have the ticker price.
+
+191
+00:14:41,755 --> 00:14:42,300
+Let's say Apple.
+
+192
+00:14:43,320 --> 00:14:43,800
+Ticker.
+
+193
+00:14:45,680 --> 00:14:54,000
+So what is AAPL It Apple Apple stock I thought it was AAPL It was thicker
+
+194
+00:14:55,220 --> 00:14:56,380
+And then there's a period.
+
+195
+00:14:56,380 --> 00:14:59,500
+Let's say you take a period of six months.
+
+196
+00:15:01,220 --> 00:15:02,360
+And then you take...
+
+197
+00:15:02,360 --> 00:15:04,710
+So, you can know more about a function.
+
+198
+00:15:04,710 --> 00:15:06,340
+If you forget, what will you do?
+
+199
+00:15:06,340 --> 00:15:11,060
+You can just do YF download.
+
+200
+00:15:11,060 --> 00:15:18,919
+and then you do a question mark and if you do it you will see on right hand side you will get to
+
+201
+00:15:18,919 --> 00:15:26,840
+know about the function so for example ticker the tickers it can be an array too so it tickers you
+
+202
+00:15:26,840 --> 00:15:32,220
+can see you can see it's a list and then it's a there's a period it can be valid period is
+
+203
+00:15:32,220 --> 00:15:35,280
+six months one year many things can be there and there's the interval
+
+204
+00:15:35,280 --> 00:15:37,860
+go to the parameters directly
+
+205
+00:15:37,860 --> 00:15:40,480
+so this is called a doc string
+
+206
+00:15:40,480 --> 00:15:41,900
+so
+
+207
+00:15:41,900 --> 00:15:43,780
+and then there is an interval
+
+208
+00:15:43,780 --> 00:15:44,660
+an interval
+
+209
+00:15:44,660 --> 00:15:50,200
+let's say
+
+210
+00:15:50,200 --> 00:15:51,620
+one day
+
+211
+00:15:51,620 --> 00:15:54,460
+so we download it
+
+212
+00:16:00,460 --> 00:16:01,560
+we have to use a
+
+213
+00:16:01,560 --> 00:16:02,479
+apl serve
+
+214
+00:16:02,479 --> 00:16:05,440
+Oh sorry
+
+215
+00:16:05,440 --> 00:16:07,600
+That's why I bought here
+
+216
+00:16:07,600 --> 00:16:11,300
+So once it download
+
+217
+00:16:11,300 --> 00:16:13,580
+Once it
+
+218
+00:16:13,580 --> 00:16:15,139
+Once you download it
+
+219
+00:16:15,139 --> 00:16:17,960
+Then you have to
+
+220
+00:16:17,960 --> 00:16:19,479
+So let's see
+
+221
+00:16:19,479 --> 00:16:21,460
+How it looks like
+
+222
+00:16:21,460 --> 00:16:23,720
+So what we will do is
+
+223
+00:16:23,720 --> 00:16:26,760
+We will do data.head
+
+224
+00:16:26,760 --> 00:16:29,240
+It looks like this
+
+225
+00:16:29,240 --> 00:16:30,220
+Now the thing is
+
+226
+00:16:30,220 --> 00:16:31,940
+This is a multi index frame
+
+227
+00:16:31,940 --> 00:16:37,280
+okay so we want to it's very hard to work in this so we will it's nothing but
+
+228
+00:16:37,280 --> 00:16:42,940
+a matrix right so what we will do is the following we will just convert this into
+
+229
+00:16:42,940 --> 00:16:49,440
+a proper numpy array a two-dimensional array okay so we will use something
+
+230
+00:16:49,440 --> 00:17:01,839
+called price 2d and we will do it NP dot array and this data
+
+231
+00:17:01,839 --> 00:17:10,689
+OK. And then we can visualize what this price today looks like.
+
+232
+00:17:10,689 --> 00:17:26,680
+It looks like this It boring Right So sometimes people want to do is they use Panda So visualize it You can directly use Panda here But as you can see it not easy actually it not easy to deal with it so to visualize it what you do is you do pd dot data frame
+
+233
+00:17:26,680 --> 00:17:37,220
+price 2d the issue is that you there is no heading to it okay you can see the heading is gone so
+
+234
+00:17:37,220 --> 00:17:40,720
+you can actually use
+
+235
+00:17:40,720 --> 00:17:45,680
+I think data.columns doesn't work.
+
+236
+00:17:47,300 --> 00:17:48,300
+Oh, it works.
+
+237
+00:17:48,300 --> 00:17:49,480
+So,
+
+238
+00:17:49,480 --> 00:17:50,400
+I'll
+
+239
+00:17:50,400 --> 00:18:09,900
+or to t t
+
+240
+00:18:09,900 --> 00:18:17,360
+just give me a minute
+
+241
+00:18:20,400 --> 00:18:34,120
+Okay.
+
+242
+00:18:37,580 --> 00:18:40,820
+So you can see, let's make a new data frame called columns.
+
+243
+00:18:40,820 --> 00:18:46,340
+Just a list with this list.
+
+244
+00:18:46,340 --> 00:18:50,180
+close I
+
+245
+00:18:50,180 --> 00:19:00,540
+you can make low
+
+246
+00:19:00,540 --> 00:19:04,640
+open
+
+247
+00:19:04,640 --> 00:19:11,960
+and volume
+
+248
+00:19:11,960 --> 00:19:18,920
+what you can do is that when you do make this refram you can just add columns
+
+249
+00:19:18,920 --> 00:19:22,940
+equal to columns again you can
+
+250
+00:19:22,940 --> 00:19:26,900
+understand this function if you don't know understand this function from and now you can see
+
+251
+00:19:26,900 --> 00:19:30,380
+this close high column coming close high low
+
+252
+00:19:30,380 --> 00:19:34,839
+open volume column coming you can just do head to just to
+
+253
+00:19:34,839 --> 00:19:39,755
+see the top okay but we want to work with this price
+
+254
+00:19:39,755 --> 00:19:42,500
+because that's what we want.
+
+255
+00:19:51,759 --> 00:19:53,599
+So, now we will work with
+
+256
+00:19:53,599 --> 00:20:00,439
+the probability distribution, how it came.
+
+257
+00:20:05,300 --> 00:20:07,754
+So, we will close this.
+
+258
+00:20:07,754 --> 00:20:09,794
+Let's close this.
+
+259
+00:20:09,794 --> 00:20:23,020
+okay so now what so we have the price to you just to remind you so if you look at
+
+260
+00:20:23,020 --> 00:20:30,340
+price to reshape you will see it's 125 cross 5 that means there are five
+
+261
+00:20:30,340 --> 00:20:35,320
+features so what we will do we will just take the first one that is the clues I
+
+262
+00:20:35,320 --> 00:20:39,680
+think it's close the first one is close yes so let's just take the first one
+
+263
+00:20:39,680 --> 00:20:51,320
+so we will just take price is equal to first column so the door colon and then
+
+264
+00:20:51,320 --> 00:20:58,020
+first column sorry the second column so so now if you look at price it looks
+
+265
+00:20:58,020 --> 00:21:03,460
+like this an array a one-dimensional array so now what we can do is the
+
+266
+00:21:03,460 --> 00:21:10,460
+following let's investigate this price of it so we can just plot this so for
+
+267
+00:21:10,460 --> 00:21:23,560
+that we need to download this import matplotlib so observe that let's
+
+268
+00:21:23,560 --> 00:21:31,619
+plot this PLT dot now let's plot this price it's one dimension you will see
+
+269
+00:21:31,619 --> 00:21:41,060
+this is also into do PLT dot show so you will see this naturally came up right
+
+270
+00:21:41,060 --> 00:21:51,120
+125 days of data now we can do we can this is an array and we can do an
+
+271
+00:21:51,120 --> 00:21:59,780
+histogram of it so what we can do is field hist price and density is equal to true
+
+272
+00:22:01,620 --> 00:22:18,120
+If you do this you will get this density So what does it mean It means it kind of a continuous distribution like this Now what you can do another thing is you can divide this into
+
+273
+00:22:18,120 --> 00:22:22,745
+price, let's say, underscore cat,
+
+274
+00:22:22,745 --> 00:22:27,000
+categorically, we'll say, or let's call it discrete. You can make it
+
+275
+00:22:27,000 --> 00:22:30,060
+like this, np.where.
+
+276
+00:22:31,680 --> 00:22:33,880
+So, essentially, you're going to replace, so
+
+277
+00:22:33,880 --> 00:22:36,379
+let's calculate the average.
+
+278
+00:22:36,379 --> 00:22:37,040
+So let's say
+
+279
+00:22:37,040 --> 00:22:40,220
+what I'm saying is that
+
+280
+00:22:40,220 --> 00:22:42,160
+now if price 2D
+
+281
+00:22:42,160 --> 00:22:44,120
+or just price, if it's
+
+282
+00:22:44,120 --> 00:22:44,980
+greater than
+
+283
+00:22:44,980 --> 00:22:49,660
+let's say
+
+284
+00:22:49,660 --> 00:22:51,220
+mean of price
+
+285
+00:22:51,220 --> 00:22:55,320
+or NP dot mean
+
+286
+00:22:55,320 --> 00:22:59,260
+then it's high
+
+287
+00:22:59,260 --> 00:23:01,320
+else it's low.
+
+288
+00:23:01,320 --> 00:23:04,840
+So, I am discretizing the price.
+
+289
+00:23:08,220 --> 00:23:10,570
+So, if you look at this, it now looks like this.
+
+290
+00:23:10,570 --> 00:23:13,135
+So, it's basically like probability kind of thing.
+
+291
+00:23:13,135 --> 00:23:13,760
+What's the probability?
+
+292
+00:23:13,760 --> 00:23:15,305
+Higher probability or lower?
+
+293
+00:23:15,305 --> 00:23:15,865
+I don't know.
+
+294
+00:23:15,865 --> 00:23:17,174
+Yeah, yeah, yeah.
+
+295
+00:23:17,174 --> 00:23:21,390
+So, this is what it looks like.
+
+296
+00:23:21,390 --> 00:23:22,525
+Now, how to plot this?
+
+297
+00:23:22,525 --> 00:23:24,615
+And to plot this, so here it was continuous.
+
+298
+00:23:24,615 --> 00:23:27,880
+So, we plotted a continuous version of it.
+
+299
+00:23:27,880 --> 00:23:29,380
+Now, we will plot a discrete version.
+
+300
+00:23:29,380 --> 00:23:37,715
+For that, so for continuous, we plot histogram and for discrete, we plot bar plot.
+
+301
+00:23:37,715 --> 00:23:38,443
+So, what we will do?
+
+302
+00:23:38,443 --> 00:23:39,858
+We will first count it.
+
+303
+00:23:39,858 --> 00:23:43,100
+So, we will do values, comma.
+
+304
+00:23:43,100 --> 00:23:44,620
+So, essentially, we need what?
+
+305
+00:23:44,620 --> 00:23:48,595
+We need number of unique values of high and number of unique values of low.
+
+306
+00:23:48,595 --> 00:23:49,425
+So, what we will do?
+
+307
+00:23:49,425 --> 00:23:53,560
+We will do, we will use something called np.unique.
+
+308
+00:23:53,560 --> 00:23:54,065
+Okay.
+
+309
+00:23:54,065 --> 00:23:55,245
+So, you don't know this.
+
+310
+00:23:55,245 --> 00:23:56,738
+So, what you do as a student?
+
+311
+00:23:56,738 --> 00:23:57,600
+You don't know this.
+
+312
+00:23:57,600 --> 00:23:58,459
+I am telling you.
+
+313
+00:23:58,459 --> 00:24:01,135
+So what you do is just run this and see what it gives.
+
+314
+00:24:01,135 --> 00:24:01,959
+This is how you learn.
+
+315
+00:24:03,979 --> 00:24:06,775
+So what I do is that I usually get this.
+
+316
+00:24:06,775 --> 00:24:11,918
+I get to understand which function to use from ChatGPT and then I learn on this one.
+
+317
+00:24:11,918 --> 00:24:16,380
+Because in research, you will be creating or doing something that is...
+
+318
+00:24:16,380 --> 00:24:18,614
+So in the future, we will learn, of course.
+
+319
+00:24:18,614 --> 00:24:20,525
+We will learn very fast using ChatGPT.
+
+320
+00:24:20,525 --> 00:24:24,539
+But a time will come, let's say after five years, six years, where people will learn very fast.
+
+321
+00:24:24,539 --> 00:24:25,539
+and then
+
+322
+00:24:25,539 --> 00:24:26,760
+chargeability
+
+323
+00:24:26,760 --> 00:24:27,479
+training
+
+324
+00:24:27,479 --> 00:24:28,340
+requires a lot
+
+325
+00:24:28,340 --> 00:24:28,700
+of data
+
+326
+00:24:28,700 --> 00:24:28,960
+right
+
+327
+00:24:28,960 --> 00:24:29,880
+so
+
+328
+00:24:29,880 --> 00:24:30,760
+then what
+
+329
+00:24:30,760 --> 00:24:31,200
+will happen
+
+330
+00:24:31,200 --> 00:24:31,780
+when you
+
+331
+00:24:31,780 --> 00:24:32,520
+when new
+
+332
+00:24:32,520 --> 00:24:32,840
+data are
+
+333
+00:24:32,840 --> 00:24:33,300
+coming in
+
+334
+00:24:33,300 --> 00:24:33,740
+it's like
+
+335
+00:24:33,740 --> 00:24:34,120
+it's not
+
+336
+00:24:34,120 --> 00:24:34,780
+training itself
+
+337
+00:24:34,780 --> 00:24:45,775
+right away right so it will be like delayed by 2 years of knowledge which you need to learn quickly So that where you learn in this new way OK that why you learn in this
+
+338
+00:24:45,775 --> 00:24:49,040
+The process of learning should be the same so that you can learn new knowledge.
+
+339
+00:24:50,320 --> 00:24:51,635
+This is how you learn to code.
+
+340
+00:24:51,635 --> 00:24:54,530
+This is how you everyone learn to code when there was no Google.
+
+341
+00:24:54,530 --> 00:24:56,425
+There was something called documentation.
+
+342
+00:24:56,425 --> 00:24:57,420
+This is a documentation.
+
+343
+00:24:57,420 --> 00:24:59,560
+OK, so there is a NumPy documentation.
+
+344
+00:24:59,560 --> 00:25:03,860
+So if you just sign NumPy documentation, you will see this.
+
+345
+00:25:05,000 --> 00:25:08,560
+and you will see lot of
+
+346
+00:25:08,560 --> 00:25:11,360
+guides are there, like a lot of guide.
+
+347
+00:25:13,340 --> 00:25:16,300
+And it's like every function has some meaning.
+
+348
+00:25:17,400 --> 00:25:19,900
+So, fundamentals, every function has some meaning.
+
+349
+00:25:21,460 --> 00:25:24,460
+But it's hard to understand. That's why I use GPD
+
+350
+00:25:24,460 --> 00:25:28,520
+to learn that what function should be used
+
+351
+00:25:28,520 --> 00:25:32,700
+and then use, go to documentation or search here, like use that function,
+
+352
+00:25:32,700 --> 00:25:37,100
+press and understand it. So how to understand a function? You see parameters
+
+353
+00:25:37,100 --> 00:25:40,785
+here. That's why whenever you write a new something, something code from scratch,
+
+354
+00:25:40,785 --> 00:25:45,090
+always write parameters, input and output. There is a returns and there is parameter.
+
+355
+00:25:45,090 --> 00:25:49,155
+You can see. So how is it written?
+
+356
+00:25:49,155 --> 00:25:52,979
+I will show you. Does it take an argument in a way?
+
+357
+00:25:54,200 --> 00:25:56,960
+Parameters is input, arguments
+
+358
+00:25:56,960 --> 00:25:59,820
+and returns is what is the output of the function.
+
+359
+00:25:59,820 --> 00:26:03,480
+I'm just used to hearing arguments
+
+360
+00:26:03,480 --> 00:26:04,855
+huh?
+
+361
+00:26:04,855 --> 00:26:06,760
+I'm just used to hearing arguments
+
+362
+00:26:06,760 --> 00:26:08,780
+yeah they're right parameters
+
+363
+00:26:08,780 --> 00:26:10,900
+it's the same thing
+
+364
+00:26:10,900 --> 00:26:15,320
+yeah tomorrow it will be a different name
+
+365
+00:26:15,320 --> 00:26:17,060
+so
+
+366
+00:26:17,060 --> 00:26:19,320
+yeah
+
+367
+00:26:19,320 --> 00:26:20,640
+I mean you can see this right
+
+368
+00:26:20,640 --> 00:26:22,780
+arguments but it's also called parameters
+
+369
+00:26:22,780 --> 00:26:24,340
+uh
+
+370
+00:26:24,340 --> 00:26:27,560
+am I doing something
+
+371
+00:26:27,560 --> 00:26:34,900
+yeah so you can say that
+
+372
+00:26:34,900 --> 00:26:38,919
+np.unique takes in an array like structure
+
+373
+00:26:38,919 --> 00:26:42,900
+okay and then there is a thing called access
+
+374
+00:26:42,900 --> 00:26:47,320
+access tells you that in which if it's a multi-dimensional
+
+375
+00:26:47,320 --> 00:26:51,360
+array then which dimension you want me to take the average of or uniqueness
+
+376
+00:26:51,360 --> 00:26:55,160
+of or is it the entire thing okay
+
+377
+00:26:55,160 --> 00:26:57,938
+So that's where it makes sense.
+
+378
+00:26:57,938 --> 00:27:03,869
+That's where it's, that's where the, yeah, that's where the whole thing happens.
+
+379
+00:27:03,869 --> 00:27:22,040
+So when you do NP so that why access is also important But here we want to do np in the entire price so we do in price underscore discrete which you already defined above and okay so there other things so
+
+380
+00:27:22,040 --> 00:27:29,880
+we want the count of it right we want understand what we want for a blur plot we need the counts
+
+381
+00:27:29,880 --> 00:27:37,360
+yeah and the corresponding values like values and the counts like your high and
+
+382
+00:27:37,360 --> 00:27:44,580
+low and their corresponding counts right as a pair so and does it give counts
+
+383
+00:27:44,580 --> 00:27:47,180
+just see
+
+384
+00:27:47,180 --> 00:28:00,280
+Actually, return the sorted array, okay.
+
+385
+00:28:02,780 --> 00:28:04,740
+Yeah, so there is something called return counts.
+
+386
+00:28:06,700 --> 00:28:10,460
+If it is true, it is the number of times each unique, okay, so we need that.
+
+387
+00:28:10,460 --> 00:28:11,760
+So, what is the outputs?
+
+388
+00:28:11,760 --> 00:28:38,280
+outputs is okay values unique values unique values and the counts yeah you
+
+389
+00:28:38,280 --> 00:28:39,820
+You can see an example here probably.
+
+390
+00:28:41,040 --> 00:28:42,960
+Yeah, values, counts here.
+
+391
+00:28:42,960 --> 00:28:43,360
+Okay.
+
+392
+00:28:45,480 --> 00:28:46,440
+So you can just.
+
+393
+00:28:56,920 --> 00:28:59,920
+So now here it's price underscore discrete.
+
+394
+00:29:03,740 --> 00:29:07,180
+So now if you have done this, now if you look at values.
+
+395
+00:29:08,280 --> 00:29:10,985
+and counts, I don't know, yeah.
+
+396
+00:29:10,985 --> 00:29:15,145
+You can see it's high, low, and it's showing to a 45 high and 80 low.
+
+397
+00:29:15,145 --> 00:29:18,410
+But we want mean of that.
+
+398
+00:29:18,410 --> 00:29:21,019
+So what we do is that the values are the same,
+
+399
+00:29:21,019 --> 00:29:23,480
+but we change counts as counts divided by,
+
+400
+00:29:25,480 --> 00:29:26,959
+what do we want?
+
+401
+00:29:31,120 --> 00:29:32,330
+What do we want?
+
+402
+00:29:32,330 --> 00:29:33,813
+Counts divided by?
+
+403
+00:29:33,813 --> 00:29:35,779
+I think it's 2, but I'm not sure.
+
+404
+00:29:36,799 --> 00:29:38,189
+No, it will be average of it.
+
+405
+00:29:38,189 --> 00:29:39,400
+You want...
+
+406
+00:29:39,400 --> 00:29:41,195
+The sum of the terms.
+
+407
+00:29:41,195 --> 00:29:42,400
+The sum of the terms.
+
+408
+00:29:43,860 --> 00:29:45,429
+So, counts will be now average.
+
+409
+00:29:45,429 --> 00:29:46,859
+So, if you look at counts now,
+
+410
+00:29:48,560 --> 00:29:49,359
+they are average.
+
+411
+00:29:51,039 --> 00:29:52,774
+Now, the sum of them is 1 now,
+
+412
+00:29:52,774 --> 00:29:54,560
+because now it's a probability distribution.
+
+413
+00:29:54,560 --> 00:29:56,220
+Now, we will do bar plot.
+
+414
+00:29:56,220 --> 00:29:59,638
+values,
+
+415
+00:29:59,638 --> 00:29:59,849
+comma,
+
+416
+00:29:59,849 --> 00:30:00,460
+counts
+
+417
+00:30:00,460 --> 00:30:02,119
+and
+
+418
+00:30:02,119 --> 00:30:03,059
+plb.show.
+
+419
+00:30:07,340 --> 00:30:07,959
+Now,
+
+420
+00:30:07,959 --> 00:30:08,360
+you can see
+
+421
+00:30:08,360 --> 00:30:08,540
+it's a
+
+422
+00:30:08,540 --> 00:30:08,820
+probability
+
+423
+00:30:08,820 --> 00:30:09,939
+distribution.
+
+424
+00:30:09,939 --> 00:30:10,219
+Okay?
+
+425
+00:30:12,039 --> 00:30:12,825
+Make sense,
+
+426
+00:30:12,825 --> 00:30:13,039
+guys?
+
+427
+00:30:18,000 --> 00:30:18,899
+Make sense?
+
+428
+00:30:26,219 --> 00:30:32,059
+All of you, can you give a thumbs up?
+
+429
+00:30:32,059 --> 00:30:35,860
+Okay, great.
+
+430
+00:30:35,860 --> 00:30:43,600
+So now let me show some notes I have written for you for, okay, another thing is left.
+
+431
+00:30:43,600 --> 00:30:45,600
+Quite a few things are left.
+
+432
+00:30:45,600 --> 00:30:56,180
+But yeah, so this is now, the whole idea is this, that, okay, so no, we are not done yet.
+
+433
+00:30:56,180 --> 00:31:04,245
+We have some things left. So that means if you aggregate all the XIs, that is becoming a random variable.
+
+434
+00:31:04,245 --> 00:31:13,420
+But is each XI a random variable? So what we will do is that if you remember price has shaped 125.
+
+435
+00:31:13,420 --> 00:31:18,740
+OK, it's a 125 vectors. So what we'll do is 125 is 25 to 5. Right.
+
+436
+00:31:18,740 --> 00:31:20,619
+so
+
+437
+00:31:20,619 --> 00:31:24,040
+what we will do is that
+
+438
+00:31:24,040 --> 00:31:25,740
+we want to change this
+
+439
+00:31:25,740 --> 00:31:26,860
+I want to change this in
+
+440
+00:31:26,860 --> 00:31:30,259
+so I want to
+
+441
+00:31:30,259 --> 00:31:31,899
+plot together
+
+442
+00:31:31,899 --> 00:31:34,060
+the price of
+
+443
+00:31:34,060 --> 00:31:36,180
+5 days
+
+444
+00:31:36,180 --> 00:31:37,680
+for
+
+445
+00:31:37,680 --> 00:31:39,880
+1 to 5 then 6 to 10
+
+446
+00:31:39,880 --> 00:31:41,560
+then 11 to 15 like this
+
+447
+00:31:41,560 --> 00:31:44,080
+together so what do we need
+
+448
+00:31:44,080 --> 00:31:45,360
+to do for that we need to change
+
+449
+00:31:45,360 --> 00:31:48,200
+like change this 1 to 5
+
+450
+00:31:48,200 --> 00:31:48,783
+5,
+
+451
+00:31:48,783 --> 00:31:49,810
+6 to 10,
+
+452
+00:31:49,810 --> 00:31:51,299
+10 to 11 to 15,
+
+453
+00:31:51,299 --> 00:31:51,939
+all these things,
+
+454
+00:31:51,939 --> 00:31:52,430
+this 5,
+
+455
+00:31:52,430 --> 00:31:52,644
+5,
+
+456
+00:31:52,644 --> 00:31:54,385
+5 arithmetic progression,
+
+457
+00:31:54,385 --> 00:32:06,220
+I want to cut it and attach in the columns Right So how to do that This is a very Python to do that we do using reshape so what we will do is we will write price
+
+458
+00:32:06,220 --> 00:32:14,260
+now 2d not 2d it's a price new as price dot reshape now when you reshape it
+
+459
+00:32:14,260 --> 00:32:20,920
+imagine now it's 125 cross 1 or 125 vector now we want to reshape it into 5
+
+460
+00:32:20,920 --> 00:32:27,700
+length the time is 5 and 25 is the number of columns so 5 rows and 25
+
+461
+00:32:27,700 --> 00:32:36,220
+columns so 5 comma 25 now you can see price underscore new it looks okay let's
+
+462
+00:32:36,220 --> 00:32:41,560
+now look at it in a data in a data frame format so pg.dataFrame so that you
+
+463
+00:32:41,560 --> 00:32:47,660
+can visualize it this is how it looks like each is a time series of 5 length
+
+464
+00:32:47,660 --> 00:33:00,519
+each is a stock of see can you feel just say price if you look at the difference
+
+465
+00:33:00,519 --> 00:33:25,299
+Just give me a minute.
+
+466
+00:33:30,519 --> 00:34:00,515
+Thank you.
+
+467
+00:34:00,515 --> 00:34:10,360
+okay so it has distributed in a different format it has distributed in
+
+468
+00:34:10,360 --> 00:34:11,979
+yeah
+
+469
+00:34:11,979 --> 00:34:16,960
+lengthwise you can see that
+
+470
+00:34:16,960 --> 00:34:21,200
+okay it is distributed in lengthwise
+
+471
+00:34:30,520 --> 00:34:42,400
+But that really fine no worries so just give me a minute
+
+472
+00:34:55,000 --> 00:35:23,800
+Just give me a minute.
+
+473
+00:35:25,000 --> 00:35:42,000
+okay so yeah so it will be the same thing there's something called order for
+
+474
+00:35:42,000 --> 00:35:52,680
+trans style so we will use that here so we will use order is equal to so now I
+
+475
+00:35:52,680 --> 00:36:02,960
+I didn't read this so therefore what we'll do is we will look at the reshape
+
+476
+00:36:02,960 --> 00:36:16,940
+okay so NP dot reshape will read about it yes so yes you can see there is an
+
+477
+00:36:16,940 --> 00:36:21,020
+order which I didn't read. So, C is the one where it reads
+
+478
+00:36:21,020 --> 00:36:24,860
+in the index order. F is the one
+
+479
+00:36:24,860 --> 00:36:28,039
+to read
+
+480
+00:36:28,039 --> 00:36:29,919
+yeah
+
+481
+00:36:29,919 --> 00:36:36,979
+correct. So, yeah. So, it's a four-trap. So, let's
+
+482
+00:36:36,979 --> 00:36:37,240
+see.
+
+483
+00:36:42,780 --> 00:36:45,140
+Yeah. Now, you can see the 1, 2, 3,
+
+484
+00:36:45,140 --> 00:36:48,460
+You can see the 1, 2, 3, 4 are the same here.
+
+485
+00:36:48,460 --> 00:36:49,460
+Got it guys?
+
+486
+00:36:49,460 --> 00:36:50,460
+Yes, Sharaf.
+
+487
+00:36:50,460 --> 00:37:05,720
+Why did you choose F specifically over C or A Oh why did I choose
+
+488
+00:37:06,920 --> 00:37:08,010
+Yes.
+
+489
+00:37:08,010 --> 00:37:15,800
+So, because I want to plot 1 to 5, then 6 to 10, then 11 to 15, like this, in a single way.
+
+490
+00:37:15,800 --> 00:37:17,720
+I want each of them in single columns.
+
+491
+00:37:19,000 --> 00:37:23,800
+If I don't have this, it was giving me, see, it was expanding this.
+
+492
+00:37:23,800 --> 00:37:26,080
+see it was like there is a string
+
+493
+00:37:26,080 --> 00:37:28,860
+I want to do the string like this
+
+494
+00:37:28,860 --> 00:37:30,400
+ok
+
+495
+00:37:30,400 --> 00:37:32,800
+into a column but they are doing the string
+
+496
+00:37:32,800 --> 00:37:33,500
+row wise
+
+497
+00:37:33,500 --> 00:37:38,220
+oh so it is just a different format
+
+498
+00:37:38,220 --> 00:37:39,120
+yeah yeah
+
+499
+00:37:39,120 --> 00:37:42,600
+that was I was doing this
+
+500
+00:37:42,600 --> 00:37:46,240
+so now what we will do is
+
+501
+00:37:46,240 --> 00:37:47,360
+we will plot this now
+
+502
+00:37:47,360 --> 00:37:48,500
+so we will do plt
+
+503
+00:37:48,500 --> 00:37:50,419
+plot
+
+504
+00:37:50,419 --> 00:37:52,300
+this price name
+
+505
+00:37:53,800 --> 00:37:58,800
+So, now you see that every time, okay, so one thing I missed.
+
+506
+00:37:58,800 --> 00:38:03,799
+So, I need to change this price new.
+
+507
+00:38:03,799 --> 00:38:08,799
+So, I want each one of them from 1 and I am telling you why.
+
+508
+00:38:08,799 --> 00:38:13,799
+So, price new divided by price new
+
+509
+00:38:13,799 --> 00:38:18,800
+of the first row. So, you can see all of them
+
+510
+00:38:18,800 --> 00:38:23,800
+are 1 now. Okay, there is a reason behind that.
+
+511
+00:38:23,800 --> 00:38:36,540
+yeah so you can see that all of them won because i want to see that
+
+512
+00:38:36,540 --> 00:38:43,540
+from every fifth day onwards how do the because i believe that after five days let's assume that
+
+513
+00:38:43,540 --> 00:38:49,240
+five days have no effect on one another so you can see after every five day like
+
+514
+00:38:49,240 --> 00:38:51,160
+what I am saying is that
+
+515
+00:38:51,160 --> 00:38:53,420
+even if it started from the same value
+
+516
+00:38:53,420 --> 00:38:56,020
+this shows
+
+517
+00:38:56,020 --> 00:38:58,080
+the path of a 5 day price movement
+
+518
+00:38:58,080 --> 00:38:59,660
+ok
+
+519
+00:38:59,660 --> 00:39:01,920
+which tells you that
+
+520
+00:39:01,920 --> 00:39:05,380
+which tells you
+
+521
+00:39:05,380 --> 00:39:07,860
+that today's
+
+522
+00:39:07,860 --> 00:39:10,100
+price is just one of the options
+
+523
+00:39:10,100 --> 00:39:11,339
+of one of such paths
+
+524
+00:39:11,339 --> 00:39:14,100
+because we are only measuring
+
+525
+00:39:14,100 --> 00:39:15,339
+relative distance right
+
+526
+00:39:15,339 --> 00:39:17,540
+because that's how we gain money
+
+527
+00:39:17,540 --> 00:39:19,905
+We do not gain money by absolute distance.
+
+528
+00:39:19,905 --> 00:39:25,200
+money by relative distance because we are dividing with a number because how we because with a let's
+
+529
+00:39:25,200 --> 00:39:32,580
+say there's a stock price price so we buy the number of shares of it okay so let's say i have
+
+530
+00:39:32,580 --> 00:39:37,880
+the stock price is 100 i buy i use thousand dollars so i buy 10 shares of it so if tomorrow
+
+531
+00:39:37,880 --> 00:39:48,820
+if the stock price becomes 110 i'm actually gaining profit of 10 per 10 stock so i get 100
+
+532
+00:39:48,820 --> 00:39:52,273
+I get because of the difference, not the absolute values.
+
+533
+00:39:52,273 --> 00:39:58,045
+So therefore, if I do it with respect to 1, all of them are combined to the same initial value.
+
+534
+00:39:58,045 --> 00:40:01,734
+Now I see the price change actual that can give us money.
+
+535
+00:40:01,734 --> 00:40:06,803
+So this price change that you see, some 5 slates.
+
+536
+00:40:06,803 --> 00:40:11,090
+So what I'm saying is that each price path is just one of the options.
+
+537
+00:40:11,090 --> 00:40:12,849
+So how do we model this?
+
+538
+00:40:12,849 --> 00:40:17,079
+So if you remember that it means we model this as X1, X2, X3, X4, right?
+
+539
+00:40:17,079 --> 00:40:21,219
+what I'm saying is x, y, each of the x, y's is one of the options
+
+540
+00:40:21,219 --> 00:40:23,519
+among its, yes Raghav
+
+541
+00:40:23,519 --> 00:40:29,240
+so I understand what you're saying about how the graph is showing the multiple options
+
+542
+00:40:29,240 --> 00:40:33,280
+that any day could go over the next 5 days, any stop could go over the next 5 days
+
+543
+00:40:33,280 --> 00:40:37,180
+but how does the price underscore new equal price underscore new
+
+544
+00:40:37,180 --> 00:40:41,680
+divided by price underscore new zero show what you're
+
+545
+00:40:41,680 --> 00:40:43,579
+describing? What I'm saying is that
+
+546
+00:40:43,579 --> 00:40:47,260
+we want to change the,
+
+547
+00:40:48,440 --> 00:40:50,660
+we want to only see the change, right?
+
+548
+00:40:51,740 --> 00:40:54,865
+So, if I, I mean, if I do not do this,
+
+549
+00:40:54,865 --> 00:40:57,410
+it will be, you will be looking something at this,
+
+550
+00:40:57,410 --> 00:41:01,100
+because every price has different starting point.
+
+551
+00:41:01,100 --> 00:41:03,205
+So, we are not actually, if we plot this,
+
+552
+00:41:03,205 --> 00:41:05,200
+we are not changing, looking at,
+
+553
+00:41:05,200 --> 00:41:08,690
+not X1, because this is relative,
+
+554
+00:41:08,690 --> 00:41:10,980
+which price change is relative to the starting point.
+
+555
+00:41:10,980 --> 00:41:15,920
+so to see the stochasticness in it the variability in it
+
+556
+00:41:15,920 --> 00:41:19,880
+we have to actually combine them to the same point
+
+557
+00:41:19,880 --> 00:41:23,999
+and then see the variability so that's what I am doing here when I am combining
+
+558
+00:41:23,999 --> 00:41:26,780
+all the prices relative to the first day's price
+
+559
+00:41:26,780 --> 00:41:31,819
+that means I am bringing all of them to day one and then seeing
+
+560
+00:41:31,819 --> 00:41:35,920
+then like I am seeing the flowering of the stock market
+
+561
+00:41:35,920 --> 00:41:38,140
+for each different days
+
+562
+00:41:38,140 --> 00:41:42,020
+am I making sense Raghav?
+
+563
+00:41:44,260 --> 00:41:55,800
+yeah so I get what you doing but I not fully I don fully understand how the code does what you are doing so how does it work okay so when i doing this i mean i dividing by price new so price
+
+564
+00:41:55,800 --> 00:42:04,200
+new is nothing but the first row oh right
+
+565
+00:42:04,200 --> 00:42:16,340
+so price knew nothing but the first row
+
+566
+00:42:16,340 --> 00:42:21,760
+so when I am writing this essentially I am saying that
+
+567
+00:42:21,760 --> 00:42:23,580
+divide each row by the first row
+
+568
+00:42:23,580 --> 00:42:30,100
+like so in python we write codes in factorized format
+
+569
+00:42:30,100 --> 00:42:33,820
+when I say a by b in python
+
+570
+00:42:33,820 --> 00:42:37,350
+in between two numbers is usually divided by two numbers.
+
+571
+00:42:37,350 --> 00:42:39,765
+But if I have an array, divided by two arrays,
+
+572
+00:42:39,765 --> 00:42:44,820
+that means each element of the array is correspondingly divided by the same index element in the other array.
+
+573
+00:42:45,959 --> 00:42:46,540
+Yes, Raghav.
+
+574
+00:42:47,680 --> 00:42:50,360
+Right, so what you're doing is you're taking the first row
+
+575
+00:42:50,360 --> 00:42:53,340
+and you're dividing each subsequent row by that first row
+
+576
+00:42:53,340 --> 00:42:55,560
+to see how much it ranges from the first row.
+
+577
+00:42:55,560 --> 00:42:56,890
+Okay, thank you.
+
+578
+00:42:56,890 --> 00:43:01,040
+Yeah, so that we normalize it to the first row and then we see the change of the movement.
+
+579
+00:43:01,040 --> 00:43:08,405
+We are essentially measuring how the price is changing with respect to the first day.
+
+580
+00:43:08,405 --> 00:43:10,885
+As if the first day is the same.
+
+581
+00:43:10,885 --> 00:43:13,775
+And so you can see the stochasticness here.
+
+582
+00:43:13,775 --> 00:43:18,640
+And now what we'll do is we'll plot each one of these histograms.
+
+583
+00:43:20,200 --> 00:43:25,459
+So we'll do it as price underscore new of zero.
+
+584
+00:43:25,459 --> 00:43:30,940
+density is equal to
+
+585
+00:43:30,940 --> 00:43:37,339
+so if you plot this
+
+586
+00:43:37,339 --> 00:43:40,680
+you can see this for one
+
+587
+00:43:40,680 --> 00:43:44,360
+for the next one let's see
+
+588
+00:43:44,360 --> 00:43:49,440
+oh sorry this will actually I have not divided it yet
+
+589
+00:43:49,440 --> 00:43:55,780
+so if you see one it will be a single bar
+
+590
+00:43:55,780 --> 00:43:58,659
+so it doesn't make sense because the first one is all one
+
+591
+00:43:58,659 --> 00:44:01,760
+now it looks like this
+
+592
+00:44:01,760 --> 00:44:07,220
+so you can see that every time point is kind of a different distribution
+
+593
+00:44:07,220 --> 00:44:10,760
+ok
+
+594
+00:44:14,760 --> 00:44:26,780
+so what I am saying is that each of the XI is the probability distribution in itself And if exponential can have increased stochastic process
+
+595
+00:44:27,860 --> 00:44:38,700
+So it's like if you take the log scale of it, the distributions are kind of similar, you can say.
+
+596
+00:44:38,700 --> 00:44:42,680
+but you can see here that
+
+597
+00:44:42,680 --> 00:44:48,080
+if it kind of increases, so that's the whole idea
+
+598
+00:44:48,080 --> 00:44:52,140
+so what I am saying is that
+
+599
+00:44:52,140 --> 00:44:56,480
+the main takeaway point is the following, so I have written some notes for you
+
+600
+00:45:00,900 --> 00:45:02,220
+so each xi
+
+601
+00:45:02,220 --> 00:45:04,660
+each xi is a random variable
+
+602
+00:45:04,660 --> 00:45:06,580
+okay
+
+603
+00:45:06,580 --> 00:45:07,820
+and
+
+604
+00:45:07,820 --> 00:45:12,380
+so each
+
+605
+00:45:12,380 --> 00:45:12,800
+exercise is a
+
+606
+00:45:12,800 --> 00:45:13,340
+random variable
+
+607
+00:45:13,340 --> 00:45:13,980
+so now how
+
+608
+00:45:13,980 --> 00:45:14,460
+would you measure
+
+609
+00:45:14,460 --> 00:45:15,260
+randomness
+
+610
+00:45:15,260 --> 00:45:15,760
+we measure
+
+611
+00:45:15,760 --> 00:45:16,500
+randomness by
+
+612
+00:45:16,500 --> 00:45:16,940
+probability
+
+613
+00:45:16,940 --> 00:45:17,560
+distribution
+
+614
+00:45:17,560 --> 00:45:19,700
+so in
+
+615
+00:45:19,700 --> 00:45:20,320
+discrete values
+
+616
+00:45:20,320 --> 00:45:20,740
+we take
+
+617
+00:45:20,740 --> 00:45:21,200
+we use
+
+618
+00:45:21,200 --> 00:45:21,640
+something called
+
+619
+00:45:21,640 --> 00:45:22,100
+bar plot
+
+620
+00:45:22,100 --> 00:45:22,460
+which is
+
+621
+00:45:22,460 --> 00:45:22,840
+nothing but
+
+622
+00:45:22,840 --> 00:45:23,280
+each exercise
+
+623
+00:45:23,280 --> 00:45:23,800
+takes values
+
+624
+00:45:23,800 --> 00:45:24,220
+like high
+
+625
+00:45:24,220 --> 00:45:24,660
+and low
+
+626
+00:45:24,660 --> 00:45:26,400
+which I am
+
+627
+00:45:26,400 --> 00:45:27,020
+saying a1
+
+628
+00:45:27,020 --> 00:45:27,919
+a2.am
+
+629
+00:45:27,919 --> 00:45:28,860
+with probability
+
+630
+00:45:28,860 --> 00:45:29,300
+is p1
+
+631
+00:45:29,300 --> 00:45:29,979
+p2.pm
+
+632
+00:45:29,979 --> 00:45:30,520
+where each
+
+633
+00:45:30,520 --> 00:45:30,919
+of these
+
+634
+00:45:30,919 --> 00:45:31,360
+is greater
+
+635
+00:45:31,360 --> 00:45:31,600
+than or equal
+
+636
+00:45:31,600 --> 00:45:31,800
+to 0
+
+637
+00:45:31,800 --> 00:45:32,180
+and sum
+
+638
+00:45:32,180 --> 00:45:32,520
+is 1
+
+639
+00:45:32,520 --> 00:45:32,840
+like we
+
+640
+00:45:32,840 --> 00:45:33,180
+have seen
+
+641
+00:45:33,180 --> 00:45:33,419
+here
+
+642
+00:45:33,419 --> 00:45:36,860
+okay
+
+643
+00:45:36,860 --> 00:45:38,100
+and
+
+644
+00:45:38,100 --> 00:45:42,500
+here for this case
+
+645
+00:45:42,500 --> 00:45:44,540
+for continuous values probability distribution
+
+646
+00:45:44,540 --> 00:45:45,580
+is nothing but a histogram
+
+647
+00:45:45,580 --> 00:45:48,200
+so each take a real number
+
+648
+00:45:48,200 --> 00:45:50,419
+each x i takes real numbers with
+
+649
+00:45:50,419 --> 00:45:52,479
+probability distribution of f x where f x is
+
+650
+00:45:52,479 --> 00:45:54,180
+greater than or equal to 0 and integration of that
+
+651
+00:45:54,180 --> 00:45:56,620
+so integration is nothing but the area under the curve
+
+652
+00:45:56,620 --> 00:45:58,340
+okay and say
+
+653
+00:45:58,340 --> 00:46:00,500
+and you can think connected by a
+
+654
+00:46:00,500 --> 00:46:02,380
+continuous curve let's say
+
+655
+00:46:02,380 --> 00:46:07,055
+Are we using Riemann's integral?
+
+656
+00:46:07,055 --> 00:46:08,280
+Yes, Riemann's integral.
+
+657
+00:46:10,419 --> 00:46:12,388
+And the Riemann integral is 1.
+
+658
+00:46:12,388 --> 00:46:14,840
+In general, you can use Riemann integral, actually,
+
+659
+00:46:14,840 --> 00:46:16,240
+but let's not go into the details of it.
+
+660
+00:46:17,660 --> 00:46:19,830
+And just here, fx is not a probability,
+
+661
+00:46:19,830 --> 00:46:21,569
+because you can see, if it's a probability,
+
+662
+00:46:21,569 --> 00:46:23,300
+then it cannot take the value of 12, right?
+
+663
+00:46:25,240 --> 00:46:27,000
+So what does it mean?
+
+664
+00:46:27,000 --> 00:46:29,124
+What does fx actually mean?
+
+665
+00:46:29,124 --> 00:46:31,440
+So fx doesn't mean anything alone,
+
+666
+00:46:31,440 --> 00:46:38,945
+but what it means that fx dx is the probability of x taking values in the interval x between x and x plus dx interval.
+
+667
+00:46:38,945 --> 00:47:00,200
+For example you can see that here 12 is not the probability but at 1 12 times 0 That is if you calculate the area under the curve that will be 12 times 0 means 0 That is the meaning of the probability So similarly here fx times dx the length
+
+668
+00:47:00,200 --> 00:47:04,660
+of that and the height actually calculates the probability of x taking values in the
+
+669
+00:47:04,660 --> 00:47:10,960
+interval x, x plus dx. And humans cannot really understand always randomness. So, often we
+
+670
+00:47:10,960 --> 00:47:13,080
+understand the distribution by its mean, median,
+
+671
+00:47:13,080 --> 00:47:14,985
+range, variance, skewness,
+
+672
+00:47:14,985 --> 00:47:16,235
+cartesis,
+
+673
+00:47:16,235 --> 00:47:18,460
+percentiles,
+
+674
+00:47:19,560 --> 00:47:20,040
+like this,
+
+675
+00:47:21,040 --> 00:47:21,945
+this values.
+
+676
+00:47:21,945 --> 00:47:25,160
+I don't know what that term means, I was just wondering.
+
+677
+00:47:26,380 --> 00:47:27,150
+It's okay, yeah.
+
+678
+00:47:27,150 --> 00:47:28,900
+So, variance, so mean, okay,
+
+679
+00:47:28,900 --> 00:47:30,260
+yeah, I should have mentioned this, so
+
+680
+00:47:30,260 --> 00:47:32,880
+mean is the average, median
+
+681
+00:47:32,880 --> 00:47:35,180
+is also kind of the, like,
+
+682
+00:47:35,180 --> 00:47:36,800
+These are the data, like,
+
+683
+00:47:36,800 --> 00:47:39,155
+ways to measure the data, not the variance,
+
+684
+00:47:39,155 --> 00:47:40,180
+they're kurtowskis.
+
+685
+00:47:40,180 --> 00:47:43,340
+yeah I'm just going I should have mentioned that so
+
+686
+00:47:43,340 --> 00:47:47,660
+range is the difference between maximum and minimum variance is again the variability
+
+687
+00:47:47,660 --> 00:47:52,140
+skewness tells you that it's how
+
+688
+00:47:52,140 --> 00:47:56,280
+skewed it is toward the left or the right for example
+
+689
+00:47:56,280 --> 00:47:59,860
+if you look
+
+690
+00:47:59,860 --> 00:48:04,620
+at the performance
+
+691
+00:48:04,620 --> 00:48:08,120
+of any student okay let's say an average student like me
+
+692
+00:48:08,120 --> 00:48:15,580
+If you take any performance, my performance is not symmetric around the number.
+
+693
+00:48:16,839 --> 00:48:17,615
+Okay.
+
+694
+00:48:17,615 --> 00:48:23,685
+My performance is always skewed towards lower value and sometimes I perform well.
+
+695
+00:48:23,685 --> 00:48:25,260
+So it's left skewed.
+
+696
+00:48:26,260 --> 00:48:30,175
+Similarly, a really good performer is right skewed.
+
+697
+00:48:30,175 --> 00:48:37,279
+Who is always on the, like a good student is always on the higher average or higher score.
+
+698
+00:48:37,279 --> 00:48:40,098
+and sometimes a student can do lower scores.
+
+699
+00:48:40,098 --> 00:48:42,910
+So that's what skewness measures.
+
+700
+00:48:42,910 --> 00:48:44,590
+You can read the mathematics online.
+
+701
+00:48:44,590 --> 00:48:47,820
+I'm not going into that because that will just not use good use of time.
+
+702
+00:48:49,140 --> 00:48:52,820
+And then kurtosis is how much it's picked at certain point.
+
+703
+00:48:54,400 --> 00:48:55,720
+How much it's picked.
+
+704
+00:48:55,720 --> 00:48:59,980
+Like the more the pick it is, that means the more dense it is.
+
+705
+00:49:01,260 --> 00:49:04,260
+So you can say kind of skewness,
+
+706
+00:49:04,260 --> 00:49:07,180
+variance is nothing but proportional to square of it.
+
+707
+00:49:10,000 --> 00:49:14,400
+power of it so for example
+
+708
+00:49:26,760 --> 00:49:30,460
+just give me a minute
+
+709
+00:49:30,460 --> 00:49:50,840
+Yes, I have written this answer a long time ago when I was a school student.
+
+710
+00:49:50,840 --> 00:49:56,460
+So, I think it's five years ago.
+
+711
+00:49:56,460 --> 00:50:01,180
+so you can see I have written like what
+
+712
+00:50:01,180 --> 00:50:04,539
+what does moment means
+
+713
+00:50:04,539 --> 00:50:09,820
+for example a Taylor series expands a function in terms of
+
+714
+00:50:09,820 --> 00:50:12,879
+you know square you know x square x cube similarly
+
+715
+00:50:12,879 --> 00:50:17,640
+so for example all these coefficients tell you the how much
+
+716
+00:50:17,640 --> 00:50:21,860
+x square is inside that function similarly the first moment tells you the location
+
+717
+00:50:21,860 --> 00:50:23,100
+and center of the distribution
+
+718
+00:50:23,100 --> 00:50:29,340
+standard deviation tells you how much spread of variability is there
+
+719
+00:50:29,340 --> 00:50:33,020
+skewness tells you how much it is right skewed or left skewed
+
+720
+00:50:33,020 --> 00:50:36,360
+curtis tells you the peakedness of it
+
+721
+00:50:36,360 --> 00:50:39,479
+so the more the flat it is
+
+722
+00:50:39,479 --> 00:50:45,500
+the more negativities, the more positivities, the more peaked it is
+
+723
+00:50:45,500 --> 00:50:49,680
+so essentially higher moments
+
+724
+00:50:49,680 --> 00:50:52,820
+tell you more about each of this
+
+725
+00:50:52,820 --> 00:50:56,440
+so the order of moments tell you about the
+
+726
+00:50:56,440 --> 00:50:58,580
+symmetricity because if they symmetric
+
+727
+00:50:58,580 --> 00:51:00,640
+the positive
+
+728
+00:51:00,640 --> 00:51:02,500
+and negative cuts away symmetric around
+
+729
+00:51:02,500 --> 00:51:04,440
+zero the positive and negative
+
+730
+00:51:04,440 --> 00:51:04,940
+cuts away
+
+731
+00:51:04,940 --> 00:51:08,600
+so that's what order of moments tell you
+
+732
+00:51:08,600 --> 00:51:09,260
+and
+
+733
+00:51:09,260 --> 00:51:12,580
+cartesis tells you about yes
+
+734
+00:51:12,580 --> 00:51:23,033
+so the even order of moments tells you about how variable how picked and this kind of behaviors So these are all complementary in nature
+
+735
+00:51:23,033 --> 00:51:30,113
+OK, so I can I can actually cite this here for better understanding.
+
+736
+00:51:36,633 --> 00:51:38,673
+So you don't understand about this, guys.
+
+737
+00:51:38,673 --> 00:51:49,613
+So, therefore, what it means is that each one of them is a distribution in itself.
+
+738
+00:51:50,653 --> 00:51:52,623
+So, each excite is a distribution in itself.
+
+739
+00:51:52,623 --> 00:51:53,808
+All of you are good with this, guys?
+
+740
+00:51:53,808 --> 00:51:54,173
+Yes or no?
+
+741
+00:51:59,133 --> 00:52:01,123
+Yes, Sai Prathesh?
+
+742
+00:52:01,123 --> 00:52:04,333
+No, I meant to click a thumbs up.
+
+743
+00:52:04,333 --> 00:52:04,893
+Okay.
+
+744
+00:52:04,893 --> 00:52:08,473
+Can you give a thumbs up?
+
+745
+00:52:08,473 --> 00:52:12,998
+Siddharth, Arnav, Raghav,
+
+746
+00:52:12,998 --> 00:52:15,628
+Shonendu, Sai Prathis.
+
+747
+00:52:15,628 --> 00:52:16,973
+Shonendu, all good?
+
+748
+00:52:18,373 --> 00:52:18,733
+Yeah.
+
+749
+00:52:19,733 --> 00:52:19,953
+Good.
+
+750
+00:52:21,693 --> 00:52:24,133
+Okay, so what's next?
+
+751
+00:52:26,873 --> 00:52:30,953
+The next part is understanding that...
+
+752
+00:52:32,693 --> 00:52:36,293
+So this is basic.
+
+753
+00:52:36,293 --> 00:52:37,513
+So the next part is understanding
+
+754
+00:52:37,513 --> 00:52:40,673
+that we have now understood
+
+755
+00:52:40,673 --> 00:52:42,153
+XI's individually.
+
+756
+00:52:42,153 --> 00:52:44,213
+So, our time series is nothing but XI's, right?
+
+757
+00:52:44,213 --> 00:52:45,323
+Individually.
+
+758
+00:52:45,323 --> 00:52:47,568
+So, we understood XI's individually.
+
+759
+00:52:47,568 --> 00:52:49,073
+But we have not understood yet
+
+760
+00:52:49,073 --> 00:52:52,638
+the, is there any relationship between XI's?
+
+761
+00:52:52,638 --> 00:52:54,998
+Are XI and X, like,
+
+762
+00:52:54,998 --> 00:52:57,533
+are X1 and X2 related to each other?
+
+763
+00:52:59,113 --> 00:52:59,903
+Okay.
+
+764
+00:52:59,903 --> 00:53:01,053
+Did we understand this?
+
+765
+00:53:02,113 --> 00:53:02,513
+So,
+
+766
+00:53:03,913 --> 00:53:05,258
+that's important.
+
+767
+00:53:05,258 --> 00:53:07,398
+Are X1 and X2 related to each other?
+
+768
+00:53:07,398 --> 00:53:13,633
+So, how to do that?
+
+769
+00:53:13,633 --> 00:53:15,373
+So I would give that as a homework.
+
+770
+00:53:15,373 --> 00:53:19,593
+So what you do as a homework is this.
+
+771
+00:53:19,593 --> 00:53:26,807
+Take a plot take any x i sequence x1 x2 xn just like I have shown here
+
+772
+00:53:31,207 --> 00:53:38,347
+And then, you plot the xi comma xi plus 1.
+
+773
+00:53:44,127 --> 00:53:44,867
+Plot it.
+
+774
+00:53:46,307 --> 00:53:48,327
+And see that, do you find a relationship?
+
+775
+00:53:50,467 --> 00:53:51,507
+Are they
+
+776
+00:53:51,507 --> 00:53:55,672
+randomly distributed?
+
+777
+00:53:55,672 --> 00:53:57,687
+So do you find a relationship?
+
+778
+00:53:57,687 --> 00:53:59,067
+Do it for multiple stocks.
+
+779
+00:54:02,907 --> 00:54:04,467
+Then what is a relationship?
+
+780
+00:54:06,567 --> 00:54:07,747
+What do you see?
+
+781
+00:54:10,987 --> 00:54:12,007
+Yes, Siddharth.
+
+782
+00:54:13,347 --> 00:54:16,342
+Is this beat for tomorrow or next week?
+
+783
+00:54:16,342 --> 00:54:17,227
+Tomorrow.
+
+784
+00:54:17,227 --> 00:54:19,027
+It will just take
+
+785
+00:54:19,027 --> 00:54:20,387
+30 minutes of yours.
+
+786
+00:54:20,387 --> 00:54:22,407
+Yes, Raghav.
+
+787
+00:54:23,787 --> 00:54:25,567
+Is XI supposed to represent
+
+788
+00:54:25,567 --> 00:54:27,707
+the close price of the...
+
+789
+00:54:27,707 --> 00:54:29,667
+You can take any of them.
+
+790
+00:54:29,667 --> 00:54:31,927
+Okay, and then XI plus 1 would be
+
+791
+00:54:31,927 --> 00:54:33,907
+the second day or the close price
+
+792
+00:54:33,907 --> 00:54:35,902
+of the next 5-day interval?
+
+793
+00:54:35,902 --> 00:54:37,047
+The beginning of the next 5-day?
+
+794
+00:54:37,047 --> 00:54:40,147
+No, no. So, just like I have done here,
+
+795
+00:54:40,147 --> 00:54:41,907
+just take the price of any day.
+
+796
+00:54:43,827 --> 00:54:45,222
+Close price of all the days.
+
+797
+00:54:45,222 --> 00:54:47,042
+Just take a single NP IRA.
+
+798
+00:54:47,042 --> 00:54:48,727
+Close price of any day. All the days.
+
+799
+00:54:48,727 --> 00:54:51,567
+and once you take the close parts of all the day, then you calculate
+
+800
+00:54:51,567 --> 00:54:55,627
+the first day, second day, second day, third day, third day, fourth day, this pairs
+
+801
+00:54:55,627 --> 00:54:56,427
+and plot them.
+
+802
+00:54:59,487 --> 00:55:03,707
+Okay. So, once you plot them, there will be points and then
+
+803
+00:55:03,707 --> 00:55:07,967
+you will see some relationships. And if you do it for multiple,
+
+804
+00:55:07,967 --> 00:55:09,167
+you will see more relationships.
+
+805
+00:55:11,027 --> 00:55:15,207
+So, then based on the relationship,
+
+806
+00:55:15,207 --> 00:55:18,807
+you tell me
+
+807
+00:55:18,807 --> 00:55:20,467
+your goal is to tell me
+
+808
+00:55:20,467 --> 00:55:21,547
+that
+
+809
+00:55:21,547 --> 00:55:25,067
+what will be your trading strategy
+
+810
+00:55:25,067 --> 00:55:52,021
+so does it give you trading strategies Also do this for different time points So do this daily okay Take this daily Do this for 5 days 10 days daily let say
+
+811
+00:55:52,021 --> 00:55:56,961
+like interval equal to daily one day. Let's not go more than that.
+
+812
+00:55:58,921 --> 00:56:03,551
+And then you vary different period.
+
+813
+00:56:03,551 --> 00:56:09,441
+That means you can do five days, 15 days, 10 days, six months and see how it evolves.
+
+814
+00:56:12,121 --> 00:56:13,361
+For different stocks.
+
+815
+00:56:13,361 --> 00:56:20,941
+yes
+
+816
+00:56:20,941 --> 00:56:23,661
+so as we
+
+817
+00:56:23,661 --> 00:56:26,281
+increase the period we will start to see more
+
+818
+00:56:26,281 --> 00:56:28,321
+of a relationship is that what you're saying
+
+819
+00:56:28,321 --> 00:56:30,181
+and that's what we need to see
+
+820
+00:56:30,181 --> 00:56:31,301
+how the relationship builds
+
+821
+00:56:31,301 --> 00:56:33,701
+yeah how the relationship builds and how
+
+822
+00:56:33,701 --> 00:56:35,561
+like
+
+823
+00:56:35,561 --> 00:56:37,341
+is there any
+
+824
+00:56:37,341 --> 00:56:39,621
+period where
+
+825
+00:56:39,621 --> 00:56:40,641
+you
+
+826
+00:56:40,641 --> 00:56:45,941
+are not sure about the trade.
+
+827
+00:56:48,221 --> 00:56:50,786
+Like whether you should do a trading or not.
+
+828
+00:56:50,786 --> 00:56:51,821
+There should be some period.
+
+829
+00:56:51,821 --> 00:56:53,876
+Otherwise, everyone can make money always.
+
+830
+00:56:53,876 --> 00:56:55,381
+So what are those?
+
+831
+00:56:55,381 --> 00:56:59,076
+So these are quantitative methods that you find out.
+
+832
+00:56:59,076 --> 00:57:02,376
+And this will prove you that X, Y and X,
+
+833
+00:57:02,376 --> 00:57:04,921
+like the pairs are not independent.
+
+834
+00:57:04,921 --> 00:57:07,321
+They have some relationship, time relationship.
+
+835
+00:57:08,361 --> 00:57:09,026
+Okay.
+
+836
+00:57:09,026 --> 00:57:10,541
+This will tell you that.
+
+837
+00:57:10,541 --> 00:57:12,361
+And yeah, that's it.
+
+838
+00:57:13,861 --> 00:57:17,321
+And then tomorrow with this, we will be introducing two things.
+
+839
+00:57:17,321 --> 00:57:19,691
+We'll be introducing three things actually.
+
+840
+00:57:19,691 --> 00:57:22,181
+I'm just thinking what tomorrow.
+
+841
+00:57:29,741 --> 00:57:32,521
+Tomorrow actually I will do the research thing because that will be a homework.
+
+842
+00:57:35,021 --> 00:57:37,881
+And probably I will talk about a bit about Markov chain.
+
+843
+00:57:39,521 --> 00:57:40,471
+Okay.
+
+844
+00:57:40,471 --> 00:57:40,801
+you

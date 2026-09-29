@@ -1,0 +1,335 @@
+1
+00:00:00,000 --> 00:00:06,359
+In this review, we look at the Kelly Criterion Strategy and how we can apply the principles
+
+2
+00:00:06,359 --> 00:00:10,920
+to our trading or investing activities to maximise growth.
+
+3
+00:00:10,920 --> 00:00:16,379
+Created by computer scientist John Kelly in a paper from 1956, often referred to as the
+
+4
+00:00:16,379 --> 00:00:21,359
+Fortunes Formula, and later popularised by Edward Thorpe when he applied the theory to
+
+5
+00:00:21,359 --> 00:00:24,080
+beat the game of blackjack.
+
+6
+00:00:24,080 --> 00:00:28,720
+Another noteworthy investor to apply the theory is Jim Simons, founder of the Renaissance
+
+7
+00:00:28,720 --> 00:00:33,880
+Medallion Hedge Fund. I also use a variation of the strategy, and this is the reason for
+
+8
+00:00:33,880 --> 00:00:39,780
+our review. Let's take a look, and as always, please hit the like button and join our growing
+
+9
+00:00:39,780 --> 00:00:44,340
+community below.
+
+10
+00:00:44,340 --> 00:00:49,000
+The Kelly criterion calculation is used to calculate the optimum stake or position size
+
+11
+00:00:49,000 --> 00:00:55,300
+for a given event, and is made up of four factors. The equity balance, the expected
+
+12
+00:00:55,300 --> 00:01:01,620
+return from a winning outcome, the probability of winning, and the probability of losing.
+
+13
+00:01:01,620 --> 00:01:06,820
+Ultimately, the Kelly criterion formula calculates the perceived edge you have over an event
+
+14
+00:01:06,820 --> 00:01:11,720
+and varies the stake accordingly, thereby determining the optimum stake size, or in
+
+15
+00:01:11,720 --> 00:01:16,360
+trading terms, determining the optimum position size.
+
+16
+00:01:16,360 --> 00:01:20,860
+Contrary to the trading community, position size should not be a predetermined input to
+
+17
+00:01:20,860 --> 00:01:26,160
+a strategy, but rather an output depending on each of these four variables. I'll apply
+
+18
+00:01:26,160 --> 00:01:31,320
+this concept to my personal trading stats shortly, but first let's look at how it applies
+
+19
+00:01:31,320 --> 00:01:33,820
+to a sporting event.
+
+20
+00:01:33,820 --> 00:01:39,540
+In this example we have two boxers in a tournament. Boxer A from the red corner, and boxer B from
+
+21
+00:01:39,540 --> 00:01:45,340
+the blue corner. Boxer B is seen to have a slight advantage due to the weight difference,
+
+22
+00:01:45,340 --> 00:01:52,219
+and as such the odds of 1.9 offered by the exchanges suggest a 52.6% chance of winning,
+
+23
+00:01:52,219 --> 00:01:56,460
+leaving Boxer A with a 47.4% chance of winning.
+
+24
+00:01:56,460 --> 00:02:08,708
+However through our own analysis we determine that Boxer B not only has a weight advantage but is also much more experienced and therefore we suggest a more realistic 55 chance of winning reflecting
+
+25
+00:02:08,708 --> 00:02:14,688
+odds of 1.8, and leaving Boxer A with a 45% chance of winning.
+
+26
+00:02:14,688 --> 00:02:18,408
+We decide to put money aside for the whole tournament, and start with a betting bank
+
+27
+00:02:18,408 --> 00:02:24,888
+of $1000. With all the metrics available, we can now complete the Kelly criterion calculation,
+
+28
+00:02:24,888 --> 00:02:31,048
+therefore determine the optimum stake. We have an expected return offered by the exchanges of 1.9,
+
+29
+00:02:31,048 --> 00:02:35,868
+which equates to a 90 cent profit for every dollar wagered, and our analysed true winning
+
+30
+00:02:35,868 --> 00:02:43,683
+probability of 55% and losing probability of 45%. The equation is therefore as follows.
+
+31
+00:02:43,683 --> 00:02:53,908
+0.9 multiplied by 0.55 minus 0.45 divided by 0.9, which finally provides the sum of 0.05,
+
+32
+00:02:53,908 --> 00:03:02,948
+or 5%. 5% multiplied by our betting bank of $1,000 is $50, therefore the optimum Kelly
+
+33
+00:03:02,948 --> 00:03:09,608
+criterion stake is $50. Try not to be put off by all the numbers. There are calculators and
+
+34
+00:03:09,608 --> 00:03:14,388
+spreadsheets available to calculate the figure automatically, but it is important to understand
+
+35
+00:03:14,388 --> 00:03:19,308
+the reasoning behind the number. Had our probability been equal to the probability
+
+36
+00:03:19,308 --> 00:03:24,348
+offered by the market, the calculation would have provided a negative figure, implying there was no
+
+37
+00:03:24,348 --> 00:03:30,028
+edge, and therefore no reason to place a wager. Or, if our probability was even higher, perhaps
+
+38
+00:03:30,028 --> 00:03:35,388
+60%, the calculation would have suggested a higher wager to take advantage of the higher edge.
+
+39
+00:03:36,568 --> 00:03:41,688
+Next, we will use my trading stats as an example to show how we can apply the same Kelly principle
+
+40
+00:03:41,688 --> 00:03:49,198
+to a trading or investing strategy. For simplicity, let's use a $20,000 equity balance.
+
+41
+00:03:49,198 --> 00:03:57,308
+My long-term win rate, or win probability, off 59%, leaving my losing probability off 41%.
+
+42
+00:03:57,308 --> 00:04:12,812
+My expected profit on risk for a winning trade is 4 Therefore for every dollar I risked I get just over in profit Using the same Kelly calculation as before we can now determine the optimum position size for a trade
+
+43
+00:04:12,812 --> 00:04:26,157
+We have 4.04 multiplied by 0.59 minus 0.41, divided by 4.04, which provides the sum of 0.488, or rounded up 49%.
+
+44
+00:04:26,157 --> 00:04:36,717
+Therefore, the optimum position size recommended by the Kelly formula would be the $20,000 equity multiplied by 49%, which equals $9,800.
+
+45
+00:04:38,097 --> 00:04:45,762
+I'm sure many of you are quite rightly thinking that this is a large amount of capital to have allocated to a position in comparison to the equity balance.
+
+46
+00:04:45,762 --> 00:04:50,557
+That's why many, including myself, use what is called fractional Kelly.
+
+47
+00:04:50,557 --> 00:04:54,557
+In essence, this simply means a certain fraction of the recommended position size.
+
+48
+00:04:54,557 --> 00:05:04,287
+I personally use 33% of the recommended position, and therefore in this example my position size would be $3,266.
+
+49
+00:05:04,287 --> 00:05:08,367
+Remember this is position size, not expected risk.
+
+50
+00:05:08,367 --> 00:05:15,472
+My risk, based on a typical stop loss, would be near 10% of this position size, equating to $326.
+
+51
+00:05:15,472 --> 00:05:22,477
+This $326 positional risk equates to a risk on equity of 1.63%.
+
+52
+00:05:22,477 --> 00:05:27,517
+The difficulty, however, in applying the Kelly Criterion formula to the stock market
+
+53
+00:05:27,517 --> 00:05:33,212
+is the randomness of price movement, and therefore the variability of these inputs.
+
+54
+00:05:33,212 --> 00:05:36,662
+The game of blackjack, on the other hand, has factors that are fixed,
+
+55
+00:05:36,662 --> 00:05:39,797
+for example the number of cards in a deck is fixed at 52.
+
+56
+00:05:41,137 --> 00:05:46,612
+With this in mind, it's important to keep track of your performance and adjust the inputs accordingly.
+
+57
+00:05:46,612 --> 00:05:49,797
+Let's assume our strike rate reduces to 50%,
+
+58
+00:05:49,797 --> 00:06:00,797
+and we only profit $2 for every $1 risked. By applying the same formula, Kelly calculates a new position size of 25% of equity, or $5,000,
+
+59
+00:06:00,797 --> 00:06:17,866
+but again I prefer fractional Kelly equal to 33 of the suggested position size Based on an average 10 stop position the expected risk on equity would now be or 0 per trade
+
+60
+00:06:18,906 --> 00:06:23,326
+The theory is that the Kelly score changes with the fluctuating performance of the trading
+
+61
+00:06:23,326 --> 00:06:29,786
+strategy. If enough people show interest below, I'll add the staking spreadsheet I use into
+
+62
+00:06:29,786 --> 00:06:31,426
+the description for ease of use.
+
+63
+00:06:31,426 --> 00:06:39,941
+To conclude, we present the theory of Kelly criterion in this diagram to better understand its concept.
+
+64
+00:06:39,941 --> 00:06:47,806
+This centre green line represents full Kelly as opposed to fractional Kelly, which could be at 33% here.
+
+65
+00:06:47,806 --> 00:06:51,461
+The blue line represents portfolio return.
+
+66
+00:06:51,461 --> 00:06:56,986
+The left side of the Kelly line is considered more conservative, and the right side more aggressive.
+
+67
+00:06:56,986 --> 00:07:04,986
+The concept suggests that the higher the Kelly or equity used, the less return and more volatility is experienced
+
+68
+00:07:04,986 --> 00:07:09,826
+whereas a smaller position provides less return and less volatility
+
+69
+00:07:09,826 --> 00:07:13,766
+The optimum position size is considered to be here
+
+70
+00:07:13,766 --> 00:07:19,446
+but remember this theory is ultimately based on events with fixed variables and true probabilities
+
+71
+00:07:19,446 --> 00:07:21,361
+like a game of blackjack
+
+72
+00:07:21,361 --> 00:07:24,506
+The stock market, however, has numerous variables
+
+73
+00:07:24,506 --> 00:07:28,366
+and as such, fractional Kelly would be the advised approach
+
+74
+00:07:28,366 --> 00:07:30,831
+should you decide on using the concept.
+
+75
+00:07:30,831 --> 00:07:32,986
+It is my preferred position management tool
+
+76
+00:07:32,986 --> 00:07:35,526
+due to its ability to reflect on my trading performance
+
+77
+00:07:35,526 --> 00:07:37,706
+and adjust the risk accordingly.
+
+78
+00:07:38,726 --> 00:07:41,446
+More often than not, a trending market will improve my edge
+
+79
+00:07:41,446 --> 00:07:44,971
+and the position size will increase as a result.
+
+80
+00:07:44,971 --> 00:07:47,836
+The opposite is also true for a ranging market.
+
+81
+00:07:47,836 --> 00:07:50,866
+My edge will decrease as will my position size to compensate.
+
+82
+00:07:50,866 --> 00:07:58,186
+I hope you found this relatively short review of the Kelly Criterion formula useful,
+
+83
+00:07:58,186 --> 00:08:03,691
+and as always, please hit the like button, and I look forward to seeing you in the next book review.
+
+84
+00:08:03,691 --> 00:08:04,686
+Thanks for listening.

@@ -1,0 +1,655 @@
+1
+00:00:00,000 --> 00:00:02,960
+Hope you enjoy this clip and if you do please like and subscribe
+
+2
+00:00:04,400 --> 00:00:10,460
+I'm pretty sure like the average person would not only not know what a quant is but also they've probably never heard of Jane Street
+
+3
+00:00:10,460 --> 00:00:15,464
+So the first thing I'll ask you is what exactly is Jane Street? How would you describe it to the average person?
+
+4
+00:00:15,464 --> 00:00:16,440
+Yeah, sure
+
+5
+00:00:16,440 --> 00:00:22,720
+So Jane Street is what we call a market making firm and it uses sort of like quantitative techniques to do that
+
+6
+00:00:22,720 --> 00:00:29,039
+So what does a market maker write a market maker sort of like takes these stocks takes these like all these derivatives and whatever
+
+7
+00:00:29,039 --> 00:00:32,660
+and just sort of like, you know, buys and sells them, right?
+
+8
+00:00:32,660 --> 00:00:36,665
+So maybe, right, maybe if you're trying to buy like some Tesla or something, right?
+
+9
+00:00:36,665 --> 00:00:39,610
+Let's say Tesla's at $500.
+
+10
+00:00:39,610 --> 00:00:43,720
+Let's say Gain Street might be buying at $499 and selling at $501, right?
+
+11
+00:00:43,720 --> 00:00:48,520
+So by doing that, Gain Street will sort of like, you know, provide this service where
+
+12
+00:00:48,520 --> 00:00:50,320
+like people can participate in the market, right?
+
+13
+00:00:50,320 --> 00:00:54,940
+If you can buy and sell stocks, they can gain exposure into the sort of like, you know,
+
+14
+00:00:54,940 --> 00:00:57,760
+the markets and the companies they believe in.
+
+15
+00:00:57,760 --> 00:01:01,300
+If the markets are going like, if people are going to buy a lot of Tesla, it's still up
+
+16
+00:01:01,300 --> 00:01:05,019
+to Jane Street to be able to provide both sides of the service.
+
+17
+00:01:05,019 --> 00:01:06,020
+Right.
+
+18
+00:01:06,020 --> 00:01:07,680
+And that's what provides liquidity in the market.
+
+19
+00:01:07,680 --> 00:01:12,040
+I hear a lot about providing liquidity in the market from a market maker's perspective.
+
+20
+00:01:12,040 --> 00:01:15,520
+So could you describe liquidity in a bit more detail?
+
+21
+00:01:15,520 --> 00:01:16,520
+Yeah.
+
+22
+00:01:16,520 --> 00:01:21,520
+So liquidity is sort of like a sort of like the crux of any like good free and open market.
+
+23
+00:01:21,520 --> 00:01:25,100
+The idea being that like if I'm going to be comfortable trading, I can like again buy
+
+24
+00:01:25,100 --> 00:01:29,133
+buy or sell stocks, derivatives, commodities, whatever you want.
+
+25
+00:01:29,133 --> 00:01:33,640
+But if I'm going to feel comfortable, I need to feel like, hey, I should go to buy this
+
+26
+00:01:33,640 --> 00:01:34,950
+and then sell it later on.
+
+27
+00:01:34,950 --> 00:01:39,020
+If it's too hard to buy it or too hard to sell it, that's not going to make me feel good.
+
+28
+00:01:39,020 --> 00:01:43,240
+If I'm like a soybean farmer, this is a classic sort of example that we go through.
+
+29
+00:01:43,240 --> 00:01:46,610
+If I'm like a soybean farmer, I depend on the liquidity of soybeans.
+
+30
+00:01:46,610 --> 00:01:53,259
+If I have to grow myself soybeans, I have to sort of sell that off to purchase other
+
+31
+00:01:53,259 --> 00:01:55,030
+goods and services for my living.
+
+32
+00:01:55,030 --> 00:01:57,320
+If I can't sell my store, I'd be in trouble.
+
+33
+00:01:57,320 --> 00:02:10,873
+I can reliably trust that I be able to sell it But thanks to market makers like Gain Street who provide both sides sides of this buy they have this option that serves as this insurance Where it like oh I
+
+34
+00:02:10,873 --> 00:02:16,573
+know someone is going to be buying this, selling my soybeans. And because of that, I'm more
+
+35
+00:02:16,573 --> 00:02:21,273
+comfortable engaging in that market and actually growing my soybeans.
+
+36
+00:02:21,273 --> 00:02:25,873
+So as a quant, what exactly do you do in this whole grand scheme of things? The goal name
+
+37
+00:02:25,873 --> 00:02:27,833
+Maybe the game is sort of like, you know,
+
+38
+00:02:27,833 --> 00:02:30,213
+currently something's sitting at a price.
+
+39
+00:02:30,213 --> 00:02:32,993
+What is that price going to be in an hour?
+
+40
+00:02:32,993 --> 00:02:36,093
+In maybe even in like a minute, maybe in 10 seconds,
+
+41
+00:02:36,093 --> 00:02:38,573
+maybe in seven days, right?
+
+42
+00:02:38,573 --> 00:02:41,013
+These sort of like, and so the idea of a plan is that
+
+43
+00:02:41,013 --> 00:02:43,653
+your main goal is to either come up with,
+
+44
+00:02:43,653 --> 00:02:46,213
+execute trading strategies, right?
+
+45
+00:02:46,213 --> 00:02:48,773
+You provide the service liquidity by having buy sell,
+
+46
+00:02:48,773 --> 00:02:50,873
+but at the same time, you're also able to pocket
+
+47
+00:02:50,873 --> 00:02:52,033
+some of that difference, right?
+
+48
+00:02:52,033 --> 00:02:53,893
+You're able to be like, oh, I bought one for 499
+
+49
+00:02:53,893 --> 00:02:55,673
+and sold one for 501, oh, that's $2, great,
+
+50
+00:02:55,673 --> 00:02:56,413
+I'm happy with that.
+
+51
+00:02:56,413 --> 00:02:57,238
+Yeah.
+
+52
+00:02:57,238 --> 00:03:01,988
+What each individual quant does, so excuse me, is kind of different, right?
+
+53
+00:03:01,988 --> 00:03:06,448
+Where it's like, you know, some will focus more on like, oh, statistical analysis.
+
+54
+00:03:06,448 --> 00:03:06,708
+Right.
+
+55
+00:03:06,708 --> 00:03:09,453
+Or some will be like, oh, how do we execute this like perfectly?
+
+56
+00:03:09,453 --> 00:03:13,953
+How do we, and you know, how do we make sure our systems can communicate with certain exchanges
+
+57
+00:03:13,953 --> 00:03:16,108
+to get that going?
+
+58
+00:03:16,108 --> 00:03:16,393
+Yeah.
+
+59
+00:03:16,393 --> 00:03:17,393
+That makes sense.
+
+60
+00:03:17,393 --> 00:03:22,093
+And I know that JSTRE offers both quantitative trading and research internships.
+
+61
+00:03:22,093 --> 00:03:24,638
+So what's the difference between the two roles at JSTRE?
+
+62
+00:03:24,638 --> 00:03:24,853
+Yeah.
+
+63
+00:03:24,853 --> 00:03:26,548
+Or just in general, I guess.
+
+64
+00:03:26,548 --> 00:03:31,348
+So certainly, so quant trading and research is kind of, it's a little bit in the name,
+
+65
+00:03:31,348 --> 00:03:35,953
+where the idea is that quant research will focus a lot more on like, you know, understanding
+
+66
+00:03:35,953 --> 00:03:36,808
+the statistics, right?
+
+67
+00:03:36,808 --> 00:03:41,048
+Doing sort of like taking historical data and sort of like running tests, you know.
+
+68
+00:03:41,048 --> 00:03:42,223
+You run these tests, right?
+
+69
+00:03:42,223 --> 00:03:45,133
+And you're able to like, you know, you come up with patterns, right?
+
+70
+00:03:45,133 --> 00:03:47,918
+Let's say, oh, there's some significance to these results, right?
+
+71
+00:03:47,918 --> 00:03:48,198
+Right.
+
+72
+00:03:48,198 --> 00:03:53,473
+And the idea is that maybe you do that and maybe someone goes in and tries to trade on
+
+73
+00:03:53,473 --> 00:03:54,253
+that strategy, right?
+
+74
+00:03:54,253 --> 00:03:56,153
+That's what a trader would do, right?
+
+75
+00:03:56,153 --> 00:03:59,743
+A lot of different firms do it in different ways.
+
+76
+00:03:59,743 --> 00:04:04,598
+So for example, Two Sigma, where you interned actually,
+
+77
+00:04:04,598 --> 00:04:17,387
+focuses a lot more on sort of automatic trading or automated trading right Where they won have people like at each other who will sort of instead be like oh I try a bot to do it for me right
+
+78
+00:04:17,387 --> 00:04:18,807
+Bots are much faster than us,
+
+79
+00:04:18,807 --> 00:04:21,087
+and they can trade much higher volume,
+
+80
+00:04:21,087 --> 00:04:23,467
+and if you can be confident in that strategy,
+
+81
+00:04:23,467 --> 00:04:25,467
+then a bot can do much better than a human can.
+
+82
+00:04:25,467 --> 00:04:27,307
+Jane Street focuses more on the human side.
+
+83
+00:04:27,307 --> 00:04:28,767
+Of course, Jane Street still does have
+
+84
+00:04:28,767 --> 00:04:30,647
+all these automated trading bots,
+
+85
+00:04:30,647 --> 00:04:34,907
+but Jane Street will oftentimes also train manual trading.
+
+86
+00:04:34,907 --> 00:04:41,627
+I remember we do a lot of mock trading sessions where we like physically go in with like something that looks like a system that like
+
+87
+00:04:41,627 --> 00:04:43,892
+real Jane Street traders use
+
+88
+00:04:43,892 --> 00:04:49,522
+And we'd actually practice with it. We hit like like every like button on our keyboard did something was really cool
+
+89
+00:04:49,522 --> 00:04:51,027
+Kind of a game
+
+90
+00:04:51,027 --> 00:04:53,587
+But like, you know, that's what traders do sometimes
+
+91
+00:04:53,587 --> 00:04:58,787
+They'll just like sit around and be like I'm gonna buy this and sell this gonna buy this and sell this while engaging with our sort of
+
+92
+00:04:58,787 --> 00:05:03,827
+like trading interface. I see. So in terms of like how the
+
+93
+00:05:03,827 --> 00:05:09,747
+internships go themselves, like both sides will be doing a lot of mock trading, both sides will also
+
+94
+00:05:09,747 --> 00:05:15,827
+engage in some research and this sort of like reflects a sort of ongoing shift in terms of how
+
+95
+00:05:15,827 --> 00:05:20,627
+sort of like Wall Street is thinking about trading I think in terms of like oh you know nowadays it's
+
+96
+00:05:20,627 --> 00:05:26,067
+sort of like oh you know you've got to be you got to be the pinnacle of research and a lot of people
+
+97
+00:05:26,067 --> 00:05:31,267
+are converting into automated trading and sort of the rules of being a quant trader
+
+98
+00:05:31,267 --> 00:05:34,067
+and a quant researcher are sort of merging together, if that makes sense.
+
+99
+00:05:34,067 --> 00:05:38,547
+Yeah, so two follow-ups on that. The first thing is, how come you guys do mock trading instead of
+
+100
+00:05:38,547 --> 00:05:43,427
+real trading at the internships? Yeah, I mean, I guess the first thing to mention is that
+
+101
+00:05:43,427 --> 00:05:49,027
+trading is hard. Even to this day, I've gone through a full internship, I have some understanding
+
+102
+00:05:49,027 --> 00:05:53,267
+of how I would trade, but it's very difficult. And on the spot, you'll have to make some very
+
+103
+00:05:54,387 --> 00:05:59,507
+tough decisions, right? And trading is very competitive. You can imagine, you can't expect
+
+104
+00:05:59,507 --> 00:06:01,267
+like a two week intern to compete against
+
+105
+00:06:01,267 --> 00:06:02,607
+like a tenured seasoned veteran.
+
+106
+00:06:02,607 --> 00:06:03,447
+Right.
+
+107
+00:06:03,447 --> 00:06:04,287
+On the market, right?
+
+108
+00:06:04,287 --> 00:06:05,127
+They'll just get money.
+
+109
+00:06:05,127 --> 00:06:08,107
+So it's just mostly cost effective for firms to just,
+
+110
+00:06:08,107 --> 00:06:11,027
+you know, come up with their own like little mock system.
+
+111
+00:06:11,027 --> 00:06:21,260
+Right so that way they can engage in trading with each other right If you trading with people who are like sort of similar skill level I guess I say you feel I feel you can learn a lot more right You can be like oh what did they trade
+
+112
+00:06:21,260 --> 00:06:22,100
+What did I trade?
+
+113
+00:06:22,100 --> 00:06:24,140
+How can I improve on my trading?
+
+114
+00:06:24,140 --> 00:06:26,100
+How do I, how am I understanding this market more?
+
+115
+00:06:26,100 --> 00:06:28,060
+Right, and oftentimes in these mock trades scenarios,
+
+116
+00:06:28,060 --> 00:06:29,500
+these markets are a lot simpler,
+
+117
+00:06:29,500 --> 00:06:32,240
+sort of like patterns and anomalies are much more apparent
+
+118
+00:06:32,240 --> 00:06:33,780
+than in the real market.
+
+119
+00:06:33,780 --> 00:06:36,660
+So it sort of like trains your brain to sort of like,
+
+120
+00:06:36,660 --> 00:06:39,140
+you know, understand like, oh, what am I looking for?
+
+121
+00:06:39,140 --> 00:06:41,430
+So what are some common myths about quant stat?
+
+122
+00:06:41,430 --> 00:06:43,235
+You realize from this when you start working.
+
+123
+00:06:43,235 --> 00:06:44,495
+That's a good question.
+
+124
+00:06:44,495 --> 00:06:49,140
+I think what I imagine the quant internship to be would be a lot of math on the board.
+
+125
+00:06:49,140 --> 00:06:52,810
+Really diving deep into like thinking about a game theory and stuff like that.
+
+126
+00:06:52,810 --> 00:06:57,585
+And they're saying, you know, if party A does this, then party B is going to do that.
+
+127
+00:06:57,585 --> 00:06:58,525
+Like the interviews.
+
+128
+00:06:58,525 --> 00:07:00,030
+Right, like the interviews.
+
+129
+00:07:00,030 --> 00:07:01,595
+Sort of you would expect.
+
+130
+00:07:01,595 --> 00:07:03,400
+But no, it turns out a lot.
+
+131
+00:07:03,400 --> 00:07:09,360
+But again, like I talked about sort of maybe changing like ideology in the world of market
+
+132
+00:07:09,360 --> 00:07:11,240
+making in the world of like Wall Street.
+
+133
+00:07:11,240 --> 00:07:11,660
+Right.
+
+134
+00:07:11,660 --> 00:07:14,585
+We're a lot more dealing with data statistics nowadays.
+
+135
+00:07:14,585 --> 00:07:15,135
+Yeah.
+
+136
+00:07:15,135 --> 00:07:18,520
+But once you're once you're familiar with that and you think you have a good shot, let's
+
+137
+00:07:18,520 --> 00:07:19,735
+say you get an offer from a firm.
+
+138
+00:07:19,735 --> 00:07:21,420
+Why should you or should you not go?
+
+139
+00:07:21,420 --> 00:07:26,030
+I think if I'm talking about should not, I think the I think the main thing is the hours.
+
+140
+00:07:26,030 --> 00:07:26,290
+Right.
+
+141
+00:07:26,290 --> 00:07:30,120
+This is not like your typical sort of tech job that you might, you know, you might be
+
+142
+00:07:30,120 --> 00:07:33,920
+cozy in San Francisco working like maybe 25 hours a week,
+
+143
+00:07:33,920 --> 00:07:34,940
+let's say.
+
+144
+00:07:34,940 --> 00:07:36,660
+No, not here.
+
+145
+00:07:36,660 --> 00:07:38,540
+If you're gonna be a real, if you're gonna be a client,
+
+146
+00:07:38,540 --> 00:07:41,720
+probably you're gonna be putting in 40 minimum hours,
+
+147
+00:07:41,720 --> 00:07:43,620
+probably 50 usually.
+
+148
+00:07:43,620 --> 00:07:46,120
+So if you think about the trading day,
+
+149
+00:07:46,120 --> 00:07:48,000
+I think the markets are like 8.30 to 4,
+
+150
+00:07:48,000 --> 00:07:48,820
+that's a bare minimum.
+
+151
+00:07:48,820 --> 00:07:50,680
+If you're a trader, that's a minimum,
+
+152
+00:07:50,680 --> 00:07:53,440
+that is already a minimum for you, 8.30 to 4.
+
+153
+00:07:53,440 --> 00:07:55,860
+And usually, you gotta get there at 8, right?
+
+154
+00:07:55,860 --> 00:07:56,980
+Because it's like intense.
+
+155
+00:07:56,980 --> 00:07:58,440
+Right, it's intense, it's intense.
+
+156
+00:07:58,440 --> 00:08:00,085
+And it's a lot, it's very tiring.
+
+157
+00:08:00,085 --> 00:08:04,560
+the hours put in for quant even in like a place that cares about work life as much as
+
+158
+00:08:04,560 --> 00:08:05,840
+industry can still be a lot.
+
+159
+00:08:05,840 --> 00:08:06,840
+Right.
+
+160
+00:08:06,840 --> 00:08:08,400
+Trading is just a very, very intense job.
+
+161
+00:08:08,400 --> 00:08:09,400
+It's really competitive.
+
+162
+00:08:09,400 --> 00:08:11,400
+Yes, it's very competitive, very intense.
+
+163
+00:08:11,400 --> 00:08:12,400
+Yeah.
+
+164
+00:08:12,400 --> 00:08:15,360
+And you should expect that if you're going to be, if you're planning to enter the quant

@@ -53,7 +53,7 @@ const dayStr = (utcDays) => {
 };
 
 function renderStats() {
-  const real = data.videos.filter((v) => !v.demo);
+  const real = data.videos;
   const doneCount = real.filter((v) => progress.done[v.id]).length;
   $("stats").replaceChildren(
     h("span", {}, `连续 ${streak(progress.done)} 天`),
@@ -63,7 +63,7 @@ function renderStats() {
 
 // ---------- today's pick ----------
 function todaysVideo() {
-  const real = data.videos.filter((v) => !v.demo);
+  const real = data.videos;
   const days = utcDay(todayStr) - utcDay(data.startDate);
   return real[mod(days, real.length)];
 }
@@ -77,16 +77,16 @@ function renderToday(video) {
     h("span", { class: "badge" }, video.level),
     h("span", { class: "badge" }, video.topic),
     video.channel && h("span", { class: "badge" }, video.channel),
-    video.demo && h("span", { class: "badge demo" }, "示例内容"),
+    video.minutes && h("span", { class: "badge" }, `${video.minutes} 分钟`),
   );
   const playerSlot = h("div");
   const actions = h("div", { class: "actions" },
-    video.url && h("button", {
+    video.ytId && h("button", {
       class: "primary",
       onclick: () => {
         playerSlot.replaceChildren(h("iframe", {
           class: "player",
-          src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.id)}`,
+          src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(video.ytId)}`,
           title: video.title,
           allow: "accelerometer; encrypted-media; picture-in-picture; fullscreen",
           allowfullscreen: true,
@@ -150,12 +150,13 @@ const panels = {
     const toggle = h("button", {
       onclick: () => { box.classList.toggle("hide-zh"); toggle.textContent = box.classList.contains("hide-zh") ? "显示中文解释" : "隐藏中文解释"; },
     }, "隐藏中文解释");
+    const hasZh = l.transcript.some((s) => s.zh);
     box.append(
-      h("div", { class: "toolbar" }, toggle, h("span", {}, `${l.transcript.length} 段`)),
+      h("div", { class: "toolbar" }, hasZh && toggle, h("span", {}, `${l.transcript.length} 段`)),
       ...l.transcript.map((s) => h("div", { class: "seg" },
         s.time && h("div", { class: "t" }, s.time),
-        h("p", { class: "en", lang: l.lang }, s.en),
-        h("p", { class: "zh" }, s.zh),
+        h("p", { class: "en", lang: l.lang }, s.text),
+        s.zh && h("p", { class: "zh" }, s.zh),
       )),
     );
     return box;
@@ -226,7 +227,7 @@ function pendingBox(video) {
 const byId = (id) => data.videos.find((v) => v.id === id);
 
 function renderPath() {
-  const real = data.videos.filter((v) => !v.demo);
+  const real = data.videos;
   const list = $("path-list");
   list.replaceChildren(...real.map((v, i) => {
     const done = progress.done[v.id];
@@ -241,12 +242,6 @@ function renderPath() {
       dot,
     );
   }));
-  if (data.videos.some((v) => v.demo)) {
-    list.append(h("li", {},
-      h("span", { class: "n" }, "·"),
-      h("div", {}, h("button", { onclick: () => select("demo-sample", true) }, "查看示例学习包（演示页面功能）")),
-    ));
-  }
 }
 
 function select(id, scroll) {
