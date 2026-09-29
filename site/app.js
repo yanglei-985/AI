@@ -104,7 +104,7 @@ function renderToday(video) {
 }
 
 // ---------- player (YouTube IFrame API) ----------
-// The player sits in a sticky bar so it stays in view while the transcript scrolls.
+// The player sits in a pinned bar so it stays in view while the transcript scrolls.
 // The transcript highlights the line being spoken; clicking a time jumps the video there.
 const PREF_KEY = "quant-prefs-v1";
 const prefs = (() => {
@@ -112,7 +112,37 @@ const prefs = (() => {
   try { return { ...d, ...JSON.parse(localStorage.getItem(PREF_KEY)) }; } catch { return d; }
 })();
 const savePrefs = () => { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch { /* storage unavailable */ } };
-const applyPrefs = () => $("player-bar").classList.toggle("unpinned", !prefs.pin);
+const applyPrefs = () => pinCheck();
+
+// Pin the player under the header once its slot scrolls past it (works without CSS sticky).
+let pinQueued = false;
+function pinCheck() {
+  const holder = $("player-holder"), bar = $("player-bar"), header = document.querySelector(".top");
+  if (!holder || !bar) return;
+  const fixed = bar.classList.contains("fixed");
+  if (bar.hidden || !prefs.pin) {
+    if (fixed) { bar.classList.remove("fixed"); holder.style.height = ""; }
+    return;
+  }
+  const top = holder.getBoundingClientRect().top;
+  const pinAt = header.offsetHeight;
+  if (!fixed && top <= pinAt) {
+    holder.style.height = `${bar.offsetHeight}px`;
+    bar.classList.add("fixed");
+  } else if (fixed && top > pinAt) {
+    bar.classList.remove("fixed");
+    holder.style.height = "";
+  } else if (fixed) {
+    holder.style.height = `${bar.offsetHeight}px`;
+  }
+}
+const queuePin = () => {
+  if (pinQueued) return;
+  pinQueued = true;
+  requestAnimationFrame(() => { pinQueued = false; pinCheck(); });
+};
+window.addEventListener("scroll", queuePin, { passive: true });
+window.addEventListener("resize", queuePin);
 
 let ytPlayer = null, ytLoading = null, playerToken = 0;
 let seg = { starts: [], els: [], active: -1 };
@@ -151,6 +181,7 @@ function renderPlayer(video) {
     msg.classList.add("show");
   };
   bar.firstElementChild.replaceChildren(msg, slot);
+  queuePin();
   const token = playerToken;
   loadYT().then((ok) => {
     if (token !== playerToken) return;
