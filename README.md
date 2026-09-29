@@ -36,3 +36,5 @@ python3 -m http.server -d site 8000   # 打开 http://localhost:8000
 ## 关于视频列表
 
 `content/curriculum.json` 中的视频来自网络搜索结果，标题与链接确实出现在搜索结果里，但生成列表时无法打开 YouTube 核实频道、时长和字幕是否可用。请以实际视频页为准；不合适的视频直接从列表里删掉或替换即可。
+
+检查视频是否仍可用（在你自己的电脑上运行）：`python3 scripts/check_videos.py`，把输出贴给 Claude 即可替换失效视频。

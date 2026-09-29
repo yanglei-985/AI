@@ -1,16 +1,7 @@
 {
   "startDate": "2026-09-29",
-  "note": "视频均来自 2026-09-29 的网络搜索结果（标题与链接出现在搜索结果里），但当时无法在沙箱内打开 YouTube 核实频道/时长/字幕，请以实际视频页为准。channel 为 null 表示尚未确认。",
+  "note": "视频来自网络搜索结果，未能在沙箱内核实；其中 8GnJV5i-R7Q 已被你确认为私享并移除。请运行 scripts/check_videos.py 检查其余视频是否可用。channel 为 null 表示尚未确认。",
   "videos": [
-    {
-      "id": "8GnJV5i-R7Q",
-      "title": "Quant Trading Basics for Beginners Explained | Quantreo",
-      "channel": "Quantreo",
-      "lang": "en",
-      "level": "入门",
-      "topic": "量化入门",
-      "reason": "面向零基础的量化交易概览课程，先建立「量化到底在做什么」的整体图景，再学后面的专题。"
-    },
     {
       "id": "504woY_aMjE",
       "title": "What is Quantitative Trading? The Complete Beginner's Guide",
