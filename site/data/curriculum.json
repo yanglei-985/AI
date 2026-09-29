@@ -101,7 +101,7 @@
       "level": "进阶",
       "topic": "因子投资",
       "reason": "Fama-French 三因子模型（市场、规模 SMB、价值 HML）的讲解和收益计算示例，是理解因子投资的起点。",
-      "status": "needs-notes",
+      "status": "ready",
       "ytId": null,
       "url": null,
       "minutes": 13
@@ -114,7 +114,7 @@
       "level": "进阶",
       "topic": "因子投资",
       "reason": "从单因子选股到多因子组合的中文讲解。",
-      "status": "needs-notes",
+      "status": "ready",
       "ytId": "IsfMOskV-pk",
       "url": "https://www.youtube.com/watch?v=IsfMOskV-pk",
       "minutes": 7
@@ -127,7 +127,7 @@
       "level": "入门",
       "topic": "Python 量化",
       "reason": "中文 Python 量化入门课（上），作者分享自己的一个长期策略。",
-      "status": "needs-notes",
+      "status": "ready",
       "ytId": "2W7iIifTVDE",
       "url": "https://www.youtube.com/watch?v=2W7iIifTVDE",
       "minutes": 41
@@ -140,7 +140,7 @@
       "level": "进阶",
       "topic": "回测",
       "reason": "用 Python 走一遍量化回测流程的中文教程。",
-      "status": "needs-notes",
+      "status": "ready",
       "ytId": "wByjGWMTnNQ",
       "url": "https://www.youtube.com/watch?v=wByjGWMTnNQ",
       "minutes": 73
