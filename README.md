@@ -4,20 +4,19 @@
 
 ## 怎么用
 
-1. **打开网页**：首页显示「今日推荐」（按日期在学习路径中轮换），可点击「在此播放」或跳转 YouTube；下方是关键点 / 字幕 / 术语 / 测验四个标签。
-2. **补字幕**：云端环境访问不了 YouTube，字幕由你导出。任选一种：
-   - 视频页 → 描述区「显示转写文稿」→ 复制，保存为 `content/<视频ID>/transcript.txt`；
-   - 本机运行 `pip install yt-dlp && python3 scripts/fetch_transcript.py <视频ID> --lang en`（中文视频用 `--lang zh-Hans`）。
-3. **生成学习包**：把字幕交给 Claude（粘贴，或说「处理 `<视频ID>`」），它会产出 `bilingual.md`（英文原文 + 中文解释）、`notes.md`（摘要/关键点/术语/延伸阅读）、`quiz.json`（测验题）。
-4. **发布**：`node scripts/build.mjs` 校验并生成 `site/data/`，推送到 `main` 后由 GitHub Actions 自动部署。
-   首次需要在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**。
+1. **打开网页**：首页显示「今日推荐」（按日期在学习路径中轮换，16 个视频循环），可点击「在此播放」或跳转 YouTube；下方是关键点 / 字幕 / 术语 / 测验四个标签。英文视频的字幕下方有中文解释（可隐藏）；中文视频只有原文字幕。
+2. **做完测验**才会记为「已学」，进度和连续学习天数保存在你自己的浏览器里。
+3. **添加新视频**：见下面「添加新视频」。
+4. **发布**：推送到 `main`（或当前开发分支）后，GitHub Actions 会运行 `node scripts/build.mjs` 并部署 `site/`。首次需要在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，然后在 Actions 页面手动运行一次 *Deploy site to GitHub Pages*。网址通常是 `https://<用户名>.github.io/<仓库名>/`。
 
 ## 目录
 
 | 路径 | 说明 |
 | --- | --- |
 | `content/curriculum.json` | 学习路径：起始日期 + 有序视频列表（含推荐理由） |
-| `content/<id>/transcript.txt` | 你导出的原始字幕 |
+| `content/<id>/transcript.srt` | 你导出的原始字幕（SRT） |
+| `content/<id>/fixes.json` | 字幕里的语音识别错误修正（正则 → 替换） |
+| `content/<id>/zh.txt` | 英文视频的中文解释，每行 `序号: 中文` |
 | `content/<id>/bilingual.md` | 双语字幕：英文段落 + 以 `> ` 开头的中文解释，段落以空行分隔，可选 `[mm:ss]` 开头 |
 | `content/<id>/notes.md` | `## 摘要` / `## 关键点` / `## 术语表`（`- **术语**: 释义`）/ `## 延伸阅读` |
 | `content/<id>/quiz.json` | `[{"q","options":[…],"answer":下标,"explain"}]` |

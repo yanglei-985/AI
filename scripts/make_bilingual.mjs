@@ -41,7 +41,11 @@ const label = (t) => {
   return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
 };
 
-const MIN = 30, MAX = 55; // seconds per chunk: close at a sentence end after MIN, or force at MAX
+// seconds per chunk: close at a sentence end after MIN, or force at MAX.
+// Long lectures can override with content/<id>/chunking.json: {"min": 45, "max": 80}
+const cfgPath = join(dir, "chunking.json");
+const cfg = existsSync(cfgPath) ? JSON.parse(readFileSync(cfgPath, "utf8")) : {};
+const MIN = cfg.min ?? 30, MAX = cfg.max ?? 55;
 function chunk(cues, fixes) {
   const out = [];
   let cur = null;
