@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 工程课程导航</title>
+<meta name="description" content="AI Engineering from Scratch 学习路径的中文导航：每节课学什么、重点在哪里、要花多少时间。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d97757'/%3E%3Cpath d='M16 7v18M7 16h18M10 10l12 12M22 10L10 22' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #faf9f5;
+  --surface: #ffffff;
+  --surface-2: #f0eee6;
+  --text: #141413;
+  --muted: #5e5d59;
+  --faint: #8a877e;
+  --line: #e8e6dc;
+  --accent: #d97757;
+  --accent-ink: #b85a3b;
+  --accent-soft: #f5e3da;
+  --ok: #5a7d4f;
+  --ok-soft: #e4ecdc;
+  --shadow: 0 1px 2px rgba(20,20,19,.04), 0 4px 16px rgba(20,20,19,.05);
+  --serif: "Tiempos Headline", "Iowan Old Style", Georgia, "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #262624; --surface: #30302e; --surface-2: #383835; --text: #f5f4ef; --muted: #b7b4ab;
+    --faint: #8f8c84; --line: #44433f; --accent: #e08a6c; --accent-ink: #ef9f83; --accent-soft: #4a3329;
+    --ok: #9cc28c; --ok-soft: #34402f; --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #262624; --surface: #30302e; --surface-2: #383835; --text: #f5f4ef; --muted: #b7b4ab;
+  --faint: #8f8c84; --line: #44433f; --accent: #e08a6c; --accent-ink: #ef9f83; --accent-soft: #4a3329;
+  --ok: #9cc28c; --ok-soft: #34402f; --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 640px) { .wrap { padding: 0 16px; } }
+
+/* ---------- nav ---------- */
+.nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; align-items: center; gap: 24px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; white-space: nowrap; }
+.brand-mark { width: 26px; height: 26px; flex: none; }
+.nav-links { display: flex; gap: 4px; margin: 0 auto 0 8px; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a { text-decoration: none; padding: 6px 12px; border-radius: 8px; color: var(--muted); font-size: 15px; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.on { color: var(--text); background: var(--surface-2); }
+.nav-links a small { font-size: 12px; color: var(--faint); margin-left: 4px; }
+.nav-cta { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; background: var(--text); color: var(--bg); padding: 8px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+.nav-cta:hover { opacity: .88; }
+.theme-btn { border: 1px solid var(--line); background: transparent; border-radius: 8px; width: 36px; height: 36px; cursor: pointer; display: grid; place-items: center; flex: none; }
+@media (max-width: 820px) {
+  .nav-inner { flex-wrap: wrap; height: auto; padding: 10px 0; gap: 8px 12px; }
+  .nav-links { order: 3; width: 100%; margin: 0; }
+  .nav-cta { margin-left: auto; }
+  .nav-links a small { display: none; }
+}
+
+/* ---------- sections ---------- */
+section { padding: 88px 0 24px; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; margin: 0 0 12px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.01em; line-height: 1.2; margin: 0; }
+h2 { font-size: clamp(30px, 4vw, 42px); }
+h3 { font-size: 22px; }
+.lede { color: var(--muted); font-size: 18px; max-width: 680px; margin: 16px 0 0; }
+.sec-head { margin-bottom: 36px; }
+
+/* ---------- hero ---------- */
+.hero { padding: 96px 0 40px; }
+.hero h1 { font-size: clamp(38px, 6.4vw, 68px); max-width: 860px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lede { font-size: 19px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: 500; border: 1px solid transparent; cursor: pointer; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-ink); }
+.btn-ghost { border-color: var(--line); background: var(--surface); }
+.btn-ghost:hover { border-color: var(--faint); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 56px; }
+.stat { background: var(--surface); padding: 20px 24px; }
+.stat b { display: block; font-family: var(--serif); font-size: 34px; font-weight: 500; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } .hero { padding-top: 56px; } }
+
+.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+.how-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); }
+.how-card .num { font-family: var(--serif); color: var(--accent); font-size: 28px; line-height: 1; }
+.how-card h3 { font-size: 19px; margin: 14px 0 8px; }
+.how-card p { margin: 0; color: var(--muted); font-size: 15px; }
+@media (max-width: 820px) { .how { grid-template-columns: 1fr; } }
+
+.map { margin-top: 56px; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; }
+.map-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.map-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.phases { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.phase { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--bg); }
+.phase .pn { font: 12px var(--mono); color: var(--faint); }
+.phase .pt { font-weight: 600; font-size: 15px; margin: 2px 0; }
+.phase .pm { font-size: 13px; color: var(--muted); }
+.phase.hot { border-color: var(--accent); background: var(--accent-soft); }
+.phase.hot .pn { color: var(--accent-ink); }
+
+/* ---------- path picker ---------- */
+.picker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.pick { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; cursor: pointer; transition: border-color .15s, transform .15s; display: flex; flex-direction: column; gap: 6px; }
+.pick:hover { border-color: var(--faint); }
+.pick[aria-selected="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.pick .k { font: 12px var(--mono); color: var(--faint); }
+.pick .t { font-family: var(--serif); font-size: 19px; line-height: 1.3; }
+.pick .s { font-size: 13px; color: var(--muted); }
+.pick .m { font-size: 13px; color: var(--faint); margin-top: auto; padding-top: 6px; }
+.bar { height: 4px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--ok); border-radius: 4px; width: 0; transition: width .3s; }
+@media (max-width: 900px) { .picker { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .picker { grid-template-columns: 1fr; } }
+
+.panel { margin-top: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: var(--shadow); }
+@media (max-width: 640px) { .panel { padding: 18px; border-radius: 16px; } }
+.panel-head { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+.panel-head h3 { font-size: 28px; }
+.panel-head .en { color: var(--faint); font-size: 14px; margin-top: 4px; }
+.panel-head p { color: var(--muted); margin: 10px 0 0; max-width: 640px; }
+.meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.chip { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); color: var(--muted); white-space: nowrap; }
+.chip.acc { background: var(--accent-soft); color: var(--accent-ink); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.progress-box { min-width: 200px; }
+.progress-box .lbl { font-size: 13px; color: var(--muted); margin-bottom: 6px; display: flex; justify-content: space-between; }
+.tools { display: flex; gap: 10px; margin: 24px 0 12px; flex-wrap: wrap; }
+.search { flex: 1; min-width: 200px; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 9px 14px; }
+.search:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.mini-btn { border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 8px 14px; cursor: pointer; font-size: 14px; }
+.mini-btn:hover { border-color: var(--faint); }
+
+/* ---------- lesson rows ---------- */
+.lessons { list-style: none; margin: 0; padding: 0; }
+.lesson { border-top: 1px solid var(--line); }
+.lesson:first-child { border-top: 0; }
+.lesson details > summary { list-style: none; display: grid; grid-template-columns: 36px 1fr auto auto; align-items: center; gap: 14px; padding: 16px 4px; cursor: pointer; }
+.lesson details > summary::-webkit-details-marker { display: none; }
+.lesson .idx { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font: 13px var(--mono); color: var(--muted); }
+.lesson.done .idx { background: var(--ok); border-color: var(--ok); color: #fff; }
+.lesson .ttl { font-weight: 600; line-height: 1.4; }
+.lesson .ttl small { display: block; font-weight: 400; color: var(--faint); font-size: 13px; margin-top: 2px; }
+.lesson .min { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.lesson .caret { color: var(--faint); transition: transform .2s; font-size: 14px; }
+.lesson details[open] .caret { transform: rotate(90deg); }
+.lesson .body { padding: 0 4px 20px 54px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.lesson .body h4 { margin: 0 0 6px; font-size: 13px; letter-spacing: .06em; color: var(--accent-ink); font-weight: 600; }
+.lesson .body p { margin: 0; color: var(--text); }
+.lesson .body ul { margin: 0; padding-left: 18px; }
+.lesson .body li { margin: 3px 0; }
+.lesson .body li::marker { color: var(--accent); }
+.lesson .foot { grid-column: 1 / -1; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; font-size: 14px; }
+.lesson .foot a { color: var(--accent-ink); text-decoration: none; }
+.lesson .foot a:hover { text-decoration: underline; }
+.lesson .also { color: var(--faint); font-size: 13px; }
+.check { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; background: var(--bg); }
+.check input { accent-color: var(--ok); }
+@media (max-width: 720px) {
+  .lesson details > summary { grid-template-columns: 32px 1fr auto; gap: 10px; }
+  .lesson .caret { display: none; }
+  .lesson .body { grid-template-columns: 1fr; padding-left: 0; }
+}
+.empty { color: var(--muted); padding: 24px 4px; }
+
+/* ---------- routes ---------- */
+.routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.route { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; }
+.route:hover { border-color: var(--faint); }
+.route[aria-selected="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.route .q { font-size: 15px; color: var(--muted); }
+.route .t { font-family: var(--serif); font-size: 21px; }
+.route .jobs { font-size: 12px; color: var(--faint); }
+@media (max-width: 900px) { .routes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .routes { grid-template-columns: 1fr; } }
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.box { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+.box h4 { margin: 0 0 8px; font-size: 14px; color: var(--accent-ink); letter-spacing: .04em; }
+.box ul { margin: 0; padding-left: 18px; font-size: 15px; }
+.box li { margin: 3px 0; }
+.box p { margin: 0; font-size: 15px; }
+@media (max-width: 820px) { .cols { grid-template-columns: 1fr; } }
+.stages { margin-top: 28px; display: grid; gap: 14px; }
+.stage { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.stage-head { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 20px; background: var(--bg); }
+.stage-n { width: 34px; height: 34px; border-radius: 10px; background: var(--accent); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 18px; }
+.stage-head h4 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 19px; }
+.stage-head p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+.stage-head .out { margin-top: 8px; font-size: 14px; }
+.stage-head .out b { color: var(--accent-ink); font-weight: 600; }
+.stage .lessons { padding: 0 16px; }
+.cover { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* ---------- time ---------- */
+.time-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; align-items: start; }
+@media (max-width: 900px) { .time-grid { grid-template-columns: 1fr; } }
+.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th, .tbl td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.tbl th { font-size: 13px; color: var(--faint); font-weight: 500; }
+.tbl td.n { white-space: nowrap; text-align: right; font-variant-numeric: tabular-nums; }
+.tbl th.n { text-align: right; }
+.tbl .hbar { height: 6px; background: var(--surface-2); border-radius: 6px; min-width: 60px; }
+.tbl .hbar i { display: block; height: 100%; background: var(--accent); border-radius: 6px; }
+.tbl tr.grp td { font-size: 12px; color: var(--accent-ink); letter-spacing: .06em; font-weight: 600; padding-top: 20px; border-bottom: 0; }
+.planner label { display: block; font-size: 14px; color: var(--muted); margin: 14px 0 6px; }
+.planner select, .planner input[type=range] { width: 100%; }
+.planner select { border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 9px 12px; }
+.planner input[type=range] { accent-color: var(--accent); }
+.result { margin: 18px 0 8px; font-family: var(--serif); font-size: 24px; line-height: 1.35; }
+.result b { color: var(--accent); font-weight: 500; }
+.weeks { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.week { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--bg); }
+.week .wh { display: flex; justify-content: space-between; font-size: 13px; color: var(--faint); margin-bottom: 4px; }
+.week .wh b { color: var(--text); font-weight: 600; }
+.week ul { margin: 0; padding-left: 18px; font-size: 14px; }
+.order { counter-reset: o; list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.order li { counter-increment: o; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; }
+.order li::before { content: counter(o); width: 30px; height: 30px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-ink); display: grid; place-items: center; font-family: var(--serif); }
+.order b { display: block; }
+.order span { color: var(--muted); font-size: 14px; }
+
+/* ---------- news ---------- */
+.news { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.news-item { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.news-item time { color: var(--faint); font-size: 14px; font-variant-numeric: tabular-nums; }
+.news-item .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 6px; background: var(--surface-2); color: var(--muted); margin-bottom: 8px; }
+.news-item .tag.site { background: var(--accent-soft); color: var(--accent-ink); }
+.news-item h3 { font-size: 21px; margin-bottom: 6px; }
+.news-item p { margin: 0; color: var(--muted); }
+@media (max-width: 640px) { .news-item { grid-template-columns: 1fr; gap: 6px; } }
+
+footer { margin-top: 96px; border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+footer a { color: var(--accent-ink); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="主导航">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M16 7v18M7 16h18M10 10l12 12M22 10L10 22" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+      AI 工程 · 课程导航
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">首页<small>Home</small></a>
+      <a href="#courses">课程<small>Courses</small></a>
+      <a href="#routes">职业路线<small>Routes</small></a>
+      <a href="#time">时间<small>Time</small></a>
+      <a href="#news">动态<small>News</small></a>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="切换深浅色">◐</button>
+    <a class="nav-cta" href="#courses">开始学习 →</a>
+  </div>
+</nav>
+
+<main>
+  <!-- ============ HOME ============ -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <p class="eyebrow">AI Engineering from Scratch · 中文学习导航</p>
+      <h1>每节课学什么、<em>重点在哪</em>，一页看清。</h1>
+      <p class="lede">把原站的 4 条核心路径和 6 条职业路线重新整理成中文目录：每一节课都写清楚「学什么」和「重点」，并标出时长，帮你决定先学哪条、每周排多少。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#courses">浏览课程目录</a>
+        <a class="btn btn-ghost" href="#time">算算要学多久</a>
+      </div>
+      <div class="stats" id="stats"></div>
+
+      <div class="how">
+        <div class="how-card"><div class="num">01</div><h3>先打基础</h3><p>从「软件工程基础」和「构建与部署 AI 应用」两条核心路径开始，它们是所有职业路线的共同前提。</p></div>
+        <div class="how-card"><div class="num">02</div><h3>再选方向</h3><p>在「职业路线」里回答一个问题：你最想每周重复做哪种工作？按答案挑一条路线深入。</p></div>
+        <div class="how-card"><div class="num">03</div><h3>边学边打勾</h3><p>每节课展开后可以勾选「已学」，进度只保存在你自己的浏览器里，同一节课在不同路线里会同步。</p></div>
+      </div>
+
+      <div class="map">
+        <div class="map-head">
+          <h3>全课地图：20 个阶段</h3>
+          <p>高亮的阶段是本页学习路径实际用到的；其余阶段可在原课程中按需深入。</p>
+        </div>
+        <div class="phases" id="phases"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSES ============ -->
+  <section id="courses">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Courses · 核心路径</p>
+        <h2>四条核心路径，按顺序学</h2>
+        <p class="lede">每条路径是一组按顺序排好的课。点开任意一节，看这节课学什么、重点是什么。</p>
+      </div>
+      <div class="picker" id="picker" role="tablist" aria-label="核心路径"></div>
+      <div class="panel" id="pathPanel"></div>
+    </div>
+  </section>
+
+  <!-- ============ ROUTES ============ -->
+  <section id="routes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Routes · 职业路线</p>
+        <h2>按你想做的工作选，而不是按头衔选</h2>
+        <p class="lede">六条职业路线是打完基础之后的「专精叠加层」。每条分四个阶段，每个阶段都有明确的产出物，最后组成你的作品集。完成路线不等于保证拿到工作，标注时长只含课程本身。</p>
+      </div>
+      <div class="routes" id="routeCards" role="tablist" aria-label="职业路线"></div>
+      <div class="panel" id="routePanel"></div>
+    </div>
+  </section>
+
+  <!-- ============ TIME ============ -->
+  <section id="time">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Time · 学习时间</p>
+        <h2>要学多久，怎么排</h2>
+        <p class="lede">时长取自原课程标注，只算课程本身，不含自己做项目和练习的时间。同一节课在不同路线里标注的时长可能略有不同。</p>
+      </div>
+      <div class="time-grid">
+        <div class="panel" style="margin-top:0">
+          <h3>各路线时长</h3>
+          <table class="tbl" id="timeTable"></table>
+        </div>
+        <div>
+          <div class="panel planner" style="margin-top:0">
+            <h3>每周排课计划</h3>
+            <label for="planPath">选择路线</label>
+            <select id="planPath"></select>
+            <label for="planHours">每周可投入：<b id="planHoursVal"></b> 小时</label>
+            <input type="range" id="planHours" min="2" max="20" step="1" value="5">
+            <p class="result" id="planResult"></p>
+            <ul class="weeks" id="planWeeks"></ul>
+          </div>
+          <div class="panel">
+            <h3>推荐学习顺序</h3>
+            <ol class="order" style="margin-top:16px">
+              <li><div><b>软件工程基础</b><span>环境、Git、Docker、调试、工具接口、安全与运维，是后面一切的地基。</span></div></li>
+              <li><div><b>构建与部署 AI 应用</b><span>从提示词到 RAG、评测、上线和观测，走完一个 AI 功能的全流程。</span></div></li>
+              <li><div><b>Agent 辅助工程</b><span>学会让编程 Agent 在真实仓库里可靠地干活。</span></div></li>
+              <li><div><b>产品判断与交付</b><span>决定做什么、怎么验证、如何把反馈变成改进。</span></div></li>
+              <li><div><b>选一条职业路线</b><span>大部分课已在前四条学过，路线负责把它们串成作品集。</span></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWS ============ -->
+  <section id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">News · 动态</p>
+        <h2>课程与本站动态</h2>
+      </div>
+      <div class="news" id="newsList"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>课程内容来自开源项目 <a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">AI Engineering from Scratch</a>（MIT 许可），本页为非官方中文导航整理。</p>
+    <p><a href="../">← 返回每日量化学习站</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+'use strict';
+
+var SRC = 'https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/';
+
+/* ---------- 20 phases (lesson counts and hours from the source ROADMAP) ---------- */
+var PHASES = [
+  ['00', '环境与工具', 12, 14, 'setup-and-tooling'],
+  ['01', '数学基础', 22, 23, 'math-foundations'],
+  ['02', '机器学习基础', 18, 21, 'ml-fundamentals'],
+  ['03', '深度学习核心', 13, 15, 'deep-learning-core'],
+  ['04', '计算机视觉', 28, 27, 'computer-vision'],
+  ['05', '自然语言处理', 29, 30, 'nlp-foundations-to-advanced'],
+  ['06', '语音与音频', 17, 18, 'speech-and-audio'],
+  ['07', 'Transformer 深入', 16, 14, 'transformers-deep-dive'],
+  ['08', '生成式 AI', 15, 14, 'generative-ai'],
+  ['09', '强化学习', 12, 13, 'reinforcement-learning'],
+  ['10', '从零实现大模型', 24, 26, 'llms-from-scratch'],
+  ['11', 'LLM 工程', 17, 19, 'llm-engineering'],
+  ['12', '多模态 AI', 25, 65, 'multimodal-ai'],
+  ['13', '工具与协议（MCP）', 31, 43, 'tools-and-protocols'],
+  ['14', 'Agent 工程', 54, 55, 'agent-engineering'],
+  ['15', '自主系统', 22, 20, 'autonomous-systems'],
+  ['16', '多 Agent 与群体', 25, 28, 'multi-agent-and-swarms'],
+  ['17', '基础设施与生产', 28, 32, 'infrastructure-and-production'],
+  ['18', '伦理、安全与对齐', 30, 31, 'ethics-safety-alignment'],
+  ['19', '结业项目', 85, 620, 'capstone-projects']
+];
+
+/* ---------- lessons: [中文标题, 英文标题, 学什么, [重点...]] ---------- */
+var L = {
+'phases/00-setup-and-tooling/01-dev-environment': ['开发环境', 'Dev Environment', '一次性把 Python、Node、Rust 和 GPU 环境配好、配对。', ['安装 Python 3.11+、Node.js 20+、Rust 工具链', '用虚拟环境 + 包管理器实现可复现构建', '用 CUDA / MPS 验证 GPU，跑一次张量运算', '理解四层结构：系统 / 包 / 运行时 / AI 库']],
+'phases/00-setup-and-tooling/02-git-and-collaboration': ['Git 与协作', 'Git & Collaboration', '用 Git 跟踪每一次实验、每个模型和每节课的代码。', ['add / commit / push 日常流程', '用分支隔离实验，不弄坏 main', '用 .gitignore 排除模型权重和大文件', '用 git log 读懂项目演进']],
+'phases/00-setup-and-tooling/04-apis-and-keys': ['API 与密钥', 'APIs & Keys', '掌握所有 AI API 共通的「请求—响应」模式，并安全地管理密钥。', ['用环境变量和 .env 保存密钥，绝不写进代码', '分别用 Anthropic Python SDK 和原始 HTTP 调用模型', '对比 SDK 与原始请求格式，方便调试', '处理认证失败、限流等常见错误']],
+'phases/00-setup-and-tooling/06-python-environments': ['Python 环境', 'Python Environments', '用虚拟环境和锁文件告别依赖地狱。', ['用 uv / venv / conda 创建隔离环境', 'pyproject.toml + 可选依赖组 + lockfile', '排查全局安装、pip 与 conda 混用、CUDA 版本不匹配', '依赖冲突时按阶段拆分环境']],
+'phases/00-setup-and-tooling/07-docker-for-ai': ['面向 AI 的 Docker', 'Docker for AI', '用容器打包 GPU 环境，消灭「我电脑上能跑」。', ['写 Dockerfile 构建带 CUDA + PyTorch 的镜像', '用 volume 持久化模型、数据和代码', '配置 NVIDIA Container Toolkit 让容器用上 GPU', '用 Docker Compose 编排推理服务 + 向量库']],
+'phases/00-setup-and-tooling/09-data-management': ['数据管理', 'Data Management', '高效地加载、转换、切分和版本化数据集。', ['Hugging Face datasets 的加载、流式读取与缓存', 'CSV / JSON / Parquet / Arrow 的转换与取舍', '固定随机种子做可复现的 train / val / test 切分', '用 .gitignore、Git LFS 或 DVC 管理大文件']],
+'phases/00-setup-and-tooling/10-terminal-and-shell': ['终端与 Shell', 'Terminal & Shell', '熟练使用命令行处理日志、管理远程训练任务。', ['用管道、重定向、grep 过滤训练日志', 'tmux 多窗格常驻会话', '用 htop / nvtop / nvidia-smi 监控资源', '用 ssh、scp、rsync 在本地和服务器之间传文件']],
+'phases/00-setup-and-tooling/12-debugging-and-profiling': ['调试与性能分析', 'Debugging and Profiling', '找出那些不报错、却在垃圾数据上「安静训练」的 bug。', ['用条件 breakpoint() 检查张量形状、dtype、NaN', '用 cProfile、line_profiler、tracemalloc 找瓶颈', '识别形状不匹配、NaN loss、数据泄漏、设备不一致', '用 TensorBoard 看 loss 曲线、权重与梯度分布']],
+'phases/02-ml-fundamentals/08-feature-engineering': ['特征工程与特征选择', 'Feature Engineering & Selection', '好特征胜过千条数据——学会构造和筛选特征。', ['标准化、归一化、对数变换、分箱各在何时用', 'One-hot、标签编码、目标编码，以及目标编码的泄漏风险', '从零实现 TF-IDF，理解它为何优于词频', '用方差阈值、相关性、互信息做特征选择']],
+'phases/02-ml-fundamentals/09-model-evaluation': ['模型评估', 'Model Evaluation', '模型好不好，取决于你怎么度量它。', ['从零实现 K 折与分层 K 折交叉验证', 'Precision、Recall、F1、AUC-ROC 与 MSE、RMSE、MAE、R²', '用学习曲线判断高偏差还是高方差', '避开数据泄漏、选错指标、测试集污染']],
+'phases/02-ml-fundamentals/13-ml-pipelines': ['机器学习流水线', 'ML Pipelines', '模型不是产品，流水线才是：从原始数据到线上预测，每一步都要可复现。', ['把缺失值填补、缩放、编码、训练串成一个对象', '只在训练集上 fit，用流水线防止数据泄漏', '用 ColumnTransformer 分别处理数值列和类别列', '序列化后保证训练与生产结果完全一致']],
+'phases/10-llms-from-scratch/03-data-pipelines': ['预训练数据流水线', 'Data Pipelines for Pre-Training', '模型是一面镜子：喂什么数据，就流利地映出什么。', ['流式分词、切块、打乱、分批，不把 TB 级数据读进内存', '去重、语言识别、内容过滤等质量过滤', '定长序列、注意力掩码与文档边界处理', '确保数据加载速度跟得上 GPU']],
+'phases/11-llm-engineering/01-prompt-engineering': ['提示词工程：技巧与模式', 'Prompt Engineering: Techniques & Patterns', '把含糊的需求改写成模型能照做的精确指令，并用测试集验证每次改动。', ['四要素：角色、上下文、约束、输出格式', '把 system prompt 写成明确的行为规则', '诊断幻觉、拒答、格式错误并针对性修复', '搭一个提示词回归测试框架']],
+'phases/11-llm-engineering/03-structured-outputs': ['结构化输出：JSON、Schema 校验、约束解码', 'Structured Outputs', '让 LLM 稳定输出程序能直接使用的类型化数据。', ['JSON mode 与 schema 约束输出（OpenAI / Anthropic 参数）', 'Pydantic 校验层：不合格就带着错误信息重试', '约束解码如何在 token 层面保证合法 JSON', '设计可靠的信息抽取提示词']],
+'phases/11-llm-engineering/04-embeddings': ['向量嵌入与向量表示', 'Embeddings & Vector Representations', '理解 embedding 如何把文本变成可比较的向量，并做一个按语义检索的搜索。', ['生成 embedding 并计算余弦相似度', '为什么它能解决关键词搜索的「词汇不匹配」', '构建语义搜索索引', '用 precision@k、recall 评估并选型嵌入模型']],
+'phases/11-llm-engineering/05-context-engineering': ['上下文工程：窗口、预算、记忆与检索', 'Context Engineering', '决定什么进入模型的上下文窗口、什么留在外面、按什么顺序排。', ['给 system、工具、历史、检索文档、生成余量分配 token 预算', '对话历史管理：截断、摘要、滑动窗口', '排序，让最相关的信息拿到注意力', '写一个按查询类型动态分配 token 的上下文组装器']],
+'phases/11-llm-engineering/06-rag': ['RAG 检索增强生成', 'RAG (Retrieval-Augmented Generation)', '搭一条完整的 RAG 流水线，让模型基于你的私有文档回答——全课最值得亲手做的一件事。', ['全链路：加载 → 切块 → 嵌入 → 向量库 → 检索 → 生成', '用 ChromaDB / FAISS / Pinecone 做语义检索', '知识类场景为什么优先 RAG 而不是微调（成本、时效、可溯源）', '检索指标（precision / recall）+ 生成指标（忠实度、相关性）']],
+'phases/11-llm-engineering/07-advanced-rag': ['进阶 RAG：切块、重排、混合检索', 'Advanced RAG', '把只能跑 10 篇文档的 demo 升级成能扛大语料、复杂问题的检索系统。', ['语义切块、递归切块、父子切块', 'BM25 + 向量混合检索 + cross-encoder 重排', '查询改写：HyDE、多查询、step-back', '排查「检错块、答案不在上下文、多跳推理失败」']],
+'phases/11-llm-engineering/09-function-calling': ['函数调用与工具使用', 'Function Calling & Tool Use', '让模型输出「调用哪个函数」的 JSON，由你的代码去执行，形成多轮工具循环。', ['完整循环：定义 schema → 解析调用 → 执行 → 回传结果', '描述清晰、参数有类型的工具 schema', '串联多次调用回答复杂问题', '处理并行调用、错误传递，防止无限工具循环']],
+'phases/11-llm-engineering/10-evaluation': ['LLM 应用的评测与测试', 'Evaluation & Testing LLM Applications', '用评测集代替「看 10 条输出觉得还行」，让每次改提示词、换模型都有数据说话。', ['构建含输入输出、评分细则、边界用例的评测集', '自动评分：LLM-as-judge、正则、确定性断言', '回归测试：改提示词 / 模型 / 参数时及时发现质量下降', '选对指标：正确性、语气、格式合规、延迟']],
+'phases/11-llm-engineering/11-caching-cost': ['缓存、限流与成本优化', 'Caching, Rate Limiting & Cost Optimization', '把每次 API 调用当成一笔开销来管理，算清单位经济账。', ['语义缓存：相似问题直接走缓存', '按请求算成本、按 token 限流、设预算告警', '提示压缩 + 模型路由（贵模型 / 便宜模型）', '精确匹配、语义相似、前缀缓存三级缓存策略']],
+'phases/11-llm-engineering/12-guardrails': ['护栏、安全与内容过滤', 'Guardrails, Safety & Content Filtering', '假设系统一上线就会被攻击，搭建输入、提示、输出三层防御。', ['输入护栏：拦截提示注入、越狱、有害内容', '输出护栏：检查 PII 泄露、编造的 URL、违规内容', '分层防御：输入过滤 + system prompt 加固 + 输出校验', '用红队提示集测误报率与漏报率']],
+'phases/11-llm-engineering/13-production-app': ['构建生产级 LLM 应用', 'Building a Production LLM Application', '把提示词、RAG、函数调用、缓存、护栏组装成一个真正能扛流量的服务。', ['把第 11 阶段的所有组件串成一个服务', '流式输出、优雅降级、超时控制', '内建可观测性：请求日志、成本、延迟分位数、错误率', '健康检查、限流，以及模型供应商宕机时的兜底']],
+'phases/13-tools-and-protocols/01-the-tool-interface': ['工具接口：Agent 为什么需要结构化 I/O', 'The Tool Interface', '理解「模型生成文本」和「程序执行动作」之间的那份契约。', ['四步循环：描述 → 决定 → 执行 → 观察，以及每步由谁负责', '工具定义 = 名称 + JSON Schema 输入 + 确定性执行函数', '区分纯函数工具和有副作用的工具（关系到安全）', 'function calling、MCP、A2A 只是同一个循环的不同编码']],
+'phases/13-tools-and-protocols/05-tool-schema-design': ['工具 Schema 设计：命名、描述、参数约束', 'Tool Schema Design', '让模型在对的时候选中对的工具——描述写得好坏能让选择准确率差 10–20 个百分点。', ['描述用「何时使用 X；不要用于 Y」句式，控制在 1024 字符内', '稳定、snake_case、在大量工具中不歧义的命名', '原子小工具 vs 一个大而全的工具怎么选', '用 schema linter 检查并修复工具库']],
+'phases/13-tools-and-protocols/06-mcp-fundamentals': ['MCP 基础：无状态请求与 JSON-RPC', 'MCP Fundamentals', '理解新版 MCP（2026-07-28）没有握手和会话：每个请求都自带足够的元数据。', ['区分服务端原语（工具、资源、提示）与客户端特性', '构造合法的 JSON-RPC 2.0 请求与响应', '每个请求都带协议版本、客户端能力和身份', '使用 server/discover，并处理不支持的协议版本错误']],
+'phases/13-tools-and-protocols/07-building-an-mcp-server': ['构建 MCP Server（Python 与 TypeScript）', 'Building an MCP Server', '写一个无状态 MCP 服务：每次请求校验元数据、执行一个处理函数、返回一个类型化结果。', ['实现必需的 server/discover', '每次请求都校验协议版本和客户端能力', '以确定顺序暴露 tools、resources、prompts', '用 stdio 在 Python 和 TypeScript 中提供同一份契约']],
+'phases/13-tools-and-protocols/22-skills-and-agent-sdks': ['Agent Skills：可移植契约与运行时边界', 'Agent Skills', 'Skill 不是换了文件名的长提示词，而是通过运行时契约进入 Agent 上下文的一个包。', ['区分 skill、提示词、仓库指令、工具、hook、子 Agent、插件', '读懂可移植的 SKILL.md 契约与各运行时的扩展', '发现、选择、激活、加载资源、调用工具、验证是不同阶段', '什么时候用 skill、MCP 工具、hook、子 Agent 或普通代码']],
+'phases/13-tools-and-protocols/23-capstone-tool-ecosystem': ['结业项目：无状态工具生态', 'Capstone: Stateless Tool Ecosystem', '把工具调用、任务结果、委派、授权、追踪组成一条完整流程，并分清模拟组件和真实生产组件。', ['每个 MCP 请求都带版本、身份和能力，不依赖连接会话', '先发现服务器再使用，用 Tasks 扩展驱动长任务', '每个模拟边界对应哪个生产组件', '哪些结论本地就能验证，哪些必须做真实集成测试']],
+'phases/13-tools-and-protocols/24-skill-discovery-and-progressive-disclosure': ['Skill 发现与渐进式披露', 'Skill Discovery and Progressive Disclosure', '名称和描述让 skill 进入目录；更深的文件只在任务需要时才占用上下文。', ['文件系统发现流水线：范围、校验、冲突策略、发布目录', '三级披露：目录元数据 → 激活指令 → 任务资源', '目录空间与激活后的上下文分开做预算', '防止路径穿越和符号链接逃逸']],
+'phases/13-tools-and-protocols/25-skill-invocation-and-routing': ['Skill 调用与路由', 'Skill Invocation and Routing', '调用先是权限决策，再是相关性决策。', ['四种调用：用户显式、模型隐式、应用触发、skill 互调', '「人能否看见」和「模型能否调用」是两个独立维度', '路由描述要写正向触发条件和易混淆的边界', '在 trace 和测试里分开资格、选择、激活、参数绑定、执行']],
+'phases/13-tools-and-protocols/27-skill-evals-packaging-and-portability': ['Skill 评测、打包与可移植性', 'Skill Evals, Packaging, and Portability', 'Skill 完成的标准：过 lint、路由正确、可度量地提升任务、守规矩、换宿主也能诚实降级。', ['把专家流程拆成判断、确定性计算、参考资料、输出契约', '分层测试：结构、触发、行为、脚本、安全、可移植', '用正例、负例、近似例测触发的精确率与召回率', '多次运行对比「有无 skill」的效果，并设发布关卡']],
+'phases/14-agent-engineering/01-the-agent-loop': ['Agent 循环：观察、思考、行动', 'The Agent Loop', '所有 Agent（包括 Claude Code、Cursor）都是 ReAct 循环的变体，先把它吃透再碰框架。', ['Thought / Action / Observation 各自为什么不可缺', '用不到 200 行标准库实现带工具注册和停止条件的循环', '从「提示词里的思考」到模型原生推理的转变', '各家 Agent SDK 底层仍是这个循环']],
+'phases/14-agent-engineering/06-tool-use-and-function-calling': ['工具使用与函数调用（研究视角）', 'Tool Use and Function Calling', '从 Toolformer 到 BFCL V4，弄清工具调用哪些已解决、哪些还没有。', ['Toolformer 的自监督信号：能降低 loss 的工具调用才保留', 'BFCL V4 五类评测分别衡量什么', '实现带 schema 校验、参数转换和沙箱的工具注册表', '三个未解问题：长链调用、动态决策、记忆']],
+'phases/14-agent-engineering/07-memory-virtual-context-memgpt': ['Agent 记忆：虚拟上下文与分页', 'Agent Memory — Virtual Context', '用操作系统虚拟内存的思路解决有限上下文：主上下文是内存，外部存储是磁盘。', ['MemGPT 类比：主上下文 = RAM，外部上下文 = 磁盘，记忆工具 = 换入换出', '实现两级记忆：主上下文缓冲 + 可检索外部存储', 'Agent 如何「中断」去查询或修改外部记忆', '这些设计如何延续到 Letta、Mem0']],
+'phases/14-agent-engineering/13-langgraph-stateful-graphs': ['有状态图编排：持久执行与检查点', 'Stateful Graph Orchestration', '把 Agent 当状态机：节点是函数、边是转移、每个节点后存检查点，失败可从断点恢复。', ['带类型的状态、函数节点、条件边、节点后检查点', '四项能力：持久执行、流式、人在回路、记忆', '三种拓扑：主管、点对点（swarm）、分层', '用标准库实现带检查点 / 恢复的状态图']],
+'phases/14-agent-engineering/23-otel-genai-conventions': ['OpenTelemetry GenAI 语义约定', 'OpenTelemetry GenAI Semantic Conventions', '用统一的 span 名称和属性记录 Agent 遥测，让各家平台读到含义一致的 trace。', ['三类 span：模型 / 客户端、Agent、工具', 'invoke_agent 的 CLIENT 与 INTERNAL span 何时使用', '顶层属性：供应商、请求模型、数据源 ID', '内容采集默认关闭，需要显式开启']],
+'phases/14-agent-engineering/24-agent-observability-platforms': ['Agent 可观测性：Langfuse、Phoenix、Opik', 'Agent Observability', '了解三大开源 Agent 观测平台各自擅长什么，并搭一条 trace → 仪表盘流水线。', ['Langfuse（MIT）：提示管理 + 会话回放', 'Phoenix（Elastic 2.0）：RAG 评测 + 自动埋点', 'Opik（Apache 2.0）：提示优化 + 护栏', '用 LLM 评审给 trace 打分']],
+'phases/14-agent-engineering/26-failure-modes-agentic': ['失败模式：Agent 为什么会坏', 'Failure Modes: Why Agents Break', '系统了解 Agent 的失败分类，并能在 trace 中自动标注。', ['MASFT：3 大类 14 种多 Agent 失败模式', 'Agent 场景会放大偏见、幻觉等已有问题', '五种常见模式：虚构动作、范围蔓延、级联错误、上下文丢失、工具误用', '实现一个给 trace 打失败标签的检测器']],
+'phases/14-agent-engineering/27-prompt-injection-defense': ['提示注入与 PVE 防御', 'Prompt Injection and the PVE Defense', '间接提示注入是 Agent 安全的头号问题：把所有检索来的内容当作不可信代码对待。', ['间接注入的威胁模型（Greshake 等，2023）', '五类攻击：数据窃取、蠕虫传播、记忆投毒、生态污染、任意工具调用', '防御：不可信内容隔离、白名单导航、逐步安全检查、人在回路', 'PVE 模式：主模型调用工具前先过一个便宜快速的校验器']],
+'phases/14-agent-engineering/28-orchestration-patterns': ['编排模式：主管、群体、分层', 'Orchestration Patterns', '认识四种常见的多 Agent 编排模式，学会「先简单，按需再加复杂度」。', ['主管-工人、群体 / 点对点、分层、辩论各适合什么', '基于工具调用的监督 vs 专门的监督库', '「为你的需求构建合适的系统」原则', '用同一个脚本化 LLM 实现四种模式']],
+'phases/14-agent-engineering/29-production-runtimes': ['生产运行时：队列、事件、定时', 'Production Runtimes', '先选运行形态，再选框架。', ['六种形态：请求-响应、流式、持久执行、队列后台、事件驱动、定时', '长任务为什么需要持久执行', '事件驱动运行时的适用场景', '多步 Agent 里，可观测性是承重结构']],
+'phases/14-agent-engineering/30-eval-driven-agent-development': ['评测驱动的 Agent 开发', 'Eval-Driven Agent Development', '评测不是最后一步，而是驱动所有选择的外层循环。', ['三层评测：静态基准、自定义离线、线上生产', '评估器-优化器紧循环', '评测与代码放在一起，在 CI 中运行、卡住 PR', '先用简单提示词，确有需要再上多步 Agent']],
+'phases/14-agent-engineering/31-agent-workbench-why-models-fail': ['Agent 工作台：为什么强模型仍会失败', 'Agent Workbench: Why Capable Models Still Fail', '区分「模型能力」和「执行可靠性」，认识决定 Agent 能否交付的七个工作台要素。', ['能力 ≠ 可靠性', '七个要素：指令、状态、范围、反馈、验证、评审、交接', '对比纯提示词运行与工作台引导运行', '写失败报告：缺了哪个要素，导致了什么症状']],
+'phases/14-agent-engineering/32-minimal-agent-workbench': ['最小 Agent 工作台', 'The Minimal Agent Workbench', '用三个文件搭出最小可用工作台：根指令路由、状态文件、任务看板。', ['三个文件各自的职责', '简短的根路由胜过冗长的 AGENTS.md', 'Agent 每轮读取、结束时写回的状态文件', '不靠聊天记录也能跨会话延续的任务看板']],
+'phases/14-agent-engineering/33-instructions-as-executable-constraints': ['把 Agent 指令写成可执行约束', 'Instructions as Executable Constraints', '把散文式的「希望」改写成运行时可检查、事后可验证的规则。', ['区分路由说明与操作规则', '启动规则、禁止动作、完成定义、不确定时怎么办、审批边界都写成可检查约束', '实现一个按规则集给运行打分的检查器', '规则集要便于 diff 审阅']],
+'phases/14-agent-engineering/34-repo-memory-and-state': ['仓库记忆与持久状态', 'Repo Memory and Durable State', '把 Agent 状态存进版本化文件，让下个会话、下个 Agent、评审者读同一份事实。', ['什么放仓库记忆、什么留在聊天里', '为 agent_state.json 和 task_board.json 写 JSON Schema', '状态管理器：加载、校验、修改、原子写入', '用 schema 拒绝会污染状态的错误写入']],
+'phases/14-agent-engineering/35-initialization-scripts': ['Agent 初始化脚本', 'Initialization Scripts for Agents', '用 init 脚本一次性完成环境探测，免得每个会话都重复「交学费」。', ['找出 Agent 不该每次重做的工作', '确定性地探测运行时、依赖和仓库健康度', '把探测结果写进状态，供 Agent 直接读取', '失败时要快、要响、只在一个地方报错']],
+'phases/14-agent-engineering/36-scope-contracts': ['范围契约与任务边界', 'Scope Contracts and Task Boundaries', '用每个任务一份的契约文件，把「别超出范围」从愿望变成检查。', ['契约内容：允许文件、禁止文件、验收标准、回滚方案、审批边界', '任务开始时 Agent 读，结束时验证器读', '范围检查器对比 diff 与契约并标出越界', '让范围蔓延自动可见、可评审']],
+'phases/14-agent-engineering/37-runtime-feedback-loops': ['运行时反馈循环', 'Runtime Feedback Loops', '让 Agent 看到真实的命令输出，基于事实而不是自己的猜测行动。', ['运行时反馈 ≠ 可观测性遥测', '反馈执行器记录 stdout、stderr、退出码和耗时', '确定性地截断大输出，控制 token 预算', '缺少反馈时拒绝推进']],
+'phases/14-agent-engineering/38-verification-gates': ['验证关卡', 'Verification Gates', '不让 Agent 自己宣布「完成」，用确定性检查判定任务是否真的做完。', ['验证关卡是作用在工作台产物上的确定性函数', '合并规则报告、范围报告、反馈记录和 diff 得出一个结论', '输出 verification_report.json 供评审 Agent 和 CI 读取', '出现阻断级失败就绝不放行']],
+'phases/14-agent-engineering/39-reviewer-agent': ['评审 Agent：干活的和打分的分开', 'Reviewer Agent', '用一个只读、目标不同的第二个循环来评审构建者的产出。', ['为什么同一个 Agent 无法可靠评审自己', '评审 Agent 读取构建产物，输出结构化评审报告', '评分细则按具体维度打分，不凭感觉', '让人工评审从一份真实报告开始']],
+'phases/14-agent-engineering/40-multi-session-handoff': ['多会话交接', 'Multi-Session Handoff', '做一份交接包，让下一个会话第一分钟就能高效开工。', ['交接包必备的七个字段', '从工作台产物自动生成，不手写长文', '把冗长的反馈日志压缩成交接摘要', '让下个会话的第一步是确定的']],
+'phases/14-agent-engineering/41-workbench-for-real-repos': ['在真实仓库上使用工作台', 'The Workbench on a Real Repo', '同一任务跑两遍（纯提示 vs 工作台），用数据证明工作台的价值。', ['把七个工作台要素合到一个小应用上', '两种方式各跑一次，度量五项结果', '读前后对比报告，找出收益最大的要素', '回应「我的模型已经够强了」的质疑']],
+'phases/14-agent-engineering/42-agent-workbench-capstone': ['结业项目：可复用的 Agent 工作台包', 'Capstone: Reusable Agent Workbench Pack', '把所有工作台要素打包成一个可直接拷进任何仓库的目录。', ['七个要素打包成即插即用目录', '固定 schema、脚本和模板，给新仓库一个可靠基线', '一个幂等的安装脚本', '说清每样东西为什么放进包或留在包外']],
+'phases/14-agent-engineering/43-frame-the-task-before-code': ['写代码前先界定任务', 'Frame the Task Before Code', '在 Agent 动手前，把请求变成有边界的任务框架——任务不清时，Agent 只会更快地做错。', ['区分仓库事实、假设和待确认问题', '明确允许路径、禁止路径和验收证据', '判断侦察是否充分、何时可以开工', '把请求写成一份有边界的任务框架']],
+'phases/14-agent-engineering/44-plan-from-evidence': ['基于证据的执行计划', 'Plan from Evidence', '计划是依赖图，不是更好看的待办清单：每个改动有理由，每个终点有证明。', ['把任务框架拆成带证据和证明的工作项', '用依赖关系而不是文字顺序表达先后', '动手前发现缺失事实、未知依赖和循环', '区分可并行的步骤与必须等待的步骤']],
+'phases/14-agent-engineering/45-delegate-with-isolation': ['隔离委派与合并契约', 'Delegate with Isolation', '只有工作真正独立时，并行 Agent 才省时间；否则只是更快地失败。', ['判断委派是否真的有独立性', '每个 worker 独占文件所有权，并给出证明', '按依赖计算执行批次（waves）', '设计安全合并多个 Agent 成果的合并契约']],
+'phases/14-agent-engineering/46-turn-feedback-into-system': ['把每次纠错变成系统改进', 'Turn Feedback into System Improvement', '聊天里的纠正只修一次；写进测试、边界、示例或工具，才能修好以后的每一次。', ['把对 Agent 的纠正转化为持久控制', '把控制放在最早能阻止复发的那一层', '用稳定指纹给重复的教训去重', '退役已不再防护真实风险的控制']],
+'phases/14-agent-engineering/47-outcomes-before-output': ['先定义成果，再选择产出', 'Outcomes Before Output', '实现越快，选错问题的代价越大——先想清楚要带来什么改变。', ['写成果框架时不提具体方案', '明确用户、场景、当前行为和期望的改变', '把约束和非目标写出来', '在方案悄悄固化成范围之前发现它']],
+'phases/14-agent-engineering/48-discover-the-real-workflow': ['发现人们真实的工作流程', 'Discover the Real Workflow', '需求不会在会议里等你收集，要从动作、变通做法、记录和分歧里挖出来。', ['把现有流程建模为带证据的有序动作', '区分亲眼观察、他人转述和推断', '定位摩擦点、交接、决策权和隐藏状态', '不确定的说法保持可见，不急着变成需求']],
+'phases/14-agent-engineering/49-map-assumptions-and-risk': ['列出假设，先解决风险最大的那个', 'Map Assumptions and Risk', '用假设地图揭示功能成立之前必须为真的前提。', ['把计划中的工作转成明确的假设', '分别评估影响、不确定性和不可逆性', '按风险而不是热情选择下一个实验', '用证据和决策替换已验证的假设']],
+'phases/14-agent-engineering/50-choose-the-smallest-testable-slice': ['选择能改变决策的最小切片', 'Choose the Smallest Testable Slice', '小只有在能证明重要的事情时才有用；无法改变下一个决策的小构建只是没做完。', ['用「它验证了哪些假设」来定义切片', '权衡成果价值、降低的不确定性、工作量与后果', '优先可逆的证据，而不是过早投入生产', '拒绝绕开流程中风险部分的切片']],
+'phases/14-agent-engineering/51-write-specifications-that-preserve-judgment': ['写能保留判断空间的规格说明', 'Write Specifications That Preserve Judgment', '好规格锁定不变量和证据，把可逆的实现选择留开——它是决策边界，不是剧本。', ['区分成果、不变量、示例、非目标与证明', '把每个决策标为：锁定 / 有边界 / 可委派', '选择便宜且可逆时，保留 Agent 的判断空间', '后果重大或对外行为变化时设人工检查点']],
+'phases/14-agent-engineering/52-design-success-metrics': ['在结果出来前设计成功指标', 'Design Success Metrics', '度量是为了回答决策，而不是装饰仪表盘。', ['目标 → 问题 → 最少的指标', '事先定好阈值、时间窗、数据来源和方向', '成果指标配上护栏指标和反向指标', '评测证据要对上这次构建要支持的决策']],
+'phases/14-agent-engineering/53-prototype-pilot-or-production': ['有意识地选择原型、试点或生产', 'Prototype, Pilot, or Production', '三者是不同的学习环境，不是精致程度的等级。', ['按未知点、受众、数据、后果、准备度选择阶段', '每个阶段的控制措施和退出标准', '防止原型悄悄变成生产系统', '证据和运维到位之前，不放出真实权限']],
+'phases/14-agent-engineering/54-build-the-feedback-ratchet': ['建立有负责人、可退役的反馈棘轮', 'Build the Feedback Ratchet', '上线只是关闭了构建循环、打开了学习循环；证据必须改变系统，否则就是没人管的遥测。', ['把事故、评测、用户行为和纠正变成有负责人的行动', '把每条信号路由到上下文、评测、策略、运行时或待办', '按严重度 × 频率排优先级', '每个控制都要有退役条件']],
+'phases/17-infrastructure-and-production/08-inference-metrics-goodput': ['推理指标：TTFT、TPOT、ITL、Goodput、P99', 'Inference Metrics', '用正确的指标判断推理服务是否健康——产品最该看的是 goodput。', ['TTFT、TPOT / ITL、端到端延迟、吞吐量、goodput 的精确定义', '为什么不能看均值，要看 P50 / P90 / P99', '构造多约束 SLO 并计算 goodput', '为什么不同压测工具测出的 TPOT 会不一样']],
+'phases/17-infrastructure-and-production/13-llm-observability': ['LLM 可观测性选型', 'LLM Observability Stack Selection', '弄清 LLM 监控工具的两大类，并按需求选型组合。', ['开发平台（评测 + 提示管理 + 会话回放）vs 网关 / 遥测工具（只管 trace 和指标）', '六款工具对比：Langfuse、LangSmith、Phoenix、Arize AX、Helicone、Opik', '用 OpenTelemetry 把网关工具和评测平台粘起来', '成本差异：零拷贝 vs 全量摄入']],
+'phases/17-infrastructure-and-production/19-ai-gateways': ['AI 网关：LiteLLM、Portkey、Kong、Bifrost', 'AI Gateways', '在应用和模型供应商之间加一层网关，统一路由、兜底、限流、密钥和观测。', ['核心能力：路由、兜底、重试、限流、密钥引用、可观测、护栏', '四款网关的规模上限与适用场景', '超过约 500 RPS 时为什么要看性能基准', '按数据驻留和运维预算选自托管或托管服务']],
+'phases/17-infrastructure-and-production/20-shadow-canary-progressive': ['影子流量、金丝雀与渐进式发布', 'Shadow, Canary & Progressive Deployment', '在没有单元测试、失败信号又滞后的情况下，安全地上线新模型或新提示词。', ['影子模式（零影响对比）→ 金丝雀（10% → 25% → 50% → 100% 逐级放量）→ A/B', '五个 LLM 专属金丝雀指标：延迟、单次成本、错误 / 拒答率、输出长度分布、用户反馈', 'LLM 的不确定性改变了「稳定」的含义', '回滚要做到秒级（切换策略），而不是小时级（重新部署）']],
+'phases/17-infrastructure-and-production/21-ab-testing-llm-features': ['LLM 功能的 A/B 测试', 'A/B Testing LLM Features', '评测回答「模型能不能做」，A/B 测试回答「用户在不在乎」，两者都要。', ['三个可测维度：提示词、模型、生成参数', '每个维度该看什么指标', 'CUPED、序贯检验、Benjamini-Hochberg 多重比较校正', 'GrowthBook 与 Statsig 怎么选']],
+'phases/17-infrastructure-and-production/22-load-testing-llm-apis': ['LLM API 压测：为什么 k6 和 Locust 会「说谎」', 'Load Testing LLM APIs', '传统压测工具不懂流式响应和 token 级指标，学会避开两个陷阱。', ['GIL 陷阱：客户端分词拖慢，反而夸大了延迟', '提示长度统一陷阱：要用真实的长度分布', '工具选择：LLMPerf、k6 流式扩展、guidellm、GenAI-Perf', '四种负载：稳态、爬坡、尖峰、浸泡']],
+'phases/17-infrastructure-and-production/23-sre-for-ai': ['面向 AI 的 SRE：事故响应、Runbook、预测检测', 'SRE for AI', '用 LLM 结合日志、runbook 和服务拓扑协助排障，同时让人保留关键决策权。', ['架构：主管 Agent + 日志 / 指标 / runbook 专职 Agent + 人工审批', '自动修复只做窄动作（重启 pod、回滚部署）', '双模型对抗评估：一致则可信，不一致就升级', '只有预测没有行动，就只是仪表盘']],
+'phases/17-infrastructure-and-production/24-chaos-engineering-llm': ['LLM 生产环境的混沌工程', 'Chaos Engineering for LLM Production', '在具备 SLO、观测、回滚、runbook 和值班之后，主动注入故障验证系统韧性。', ['五个前提：SLI / SLO、可观测性、自动回滚、runbook、值班', '四个平面：控制、目标、安全、观测，再反馈回 SLO', '五类 LLM 实验：内存过载、网络故障、供应商宕机、畸形提示、KV 缓存驱逐风暴', 'Harness、LitmusChaos、Chaos Mesh 怎么选']],
+'phases/17-infrastructure-and-production/25-security-secrets-audit': ['安全：密钥、API Key 轮换、审计日志', 'Security — Secrets, Rotation, Audit', '杜绝密钥散落，建立集中保管、自动轮换、可审计的凭据体系。', ['四种反模式：配置文件进仓库、硬编码 env、表格存密钥、长期静态 key', '用 IAM 角色和 CI 的 OIDC 代替静态密钥', 'AI 网关在运行时从 Vault 拉取凭据', 'PII 脱敏：同一个值映射同一个占位符，保留语义']]
+};
+
+/* ---------- 4 core paths ---------- */
+function seq(list) { return list.map(function (x) { return { p: x[0], m: x[1] }; }); }
+var CORE = [
+  { id: 'building-and-deploying-ai-applications', t: '构建与部署 AI 应用', en: 'Building and Deploying AI Applications', tag: '接口 · 落地 · 评测 · 生产',
+    s: '从提示词和结构化输出出发，经过检索、评测、生产服务、可观测性，一直到发布上线，完整走一遍 AI 功能。',
+    who: '想亲手做出一个能上线的 AI 功能的人。',
+    lessons: seq([
+      ['phases/11-llm-engineering/01-prompt-engineering', 60], ['phases/11-llm-engineering/03-structured-outputs', 60],
+      ['phases/11-llm-engineering/04-embeddings', 60], ['phases/11-llm-engineering/05-context-engineering', 60],
+      ['phases/11-llm-engineering/06-rag', 75], ['phases/11-llm-engineering/10-evaluation', 75],
+      ['phases/11-llm-engineering/11-caching-cost', 60], ['phases/11-llm-engineering/12-guardrails', 60],
+      ['phases/11-llm-engineering/13-production-app', 90], ['phases/17-infrastructure-and-production/13-llm-observability', 60],
+      ['phases/17-infrastructure-and-production/20-shadow-canary-progressive', 60], ['phases/17-infrastructure-and-production/23-sre-for-ai', 60]]) },
+  { id: 'software-engineering-fundamentals', t: '软件工程基础', en: 'Software Engineering Fundamentals', tag: '全栈 · 数据 · 架构 · 可靠性 · 规模',
+    s: '打好 AI 系统依赖的地基：代码仓库、调试、测试、接口、安全、发布和运维。',
+    who: '编程基础还不扎实，或者没在团队里做过工程的人。',
+    lessons: seq([
+      ['phases/00-setup-and-tooling/01-dev-environment', 45], ['phases/00-setup-and-tooling/02-git-and-collaboration', 60],
+      ['phases/00-setup-and-tooling/06-python-environments', 45], ['phases/00-setup-and-tooling/07-docker-for-ai', 60],
+      ['phases/00-setup-and-tooling/09-data-management', 60], ['phases/00-setup-and-tooling/10-terminal-and-shell', 45],
+      ['phases/00-setup-and-tooling/12-debugging-and-profiling', 60], ['phases/13-tools-and-protocols/01-the-tool-interface', 60],
+      ['phases/13-tools-and-protocols/05-tool-schema-design', 60], ['phases/14-agent-engineering/38-verification-gates', 55],
+      ['phases/17-infrastructure-and-production/20-shadow-canary-progressive', 60], ['phases/17-infrastructure-and-production/25-security-secrets-audit', 60],
+      ['phases/17-infrastructure-and-production/23-sre-for-ai', 60]]) },
+  { id: 'using-coding-agents', t: 'Agent 辅助工程', en: 'Agent-Assisted Engineering', tag: '界定 · 计划 · 委派 · 验证 · 改进',
+    s: '在真实代码仓库里，让编程 Agent 的工作可界定、可计划、可委派、可验证、可评审、可持续改进。',
+    who: '已经在用 Claude Code、Cursor 等编程 Agent，想让它更可靠的人。',
+    lessons: seq([
+      ['phases/14-agent-engineering/31-agent-workbench-why-models-fail', 45], ['phases/14-agent-engineering/43-frame-the-task-before-code', 60],
+      ['phases/14-agent-engineering/44-plan-from-evidence', 65], ['phases/14-agent-engineering/32-minimal-agent-workbench', 45],
+      ['phases/14-agent-engineering/33-instructions-as-executable-constraints', 50], ['phases/14-agent-engineering/34-repo-memory-and-state', 60],
+      ['phases/14-agent-engineering/35-initialization-scripts', 45], ['phases/14-agent-engineering/36-scope-contracts', 50],
+      ['phases/14-agent-engineering/37-runtime-feedback-loops', 50], ['phases/14-agent-engineering/38-verification-gates', 55],
+      ['phases/14-agent-engineering/39-reviewer-agent', 55], ['phases/14-agent-engineering/45-delegate-with-isolation', 70],
+      ['phases/14-agent-engineering/40-multi-session-handoff', 50], ['phases/14-agent-engineering/41-workbench-for-real-repos', 60],
+      ['phases/14-agent-engineering/46-turn-feedback-into-system', 65], ['phases/14-agent-engineering/42-agent-workbench-capstone', 75]]) },
+  { id: 'shaping-the-build', t: '产品判断与交付', en: 'Product Judgment and Delivery', tag: '成果 · 证据 · 风险 · 指标 · 反馈',
+    s: '把证据变成成果目标、假设、可测试的切片、可执行的规格、度量计划和有人负责的反馈循环。',
+    who: '需要决定「做什么、做多小、怎么证明有效」的工程师或产品负责人。',
+    lessons: seq([
+      ['phases/14-agent-engineering/47-outcomes-before-output', 60], ['phases/14-agent-engineering/48-discover-the-real-workflow', 70],
+      ['phases/14-agent-engineering/49-map-assumptions-and-risk', 65], ['phases/14-agent-engineering/50-choose-the-smallest-testable-slice', 65],
+      ['phases/14-agent-engineering/51-write-specifications-that-preserve-judgment', 75], ['phases/14-agent-engineering/52-design-success-metrics', 70],
+      ['phases/14-agent-engineering/53-prototype-pilot-or-production', 70], ['phases/14-agent-engineering/54-build-the-feedback-ratchet', 75]]) }
+];
+
+/* ---------- 6 career routes ---------- */
+var P11 = 'phases/11-llm-engineering/', P13 = 'phases/13-tools-and-protocols/', P14 = 'phases/14-agent-engineering/', P17 = 'phases/17-infrastructure-and-production/';
+var STAGE_NAMES = ['共同核心', '角色实践', '证明项目', '面试与就绪证据'];
+var ROUTES = [
+  { id: 'forward-deployed-ai-engineer', t: '客户 AI 落地', en: 'Customer AI Deployment', jobs: 'Forward-Deployed AI Engineer · Field AI Engineer · AI Solutions Engineer',
+    q: '想贴近用户，把一个真实工作流程做成 AI 系统并推到生产？',
+    mission: '把观察到的客户工作流程，变成范围清晰、经过评测、可运维的 AI 部署。',
+    fit: ['喜欢贴近用户、面对模糊的业务环境', '喜欢在调研、实现、评测和上线之间来回切换', '能向技术和业务两方解释取舍'],
+    proof: ['可度量的客户试点', '把一个记录在案的工作流程做成范围很窄的试点：有证据、有发布控制、有反馈计划。'],
+    strong: ['工作流程发现与界定', '证据驱动的原型', '评测与成功指标', '分阶段发布与反馈'], partial: ['干系人协调', '企业集成与安全', '真实流量下的生产运维'], outside: ['商业客户经营', '采购与法务谈判', '多年客户落地经验'],
+    stages: [
+      ['界定客户成果、工作流程、假设和最小的有用测试。', '一份工作流程简报：成果、证据、假设、风险，以及可执行的切片规格。', [[P14 + '47-outcomes-before-output', 60], [P14 + '48-discover-the-real-workflow', 70], [P14 + '49-map-assumptions-and-risk', 65], [P14 + '50-choose-the-smallest-testable-slice', 65], [P14 + '51-write-specifications-that-preserve-judgment', 75]]],
+      ['按明确的成功标准构建并评测这个窄范围的 AI 系统。', '一个可运行的纵向切片，附评测集、基线和成功记分卡。', [[P11 + '06-rag', 90], [P11 + '10-evaluation', 45], [P11 + '13-production-app', 120], [P14 + '52-design-success-metrics', 70]]],
+      ['选对发布阶段，让试点在受控曝光下推进。', '一次可度量的试点：带发布关卡、回滚条件和结果记录。', [[P14 + '53-prototype-pilot-or-production', 70], [P17 + '20-shadow-canary-progressive', 60]]],
+      ['展示证据和用户反馈如何决定下一轮迭代。', '一份简洁案例：连起用户证据、系统结果、取舍和下一步决策。', [[P14 + '54-build-the-feedback-ratchet', 75]]]
+    ] },
+  { id: 'ai-developer-relations-engineer', t: '开发者体验与教育', en: 'Developer Experience and Education', jobs: 'AI Developer Relations Engineer · AI Developer Advocate · DX Engineer',
+    q: '想让开发者更容易理解、上手并正确使用 AI 能力？',
+    mission: '把技术能力变成可信的接口、可运行的示例和可复用的学习资产。',
+    fit: ['喜欢写软件，也喜欢解释它为什么能工作', '在意首次运行成功率、示例、文档和开发者信任', '希望开发者的反馈能影响产品'],
+    proof: ['开发者采用工具包', '把一项 AI 能力包装成可发现的集成，让其他开发者能运行、检查和验证。'],
+    strong: ['API 与工具契约', 'MCP 实现', 'Skill 发现与打包', '可运行的技术示例'], partial: ['技术写作与快速上手文档', '开发者反馈研究', '社区教育'], outside: ['活动与社区项目运营', '内容分发策略', '多年面向开发者的公开经验'],
+    stages: [
+      ['从凭据到工具与协议契约，搭建一个可靠的能力接口。', '一个可运行的集成：契约清晰、安装路径明确、错误行为可观察。', [['phases/00-setup-and-tooling/04-apis-and-keys', 30], [P13 + '01-the-tool-interface', 45], [P13 + '05-tool-schema-design', 45], [P13 + '06-mcp-fundamentals', 55], [P13 + '07-building-an-mcp-server', 85]]],
+      ['让可复用的 Agent 知识可发现、可调用、渐进式披露。', '一个 skill 包：元数据简洁、参考资料分层、带明确的调用示例。', [[P13 + '22-skills-and-agent-sdks', 90], [P13 + '24-skill-discovery-and-progressive-disclosure', 105], [P13 + '25-skill-invocation-and-routing', 105]]],
+      ['证明这个包及其工具生态在各支持环境中都能工作。', '一套开发者采用工具包：验证结果、可移植性说明和端到端示例。', [[P13 + '27-skill-evals-packaging-and-portability', 150], [P13 + '23-capstone-tool-ecosystem', 120]]],
+      ['展示开发者反馈如何改变了集成或教学路径。', '一份简短的采用案例：摩擦证据、所做改动和度量结果。', [[P14 + '54-build-the-feedback-ratchet', 75]]]
+    ] },
+  { id: 'ai-data-engineer', t: 'AI 数据系统', en: 'AI Data Systems', jobs: 'AI Data Engineer · ML Data Engineer · Retrieval Engineer',
+    q: '想让训练、检索、评测和生产背后的数据值得信任？',
+    mission: '构建可追溯的 AI 数据系统，把源数据变成可度量的模型输入和检索输入。',
+    fit: ['比起 demo，更在意数据血缘、可重复性和数据质量', '喜欢把模型行为追溯到数据和检索决策', '想把数据系统和可度量的 AI 结果连起来'],
+    proof: ['可追溯的 AI 数据流水线', '一条可复现的数据与检索链路：输入、变换、质量检查和下游影响都能检查。'],
+    strong: ['数据与特征流水线', 'Embedding 与检索', 'RAG 评测', 'AI 可观测性'], partial: ['数据血缘与 schema 演进', '流水线编排与回填', '数据治理'], outside: ['企业数仓 / 数据湖负责人', '合规审批权', '真实数据平台值班经验'],
+    stages: [
+      ['构建可复现的数据、特征和语言模型数据准备流水线。', '一条版本化流水线：确定性变换、切分检查、可复现的运行记录。', [['phases/00-setup-and-tooling/09-data-management', 45], ['phases/02-ml-fundamentals/08-feature-engineering', 90], ['phases/02-ml-fundamentals/13-ml-pipelines', 120], ['phases/10-llms-from-scratch/03-data-pipelines', 90]]],
+      ['构建质量可以单独度量的上下文与检索链路。', '一个检索系统：语料有文档、索引配置清晰、有检索指标。', [[P11 + '04-embeddings', 75], [P11 + '05-context-engineering', 90], [P11 + '06-rag', 90], [P11 + '07-advanced-rag', 90]]],
+      ['把数据链路接到一个经过评测的生产式应用。', '一条可追溯的 AI 数据流水线，带端到端质量检查和应用层评测。', [[P11 + '10-evaluation', 45], [P11 + '13-production-app', 120]]],
+      ['展示遥测如何区分数据、检索和生成三类失败。', '一份故障分析：把生产症状追溯到出问题的数据或检索环节。', [[P17 + '13-llm-observability', 60]]]
+    ] },
+  { id: 'agentic-ai-engineer', t: 'Agent 系统工程', en: 'Agent Systems Engineering', jobs: 'Agent Systems Engineer · Agentic AI Engineer · AI Agent Engineer',
+    q: '想设计会用工具的系统，并让它的状态、决策、失败和控制都可观察？',
+    mission: '构建有明确工具契约、状态、安全边界、评测和运行时证据的 Agent 系统。',
+    fit: ['喜欢推敲有状态系统、控制流和故障恢复', '希望自主性被明确的契约和证据约束', '偏好可测试的编排，而不是不透明的 Agent demo'],
+    proof: ['可观测的 Agent 系统', '一个有边界的 Agent 工作流：工具、状态、记忆、失败行为和发布证据都可检查。'],
+    strong: ['工具契约与 Agent 循环', '上下文、记忆与状态', '编排与失败模式', 'Agent 安全、评测与可观测性'], partial: ['分布式 Agent 系统', '人工审批体验', '长时工作流的持久性'], outside: ['生产集群负责人', '模型厂商内部的模型控制', '多年真实值班经验'],
+    stages: [
+      ['构建类型化的工具接口和有边界的 Agent 循环。', '一个确定性的 Agent 循环：类型化工具、校验、停止条件和完整记录。', [[P13 + '01-the-tool-interface', 45], [P13 + '05-tool-schema-design', 45], [P13 + '06-mcp-fundamentals', 55], [P14 + '01-the-agent-loop', 60], [P14 + '06-tool-use-and-function-calling', 60]]],
+      ['让上下文、记忆、状态和编排变得明确、可测试。', '一个有状态的工作流：上下文预算、记忆策略、检查点和恢复路径。', [[P11 + '05-context-engineering', 90], [P14 + '07-memory-virtual-context-memgpt', 75], [P14 + '13-langgraph-stateful-graphs', 75], [P14 + '28-orchestration-patterns', 60]]],
+      ['发布前用真实失败和不安全输入给系统施压。', '一个可观测的 Agent 系统：对抗测试、轨迹评测和明确的发布关卡。', [[P14 + '26-failure-modes-agentic', 60], [P14 + '27-prompt-injection-defense', 75], [P14 + '30-eval-driven-agent-development', 60]]],
+      ['证明运行时可以依靠控制措施和 trace 证据来运维。', '一份案例：架构、失败证据、运行时控制、trace 和有理由的取舍。', [[P14 + '29-production-runtimes', 60], [P14 + '24-agent-observability-platforms', 45]]]
+    ] },
+  { id: 'applied-ai-engineer', t: 'LLM 产品工程', en: 'LLM Product Engineering', jobs: 'Applied AI Engineer · LLM Engineer · AI Product Engineer',
+    q: '想把大模型能力做成一个可靠、用户行为可度量的产品功能？',
+    mission: '交付有明确契约、评测、安全、成本和发布控制的、基于事实的 LLM 功能。',
+    fit: ['想把模型行为直接连到面向用户的产品', '喜欢在质量、安全、延迟和成本之间做平衡', '偏好可度量的产品行为，而不是孤立的模型 demo'],
+    proof: ['生产级 LLM 功能', '一个基于事实的 LLM 功能：用户契约清晰、质量可度量、有安全控制和分阶段发布计划。'],
+    strong: ['提示词与结构化输出设计', '上下文、检索与工具', 'LLM 评测与护栏', '兼顾成本的生产发布'], partial: ['产品发现', '用户体验研究', '完整的云运维'], outside: ['视觉与音频产品专精', '基础模型训练', '商业产品管理'],
+    stages: [
+      ['通过提示词、schema、上下文、检索和工具塑造模型行为。', '一个基于事实的功能原型：类型化用户契约，工具或检索行为可观察。', [[P11 + '01-prompt-engineering', 90], [P11 + '03-structured-outputs', 90], [P11 + '04-embeddings', 75], [P11 + '05-context-engineering', 90], [P11 + '06-rag', 90], [P11 + '09-function-calling', 75]]],
+      ['在接触生产流量前度量质量，控制成本与安全。', '一套评测：护栏测试 + 质量 / 延迟 / 成本记分卡。', [[P11 + '10-evaluation', 45], [P11 + '11-caching-cost', 45], [P11 + '12-guardrails', 45]]],
+      ['把功能打包成有运维控制的生产式应用。', '一个已部署的 LLM 功能：有路由、限额、观测钩子和记录在案的失败行为。', [[P11 + '13-production-app', 120], [P17 + '19-ai-gateways', 60]]],
+      ['展示功能如何在受控曝光下推进，并留下回滚证据。', '一份产品案例：评测结果、成本取舍、发布关卡和回滚决策。', [[P17 + '20-shadow-canary-progressive', 60]]]
+    ] },
+  { id: 'ai-evaluation-reliability-engineer', t: 'AI 评测与可靠性', en: 'AI Evaluation and Reliability', jobs: 'AI Evaluation Engineer · AI Reliability Engineer · ML SRE',
+    q: '想把模型与系统的不确定性，变成评测、观测、发布和恢复的证据？',
+    mission: '定义可信行为、暴露失败，并用可度量的可靠性控制来运营 AI 发布。',
+    fit: ['比起自信的「做完了」，更信可度量的证据', '喜欢找边界用例、回归和系统故障路径', '希望评测和运维共用同一份发布证据'],
+    proof: ['回归与可靠性关卡', '一道证据关卡：把行为评测、运行时遥测、负载、发布和恢复决策连起来。'],
+    strong: ['模型、LLM 与 Agent 评测', '失败分类与可观测性', '推理指标与压测', '实验、发布、混沌工程与 SRE 控制'], partial: ['人工标注运营', '事故指挥', '大型分布式基础设施'], outside: ['生产值班负责人', '合规签批', '大规模基准实验室运营'],
+    stages: [
+      ['定义行为、评测层次、失败模式和 trace 语义。', '一份分层评测计划：失败分类、trace schema 和回归阈值。', [['phases/02-ml-fundamentals/09-model-evaluation', 90], [P11 + '10-evaluation', 45], [P14 + '30-eval-driven-agent-development', 60], [P14 + '26-failure-modes-agentic', 60], [P14 + '23-otel-genai-conventions', 60]]],
+      ['度量推理健康度、生产行为、实验和容量上限。', '一份观测与负载报告：把服务指标和行为、用户结果连起来。', [[P17 + '08-inference-metrics-goodput', 60], [P17 + '13-llm-observability', 60], [P17 + '21-ab-testing-llm-features', 60], [P17 + '22-load-testing-llm-apis', 75]]],
+      ['在受控故障下证明发布与恢复行为。', '一道回归与可靠性关卡：金丝雀阈值、回滚证据和混沌实验结果。', [[P17 + '20-shadow-canary-progressive', 60], [P17 + '24-chaos-engineering-llm', 60]]],
+      ['展示目标、事故和纠正措施如何构成可靠性运作体系。', '一份可靠性案例：SLO、失败证据、响应决策和已验证的纠正措施。', [[P17 + '23-sre-for-ai', 60]]]
+    ] }
+];
+ROUTES.forEach(function (r) {
+  r.lessons = [];
+  r.stages = r.stages.map(function (s, i) {
+    var ls = seq(s[2]);
+    r.lessons = r.lessons.concat(ls);
+    return { name: STAGE_NAMES[i], outcome: s[0], artifact: s[1], lessons: ls };
+  });
+});
+
+var NEWS = [
+  { d: '2026-10-05', tag: '本站', site: true, t: '中文课程导航上线', p: '把原站的 4 条核心路径、6 条职业路线和其中用到的 76 节课整理成中文：每节课写清「学什么」和「重点」，附时长、每周排课和学习进度。' },
+  { d: '2026-10 快照', tag: '课程', t: '20 个阶段、523 节课全部标记完成', p: '原课程路线图中 Phase 0 到 Phase 19 均已标记为完成，官方估算总学习时间约 323 小时（按自己的节奏）。本页数据取自 2026-10-04 的源仓库。' },
+  { d: '2026-10 快照', tag: '课程', t: '学习路径：4 条核心路径 + 6 条职业路线', p: '原站学习路径页把同一批课程按两种方式组织：按知识领域的 4 条核心路径，以及按工作内容的 6 条职业路线——客户 AI 落地、开发者体验与教育、AI 数据系统、Agent 系统工程、LLM 产品工程、AI 评测与可靠性。每条路线分四个阶段，每阶段都有明确的作品产出。' },
+  { d: '2026-10 快照', tag: '课程', t: 'MCP 课程按 2026-07-28 版协议编写', p: 'Phase 13 的 MCP 课程讲的是新版无状态协议：没有握手和会话，每个请求自带协议版本、客户端能力和身份，并通过 server/discover 发现服务。' },
+  { d: '2026-10 快照', tag: '课程', t: 'Agent 工作台与产品判断两组课', p: 'Phase 14 第 31–46 课组成「Agent 辅助工程」路径，第 47–54 课组成「产品判断与交付」路径，侧重让编程 Agent 在真实仓库里可靠交付。' },
+  { d: '2026-04', tag: '课程', t: '第 4 阶段「计算机视觉」28 节课全部完成', p: '覆盖图像基础到多模态视觉（VLM、3D、视频、自监督），并对 15+ 节课做了精确性修订。' },
+  { d: '2026 Q1 及更早', tag: '课程', t: '基础阶段完成', p: '第 0 阶段（环境与工具，12 节）、第 1 阶段（数学基础，22 节）、第 2 阶段（机器学习基础，18 节）全部上线。' }
+];
+
+/* ---------- helpers ---------- */
+var store = {
+  get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+};
+var done = store.get('aiPaths.done', {}) || {};
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function $(id) { return document.getElementById(id); }
+function sum(ls) { return ls.reduce(function (a, l) { return a + l.m; }, 0); }
+function hrs(min) { var h = min / 60; return (Math.round(h * 10) / 10) + ' 小时'; }
+function doneCount(ls) { return ls.filter(function (l) { return done[l.p]; }).length; }
+function phaseOf(p) { var m = p.match(/^phases\/(\d\d)-/); return m ? m[1] : ''; }
+
+var usedIn = {};
+CORE.concat(ROUTES).forEach(function (x) {
+  x.lessons.forEach(function (l) { (usedIn[l.p] = usedIn[l.p] || []).indexOf(x.t) < 0 && usedIn[l.p].push(x.t); });
+});
+var uniqueLessons = Object.keys(usedIn);
+var uniqueMinutes = uniqueLessons.reduce(function (a, p) {
+  var best = 0;
+  CORE.concat(ROUTES).forEach(function (x) { x.lessons.forEach(function (l) { if (l.p === p && !best) best = l.m; }); });
+  return a + best;
+}, 0);
+
+function lessonHTML(l, i, ownerTitle) {
+  var d = L[l.p];
+  if (!d) return '';
+  var others = (usedIn[l.p] || []).filter(function (t) { return t !== ownerTitle; });
+  return '<li class="lesson' + (done[l.p] ? ' done' : '') + '" data-p="' + esc(l.p) + '" data-q="' + esc((d[0] + ' ' + d[1] + ' ' + d[2] + ' ' + d[3].join(' ')).toLowerCase()) + '">' +
+    '<details><summary>' +
+      '<span class="idx" data-n="' + (i + 1) + '">' + (done[l.p] ? '✓' : (i + 1)) + '</span>' +
+      '<span class="ttl">' + esc(d[0]) + '<small>' + esc(d[1]) + ' · 第 ' + phaseOf(l.p) + ' 阶段</small></span>' +
+      '<span class="min">' + l.m + ' 分钟</span>' +
+      '<span class="caret" aria-hidden="true">▶</span>' +
+    '</summary><div class="body">' +
+      '<div><h4>学什么</h4><p>' + esc(d[2]) + '</p></div>' +
+      '<div><h4>重点</h4><ul>' + d[3].map(function (k) { return '<li>' + esc(k) + '</li>'; }).join('') + '</ul></div>' +
+      '<div class="foot">' +
+        '<label class="check"><input type="checkbox" data-done="' + esc(l.p) + '"' + (done[l.p] ? ' checked' : '') + '> 已学</label>' +
+        '<a href="' + SRC + esc(l.p) + '" target="_blank" rel="noopener">阅读原课（英文）↗</a>' +
+        (others.length ? '<span class="also">也出现在：' + others.map(esc).join('、') + '</span>' : '') +
+      '</div>' +
+    '</div></details></li>';
+}
+
+/* ---------- home ---------- */
+function renderStats() {
+  $('stats').innerHTML = [
+    [CORE.length, '条核心路径'], [ROUTES.length, '条职业路线'], [uniqueLessons.length, '节课（去重）'], [Math.round(uniqueMinutes / 60), '小时课程时长']
+  ].map(function (s) { return '<div class="stat"><b>' + s[0] + '</b><span>' + s[1] + '</span></div>'; }).join('');
+  var hot = {};
+  uniqueLessons.forEach(function (p) { hot[phaseOf(p)] = (hot[phaseOf(p)] || 0) + 1; });
+  $('phases').innerHTML = PHASES.map(function (ph) {
+    var h = hot[ph[0]];
+    return '<a class="phase' + (h ? ' hot' : '') + '" style="text-decoration:none" href="' + SRC + 'phases/' + ph[0] + '-' + ph[4] + '" target="_blank" rel="noopener">' +
+      '<div class="pn">PHASE ' + ph[0] + (h ? ' · 本页用到 ' + h + ' 节' : '') + '</div><div class="pt">' + esc(ph[1]) + '</div><div class="pm">' + ph[2] + ' 节课 · 约 ' + ph[3] + ' 小时</div></a>';
+  }).join('');
+}
+
+/* ---------- courses ---------- */
+var curPath = store.get('aiPaths.path', CORE[0].id);
+if (!CORE.some(function (c) { return c.id === curPath; })) curPath = CORE[0].id;
+var query = '';
+
+function renderPicker() {
+  $('picker').innerHTML = CORE.map(function (c, i) {
+    var n = doneCount(c.lessons);
+    return '<button class="pick" role="tab" type="button" data-path="' + c.id + '" aria-selected="' + (c.id === curPath) + '">' +
+      '<span class="k">PATH 0' + (i + 1) + '</span><span class="t">' + esc(c.t) + '</span><span class="s">' + esc(c.tag) + '</span>' +
+      '<span class="m">' + c.lessons.length + ' 节 · ' + hrs(sum(c.lessons)) + ' · 已学 ' + n + '</span>' +
+      '<span class="bar"><i style="width:' + Math.round(n / c.lessons.length * 100) + '%"></i></span></button>';
+  }).join('');
+}
+function renderPath() {
+  var c = CORE.filter(function (x) { return x.id === curPath; })[0];
+  var n = doneCount(c.lessons);
+  $('pathPanel').innerHTML =
+    '<div class="panel-head"><div><h3>' + esc(c.t) + '</h3><div class="en">' + esc(c.en) + '</div><p>' + esc(c.s) + '</p>' +
+      '<div class="meta"><span class="chip acc">适合：' + esc(c.who) + '</span><span class="chip">' + c.lessons.length + ' 节课</span><span class="chip">' + hrs(sum(c.lessons)) + '</span></div></div>' +
+      '<div class="progress-box"><div class="lbl"><span>学习进度</span><span>' + n + ' / ' + c.lessons.length + '</span></div><div class="bar"><i style="width:' + Math.round(n / c.lessons.length * 100) + '%"></i></div></div></div>' +
+    '<div class="tools"><input class="search" id="search" type="search" placeholder="在本路径中搜索：如 RAG、评测、MCP…" value="' + esc(query) + '" aria-label="搜索课程">' +
+      '<button class="mini-btn" type="button" data-expand="1">全部展开</button><button class="mini-btn" type="button" data-expand="0">全部收起</button></div>' +
+    '<ol class="lessons" id="lessonList">' + c.lessons.map(function (l, i) { return lessonHTML(l, i, c.t); }).join('') + '</ol>' +
+    '<p class="empty" id="noHit" hidden>没有匹配的课程，换个关键词试试。</p>';
+  applyFilter();
+}
+function applyFilter() {
+  var q = query.trim().toLowerCase(), hit = 0;
+  document.querySelectorAll('#lessonList .lesson').forEach(function (li) {
+    var ok = !q || li.getAttribute('data-q').indexOf(q) >= 0;
+    li.hidden = !ok; if (ok) hit++;
+  });
+  var nh = $('noHit'); if (nh) nh.hidden = hit > 0;
+}
+
+/* ---------- routes ---------- */
+var curRoute = store.get('aiPaths.route', ROUTES[0].id);
+if (!ROUTES.some(function (r) { return r.id === curRoute; })) curRoute = ROUTES[0].id;
+function renderRouteCards() {
+  $('routeCards').innerHTML = ROUTES.map(function (r, i) {
+    var n = doneCount(r.lessons);
+    return '<button class="route" role="tab" type="button" data-route="' + r.id + '" aria-selected="' + (r.id === curRoute) + '">' +
+      '<span class="chip acc" style="align-self:flex-start">0' + (i + 1) + ' · ' + r.lessons.length + ' 节 · ' + hrs(sum(r.lessons)) + '</span>' +
+      '<span class="t">' + esc(r.t) + '</span><span class="q">' + esc(r.q) + '</span><span class="jobs">' + esc(r.jobs) + '</span>' +
+      '<span class="bar" style="margin-top:auto"><i style="width:' + Math.round(n / r.lessons.length * 100) + '%"></i></span></button>';
+  }).join('');
+}
+function list(items) { return '<ul>' + items.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; }
+function renderRoute() {
+  var r = ROUTES.filter(function (x) { return x.id === curRoute; })[0];
+  var n = doneCount(r.lessons), k = 0;
+  $('routePanel').innerHTML =
+    '<div class="panel-head"><div><h3>' + esc(r.t) + '</h3><div class="en">' + esc(r.en) + ' · ' + esc(r.jobs) + '</div><p>' + esc(r.mission) + '</p></div>' +
+      '<div class="progress-box"><div class="lbl"><span>路线进度</span><span>' + n + ' / ' + r.lessons.length + '</span></div><div class="bar"><i style="width:' + Math.round(n / r.lessons.length * 100) + '%"></i></div></div></div>' +
+    '<div class="cols">' +
+      '<div class="box"><h4>适合你，如果</h4>' + list(r.fit) + '</div>' +
+      '<div class="box"><h4>作品集：' + esc(r.proof[0]) + '</h4><p>' + esc(r.proof[1]) + '</p></div>' +
+      '<div class="box"><h4>课程覆盖</h4><div class="cover">' +
+        r.strong.map(function (x) { return '<span class="chip ok">强 · ' + esc(x) + '</span>'; }).join('') +
+        r.partial.map(function (x) { return '<span class="chip">部分 · ' + esc(x) + '</span>'; }).join('') +
+        r.outside.map(function (x) { return '<span class="chip" style="opacity:.75">课外 · ' + esc(x) + '</span>'; }).join('') +
+      '</div></div>' +
+    '</div>' +
+    '<div class="stages">' + r.stages.map(function (s, si) {
+      return '<div class="stage"><div class="stage-head"><div class="stage-n">' + (si + 1) + '</div><div>' +
+        '<h4>' + esc(s.name) + ' <span class="chip" style="vertical-align:middle">' + s.lessons.length + ' 节 · ' + hrs(sum(s.lessons)) + '</span></h4>' +
+        '<p>' + esc(s.outcome) + '</p><div class="out"><b>产出：</b>' + esc(s.artifact) + '</div></div></div>' +
+        '<ol class="lessons">' + s.lessons.map(function (l) { return lessonHTML(l, k++, r.t); }).join('') + '</ol></div>';
+    }).join('') + '</div>';
+}
+
+/* ---------- time ---------- */
+function renderTime() {
+  var all = CORE.concat(ROUTES), max = Math.max.apply(null, all.map(function (x) { return sum(x.lessons); }));
+  function row(x) {
+    var m = sum(x.lessons);
+    return '<tr><td>' + esc(x.t) + '</td><td class="n">' + x.lessons.length + ' 节</td><td class="n">' + hrs(m) + '</td><td style="width:30%"><div class="hbar"><i style="width:' + Math.round(m / max * 100) + '%"></i></div></td></tr>';
+  }
+  $('timeTable').innerHTML = '<thead><tr><th>路线</th><th class="n">课数</th><th class="n">时长</th><th><span class="sr">对比</span></th></tr></thead><tbody>' +
+    '<tr class="grp"><td colspan="4">核心路径</td></tr>' + CORE.map(row).join('') +
+    '<tr class="grp"><td colspan="4">职业路线</td></tr>' + ROUTES.map(row).join('') +
+    '<tr class="grp"><td colspan="4">合计</td></tr><tr><td>全部课程（去重）</td><td class="n">' + uniqueLessons.length + ' 节</td><td class="n">' + hrs(uniqueMinutes) + '</td><td></td></tr></tbody>';
+  $('planPath').innerHTML = '<optgroup label="核心路径">' + CORE.map(function (c) { return '<option value="' + c.id + '">' + esc(c.t) + '</option>'; }).join('') + '</optgroup>' +
+    '<optgroup label="职业路线">' + ROUTES.map(function (r) { return '<option value="' + r.id + '">' + esc(r.t) + '</option>'; }).join('') + '</optgroup>';
+  $('planPath').value = store.get('aiPaths.planPath', CORE[0].id);
+  if (!$('planPath').value) $('planPath').value = CORE[0].id;
+  $('planHours').value = store.get('aiPaths.planHours', 5);
+  renderPlan();
+}
+function renderPlan() {
+  var id = $('planPath').value, h = +$('planHours').value;
+  var x = CORE.concat(ROUTES).filter(function (y) { return y.id === id; })[0];
+  $('planHoursVal').textContent = h;
+  var cap = h * 60, weeks = [], cur = null;
+  x.lessons.forEach(function (l) {
+    if (!cur || (cur.m + l.m > cap && cur.ls.length)) { cur = { m: 0, ls: [] }; weeks.push(cur); }
+    cur.m += l.m; cur.ls.push(l);
+  });
+  var left = x.lessons.filter(function (l) { return !done[l.p]; });
+  $('planResult').innerHTML = '「' + esc(x.t) + '」共 ' + hrs(sum(x.lessons)) + '，每周 ' + h + ' 小时，大约 <b>' + weeks.length + ' 周</b>学完' +
+    (left.length < x.lessons.length ? '；还剩 ' + left.length + ' 节、' + hrs(sum(left)) + '。' : '。');
+  $('planWeeks').innerHTML = weeks.map(function (w, i) {
+    return '<li class="week"><div class="wh"><b>第 ' + (i + 1) + ' 周</b><span>' + hrs(w.m) + '</span></div><ul>' +
+      w.ls.map(function (l) { return '<li' + (done[l.p] ? ' style="color:var(--faint);text-decoration:line-through"' : '') + '>' + esc(L[l.p][0]) + '</li>'; }).join('') + '</ul></li>';
+  }).join('');
+}
+
+/* ---------- news ---------- */
+function renderNews() {
+  $('newsList').innerHTML = NEWS.map(function (n) {
+    return '<article class="news-item"><time>' + esc(n.d) + '</time><div><span class="tag' + (n.site ? ' site' : '') + '">' + esc(n.tag) + '</span><h3>' + esc(n.t) + '</h3><p>' + esc(n.p) + '</p></div></article>';
+  }).join('');
+}
+
+/* ---------- events ---------- */
+function refreshProgress() {
+  renderPicker(); renderRouteCards(); renderPlan();
+  document.querySelectorAll('.lesson').forEach(function (li) {
+    var p = li.getAttribute('data-p'), on = !!done[p];
+    li.classList.toggle('done', on);
+    var idx = li.querySelector('.idx');
+    idx.textContent = on ? '✓' : idx.getAttribute('data-n');
+    li.querySelectorAll('input[data-done]').forEach(function (cb) { cb.checked = on; });
+  });
+  ['pathPanel', 'routePanel'].forEach(function (pid) {
+    var lessons = pid === 'pathPanel' ? CORE.filter(function (c) { return c.id === curPath; })[0].lessons : ROUTES.filter(function (r) { return r.id === curRoute; })[0].lessons;
+    var n = doneCount(lessons), box = $(pid).querySelector('.progress-box');
+    box.querySelector('.lbl span:last-child').textContent = n + ' / ' + lessons.length;
+    box.querySelector('.bar i').style.width = Math.round(n / lessons.length * 100) + '%';
+  });
+}
+document.addEventListener('click', function (e) {
+  var t = e.target.closest('[data-path]');
+  if (t) { curPath = t.getAttribute('data-path'); store.set('aiPaths.path', curPath); query = ''; renderPicker(); renderPath(); return; }
+  t = e.target.closest('[data-route]');
+  if (t) { curRoute = t.getAttribute('data-route'); store.set('aiPaths.route', curRoute); renderRouteCards(); renderRoute(); return; }
+  t = e.target.closest('[data-expand]');
+  if (t) { var open = t.getAttribute('data-expand') === '1'; document.querySelectorAll('#lessonList details').forEach(function (d) { if (!d.parentNode.hidden) d.open = open; }); }
+});
+document.addEventListener('change', function (e) {
+  var p = e.target.getAttribute && e.target.getAttribute('data-done');
+  if (p) { if (e.target.checked) done[p] = 1; else delete done[p]; store.set('aiPaths.done', done); refreshProgress(); return; }
+  if (e.target.id === 'planPath') { store.set('aiPaths.planPath', e.target.value); renderPlan(); }
+});
+document.addEventListener('input', function (e) {
+  if (e.target.id === 'search') { query = e.target.value; applyFilter(); }
+  if (e.target.id === 'planHours') { store.set('aiPaths.planHours', +e.target.value); renderPlan(); }
+});
+
+/* theme toggle */
+var theme = store.get('aiPaths.theme', null);
+if (theme) document.documentElement.setAttribute('data-theme', theme);
+$('themeBtn').addEventListener('click', function () {
+  var cur = document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next); store.set('aiPaths.theme', next);
+});
+
+/* nav highlight */
+var links = document.querySelectorAll('#navLinks a');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (en.isIntersecting) links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id); });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('main section').forEach(function (s) { io.observe(s); });
+}
+
+renderStats(); renderPicker(); renderPath(); renderRouteCards(); renderRoute(); renderTime(); renderNews();
+})();
+</script>
+</body>
+</html>

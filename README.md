@@ -10,6 +10,18 @@
 4. **添加新视频**：见下面「添加新视频」。
 5. **发布**：推送到 `main`（或当前开发分支）后，GitHub Actions 会运行 `node scripts/build.mjs` 并部署 `site/`。首次需要在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**，然后在 Actions 页面手动运行一次 *Deploy site to GitHub Pages*。网址通常是 `https://<用户名>.github.io/<仓库名>/`。
 
+## AI 工程课程导航（`site/ai-paths/`）
+
+`site/ai-paths/index.html` 是 [AI Engineering from Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) 学习路径的中文导航页（单文件，无需构建）：
+
+- **首页 Home**：怎么用、全课 20 个阶段地图
+- **课程 Courses**：4 条核心路径，每节课的「学什么 / 重点 / 时长」，可搜索、可勾选已学
+- **职业路线 Routes**：6 条职业路线，每条 4 个阶段及产出物、作品集要求、课程覆盖范围
+- **时间 Time**：各路线时长，按每周可投入小时数自动排课
+- **动态 News**：课程与本站更新
+
+部署后访问 `https://<用户名>.github.io/<仓库名>/ai-paths/`；本地直接用浏览器打开该文件即可。
+
 ## 目录
 
 | 路径 | 说明 |
