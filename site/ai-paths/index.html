@@ -288,7 +288,7 @@ footer a { color: var(--accent-ink); }
       <div class="map">
         <div class="map-head">
           <h3>全课地图：20 个阶段</h3>
-          <p>高亮的阶段是本页学习路径实际用到的；其余阶段可在原课程中按需深入。</p>
+          <p>高亮的阶段是本页学习路径实际用到的；点击任一阶段会在原站打开它的第一课。</p>
         </div>
         <div class="phases" id="phases"></div>
       </div>
@@ -373,7 +373,7 @@ footer a { color: var(--accent-ink); }
 
 <footer>
   <div class="wrap">
-    <p>课程内容来自开源项目 <a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">AI Engineering from Scratch</a>（MIT 许可），本页为非官方中文导航整理。</p>
+    <p>课程内容来自 <a href="https://aiengineeringfromscratch.com/" target="_blank" rel="noopener">AI Engineering from Scratch</a>（<a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank" rel="noopener">开源仓库</a>，MIT 许可），本页为非官方中文导航整理。</p>
     <p><a href="../">← 返回每日量化学习站</a></p>
   </div>
 </footer>
@@ -382,30 +382,31 @@ footer a { color: var(--accent-ink); }
 (function () {
 'use strict';
 
-var SRC = 'https://github.com/rohitg00/ai-engineering-from-scratch/tree/main/';
+var SITE = 'https://aiengineeringfromscratch.com/';
+function lessonUrl(p) { return SITE + 'lesson?path=' + encodeURIComponent(p); }
 
-/* ---------- 20 phases (lesson counts and hours from the source ROADMAP) ---------- */
+/* ---------- 20 phases: [num, name, lessons, hours, slug, first lesson] (counts and hours from the source ROADMAP) ---------- */
 var PHASES = [
-  ['00', '环境与工具', 12, 14, 'setup-and-tooling'],
-  ['01', '数学基础', 22, 23, 'math-foundations'],
-  ['02', '机器学习基础', 18, 21, 'ml-fundamentals'],
-  ['03', '深度学习核心', 13, 15, 'deep-learning-core'],
-  ['04', '计算机视觉', 28, 27, 'computer-vision'],
-  ['05', '自然语言处理', 29, 30, 'nlp-foundations-to-advanced'],
-  ['06', '语音与音频', 17, 18, 'speech-and-audio'],
-  ['07', 'Transformer 深入', 16, 14, 'transformers-deep-dive'],
-  ['08', '生成式 AI', 15, 14, 'generative-ai'],
-  ['09', '强化学习', 12, 13, 'reinforcement-learning'],
-  ['10', '从零实现大模型', 24, 26, 'llms-from-scratch'],
-  ['11', 'LLM 工程', 17, 19, 'llm-engineering'],
-  ['12', '多模态 AI', 25, 65, 'multimodal-ai'],
-  ['13', '工具与协议（MCP）', 31, 43, 'tools-and-protocols'],
-  ['14', 'Agent 工程', 54, 55, 'agent-engineering'],
-  ['15', '自主系统', 22, 20, 'autonomous-systems'],
-  ['16', '多 Agent 与群体', 25, 28, 'multi-agent-and-swarms'],
-  ['17', '基础设施与生产', 28, 32, 'infrastructure-and-production'],
-  ['18', '伦理、安全与对齐', 30, 31, 'ethics-safety-alignment'],
-  ['19', '结业项目', 85, 620, 'capstone-projects']
+  ['00', '环境与工具', 12, 14, 'setup-and-tooling', '01-dev-environment'],
+  ['01', '数学基础', 22, 23, 'math-foundations', '01-linear-algebra-intuition'],
+  ['02', '机器学习基础', 18, 21, 'ml-fundamentals', '01-what-is-machine-learning'],
+  ['03', '深度学习核心', 13, 15, 'deep-learning-core', '01-the-perceptron'],
+  ['04', '计算机视觉', 28, 27, 'computer-vision', '01-image-fundamentals'],
+  ['05', '自然语言处理', 29, 30, 'nlp-foundations-to-advanced', '01-text-processing'],
+  ['06', '语音与音频', 17, 18, 'speech-and-audio', '01-audio-fundamentals'],
+  ['07', 'Transformer 深入', 16, 14, 'transformers-deep-dive', '01-why-transformers'],
+  ['08', '生成式 AI', 15, 14, 'generative-ai', '01-generative-models-taxonomy-history'],
+  ['09', '强化学习', 12, 13, 'reinforcement-learning', '01-mdps-states-actions-rewards'],
+  ['10', '从零实现大模型', 24, 26, 'llms-from-scratch', '01-tokenizers'],
+  ['11', 'LLM 工程', 17, 19, 'llm-engineering', '01-prompt-engineering'],
+  ['12', '多模态 AI', 25, 65, 'multimodal-ai', '01-vision-transformer-patch-tokens'],
+  ['13', '工具与协议（MCP）', 31, 43, 'tools-and-protocols', '01-the-tool-interface'],
+  ['14', 'Agent 工程', 54, 55, 'agent-engineering', '01-the-agent-loop'],
+  ['15', '自主系统', 22, 20, 'autonomous-systems', '01-long-horizon-agents'],
+  ['16', '多 Agent 与群体', 25, 28, 'multi-agent-and-swarms', '01-why-multi-agent'],
+  ['17', '基础设施与生产', 28, 32, 'infrastructure-and-production', '01-managed-llm-platforms'],
+  ['18', '伦理、安全与对齐', 30, 31, 'ethics-safety-alignment', '01-instruction-following-alignment-signal'],
+  ['19', '结业项目', 85, 620, 'capstone-projects', '01-terminal-native-coding-agent']
 ];
 
 /* ---------- lessons: [中文标题, 英文标题, 学什么, [重点...]] ---------- */
@@ -669,7 +670,7 @@ function lessonHTML(l, i, ownerTitle) {
       '<div><h4>重点</h4><ul>' + d[3].map(function (k) { return '<li>' + esc(k) + '</li>'; }).join('') + '</ul></div>' +
       '<div class="foot">' +
         '<label class="check"><input type="checkbox" data-done="' + esc(l.p) + '"' + (done[l.p] ? ' checked' : '') + '> 已学</label>' +
-        '<a href="' + SRC + esc(l.p) + '" target="_blank" rel="noopener">阅读原课（英文）↗</a>' +
+        '<a href="' + lessonUrl(l.p) + '" target="_blank" rel="noopener">打开原站课程（英文）↗</a>' +
         (others.length ? '<span class="also">也出现在：' + others.map(esc).join('、') + '</span>' : '') +
       '</div>' +
     '</div></details></li>';
@@ -684,7 +685,7 @@ function renderStats() {
   uniqueLessons.forEach(function (p) { hot[phaseOf(p)] = (hot[phaseOf(p)] || 0) + 1; });
   $('phases').innerHTML = PHASES.map(function (ph) {
     var h = hot[ph[0]];
-    return '<a class="phase' + (h ? ' hot' : '') + '" style="text-decoration:none" href="' + SRC + 'phases/' + ph[0] + '-' + ph[4] + '" target="_blank" rel="noopener">' +
+    return '<a class="phase' + (h ? ' hot' : '') + '" style="text-decoration:none" href="' + lessonUrl('phases/' + ph[0] + '-' + ph[4] + '/' + ph[5]) + '" target="_blank" rel="noopener" title="在原站打开本阶段第一课">' +
       '<div class="pn">PHASE ' + ph[0] + (h ? ' · 本页用到 ' + h + ' 节' : '') + '</div><div class="pt">' + esc(ph[1]) + '</div><div class="pm">' + ph[2] + ' 节课 · 约 ' + ph[3] + ' 小时</div></a>';
   }).join('');
 }
